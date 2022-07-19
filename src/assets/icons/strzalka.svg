@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="233.87578"
+   height="264.05667"
+   viewBox="0 0 233.87577 264.05669"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="strzaka.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     showgrid="false"
+     inkscape:zoom="1.7000493"
+     inkscape:cx="88.526844"
+     inkscape:cy="75.586043"
+     inkscape:window-width="2560"
+     inkscape:window-height="1057"
+     inkscape:window-x="1072"
+     inkscape:window-y="302"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6" />
+  <g
+     id="Warstwa_2"
+     data-name="Warstwa 2"
+     transform="translate(2.8647686e-7,-0.02666518)">
+    <g
+       id="Warstwa_1-2"
+       data-name="Warstwa 1">
+      <path
+         d="m 224.17,115.25 a 19.41,19.41 0 0 1 0,33.62 l -97.53,56.3 -97.52,56.31 A 19.41,19.41 0 0 1 0,244.67 L 113.59,132.06 0,19.44 A 19.41,19.41 0 0 1 29.12,2.63 l 97.52,56.31 z"
+         style="fill:#707070"
+         id="path2" />
+    </g>
+  </g>
+</svg>
