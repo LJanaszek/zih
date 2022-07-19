@@ -10,6 +10,7 @@ import PageFooter from './components/layout/footer';
 import PolicyPage from './routes/policy';
 import { useEffect } from 'react';
 import { CONFIG_MODULE_ACTION, useConfigModuleDispatch } from './modules/config';
+import StreetPhotoTestPage from './components/task-widgets/street-photo';
 
 const HomePage = React.lazy(() => import('./routes/home'));
 const GamePage = React.lazy(() => import('./routes/game'));
@@ -32,6 +33,9 @@ export default function App() {
                             <Route path={getGamePageRoute()} element={<GamePage />} />
 
                             <Route path={getPolicyRoute()} element={<PolicyPage />} />
+
+                            <Route path={'/test/street-photo'} element={<StreetPhotoTestPage />} />
+
                             <Route path={'/debug-on'} element={<DebugOn />} />
                             <Route path={'/debug-off'} element={<DebugOff />} />
                             <Route element={<HomePage />} />

@@ -125,6 +125,20 @@ Zestaw narzedzi widoczny na ekranach gry z kompasem.
 
 ---
 
+# Notatki do Projektu: Wawer
+
+## Mechaniki zadań przeniesionych z innych projketów
+
+### Zadanie 1 - Zdjęcie ulicy
+
+W projekcie jest podstawowy kod do zadania w plikach:
+* `src\components\task-widgets\street-photo\photo.tsx` - layout widoku + kod generacji zdjęcia
+* `src\components\task-widgets\street-photo\video.tsx` - element playera video z nałożoną grafiką
+
+**Uwaga:** nakładanie naklejki na widoku z kamery i nakłądanie naklejki na zrobione zdjęcie są dwoma niezależnymi procesami. Trzeba przypilnować że oba dają ten sam wynik!
+
+---
+
 ## Problemy
 
 ### Importowanie plików SVG

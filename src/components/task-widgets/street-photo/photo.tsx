@@ -1,0 +1,292 @@
+import { useReducer, useRef, useCallback } from "react";
+import styled from "styled-components";
+import VideoComponent from "./video";
+
+import Sticker from './placeholder.png';
+
+import ChangeCamera from '../../../assets/icons/x.svg';
+import CameraOn from '../../../assets/icons/x.svg';
+import CameraOff from '../../../assets/icons/x.svg';
+import makePhotoIcon from '../../../assets/icons/x.svg';
+
+import { useState } from "react";
+import { useEffect } from "react";
+import ScrollToTop from "../../../utils/widgets/scroll-to-top";
+import useCamera from "../../../modules/camera/use-camera";
+import Popup from "../../elements/popup";
+
+type Props = {
+    onComplete(): void
+}
+
+const Container = styled.div`
+    width: 100vw;
+    height: 100vh;
+
+    margin: 0 auto;
+
+    position: relative;
+
+    display: grid;
+
+    .camera-container {
+        background: black;
+    }
+
+    .toggle-camera {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        input {
+            width: 30%;
+        }
+    }
+
+    .change-camera {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        input {
+            width: 30%;
+        }
+    }
+
+    .make-photo {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        input {
+            width: 50%;
+        }
+    }
+
+    .logo {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            display: block;
+            width: 30%;
+        }
+    }
+
+    @media (orientation: landscape) {
+
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-rows: repeat(6, 1fr);
+
+        .camera-container {
+            grid-column: 2;
+            grid-row: 1 / span 6;
+        }
+
+        .toggle-camera {
+            grid-column: 1;
+            grid-row: 2 / span 2;
+        }
+
+        .change-camera {
+            grid-column: 1;
+            grid-row: 4 / span 2;
+        }
+
+        .make-photo {
+            grid-column: 3;
+            grid-row: 3 / span 2;
+        }
+
+        .logo {
+            grid-column: 3;
+            grid-row: 5 / span 2;
+        }
+    }
+
+    @media (orientation: portrait) {
+
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr 4fr 1fr;
+
+        .camera-container {
+            grid-column: 1 / span 3;
+            grid-row: 2;
+        }
+
+        .toggle-camera {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .change-camera {
+            grid-column: 3;
+            grid-row: 1;
+        }
+
+        .make-photo {
+            grid-column: 2;
+            grid-row: 3;
+        }
+
+        .logo {
+            grid-column: 2;
+            grid-row: 1;
+        }
+    }
+
+    video {
+        width: 100%;
+        height: 100%;
+    }
+
+    .background-controlls {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        padding: 20px;
+    }
+
+    canvas {
+        display: none;
+    }
+
+    .camera-container {
+
+    }
+
+`;
+
+export default function Zad1Photo({ onComplete }: Props) {
+    const { videoInputDevices, error, srcObject, nextDevice } = useCamera();
+    const [permitionDenied, setPermitionDenied] = useState(false);
+    const [showPermitionError, setShowPermitionDenied] = useState(false);
+
+    const showPermitionInfo = useCallback(() => {
+        setPermitionDenied(true);
+    }, [setPermitionDenied]);
+
+    const [showVideo, toggleVideo] = useReducer((state: boolean, action: boolean | null) => {
+        return action === null ? !state : action;
+    }, true);
+
+    const onToggleVideoClick = useCallback(() => {
+        if (permitionDenied) {
+            showPermitionInfo()
+        } else {
+            toggleVideo(null)
+        }
+    }, [toggleVideo, showPermitionInfo, permitionDenied]);
+
+    const captureRef = useRef<HTMLCanvasElement>(null);
+    const videoRef = useRef<any>(null);
+
+    const makeSnapshot = useCallback(() => {
+        if (videoRef.current && captureRef.current) {
+            const capture = captureRef.current;
+            var ctx = capture.getContext('2d');
+
+            const v = document.getElementsByTagName('video')[0];
+
+            if (v) {
+                capture.width = v.videoWidth;
+                capture.height = v.videoHeight;
+            }
+
+            var img = new Image();
+
+            img.src = Sticker;
+
+            img.onload = () => {
+                if (ctx) {
+
+                    const stickerSpaceWidth = capture.width * .5;
+                    const stickerSpaceHeight = capture.height * .66;
+
+                    const imgWidth = 680;
+                    const imgHeight = 974;
+
+                    const stickerSpaceRatio = stickerSpaceWidth / stickerSpaceHeight;
+                    const imgRatio = imgWidth / imgHeight;
+
+                    let stickerWidth = imgWidth;
+                    let stickerHeight = imgHeight;
+
+                    if (imgRatio >= stickerSpaceRatio) {
+                        stickerWidth = Math.min(imgWidth, stickerSpaceWidth);
+                        stickerHeight = stickerWidth / imgRatio;
+                    } else {
+                        stickerHeight = Math.min(imgHeight, stickerSpaceHeight);
+                        stickerWidth = stickerHeight * imgRatio;
+                    }
+
+                    ctx.drawImage(videoRef.current.getVideo(), 0, 0, capture.width, capture.height);
+                    ctx.drawImage(img,
+                        capture.width - stickerWidth,
+                        capture.height * (1 - .66),
+                        stickerWidth,
+                        stickerHeight);
+
+                    var a = document.createElement('a');
+                    a.href = capture.toDataURL("image/png");;
+                    a.style.display = 'none';
+                    a.setAttribute('download', 'Poniatowski_z_kadetami.png');
+                    document.body.appendChild(a);
+                    a.click();
+
+                    onComplete();
+                }
+            }
+        }
+    }, [onComplete]);
+
+    const onPermitionDenied = useCallback(() => {
+        toggleVideo(false)
+        setPermitionDenied(true);
+        setShowPermitionDenied(true);
+    }, [setPermitionDenied, setShowPermitionDenied, toggleVideo])
+
+    useEffect(() => {
+        if (error?.name === 'NotAllowedError') {
+            onPermitionDenied();
+        }
+    }, [onPermitionDenied, error])
+
+    return <>
+        <ScrollToTop behavior="smooth" />
+        <Container>
+            <div className="camera-container">
+                {showVideo && <VideoComponent ref={videoRef} srcObject={srcObject as MediaStream} />}
+            </div>
+
+
+            {showVideo && (videoInputDevices.length > 1) &&
+                <div className="change-camera">
+                    <input type="image" src={ChangeCamera} onClick={nextDevice} alt="" />
+                </div>
+            }
+
+            <div className="toggle-camera">
+                <input type="image" src={showVideo ? CameraOff : CameraOn} onClick={onToggleVideoClick} alt="" />
+            </div>
+
+            <div className="make-photo">
+                <input type="image" alt="zrób zdjęcie" src={makePhotoIcon} onClick={makeSnapshot} />
+            </div>
+
+
+            {showPermitionError && <Popup onClick={() => setPermitionDenied(false)}>
+                <p>
+                    Nie wyraziłeś zgody na udostępnienie kamery. Aby zmienić ustawienia, wejdź w ustawienia przeglądarki, następnie w ustawienia witryny i wyraź zgodę na udostępnienie aparatu. Na koniec odśwież stronę i zobacz grę w rozszerzonej rzeczywistości.
+                </p>
+            </Popup>}
+            <canvas ref={captureRef} ></canvas>
+        </Container>
+    </>
+}
