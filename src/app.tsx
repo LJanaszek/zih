@@ -12,6 +12,7 @@ import { useEffect } from 'react';
 import { CONFIG_MODULE_ACTION, useConfigModuleDispatch } from './modules/config';
 import StreetPhotoTestPage from './components/task-widgets/street-photo';
 import TravelersTestPage from './components/task-widgets/travelers';
+import PuzzleTestPage from './components/task-widgets/puzzle';
 
 const HomePage = React.lazy(() => import('./routes/home'));
 const GamePage = React.lazy(() => import('./routes/game'));
@@ -37,6 +38,7 @@ export default function App() {
 
                             <Route path={'/test/street-photo'} element={<StreetPhotoTestPage />} />
                             <Route path={'/test/travelers'} element={<TravelersTestPage />} />
+                            <Route path={'/test/puzzle'} element={<PuzzleTestPage />} />
 
                             <Route path={'/debug-on'} element={<DebugOn />} />
                             <Route path={'/debug-off'} element={<DebugOff />} />
