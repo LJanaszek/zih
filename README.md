@@ -125,6 +125,31 @@ Zestaw narzedzi widoczny na ekranach gry z kompasem.
 
 ---
 
+# Notatki do Projektu: Wawer
+
+## Mechaniki zadań przeniesionych z innych projketów
+
+### Zadanie 1 - Zdjęcie ulicy
+
+W projekcie jest podstawowy kod do zadania w plikach:
+* `src\components\task-widgets\street-photo\photo.tsx` - layout widoku + kod generacji zdjęcia
+* `src\components\task-widgets\street-photo\video.tsx` - element playera video z nałożoną grafiką
+
+**Uwaga:** nakładanie naklejki na widoku z kamery i nakłądanie naklejki na zrobione zdjęcie są dwoma niezależnymi procesami. Trzeba przypilnować że oba dają ten sam wynik!
+
+
+### Zadanie 5 - Polowanie na podróżnych
+
+Zadanie zbudowane jest na podstawie sceny 3D przy pomocy biblioteki [THREE.js](https://threejs.org/) nałozonej na obraz z kamery urządzenia
+
+Istotne pliki:
+* `src\components\task-widgets\travelers\scene.tsx` - główny widok zadania
+* `src\components\task-widgets\travelers\scene\scene.ts` - scena 3D
+* `src\components\task-widgets\travelers\scene\controls.ts` - kontrole łączący ruchy urządzenia z kamerą w scenie 3d
+* `src\components\task-widgets\travelers\scene\video.tsx` - element video wyświetlający widok z kamery
+
+---
+
 ## Problemy
 
 ### Importowanie plików SVG
