@@ -236,7 +236,7 @@ export default function Zad1Photo({ onComplete }: Props) {
                     var a = document.createElement('a');
                     a.href = capture.toDataURL("image/png");;
                     a.style.display = 'none';
-                    a.setAttribute('download', 'Poniatowski_z_kadetami.png');
+                    a.setAttribute('download', 'ulica.png');
                     document.body.appendChild(a);
                     a.click();
 
