@@ -18,12 +18,20 @@ import MultiPointCompassViewContent from "./content";
 export default function MultiPointCompassView({ stepId }: { stepId: string }) {
 
     const { showDebug } = useConfigModuleState();
-    const {step, noCompletedPoints} = useMultiGeoViewData(stepId);
+    const {step, noCompletedPoints, completedPoints} = useMultiGeoViewData(stepId);
 
     return <>
         {step && <GeoModuleProvider>
             <ScrollToMe trigger={step.id} behavior="smooth" />
             <MultiPointCompassViewContent geoSteps={noCompletedPoints} />
+            <p>
+                <h3>Zaliczone punkty:</h3>
+                <pre>
+                {
+                    JSON.stringify(completedPoints, null, 2)
+                }
+                </pre>
+            </p>
             {showDebug && <CompassDebugTools />}
         </GeoModuleProvider>}
         {!step && <GameErrorPage />}
@@ -40,19 +48,20 @@ function useMultiGeoViewData(stepId: string) {
         .filter(s => (step?.stepsId || []).includes(s.id))
         .filter(s => s.type === GAME_STEP_TYPE.GEO_STEP) as GeoStep[];
 
-    const completedPoints = geoPoints.filter(p => completedSteps.includes(p.id)).length;
+    const completedPoints = geoPoints.filter(p => completedSteps.includes(p.id));
 
     const noCompletedPoints = geoPoints.filter(p => !completedSteps.includes(p.id));
 
     // Jeżeli gracz zaliczył już określoną ilość punktów to wykonujemy `finishStep`
     useEffect(() => {
-        if (step && completedPoints >= step.minVisitedPoints) {
+        if (step && completedPoints.length >= step.minVisitedPoints) {
             finishStep(step.id);
         }
     }, [completedPoints, step, finishStep]);
 
     return {
         step,
-        noCompletedPoints
+        noCompletedPoints,
+        completedPoints
     }
 }
