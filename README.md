@@ -1,6 +1,4 @@
-# GD Events Geo Game Template
-
-To jest podstawowy szablon to tworzenie stron www/gier z wykożystaniem geolokalizacji.
+# WAWER: Brunon Schulz
 
 ## Środowisko developerskie
 
@@ -14,6 +12,46 @@ Po skolowaniu repozytorium należy zaistalować zależności komendą `yarn`
 
 - `yarn start` - start developer server
 - `yarn build` - build projects (result in `/build`)
+
+## Branche
+
+* `master` - produkcyjna bezpieczna wersja kodu
+* `develop` - aktualna wersja kodu z zatwierdzonymi zmianami (stąd zaczynamy pisanie nowych funkcjonalności)
+* `feature/*` - brancze z poszczególnymi funkcjonalnościami/zadaniami
+
+## Mechaniki zadań przeniesionych z innych projketów
+
+### Zadanie 1 - Zdjęcie ulicy
+
+W projekcie jest podstawowy kod do zadania w plikach:
+* `src\components\task-widgets\street-photo\photo.tsx` - layout widoku + kod generacji zdjęcia
+* `src\components\task-widgets\street-photo\video.tsx` - element playera video z nałożoną grafiką
+
+**Uwaga:** nakładanie naklejki na widoku z kamery i nakłądanie naklejki na zrobione zdjęcie są dwoma niezależnymi procesami. Trzeba przypilnować że oba dają ten sam wynik!
+
+
+### Zadanie 5 - Polowanie na podróżnych
+
+Zadanie zbudowane jest na podstawie sceny 3D przy pomocy biblioteki [THREE.js](https://threejs.org/) nałozonej na obraz z kamery urządzenia
+
+Istotne pliki:
+* `src\components\task-widgets\travelers\scene.tsx` - główny widok zadania
+* `src\components\task-widgets\travelers\scene\scene.ts` - scena 3D
+* `src\components\task-widgets\travelers\scene\controls.ts` - kontrole łączący ruchy urządzenia z kamerą w scenie 3d
+* `src\components\task-widgets\travelers\scene\video.tsx` - element video wyświetlający widok z kamery
+
+### Zadanie 6 - 15-stka
+
+W projekcie jest podstawowy kod do zadania w plikach:
+* `src\components\task-widgets\puzzle\puzzle.tsx` - skrypt widgetu.
+
+W pliku należy podmienić ścieżki do grafik i ewentualnie zmienić startowe ustawienie elementów
+
+# GD Events Geo Game Template
+
+To jest podstawowy szablon to tworzenie stron www/gier z wykożystaniem geolokalizacji.
+
+
 
 ## Deploy
 
@@ -125,35 +163,12 @@ Zestaw narzedzi widoczny na ekranach gry z kompasem.
 
 ---
 
-# Notatki do Projektu: Wawer
+## Przydasie
 
-## Mechaniki zadań przeniesionych z innych projketów
-
-### Zadanie 1 - Zdjęcie ulicy
-
-W projekcie jest podstawowy kod do zadania w plikach:
-* `src\components\task-widgets\street-photo\photo.tsx` - layout widoku + kod generacji zdjęcia
-* `src\components\task-widgets\street-photo\video.tsx` - element playera video z nałożoną grafiką
-
-**Uwaga:** nakładanie naklejki na widoku z kamery i nakłądanie naklejki na zrobione zdjęcie są dwoma niezależnymi procesami. Trzeba przypilnować że oba dają ten sam wynik!
-
-
-### Zadanie 5 - Polowanie na podróżnych
-
-Zadanie zbudowane jest na podstawie sceny 3D przy pomocy biblioteki [THREE.js](https://threejs.org/) nałozonej na obraz z kamery urządzenia
-
-Istotne pliki:
-* `src\components\task-widgets\travelers\scene.tsx` - główny widok zadania
-* `src\components\task-widgets\travelers\scene\scene.ts` - scena 3D
-* `src\components\task-widgets\travelers\scene\controls.ts` - kontrole łączący ruchy urządzenia z kamerą w scenie 3d
-* `src\components\task-widgets\travelers\scene\video.tsx` - element video wyświetlający widok z kamery
-
-### Zadanie 6 - 15-stka
-
-W projekcie jest podstawowy kod do zadania w plikach:
-* `src\components\task-widgets\puzzle\puzzle.tsx` - skrypt widgetu.
-
-W pliku należy podmienić ścieżki do grafik i ewentualnie zmienić startowe ustawienie elementów
+* `/src/utils/store/index.tsx` - scrypt do generacji magazynu danych przykład użycia: `/src/modules/main`
+* `/src/utils/widgets/center-on-me.tsx` - widget do przewijania strony tak aby widget był na środku ekranu
+* `/src/utils/widgets/scroll-to-me.tsx` - widget do przewijania strony tak aby widget był na góze ekranu
+* `/src/utils/widgets/scroll-to-top.tsx` - widget do przewijania strony do góry
 
 ---
 
