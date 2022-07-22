@@ -148,6 +148,13 @@ Istotne pliki:
 * `src\components\task-widgets\travelers\scene\controls.ts` - kontrole łączący ruchy urządzenia z kamerą w scenie 3d
 * `src\components\task-widgets\travelers\scene\video.tsx` - element video wyświetlający widok z kamery
 
+### Zadanie 6 - 15-stka
+
+W projekcie jest podstawowy kod do zadania w plikach:
+* `src\components\task-widgets\puzzle\puzzle.tsx` - skrypt widgetu.
+
+W pliku należy podmienić ścieżki do grafik i ewentualnie zmienić startowe ustawienie elementów
+
 ---
 
 ## Problemy
