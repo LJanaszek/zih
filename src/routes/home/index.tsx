@@ -31,6 +31,7 @@ export default function HomePage() {
             </nav>
             {gameStarted && <div className="button-list">
                 <Link className="button" to={getRulesPageRoute()} onClick={onGameRestart}>Zrestartuj grę</Link>
+                {/* baza wiedzy */}
             </div>}
         </Box>
     </Container>
