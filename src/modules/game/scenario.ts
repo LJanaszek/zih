@@ -14,8 +14,8 @@ export const SCENARIO: GameScenario = {
             // mapa v1 6pkt geo
             id: '0.2',
             type: GAME_STEP_TYPE.MULTI_GEO_STEP,
-            stepsId: ['1.1', '2.1', '3.1'],
-            minVisitedPoints: 3,
+            stepsId: ['1.1', '2.1', '3.1', '4.1', '5.1', '6.1'],
+            minVisitedPoints: 6,
             nextStep: '7.1'
         },
         {
@@ -67,6 +67,55 @@ export const SCENARIO: GameScenario = {
             nextStep: '0.2'
         },
         //dodać punkty od 4.1 do 6.1
+        {
+            id: '4.1',
+            type: GAME_STEP_TYPE.GEO_STEP,
+            position: {
+                lat: 52.15376456305676,
+                lng: 20.919047105253416
+            },
+            name: ["Punkt geo 4"],
+            nextStep: '4.2'
+        },
+        {
+            id: '4.2',
+            type: GAME_STEP_TYPE.TASK,
+            taskId: 'task-2',
+            nextStep: '0.2'
+        },
+        {
+            id: '5.1',
+            type: GAME_STEP_TYPE.GEO_STEP,
+            position: {
+                lat: 52.15376456305676,
+                lng: 20.919047105253416
+            },
+            name: ["Punkt geo 5"],
+            nextStep: '5.2'
+        },
+        {
+            id: '5.2',
+            type: GAME_STEP_TYPE.TASK,
+            taskId: 'task-2',
+            nextStep: '0.2'
+        },
+        {
+            id: '6.1',
+            type: GAME_STEP_TYPE.GEO_STEP,
+            position: {
+                lat: 52.15376456305676,
+                lng: 20.919047105253416
+            },
+            name: ["Punkt geo 6"],
+            nextStep: '6.2'
+        },
+        {
+            id: '6.2',
+            type: GAME_STEP_TYPE.TASK,
+            taskId: 'task-2',
+            nextStep: '0.2'
+        },
+        
         {
             //mapa v2
             id:'7.1',
