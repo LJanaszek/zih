@@ -1,12 +1,30 @@
 @import-normalize;
 
 :root {
-    --color1: #cf6954;
-    --color2: #f6eadc;
-    --color3: #707070;
+    --color1: #da783c;
+    --color2: #dfd7cd;
+    --color3: #666699;
     --color4: #84CE55;
+    --color5: #434357;
 }
+@font-face {
 
+    font-family: 'Bristol';
+    src: url('Bristol.otf');
+    src:
+      local('Bristol'),
+      url('Bristol.otf')
+      format('opentype');
+    }
+@font-face {
+
+    font-family: 'Gothic';
+    src: url('DidactGothic-Regular.otf');
+    src:
+      local('Gothic'),
+      url('DidactGothic-Regular.otf')
+      format('opentype');
+    }    
 html, body, div, h1 {
     margin: 0;
     padding: 0;
@@ -14,13 +32,14 @@ html, body, div, h1 {
 
 html {
     font-size: 16pt;
-    font-family: Lato;
+    font-family: DidactGothic-Regular;
     color: var(--color3);
     line-height: 1.5em;
 }
 
 body {
-    background: var(--color2);
+    background: var(--color3);
+    
 }
 
 #root {
@@ -28,7 +47,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-
+    height: auto;
+    width: 75%;
+    margin: 0 auto;
+    background: var(--color2);
     & > main {
         flex: 1 1 auto;
     }
@@ -72,15 +94,15 @@ p {
 
 .button {
     display: inline-block;
-    background: var(--color1);
+    background: var(--color3);
     color: white;
     padding: .3em 1em;
     border-radius: 10em;
 
     text-decoration: none;
 
-    font-size: 20pt;
-    font-family: Lato;
+    font-size: 16pt;
+    font-family: DidactGothic-Regular;
 
     text-align: center;
     box-sizing: border-box;
@@ -89,7 +111,7 @@ p {
     cursor: pointer;
 
     &:hover {
-        background: var(--color3);
+        background: var(--color5);
     }
 
     &:focus {
@@ -98,5 +120,14 @@ p {
 
     @media (max-width: 1200px) {
         font-size: 16pt;
+        width: 80%;
     }
+    @media(max-width: 600px){
+        body{
+            background: var(--color1);
+            width: 100%;
+        }
+        
+    }
+
 }
