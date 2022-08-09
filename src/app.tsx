@@ -16,7 +16,7 @@ import PuzzleTestPage from './components/task-widgets/puzzle';
 
 const HomePage = React.lazy(() => import('./routes/home'));
 const GamePage = React.lazy(() => import('./routes/game'));
-const RulesPage = React.lazy(() => import('./routes/rules'));
+// const RulesPage = React.lazy(() => import('./routes/rules'));
 
 export default function App() {
 
@@ -31,7 +31,7 @@ export default function App() {
                     <Suspense fallback={<Loader />}>
                         <Routes>
                             <Route path={getHomeRoute()} element={<HomePage />} />
-                            <Route path={getRulesPageRoute()} element={<RulesPage />} />
+                            {/* <Route path={getRulesPageRoute()} element={<RulesPage />} /> */}
                             <Route path={getGamePageRoute()} element={<GamePage />} />
 
                             <Route path={getPolicyRoute()} element={<PolicyPage />} />

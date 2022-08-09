@@ -3,7 +3,7 @@ export function getHomeRoute() {
 }
 
 export function getRulesPageRoute() {
-    return '/instrukcja';
+    return '/game';
 }
 
 export function getGamePageRoute() {

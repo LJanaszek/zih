@@ -4,11 +4,12 @@ const Container = styled.header`
     
     text-align: center;
     vertical-align:middle;
-    margin: 0 auto;
+    // margin: 0 auto;
     margin-top: 2em;
     height: 3.5em;
     position: relative;
     // width: inherit;
+   
     h1{
         letter-spacing: 3px;
         border-radius: 50px;
@@ -24,6 +25,15 @@ const Container = styled.header`
         width:max-content;
         padding: 1em 2em;
         width: max-content;
+
+        @media(max-width: 950px){
+            width:max-content;
+            font-size:18px;
+            margin-top:-1em;
+        }
+        @media(max-width: 300px){
+            width:70%;
+        }
     }
     .shultz{
         color: var(--color1);

@@ -1,15 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Box from "../../components/layout/box";
 import { getRulesPageRoute, getGamePageRoute } from "../routes";
 import useGameStarted from "../../modules/game/hooks/use-game-started";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { GAME_MODULE_ACTION, useGameModuleDispatch } from "../../modules/game";
 import logo from './instrukcja.png';
 import GameRestart from '../game/img/ikonsButton/zrestartuj.svg';
 import GameStart from '../game/img/ikonsButton/uruchom.svg';
 import GameContinue from '../game/img/ikonsButton/kontynuujGre.svg';
-import Knowledge from '../game/img/ikonsButton/bazaWiedzy.svg'
+import Knowledge from '../game/img/ikonsButton/bazaWiedzy.svg';
+import Popup from "../../components/elements/popup";
 /* <meta name="viewport" content="width=device-width, initial-scale=1"></meta> */
 // import meta
 
@@ -34,7 +35,7 @@ p{
     height: auto;
     width: 45%;
     border-radius: 50px;
-    border:  1px solid var(--color1);
+    border: 1px solid var(--color1);
 }
 #content{
     
@@ -58,16 +59,20 @@ nav{
 }
 .button{
     margin: 0 auto;
-    width:12em;
+    width:80%;
     margin-top:0.5em;
-    margin-right:1em;
+    // margin-right:1em;
+    // display:flex;
+    font-size: 20px;
 }
+
+
 .icon{
     height: 1.5rem;
     vertical-align: middle;
     margin-left: 0.5em;
 }
-@media (max-width: 600px) {
+@media (max-width: 950px) {
     .fill {
         width: auto;
         margin: auto;
@@ -86,11 +91,22 @@ nav{
     nav{
         display: block;
     }
+    .icon{
+        margin: 0 auto;
+    }
     
   }
 `;
 
 export default function HomePage() {
+
+    const navigate = useNavigate()
+
+    const [showGPSInfo, setShowGPSInfo] = useState(false);
+
+    const goToGame = useCallback(() => {
+        navigate(getGamePageRoute())
+    }, [navigate]);
 
     const gameStarted = useGameStarted();
     const dispatch = useGameModuleDispatch();
@@ -114,12 +130,19 @@ export default function HomePage() {
             </div>
             </div>
             <nav>
-                {!gameStarted && <Link className="button" to={getRulesPageRoute()}>Rozpocznij grę <img className="icon" src={GameStart} alt=""></img></Link>}
+
+                {!gameStarted && <button className="button" onClick={() => { setShowGPSInfo(true) }}>Rozpocznij grę <img className="icon" src={GameStart} alt=""></img></button>}
                 {gameStarted && <Link className="button" to={getGamePageRoute()}>Kontynuuj grę <img className="icon" src={GameContinue} alt=""></img></Link>}
             
             {gameStarted &&
                 <Link className="button" to={getRulesPageRoute()} onClick={onGameRestart}>Zrestartuj grę <img className="icon" src={GameRestart} alt=""></img> </Link>}
                 <a href="baza_wiedzy.pdf" className="button">Baza wiedzy<img className="icon" src={Knowledge} alt=""></img> </a></nav>
         </Box>
+
+        {showGPSInfo && <Popup onClick={goToGame}>
+            <p>
+                Dostęp do lokalizacji urządzenia jest niezbędny do przeprowadzenia gry. Udziel dostępu, jeśli zostaniesz o to poproszony.
+            </p>
+        </Popup>}
     </Container>
 }

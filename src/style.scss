@@ -54,6 +54,9 @@ body {
     & > main {
         flex: 1 1 auto;
     }
+    @media (max-width: 950px){
+        width: 100%;
+    }
 }
 
 h1 {
@@ -85,9 +88,9 @@ p {
         margin: .5em 0;
     }
 
-    @media (min-width: 800px) {
+    @media (min-width: 900px) {
         .button {
-            max-width: 30%;
+            max-width: 50%;
         }
     }
 }
@@ -120,14 +123,8 @@ p {
 
     @media (max-width: 1200px) {
         font-size: 16pt;
-        width: 80%;
+        width: 60%;
     }
-    @media(max-width: 600px){
-        body{
-            background: var(--color1);
-            width: 100%;
-        }
-        
-    }
+    
 
 }
