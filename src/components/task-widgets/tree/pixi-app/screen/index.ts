@@ -4,9 +4,16 @@ import { SCREEN } from '../data';
 import Bin from './bin';
 import LabelItem from './label';
 
+const positionInfo = {
+    sliderHeight: 200
+}
+
 export default class GameScreen extends PIXI.Container implements IScreen {
 
-    bins: Bin[] = [];
+    bins: {
+        bin: Bin,
+        items: LabelItem[]
+    }[] = [];
     items: LabelItem[] = [];
 
     pages: {
@@ -17,9 +24,20 @@ export default class GameScreen extends PIXI.Container implements IScreen {
     nextPageButton: PIXI.Text;
     prevPageButton: PIXI.Text;
     completeButton: PIXI.Text;
+    bg: PIXI.Sprite;
 
     constructor(private app: PIXI.Application, private onComplete: () => void) {
         super();
+
+        this.bg = PIXI.Sprite.from('drzewo');
+        this.bg.anchor.set(.5, 0);
+
+        this.addChild(this.bg);
+
+        app.renderer.on('resize', () => {
+            console.log('RESIZE!!!');
+            // this.updatePositions();
+        });
 
         SCREEN.ITEMS.forEach((i, index) => {
             const item = new LabelItem(i, app);
@@ -29,12 +47,12 @@ export default class GameScreen extends PIXI.Container implements IScreen {
             this.items.push(item);
 
             item.on('new-position', ({ position }) => {
-                const bin = this.bins.find(l => l.containsPoint(position));
+                const binData = this.bins.find(l => l.bin.containsPoint(position));
 
-                if (bin) {
+                if (binData) {
 
                     const binAnswers = SCREEN.ANSWERS.find(answ => {
-                        return answ[0] === bin.id;
+                        return answ[0] === binData.bin.id;
                     });
 
                     if (!binAnswers) {
@@ -45,11 +63,13 @@ export default class GameScreen extends PIXI.Container implements IScreen {
                     const answer = binAnswers[1].find(a => a.id === item.id)
 
                     if (answer) {
-                        item.setPosition(bin.position.x + answer.position.x, bin.position.y + answer.position.y);
+                        item.setPosition(binData.bin.position.x + answer.position.x, binData.bin.position.y + answer.position.y);
 
                         this.pages.forEach(page => {
                             page.items = page.items.filter(i => i.id !== item.id);
                         });
+
+                        binData.items.push(item);
 
                         if (!this.checkComplete()) {
                             if (this.pages[this.activePage].items.length === 0) {
@@ -60,7 +80,7 @@ export default class GameScreen extends PIXI.Container implements IScreen {
 
                     } else {
                         item.resetToLastPosition();
-                        bin.markInvalid();
+                        binData.bin.markInvalid();
                     }
 
                 } else {
@@ -76,7 +96,10 @@ export default class GameScreen extends PIXI.Container implements IScreen {
 
             bin.position.set(data.position.x, data.position.y);
 
-            this.bins.push(bin);
+            this.bins.push({
+                bin,
+                items: []
+            });
 
             this.addChild(bin);
         });
@@ -91,7 +114,6 @@ export default class GameScreen extends PIXI.Container implements IScreen {
                 const item = this.items.find(i => i.id === itemId);
 
                 if (item) {
-                    item.setPosition(300 + 0, 600 + 40 * index);
                     data.items.push(item);
                     this.addChild(item);
                 }
@@ -107,8 +129,6 @@ export default class GameScreen extends PIXI.Container implements IScreen {
         this.nextPageButton.interactive = true;
         this.nextPageButton.buttonMode = true;
 
-        this.nextPageButton.position.set(600, 650);
-
         this.addChild(this.nextPageButton);
 
         this.nextPageButton.on('click', () => {
@@ -119,8 +139,6 @@ export default class GameScreen extends PIXI.Container implements IScreen {
 
         this.prevPageButton.interactive = true;
         this.prevPageButton.buttonMode = true;
-
-        this.prevPageButton.position.set(50, 650);
 
         this.addChild(this.prevPageButton);
 
@@ -133,8 +151,6 @@ export default class GameScreen extends PIXI.Container implements IScreen {
         this.completeButton.interactive = true;
         this.completeButton.buttonMode = true;
 
-        this.completeButton.position.set(50, 650);
-
         this.completeButton.visible = false;
 
         this.addChild(this.completeButton);
@@ -142,6 +158,8 @@ export default class GameScreen extends PIXI.Container implements IScreen {
         this.completeButton.on('click', () => {
             this.onComplete();
         });
+
+        this.updatePositions();
     }
 
     showNextPage() {
@@ -170,6 +188,74 @@ export default class GameScreen extends PIXI.Container implements IScreen {
                 i.visible = index === this.activePage;
             })
         });
+    }
+
+    private updatePositions() {
+
+        const appWidth = this.app.renderer.width;
+        const appHeight = this.app.renderer.height;
+
+        console.log({ appWidth, appHeight });
+
+
+        this.bg.position.set(appWidth / 2, 0);
+
+        const bgNewHeight = appHeight - positionInfo.sliderHeight;
+
+        const bgRealHeight = this.bg.height / this.bg.scale.y;
+        const bgNewScale = bgNewHeight / bgRealHeight;
+
+        this.bg.scale.set(bgNewScale);
+
+        this.prevPageButton.position.set(50, appHeight - (positionInfo.sliderHeight / 2));
+        this.completeButton.position.set(appWidth, appHeight - (positionInfo.sliderHeight / 2));
+        this.nextPageButton.position.set(600, appHeight - (positionInfo.sliderHeight / 2));
+
+        this.pages.forEach(p => {
+            p.items.forEach((item, index) => {
+                item.setPosition(300 + 0, (appHeight - positionInfo.sliderHeight) + 20 + 40 * index);
+            });
+        });
+
+        const boxHeight = bgNewHeight * .3;
+        const boxWidth = this.bg.width * .4;
+        const boxMargin = bgNewHeight * .05;
+
+        this.bins.forEach(({bin, items}, index) => {
+            bin.setSize(boxWidth, boxHeight);
+
+            switch (index) {
+                case 0:
+                    bin.position.set((appWidth/2) - (boxWidth + boxMargin), boxMargin);
+                    break;
+
+                case 1:
+                    bin.position.set((appWidth/2) + boxMargin, boxMargin);
+                    break;
+
+                case 2:
+                    bin.position.set((appWidth/2) - (boxWidth + boxMargin), boxMargin * 2 + boxHeight);
+                    break;
+
+                case 3:
+                    bin.position.set((appWidth/2) + boxMargin, boxMargin * 2 + boxHeight);
+                    break;
+            }
+
+            items.forEach((item, index) => {
+                const position = SCREEN.ANSWERS
+                    .find(a => a[0] === bin.id)?.[1]
+                    .find(i => i.id === item.id)?.position;
+
+                if (position) {
+                    item.setPosition(bin.position.x + position.x, bin.position.y + position.y)
+                }
+            });
+        });
+
+        this.items.forEach(item => {
+            item.setFontSize(boxWidth*.1);
+        })
     }
 
     private checkComplete() {
