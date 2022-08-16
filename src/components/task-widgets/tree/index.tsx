@@ -14,17 +14,12 @@ const TreeTask: React.FC<Props> = ({ onComplete }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const appRef = useRef<App>();
 
-    const [phase, setPhase] = useState('in-proggress');
-
     useEffect(() => {
         const app = new App({
-            assetsPath: '/generated/t-101/'
+            assetsPath: '/generated/t-101/',
+            onComplete
         });
         appRef.current = app;
-
-        app.stage.on('complete', (points: number[]) => {
-            setPhase('complete')
-        });
 
         if (containerRef.current) {
             containerRef.current.appendChild(app.view);
@@ -34,7 +29,7 @@ const TreeTask: React.FC<Props> = ({ onComplete }) => {
         return () => {
             app.destroy(true);
         }
-    }, [onComplete, setPhase]);
+    }, [onComplete]);
 
     return <Container>
         <div ref={containerRef} style={{

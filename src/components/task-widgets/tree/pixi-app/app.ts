@@ -4,6 +4,7 @@ import loadSprites from './utils/load-sprites';
 
 type AppConfig = {
     assetsPath: string,
+    onComplete(): void
 }
 
 export default class App extends PIXI.Application {
@@ -28,7 +29,7 @@ export default class App extends PIXI.Application {
     private gameScreen?: GameScreen;
 
     private initApp() {
-        this.gameScreen = new GameScreen(this);
+        this.gameScreen = new GameScreen(this, this.config.onComplete);
 
         this.stage.addChild(this.gameScreen);
     }
