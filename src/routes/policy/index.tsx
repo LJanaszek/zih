@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import Box from "../../components/layout/box";
-import { getRulesPageRoute } from "../routes";
+import { getHomeRoute } from "../routes";
 
 export default function PolicyPage() {
 
@@ -15,7 +15,7 @@ export default function PolicyPage() {
             </p>
 
             <nav className="button-list" aria-label="Porwót">
-                <Link className="button" to={getRulesPageRoute()} onClick={() => navigate(-1)}>Powrót</Link>
+                <Link className="button" to={getHomeRoute()} onClick={() => navigate(-1)}>Powrót</Link>
             </nav>
 
         </Box>
