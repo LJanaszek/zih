@@ -4,7 +4,7 @@ import { ColorOverlayFilter } from '@pixi/filter-color-overlay';
 
 const invalidFilter = new ColorOverlayFilter(0xff0000, .45);
 
-export default class TrashItem extends PIXI.Container {
+export default class LabelItem extends PIXI.Container {
     public id: string;
     constructor(private config: ItemData, private app: PIXI.Application) {
         super();
@@ -13,6 +13,9 @@ export default class TrashItem extends PIXI.Container {
 
         this.interactive = true;
         this.buttonMode = true;
+
+        const text = new PIXI.Text(config.text);
+        this.addChild(text);
 
         this
             .on('pointerdown', this.onDragStart)
