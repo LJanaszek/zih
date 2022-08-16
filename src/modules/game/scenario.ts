@@ -20,7 +20,7 @@ export const SCENARIO: GameScenario = {
         },
         {
             id: '1.1',
-            type: GAME_STEP_TYPE.GEO_STEP,
+            type: GAME_STEP_TYPE.GEO_STEP,//dojście w terenie
             position: {
                 lat: 52.15414609929565,
                 lng: 20.91776308234229
@@ -30,7 +30,7 @@ export const SCENARIO: GameScenario = {
         },
         {
             id: '1.2',
-            type: GAME_STEP_TYPE.TASK,
+            type: GAME_STEP_TYPE.TASK,//zadanie
             taskId: 'task-1',
             nextStep: '0.2'
         },
@@ -46,8 +46,8 @@ export const SCENARIO: GameScenario = {
         },
         {
             id: '2.2',
-            type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-2',
+            type: GAME_STEP_TYPE.TASK,
+            taskId: 'task-2',
             nextStep: '0.2'
         },
         {
@@ -63,7 +63,7 @@ export const SCENARIO: GameScenario = {
         {
             id: '3.2',
             type: GAME_STEP_TYPE.TASK,
-            taskId: 'task-2',
+            taskId: 'task-3',
             nextStep: '0.2'
         },
         //dodać punkty od 4.1 do 6.1
@@ -80,7 +80,7 @@ export const SCENARIO: GameScenario = {
         {
             id: '4.2',
             type: GAME_STEP_TYPE.TASK,
-            taskId: 'task-2',
+            taskId: 'task-4',
             nextStep: '0.2'
         },
         {
@@ -96,7 +96,7 @@ export const SCENARIO: GameScenario = {
         {
             id: '5.2',
             type: GAME_STEP_TYPE.TASK,
-            taskId: 'task-2',
+            taskId: 'task-5',
             nextStep: '0.2'
         },
         {
@@ -112,7 +112,7 @@ export const SCENARIO: GameScenario = {
         {
             id: '6.2',
             type: GAME_STEP_TYPE.TASK,
-            taskId: 'task-2',
+            taskId: 'task-6',
             nextStep: '0.2'
         },
         
