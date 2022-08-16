@@ -208,7 +208,7 @@ export default class GameScreen extends PIXI.Container implements IScreen {
         this.bg.scale.set(bgNewScale);
 
         this.prevPageButton.position.set(50, appHeight - (positionInfo.sliderHeight / 2));
-        this.completeButton.position.set(appWidth, appHeight - (positionInfo.sliderHeight / 2));
+        this.completeButton.position.set(appWidth/2, appHeight - (positionInfo.sliderHeight / 2));
         this.nextPageButton.position.set(600, appHeight - (positionInfo.sliderHeight / 2));
 
         this.pages.forEach(p => {

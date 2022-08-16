@@ -8,6 +8,6 @@ type Props = {
 export default function TaskMain({onComplete}: Props) {
     return <Box>
         <TreeTask onComplete={onComplete} />
-        <button onClick={onComplete}>Zrobione!</button>
+        {/* <button onClick={onComplete}>Zrobione!</button> */}
     </Box>
 }
