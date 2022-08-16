@@ -5,7 +5,7 @@ import {  getGamePageRoute } from "../routes";
 import useGameStarted from "../../modules/game/hooks/use-game-started";
 import { useCallback, useState } from "react";
 import { GAME_MODULE_ACTION, useGameModuleDispatch } from "../../modules/game";
-import logo from './instrukcja.png';
+import logo from './instrukcja.svg';
 import GameRestart from '../game/img/ikonsButton/zrestartuj.svg';
 import GameStart from '../game/img/ikonsButton/uruchom.svg';
 import GameContinue from '../game/img/ikonsButton/kontynuujGre.svg';
@@ -22,16 +22,22 @@ const Container = styled.div`
     display: block;
     background-color: white;
     border-radius: 50px;
-    width: 50%;
-    margin-left: 15%;
+    width: 60%;
+    margin-left: 5%;
+    padding-bottom: 2em;
+    padding-top:0.5em;
 }
-p{
-    padding: 1em;
-    width: auto;
+ul{
+    padding: 0em 1em;
+    width: 80%;
     margin: 0 auto;
-
+}
+li::marker{
+    color:var(--color1);
 }
 .shultz{
+    margin-top:0;
+    margin-bottom:1em;
     height: auto;
     width: 45%;
     border-radius: 50px;
@@ -39,15 +45,19 @@ p{
 }
 #content{
 
-    width: 80%;
+    // width: 80%;
     margin: 0 auto;
     border-radius: 50px;
-    padding: 0.5em 1.5em;
+    padding: 0em 1.5em;
     // height: 20em;
-    margin-top:3em;
+    margin-top:4em;
     margin-bottom: 1em;
     height: fit-content;
     display:flex;
+}
+p{
+    padding:0em 3em;
+    padding-bottom: 2em;
 }
 nav{
     width:70%;
@@ -72,7 +82,7 @@ nav{
     vertical-align: middle;
     margin-left: 0.5em;
 }
-@media (max-width: 950px) {
+@media (max-width: 1560px  min-height: 500px) {
     .fill {
         width: auto;
         margin: auto;
@@ -81,7 +91,9 @@ nav{
         display:block;
     }
     .shultz{
-        width: -webkit-fill-available;
+        width: 80%;
+        position: relative;
+        left:10%;
         height: fit-content;
     }
     #root{
@@ -94,8 +106,17 @@ nav{
     .icon{
         margin: 0 auto;
     }
+    .button{
 
   }
+
+  }
+  .button{
+    margin-right: 1em;
+
+  }
+  #knowledge:
+  margin-right: null;
 `;
 
 export default function HomePage() {
@@ -126,7 +147,17 @@ export default function HomePage() {
 
             <div className="fill">
             <h2>Instrukcja</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus quae illo nisi illum accusantium deleniti obcaecati, vel magni suscipit consequatur, voluptatum ratione atque distinctio quidem architecto? Quis modi quidem corporis!</p>
+            <p>Zabierzemy Was na wycieczkę, ale kiedy, to trudno powiedzieć. Cały trik polega na tym, że cofnęliśmy czas. Spóźniamy się tu z czasem o pewien interwał, którego wielkość niepodobna określić. Będziemy przemieszczać się po określonych punktach i poznawać je z czasu, który z waszej codziennej perspektywy już minął, zbierać kawałki historii, wspomnienia, resztki pamięci. Nie dojdziemy czy wszystkie te rzeczy stały się całkiem, czy tylko próbowały się zdarzyć. Czy były to wielkie czy małe zdarzenia, również nie stwierdzimy tego ostatecznie. Jakieś zdarzenie może być co do swe prowenienci i swoich własnych środków małe i ubogie, a jednak, zbliżone do oka, może otwierać w swoim wnętrzu nieskończoną i promienną perspektywę .Dzięki temu, że wyższy byt usiłuje w nim się wyrazić i gwałtownie w nim błyszczy.
+Tak tedy będziemy zbierali te aluzje, te ziemskie przybliżenia, te stacje i etapy po drogach naszego życia, jak ułamki potłuczonego zwierciadła.
+</p>
+            <ul>
+                <li>Do wzięcia udziału w grze niezbędne jest urządzenie mobilne z dostępem do Internetu</li>
+                <li>Gra wykorzystuje aparat i lokalizację urządzenia. Udziel zgody, gdy zostaniesz zapytany/zapytana o udzielenie dostępu.</li>
+                <li>By móc rozpocząć grę musisz ja uruchomić na terenie Falenicy.</li>
+                <li>Gra jest przeznaczona dla zespołów, ale można wziąć w niej udział pojedynczo.</li>
+                <li>Informacja o lokalizacji kolejnych punktów będzie podawana na podstawie danych</li>
+            </ul>
+            
             </div>
             </div>
             <nav>
@@ -136,7 +167,7 @@ export default function HomePage() {
 
             {gameStarted &&
                 <Link className="button" to={getGamePageRoute()} onClick={onGameRestart}>Zrestartuj grę <img className="icon" src={GameRestart} alt=""></img> </Link>}
-                <a href="baza_wiedzy.pdf" className="button">Baza wiedzy<img className="icon" src={Knowledge} alt=""></img> </a></nav>
+                <a href="baza_wiedzy.pdf" id="knowledge" className="button">Baza wiedzy<img className="icon" src={Knowledge} alt=""></img> </a></nav>
         </Box>
 
         {showGPSInfo && <Popup onClick={goToGame}>
