@@ -36,7 +36,7 @@ export default class GameScreen extends PIXI.Container implements IScreen {
 
         app.renderer.on('resize', () => {
             console.log('RESIZE!!!');
-            // this.updatePositions();
+            this.updatePositions();
         });
 
         SCREEN.ITEMS.forEach((i, index) => {
