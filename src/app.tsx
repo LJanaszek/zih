@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 
-import { getHomeRoute, getGamePageRoute, getRulesPageRoute, getPolicyRoute } from './routes/routes';
+import { getHomeRoute, getGamePageRoute, getPolicyRoute } from './routes/routes';
 import React, { Suspense } from 'react';
 import Loader from './components/elements/loader';
 import PageHeader from './components/layout/header';
@@ -16,7 +16,6 @@ import PuzzleTestPage from './components/task-widgets/puzzle';
 
 const HomePage = React.lazy(() => import('./routes/home'));
 const GamePage = React.lazy(() => import('./routes/game'));
-// const RulesPage = React.lazy(() => import('./routes/rules'));
 
 export default function App() {
 
@@ -31,7 +30,6 @@ export default function App() {
                     <Suspense fallback={<Loader />}>
                         <Routes>
                             <Route path={getHomeRoute()} element={<HomePage />} />
-                            {/* <Route path={getRulesPageRoute()} element={<RulesPage />} /> */}
                             <Route path={getGamePageRoute()} element={<GamePage />} />
 
                             <Route path={getPolicyRoute()} element={<PolicyPage />} />

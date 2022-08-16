@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Box from "../../components/layout/box";
-import { getRulesPageRoute, getGamePageRoute } from "../routes";
+import {  getGamePageRoute } from "../routes";
 import useGameStarted from "../../modules/game/hooks/use-game-started";
 import { useCallback, useState } from "react";
 import { GAME_MODULE_ACTION, useGameModuleDispatch } from "../../modules/game";
@@ -29,7 +29,7 @@ p{
     padding: 1em;
     width: auto;
     margin: 0 auto;
-    
+
 }
 .shultz{
     height: auto;
@@ -38,7 +38,7 @@ p{
     border: 1px solid var(--color1);
 }
 #content{
-    
+
     width: 80%;
     margin: 0 auto;
     border-radius: 50px;
@@ -94,7 +94,7 @@ nav{
     .icon{
         margin: 0 auto;
     }
-    
+
   }
 `;
 
@@ -119,11 +119,11 @@ export default function HomePage() {
 
     return <Container>
         <Box>
-            
+
             <div id='content'>
             <img className="shultz" src={logo} alt="dupa" />
-            
-            
+
+
             <div className="fill">
             <h2>Instrukcja</h2>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus quae illo nisi illum accusantium deleniti obcaecati, vel magni suscipit consequatur, voluptatum ratione atque distinctio quidem architecto? Quis modi quidem corporis!</p>
@@ -133,9 +133,9 @@ export default function HomePage() {
 
                 {!gameStarted && <button className="button" onClick={() => { setShowGPSInfo(true) }}>Rozpocznij grę <img className="icon" src={GameStart} alt=""></img></button>}
                 {gameStarted && <Link className="button" to={getGamePageRoute()}>Kontynuuj grę <img className="icon" src={GameContinue} alt=""></img></Link>}
-            
+
             {gameStarted &&
-                <Link className="button" to={getRulesPageRoute()} onClick={onGameRestart}>Zrestartuj grę <img className="icon" src={GameRestart} alt=""></img> </Link>}
+                <Link className="button" to={getGamePageRoute()} onClick={onGameRestart}>Zrestartuj grę <img className="icon" src={GameRestart} alt=""></img> </Link>}
                 <a href="baza_wiedzy.pdf" className="button">Baza wiedzy<img className="icon" src={Knowledge} alt=""></img> </a></nav>
         </Box>
 
