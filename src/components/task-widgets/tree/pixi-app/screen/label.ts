@@ -6,6 +6,7 @@ const invalidFilter = new ColorOverlayFilter(0xff0000, .45);
 
 export default class LabelItem extends PIXI.Container {
     public id: string;
+    text: PIXI.Text;
     constructor(private config: ItemData, private app: PIXI.Application) {
         super();
 
@@ -14,8 +15,8 @@ export default class LabelItem extends PIXI.Container {
         this.interactive = true;
         this.buttonMode = true;
 
-        const text = new PIXI.Text(config.text);
-        this.addChild(text);
+        this.text = new PIXI.Text(config.text);
+        this.addChild(this.text);
 
         this
             .on('pointerdown', this.onDragStart)
@@ -138,6 +139,10 @@ export default class LabelItem extends PIXI.Container {
     public resetScale() {
         this.lastScale = 1;
         this.scale.set(this.lastScale);
+    }
+
+    public setFontSize(size: number) {
+        this.text.style.fontSize = `${size}px`;
     }
 
     markAsInvalid() {

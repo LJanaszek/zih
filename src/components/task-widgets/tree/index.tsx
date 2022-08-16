@@ -16,14 +16,15 @@ const TreeTask: React.FC<Props> = ({ onComplete }) => {
 
     useEffect(() => {
         const app = new App({
-            assetsPath: '/generated/t-101/',
+            assetsPath: '/task-3/',
             onComplete
         });
         appRef.current = app;
 
+
         if (containerRef.current) {
             containerRef.current.appendChild(app.view);
-            app.view.style.width = '100%';
+            app.resizeTo = containerRef.current;
         }
 
         return () => {
@@ -34,6 +35,7 @@ const TreeTask: React.FC<Props> = ({ onComplete }) => {
     return <Container>
         <div ref={containerRef} style={{
             width: '100%',
+            height: '100vh',
             margin: '0 auto'
         }}></div>
     </Container>
