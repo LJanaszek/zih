@@ -94,7 +94,12 @@ export const SCREEN: {
     ITEMS: ItemData[],
     BINS: BinData[],
     PAGES: string[][],
-    ANSWERS: [string, string[]][]
+    ANSWERS: [string, {
+        id: string,
+        position: {
+            x: number, y: number
+        }
+    }[]][]
 } = {
     PAGES: ITEMS
         .map(i => i.id)
@@ -117,10 +122,32 @@ export const SCREEN: {
 
     ,
     ANSWERS: [
-        ['bin1', ['item11', 'item12', 'item13', 'item14', 'item15']],
-        ['bin2', ['item21', 'item22', 'item23', 'item24']],
-        ['bin3', ['item31', 'item32', 'item33', 'item34']],
-        ['bin4', ['item41', 'item42', 'item43', 'item44']]
+        ['bin1', [
+            { id: 'item11', position: { x: 20, y: 20 } },
+            { id: 'item12', position: { x: 20, y: 40 } },
+            { id: 'item13', position: { x: 20, y: 60 } },
+            { id: 'item14', position: { x: 20, y: 80 } },
+            { id: 'item15', position: { x: 20, y: 100 } }
+        ]
+        ],
+        ['bin2', [
+            { id: 'item21', position: { x: 20, y: 20 } },
+            { id: 'item22', position: { x: 20, y: 40 } },
+            { id: 'item23', position: { x: 20, y: 60 } },
+            { id: 'item24', position: { x: 20, y: 80 } }
+        ]],
+        ['bin3', [
+            { id: 'item31', position: { x: 20, y: 20 } },
+            { id: 'item32', position: { x: 20, y: 40 } },
+            { id: 'item33', position: { x: 20, y: 60 } },
+            { id: 'item34', position: { x: 20, y: 80 } }
+        ]],
+        ['bin4', [
+            { id: 'item41', position: { x: 20, y: 20 } },
+            { id: 'item42', position: { x: 20, y: 40 } },
+            { id: 'item43', position: { x: 20, y: 60 } },
+            { id: 'item44', position: { x: 20, y: 80 } }
+        ]]
     ],
     ITEMS,
     BINS: [

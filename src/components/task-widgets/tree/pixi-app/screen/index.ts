@@ -42,14 +42,16 @@ export default class GameScreen extends PIXI.Container implements IScreen {
                         return;
                     }
 
-                    if (binAnswers[1].includes(item.id)) {
-                        item.setPosition(bin.position.x, bin.position.y);
+                    const answer = binAnswers[1].find(a => a.id === item.id)
+
+                    if (answer) {
+                        item.setPosition(bin.position.x + answer.position.x, bin.position.y + answer.position.y);
 
                         this.pages.forEach(page => {
                             page.items = page.items.filter(i => i.id !== item.id);
                         });
 
-                        if(!this.checkComplete()) {
+                        if (!this.checkComplete()) {
                             if (this.pages[this.activePage].items.length === 0) {
                                 this.showNextPage();
                             }
@@ -174,7 +176,6 @@ export default class GameScreen extends PIXI.Container implements IScreen {
         const isComplete = this.pages.every(p => p.items.length === 0);
 
         if (isComplete) {
-            console.log('COMPLETE!!!!!');
             this.nextPageButton.visible = false;
             this.prevPageButton.visible = false;
             this.completeButton.visible = true;
