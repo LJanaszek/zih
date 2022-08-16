@@ -1,0 +1,149 @@
+import * as PIXI from 'pixi.js';
+import { ItemData } from '../data';
+import { ColorOverlayFilter } from '@pixi/filter-color-overlay';
+
+const invalidFilter = new ColorOverlayFilter(0xff0000, .45);
+
+export default class TrashItem extends PIXI.Container {
+    public id: string;
+    constructor(private config: ItemData, private app: PIXI.Application) {
+        super();
+
+        this.id = config.id;
+
+        this.interactive = true;
+        this.buttonMode = true;
+
+        this
+            .on('pointerdown', this.onDragStart)
+            .on('pointermove', this.onDragMove)
+            .on('pointerup', this.onDragEnd)
+            .on('pointerupoutside', this.onDragEnd)
+    }
+
+    private disableScrolling = (e: TouchEvent) => {
+        if (this.dragging) {
+            e.preventDefault();
+        }
+    }
+
+    private grabData?: PIXI.InteractionEvent['data'] | null;
+    private grabPoint?: PIXI.Point;
+    private dragging = false;
+    private lastPosition = new PIXI.Point();
+    private lastScale = 1;
+
+    private onDragStart(event: PIXI.InteractionEvent) {
+        this.grabData = event.data;
+        this.grabPoint = this.grabData.getLocalPosition(this);
+        this.alpha = 1;
+        this.dragging = true;
+        this.zIndex = 1000;
+
+        this.app.renderer.view.addEventListener('touchmove', this.disableScrolling)
+
+        this.scale.set(1);
+
+    }
+
+    private rectBounds = new PIXI.Rectangle();
+
+    private onDragMove(event: PIXI.InteractionEvent) {
+
+
+        if (this.dragging && this.grabData && this.grabPoint) {
+            const newPosition = this.grabData.getLocalPosition(this.parent);
+
+            const freePos = [
+                newPosition.x - this.grabPoint.x,
+                newPosition.y - this.grabPoint.y
+            ];
+
+            this.position.set(...freePos);
+
+            const globalY = this.getGlobalPosition().y;
+            const windowHeight = window.innerHeight;
+            const canvasRec = this.app.renderer.view.getBoundingClientRect();
+            const canvasTop = canvasRec.top;
+            const canvasBottom = canvasRec.bottom;
+
+            const pointerViewportY = canvasTop + globalY;
+
+            this.getBounds(true, this.rectBounds);
+
+            const itemTop = pointerViewportY - (this.grabPoint?.y || 0) - this.height/2;
+            const itemBottom = pointerViewportY - (this.grabPoint?.y || 0) + this.height/2;
+
+
+
+            if (canvasBottom > windowHeight) {
+
+                if (pointerViewportY > windowHeight * .98 || itemBottom > windowHeight * .98) {
+                    window.scroll(
+                        window.scrollX,
+                        window.scrollY + windowHeight * .02
+                    )
+                }
+            }
+
+            if (canvasTop < 0) {
+                if (pointerViewportY < windowHeight * .02 || itemTop < windowHeight * .02) {
+                    window.scroll(
+                        window.scrollX,
+                        window.scrollY - windowHeight * .02
+                    )
+                }
+            }
+        }
+    }
+
+    private onDragEnd() {
+        this.alpha = 1;
+        this.dragging = false;
+        // set the interaction data to null
+        this.grabData = null;
+        this.zIndex = 0;
+
+        this.app.renderer.view.removeEventListener('touchmove', this.disableScrolling)
+
+        this.emit('new-position', { position: this.position });
+    }
+
+    public resetToLastPosition() {
+        this.position.set(this.lastPosition.x, this.lastPosition.y);
+        this.scale.set(this.lastScale);
+    }
+
+    public returnToSource() {
+        this.resetToLastPosition();
+    }
+
+    public setPosition(x: number, y: number) {
+        this.position.set(x, y);
+        this.lastPosition.set(x, y);
+    }
+
+    public scaleToRect(width: number, height: number) {
+        const wScale = Math.min(1, width / (this.width / this.scale.x));
+        const hScale = Math.min(1, height / (this.height / this.scale.x));
+
+        this.lastScale = Math.min(wScale, hScale)
+
+        this.scale.set(this.lastScale);
+    }
+
+    public resetScale() {
+        this.lastScale = 1;
+        this.scale.set(this.lastScale);
+    }
+
+    markAsInvalid() {
+        this.filters = [
+            invalidFilter
+        ]
+    }
+
+    removeInvalidMark() {
+        this.filters = []
+    }
+}

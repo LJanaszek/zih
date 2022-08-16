@@ -1,4 +1,5 @@
 import Box from "../../../../components/layout/box"
+import TreeTask from "../../../../components/task-widgets/tree"
 
 type Props = {
     onComplete(): void
@@ -6,7 +7,7 @@ type Props = {
 
 export default function TaskMain({onComplete}: Props) {
     return <Box>
-        <p>Tutaj będzie zadanie do wykonania 3.</p>
+        <TreeTask onComplete={onComplete} />
         <button onClick={onComplete}>Zrobione!</button>
     </Box>
 }
