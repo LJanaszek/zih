@@ -210,7 +210,7 @@ export default class GameScreen extends PIXI.Container implements IScreen {
         this.bg.scale.set(bgNewScale);
 
         this.prevPageButton.position.set(50, appHeight - (positionInfo.sliderHeight / 2));
-        this.completeButton.position.set(appWidth/2, appHeight - (positionInfo.sliderHeight / 2));
+        this.completeButton.position.set(appWidth / 2, appHeight - (positionInfo.sliderHeight / 2));
         this.nextPageButton.position.set(600, appHeight - (positionInfo.sliderHeight / 2));
 
         this.pages.forEach(p => {
@@ -224,27 +224,27 @@ export default class GameScreen extends PIXI.Container implements IScreen {
         const boxMargin = bgNewHeight * .05;
 
         this.items.forEach(item => {
-            item.setFontSize(bgNewHeight*.07);
+            item.setFontSize(bgNewHeight * .07);
         })
 
-        this.bins.forEach(({bin, items}, index) => {
+        this.bins.forEach(({ bin, items }, index) => {
             bin.setSize(boxWidth, boxHeight);
 
             switch (index) {
                 case 0:
-                    bin.position.set((appWidth/2) - (boxWidth + boxMargin), boxMargin);
+                    bin.position.set((appWidth / 2) - (boxWidth + boxMargin), boxMargin);
                     break;
 
                 case 1:
-                    bin.position.set((appWidth/2) + boxMargin, boxMargin);
+                    bin.position.set((appWidth / 2) + boxMargin, boxMargin);
                     break;
 
                 case 2:
-                    bin.position.set((appWidth/2) - (boxWidth + boxMargin), boxMargin * 2 + boxHeight);
+                    bin.position.set((appWidth / 2) - (boxWidth + boxMargin), boxMargin * 2 + boxHeight);
                     break;
 
                 case 3:
-                    bin.position.set((appWidth/2) + boxMargin, boxMargin * 2 + boxHeight);
+                    bin.position.set((appWidth / 2) + boxMargin, boxMargin * 2 + boxHeight);
                     break;
             }
 
@@ -255,7 +255,7 @@ export default class GameScreen extends PIXI.Container implements IScreen {
 
                 if (position) {
                     item.setPosition(bin.position.x + position.x, bin.position.y + position.y)
-                    item.setFontSize(bgNewHeight*.003)
+                    item.setFontSize(bgNewHeight * .003)
                 }
             });
         });

@@ -12,9 +12,9 @@ export default class App extends PIXI.Application {
     constructor(private config: AppConfig) {
         super({
             backgroundAlpha: 1,
-            backgroundColor: 0xDFD7CD
-            // width: 1440,
-            // height: 1220
+            backgroundColor: 0xDFD7CD,
+            width: 590,
+            height: 900,
         });
 
         this.renderer.plugins.interaction.autoPreventDefault = false;

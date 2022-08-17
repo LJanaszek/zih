@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import styled from "styled-components";
 import App from "./pixi-app/app";
 
@@ -7,10 +7,17 @@ type Props = {
 }
 
 const Container = styled.div`
-
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 `;
 
+const widgetRatio = 1.52;
+
 const TreeTask: React.FC<Props> = ({ onComplete }) => {
+    const widgetContainerRef = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const appRef = useRef<App>();
 
@@ -22,9 +29,8 @@ const TreeTask: React.FC<Props> = ({ onComplete }) => {
         appRef.current = app;
 
 
-        if (containerRef.current) {
-            containerRef.current.appendChild(app.view);
-            app.resizeTo = containerRef.current;
+        if (widgetContainerRef.current) {
+            widgetContainerRef.current.appendChild(app.view);
         }
 
         return () => {
@@ -32,16 +38,34 @@ const TreeTask: React.FC<Props> = ({ onComplete }) => {
         }
     }, [onComplete]);
 
-    return <Container>
-        <div ref={containerRef} style={{
+    const onResize = useCallback(() => {
+        if (widgetContainerRef.current && containerRef.current && appRef.current) {
+            const boundries = containerRef.current.getBoundingClientRect();
+
+            appRef.current.view.style.height = `${boundries.height}px`;
+            appRef.current.view.style.width = `${boundries.height / widgetRatio}px`;
+        }
+    }, []);
+
+    useEffect(() => {
+        window.addEventListener('resize', onResize);
+
+        onResize();
+
+        return () => {
+            window.removeEventListener('resize', onResize);
+        }
+    }, [onResize]);
+
+    return <Container ref={containerRef}>
+        <div ref={widgetContainerRef} style={{
             width: '100%',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            margin: '0 auto'
+            margin: '0 auto',
+            display: 'flex',
+            justifyContent: 'center',
+            flexDirection: 'row'
         }}></div>
+
     </Container>
 }
 

@@ -11,6 +11,7 @@ const Container = styled.div`
 
     .content {
         flex-grow: 1;
+        flex-shrink: 1;
         position: relative;
     }
 `;
