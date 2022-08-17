@@ -7,14 +7,17 @@ type AppConfig = {
     onComplete(): void
 }
 
+export const APP_WIDTH = 590;
+export const APP_HEIGHT = 900;
+
 export default class App extends PIXI.Application {
 
     constructor(private config: AppConfig) {
         super({
             backgroundAlpha: 1,
             backgroundColor: 0xDFD7CD,
-            width: 590,
-            height: 900,
+            width: APP_WIDTH,
+            height: APP_HEIGHT,
         });
 
         this.renderer.plugins.interaction.autoPreventDefault = false;

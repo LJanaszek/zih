@@ -1,12 +1,10 @@
 import * as PIXI from 'pixi.js';
-import { IScreen } from "../app";
+import { APP_HEIGHT, APP_WIDTH, IScreen } from "../app";
 import { SCREEN } from '../data';
 import Bin from './bin';
 import LabelItem from './label';
 
-const positionInfo = {
-    sliderHeight: 200
-}
+const SLIDER_HEIGHT = 220;
 
 export default class GameScreen extends PIXI.Container implements IScreen {
 
@@ -21,28 +19,21 @@ export default class GameScreen extends PIXI.Container implements IScreen {
     }[] = [];
 
     activePage = 0;
-    nextPageButton: PIXI.Text;
-    prevPageButton: PIXI.Text;
-    completeButton: PIXI.Text;
-    bg: PIXI.Sprite;
+    nextPageButton: PIXI.Text =  new PIXI.Text('>>');
+    prevPageButton: PIXI.Text = new PIXI.Text('<<');
+    completeButton: PIXI.Text = new PIXI.Text('Zrobione')
+    bg: PIXI.Sprite = PIXI.Sprite.from('drzewo');
 
     constructor(private app: PIXI.Application, private onComplete: () => void) {
         super();
 
-        this.bg = PIXI.Sprite.from('drzewo');
-        this.bg.anchor.set(.5, 0);
-
-        this.addChild(this.bg);
-
-        app.renderer.on('resize', () => {
-            console.log('RESIZE!!!');
-            this.updatePositions();
-        });
+        this.initBackground();
 
         SCREEN.ITEMS.forEach((i, index) => {
             const item = new LabelItem(i, app);
 
             item.setPosition(100, 100 + index * 40);
+
 
             this.items.push(item);
 
@@ -77,8 +68,6 @@ export default class GameScreen extends PIXI.Container implements IScreen {
                             }
                         }
 
-                        this.updatePositions();
-
 
                     } else {
                         item.resetToLastPosition();
@@ -91,12 +80,37 @@ export default class GameScreen extends PIXI.Container implements IScreen {
             });
         });
 
+        this.initBins();
+
+        this.initControlls();
+    }
+
+    private initBackground() {
+        this.bg.anchor.set(.5, 0);
+
+        this.resizeBackground();
+        this.bg.position.set(APP_WIDTH/2, 0)
+
+        this.addChild(this.bg);
+    }
+
+    private resizeBackground() {
+        this.bg.scale.set((APP_HEIGHT - SLIDER_HEIGHT) / this.bg.height);
+
+        if (this.bg.width > APP_WIDTH) {
+            this.bg.scale.set(APP_WIDTH / this.bg.width);
+        }
+    }
+
+    private initBins() {
         SCREEN.BINS.forEach(data => {
             const bin = new Bin();
             bin.id = data.id;
             bin.zIndex = 10;
 
-            bin.position.set(data.position.x, data.position.y);
+            bin.setSize(APP_WIDTH * .4, APP_WIDTH * .2);
+
+            bin.position.set(data.position.x * APP_WIDTH, data.position.y * APP_HEIGHT);
 
             this.bins.push({
                 bin,
@@ -105,7 +119,9 @@ export default class GameScreen extends PIXI.Container implements IScreen {
 
             this.addChild(bin);
         });
+    }
 
+    private initControlls() {
         SCREEN.PAGES.forEach((pageData, index) => {
 
             const data: { items: LabelItem[] } = {
@@ -124,16 +140,20 @@ export default class GameScreen extends PIXI.Container implements IScreen {
             this.pages.push(data);
         });
 
-        this.updatePageVisibility();
+        this.pages.forEach(p => {
+            p.items.forEach((item, index) => {
+                item.setPosition(300 + 0, (APP_HEIGHT - SLIDER_HEIGHT) + 20 + 40 * index);
+            });
+        });
 
-        this.nextPageButton = new PIXI.Text('>>');
+        this.updatePageVisibility();
 
         this.nextPageButton.interactive = true;
         this.nextPageButton.buttonMode = true;
 
         this.addChild(this.nextPageButton);
 
-        this.nextPageButton.on('click', () => {
+        this.nextPageButton.on('pointerdown', () => {
             this.showNextPage();
         })
 
@@ -144,11 +164,9 @@ export default class GameScreen extends PIXI.Container implements IScreen {
 
         this.addChild(this.prevPageButton);
 
-        this.prevPageButton.on('click', () => {
+        this.prevPageButton.on('pointerdown', () => {
             this.showPrevPage();
         })
-
-        this.completeButton = new PIXI.Text('Zrobione');
 
         this.completeButton.interactive = true;
         this.completeButton.buttonMode = true;
@@ -157,11 +175,13 @@ export default class GameScreen extends PIXI.Container implements IScreen {
 
         this.addChild(this.completeButton);
 
-        this.completeButton.on('click', () => {
+        this.completeButton.on('pointerdown', () => {
             this.onComplete();
         });
 
-        this.updatePositions();
+        this.prevPageButton.position.set(50, APP_HEIGHT - (SLIDER_HEIGHT / 2));
+        this.completeButton.position.set(APP_WIDTH / 2, APP_HEIGHT - (SLIDER_HEIGHT / 2));
+        this.nextPageButton.position.set(APP_WIDTH - 50 - this.nextPageButton.width, APP_HEIGHT - (SLIDER_HEIGHT / 2));
     }
 
     showNextPage() {
@@ -194,28 +214,24 @@ export default class GameScreen extends PIXI.Container implements IScreen {
 
     private updatePositions() {
 
-        const appWidth = this.app.renderer.width;
-        const appHeight = this.app.renderer.height;
+        const appWidth = APP_WIDTH;
+        const appHeight = APP_HEIGHT;
 
         console.log({ appWidth, appHeight });
 
 
         this.bg.position.set(appWidth / 2, 0);
 
-        const bgNewHeight = appHeight - positionInfo.sliderHeight;
+        const bgNewHeight = appHeight - SLIDER_HEIGHT;
 
         const bgRealHeight = this.bg.height / this.bg.scale.y;
         const bgNewScale = bgNewHeight / bgRealHeight;
 
         this.bg.scale.set(bgNewScale);
 
-        this.prevPageButton.position.set(50, appHeight - (positionInfo.sliderHeight / 2));
-        this.completeButton.position.set(appWidth / 2, appHeight - (positionInfo.sliderHeight / 2));
-        this.nextPageButton.position.set(600, appHeight - (positionInfo.sliderHeight / 2));
-
         this.pages.forEach(p => {
             p.items.forEach((item, index) => {
-                item.setPosition(300 + 0, (appHeight - positionInfo.sliderHeight) + 20 + 40 * index);
+                item.setPosition(300 + 0, (appHeight - SLIDER_HEIGHT) + 20 + 40 * index);
             });
         });
 

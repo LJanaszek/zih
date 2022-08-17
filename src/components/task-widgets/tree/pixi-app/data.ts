@@ -155,8 +155,8 @@ export const SCREEN: {
             id: 'bin1',
             label: 'Gospodarstwo',
             position: {
-                x: 100,
-                y: 100
+                x: .05,
+                y: .1
             },
             size: {
                 width: 200,
@@ -167,8 +167,8 @@ export const SCREEN: {
             id: 'bin2',
             label: 'Higiena',
             position: {
-                x: 600,
-                y: 100
+                x: .55,
+                y: .1
             },
             size: {
                 width: 200,
@@ -179,8 +179,8 @@ export const SCREEN: {
             id: 'bin3',
             label: 'koło pracy kulturalnej',
             position: {
-                x: 100,
-                y: 350
+                x: .05,
+                y: .3
             },
             size: {
                 width: 200,
@@ -191,8 +191,8 @@ export const SCREEN: {
             id: 'bin4',
             label: 'Koło przyrodnicze',
             position: {
-                x: 600,
-                y: 350
+                x: .55,
+                y: .3
             },
             size: {
                 width: 200,
