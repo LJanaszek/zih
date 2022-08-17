@@ -44,13 +44,13 @@ li::marker{
     border: 1px solid var(--color1);
 }
 #content{
-
+    
     // width: 80%;
     margin: 0 auto;
     border-radius: 50px;
     padding: 0em 1.5em;
     // height: 20em;
-    margin-top:4em;
+    margin-top:1em;
     margin-bottom: 1em;
     height: fit-content;
     display:flex;
@@ -61,7 +61,7 @@ p{
 }
 nav{
     width:70%;
-    margin: 0 auto;
+    margin: auto;
     background-color:var(--color2);
     margin-bottom: 2em;
     display:flex;
@@ -71,8 +71,6 @@ nav{
     margin: 0 auto;
     width:80%;
     margin-top:0.5em;
-    // margin-right:1em;
-    // display:flex;
     font-size: 20px;
 }
 
@@ -82,13 +80,15 @@ nav{
     vertical-align: middle;
     margin-left: 0.5em;
 }
-@media (max-width: 1560px  min-height: 500px) {
+@media (max-width: 1560px) {
     .fill {
         width: auto;
         margin: auto;
+        font-size: 18px;
     }
     #content{
         display:block;
+        align-items: center;
     }
     .shultz{
         width: 80%;
@@ -106,14 +106,23 @@ nav{
     .icon{
         margin: 0 auto;
     }
+    p{
+        padding:0.6em;
+
+  }
     .button{
+        width:70%;
+    }
 
   }
-
-  }
+  @media (max-width: 490px) {
   .button{
-    margin-right: 1em;
-
+            font-size: 16px;
+            width:80%
+  }
+        .icon{
+            height:1rem;
+        }
   }
   #knowledge:
   margin-right: null;
