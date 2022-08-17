@@ -15,7 +15,7 @@ const Container = styled.div`
     bottom: 0;
 `;
 
-const widgetRatio = 1.52;
+const widgetRatio = 1/1.35;
 
 const BirdsTask: React.FC<Props> = ({ onComplete }) => {
     const widgetContainerRef = useRef<HTMLDivElement>(null);
@@ -41,7 +41,7 @@ const BirdsTask: React.FC<Props> = ({ onComplete }) => {
                 if (appRef.current) return;
 
                 const app = new App({
-                    assetsPath: '/task-3/',
+                    assetsPath: '/task-2/',
                     onComplete
                 });
                 appRef.current = app;

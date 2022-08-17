@@ -7,8 +7,8 @@ type AppConfig = {
     onComplete(): void
 }
 
-export const APP_WIDTH = 590;
-export const APP_HEIGHT = 900;
+export const APP_WIDTH = 800;
+export const APP_HEIGHT = 590;
 
 export default class App extends PIXI.Application {
 
@@ -24,7 +24,19 @@ export default class App extends PIXI.Application {
         this.renderer.plugins.interaction.autoPreventDefault = false;
         this.renderer.view.style.touchAction = 'auto';
 
-        loadSprites(this, []).then(() => {
+        loadSprites(this, [
+            ['ulica', `${config.assetsPath}ulica.png`],
+            ['bird1', `${config.assetsPath}bird1.png`],
+            ['bird2', `${config.assetsPath}bird2.png`],
+            ['bird3', `${config.assetsPath}bird3.png`],
+            ['bird4', `${config.assetsPath}bird4.png`],
+            ['bird5', `${config.assetsPath}bird5.png`],
+            ['bird6', `${config.assetsPath}bird6.png`],
+            ['bird7', `${config.assetsPath}bird7.png`],
+            ['bird8', `${config.assetsPath}bird8.png`],
+            ['bird9', `${config.assetsPath}bird9.png`],
+            ['bird10', `${config.assetsPath}bird10.png`],
+        ]).then(() => {
             this.initApp();
         })
     }

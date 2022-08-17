@@ -1,182 +1,94 @@
 export type ItemData = {
     id: string,
-    text: string
-}
-
-export type BinData = {
-    id: string,
-    label: string,
+    sprite: string,
     position: {
-        x: number, y: number
+        x: number,
+        y: number
     }
 }
-
-const ITEMS = [
-    {
-        id: 'item11',
-        text: 'stołówka'
-    },
-    {
-        id: 'item12',
-        text: 'leżalnie'
-    },
-    {
-        id: 'item13',
-        text: 'picie mleka'
-    },
-    {
-        id: 'item14',
-        text: 'szatnia'
-    },
-    {
-        id: 'item15',
-        text: 'koce'
-    },
-
-    {
-        id: 'item21',
-        text: 'umywalnie'
-    },
-    {
-        id: 'item22',
-        text: 'mierzenie temperatury'
-    },
-    {
-        id: 'item23',
-        text: 'nocniki'
-    },
-    {
-        id: 'item24',
-        text: 'czyszczenie obuwia'
-    },
-
-    {
-        id: 'item31',
-        text: 'rozrywki'
-    },
-    {
-        id: 'item32',
-        text: 'goście - rodzice'
-    },
-    {
-        id: 'item33',
-        text: 'poczta'
-    },
-    {
-        id: 'item34',
-        text: 'biblioteka'
-    },
-
-    {
-        id: 'item41',
-        text: 'gołębnik'
-    },
-    {
-        id: 'item42',
-        text: 'stacja meteo.'
-    },
-    {
-        id: 'item43',
-        text: 'ogród i sad'
-    },
-    {
-        id: 'item44',
-        text: 'kurnik'
-    }
-];
-
 
 export const SCREEN: {
-    ITEMS: ItemData[],
-    BINS: BinData[],
-    PAGES: string[][],
-    ANSWERS: [string, {
-        id: string,
-        position: {
-            x: number, y: number
-        }
-    }[]][]
+    ITEMS: ItemData[]
 } = {
-    PAGES: ITEMS
-        .map(i => i.id)
-        .reduce((prev, itemId) => {
-
-            if (!prev.length) {
-                return [[itemId]]
-            }
-
-            if (prev[prev.length - 1].length < 3) {
-                prev[prev.length - 1].push(itemId);
-                return prev;
-            }
-
-            return [
-                ...prev,
-                [itemId]
-            ];
-        }, [] as string[][])
-
-    ,
-    ANSWERS: [
-        ['bin1', [
-            { id: 'item11', position: { x: .11, y: .54 } },
-            { id: 'item12', position: { x: .56, y: .54 } },
-            { id: 'item13', position: { x: .27, y: .74 } },
-            { id: 'item14', position: { x: .48, y: .34 } },
-            { id: 'item15', position: { x: .22, y: .34 } }
-        ]
-        ],
-        ['bin2', [
-            { id: 'item21', position: { x: .51, y: .34 } },
-            { id: 'item22', position: { x: .09, y: .54 } },
-            { id: 'item23', position: { x: .12, y: .34 } },
-            { id: 'item24', position: { x: .14, y: .74 } }
-        ]],
-        ['bin3', [
-            { id: 'item31', position: { x: .13, y: .68 } },
-            { id: 'item32', position: { x: .35, y: .475 } },
-            { id: 'item33', position: { x: .07, y: .475 } },
-            { id: 'item34', position: { x: .51, y: .68 } }
-        ]],
-        ['bin4', [
-            { id: 'item41', position: { x: .60, y: .475 } },
-            { id: 'item42', position: { x: .41, y: .68 } },
-            { id: 'item43', position: { x: .09, y: .475 } },
-            { id: 'item44', position: { x: .09, y: .68 } }
-        ]]
-    ],
-    ITEMS,
-    BINS: [
+    ITEMS: [
         {
-            id: 'bin1',
-            label: 'Gospodarstwo',
+            id: 'b01',
+            sprite: 'bird1',
             position: {
-                x: .1,
-                y: .05
+                x: 100,
+                y: 100
             }
         },
         {
-            id: 'bin3',
-            label: 'koło pracy kulturalnej',
+            id: 'b02',
+            sprite: 'bird2',
             position: {
-                x: .56,
-                y: .1
+                x: 200,
+                y: 100
             }
         },
         {
-            id: 'bin2',
-            label: 'Higiena',
+            id: 'b03',
+            sprite: 'bird3',
             position: {
-                x: .03,
-                y: .28
+                x: 100,
+                y: 200
             }
         },
         {
-            id: 'bin4',
-            label: 'Koło przyrodnicze',
+            id: 'b04',
+            sprite: 'bird4',
             position: {
-                x: .6,
-                y: .33
+                x: 200,
+                y: 200
+            }
+        },
+        {
+            id: 'b05',
+            sprite: 'bird5',
+            position: {
+                x: 300,
+                y: 100
+            }
+        },
+        {
+            id: 'b06',
+            sprite: 'bird6',
+            position: {
+                x: 100,
+                y: 300
+            }
+        },
+        {
+            id: 'b07',
+            sprite: 'bird7',
+            position: {
+                x: 300,
+                y: 300
+            }
+        },
+        {
+            id: 'b08',
+            sprite: 'bird8',
+            position: {
+                x: 400,
+                y: 100
+            }
+        },
+        {
+            id: 'b09',
+            sprite: 'bird9',
+            position: {
+                x: 100,
+                y: 400
+            }
+        },
+        {
+            id: 'b10',
+            sprite: 'bird10',
+            position: {
+                x: 400,
+                y: 400
             }
         },
     ]
