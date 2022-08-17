@@ -1,7 +1,7 @@
 import { GameScenario, GAME_STEP_TYPE } from "./types";
 
 export const SCENARIO: GameScenario = {
-    startStep: '0.1',
+    startStep: '2.2',
     steps: [
         {
             // tekst wprowadzenia

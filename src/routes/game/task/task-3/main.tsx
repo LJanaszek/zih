@@ -1,5 +1,5 @@
-import FillScreenWithHeader from "../../../../components/layout/fill-screen-with-header"
-import TreeTask from "../../../../components/task-widgets/tree"
+import FillScreenWithHeader from "../../../../components/layout/fill-screen-with-header";
+import TreeTask from "../../../../components/task-widgets/tree";
 import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header"
 
 type Props = {
