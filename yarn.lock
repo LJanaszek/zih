@@ -1831,6 +1831,11 @@
   resolved "https://registry.yarnpkg.com/@pixi/interaction/-/interaction-6.5.1.tgz#ba28d61144aa88b88dbb36238cabdf59b03fa201"
   integrity sha512-JVQ4SAr1ykE7nJZpoROnexscRI8QYx5T8fyXwVlXxAFdpX5mtBqOlCpYOVCs8wtu6dP0R7EDlfpf5ARh1JZwvQ==
 
+"@pixi/layers@^1.0.11":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@pixi/layers/-/layers-1.0.11.tgz#10343f92405101e950ff5f6faaee7dce7243104e"
+  integrity sha512-E9jVR7kWMbBBhyaoX4Vi/rZAk4QFMDFiwvZF5xXZ2sBKh1/2aaTD2oQB3QHtekQ0IYXjyxgRRVEpeYTlZgz5xA==
+
 "@pixi/loaders@6.5.1":
   version "6.5.1"
   resolved "https://registry.yarnpkg.com/@pixi/loaders/-/loaders-6.5.1.tgz#148e2d7e5b30bd81dab4941a857a01b92c5aa65e"

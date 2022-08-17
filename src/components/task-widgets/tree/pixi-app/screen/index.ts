@@ -1,4 +1,5 @@
 import * as PIXI from 'pixi.js';
+import { Layer } from '@pixi/layers';
 import { APP_HEIGHT, APP_WIDTH, IScreen } from "../app";
 import { SCREEN } from '../data';
 import Bin from './bin';
@@ -24,12 +25,17 @@ export default class GameScreen extends PIXI.Container implements IScreen {
     completeButton: PIXI.Text = new PIXI.Text('Zrobione')
     bg: PIXI.Sprite = PIXI.Sprite.from('drzewo');
 
+    errorLayer = new PIXI.Container();
+
     constructor(private app: PIXI.Application, private onComplete: () => void) {
         super();
 
         this.sortableChildren = true;
 
         this.initBackground();
+
+        this.errorLayer.zIndex = 100;
+        this.addChild(this.errorLayer);
 
         SCREEN.ITEMS.forEach((i, index) => {
             const item = new LabelItem(i, app);
@@ -107,7 +113,7 @@ export default class GameScreen extends PIXI.Container implements IScreen {
 
     private initBins() {
         SCREEN.BINS.forEach(data => {
-            const bin = new Bin(data.label);
+            const bin = new Bin(data.label, this.errorLayer);
             bin.id = data.id;
             bin.zIndex = 10;
 
