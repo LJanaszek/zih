@@ -8,10 +8,6 @@ export type BinData = {
     label: string,
     position: {
         x: number, y: number
-    },
-    size: {
-        width: number,
-        height: number
     }
 }
 
@@ -155,48 +151,32 @@ export const SCREEN: {
             id: 'bin1',
             label: 'Gospodarstwo',
             position: {
-                x: .05,
-                y: .1
-            },
-            size: {
-                width: 200,
-                height: 400
+                x: .1,
+                y: .05
             }
         },
         {
             id: 'bin2',
             label: 'Higiena',
             position: {
-                x: .55,
+                x: .56,
                 y: .1
-            },
-            size: {
-                width: 200,
-                height: 400
             }
         },
         {
             id: 'bin3',
             label: 'koło pracy kulturalnej',
             position: {
-                x: .05,
-                y: .3
-            },
-            size: {
-                width: 200,
-                height: 400
+                x: .03,
+                y: .28
             }
         },
         {
             id: 'bin4',
             label: 'Koło przyrodnicze',
             position: {
-                x: .55,
-                y: .3
-            },
-            size: {
-                width: 200,
-                height: 400
+                x: .6,
+                y: .33
             }
         },
     ]

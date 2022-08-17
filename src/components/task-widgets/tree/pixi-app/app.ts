@@ -24,7 +24,8 @@ export default class App extends PIXI.Application {
         this.renderer.view.style.touchAction = 'auto';
 
         loadSprites(this, [
-            ['drzewo', `${this.config.assetsPath}drzewo.jpg`]
+            ['drzewo', `${this.config.assetsPath}drzewo.jpg`],
+            ['arrow', `${this.config.assetsPath}arrow.png`]
             // ['t-101', `${this.config.assetsPath}t-101.json`]
         ]).then(() => {
             this.initApp();

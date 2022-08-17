@@ -1,5 +1,7 @@
 import * as PIXI from 'pixi.js';
 
+const BORDER_RADIUS = 50;
+
 export default class Bin extends PIXI.Container {
     public id: string = ''
 
@@ -10,22 +12,19 @@ export default class Bin extends PIXI.Container {
 
     constructor() {
         super();
-
-        this.gfx.beginFill(0xffff00, .5);
-        this.gfx.drawRoundedRect(0, 0, this.boxWidth, this.boxHeight, 20);
-
         this.addChild(this.gfx);
+
+        this.drawNormal();
+
     }
 
     markInvalid() {
         this.gfx.clear();
         this.gfx.beginFill(0xff0000, .5);
-        this.gfx.drawRoundedRect(0, 0, this.boxWidth, this.boxHeight, 20);
+        this.gfx.drawRoundedRect(0, 0, this.boxWidth, this.boxHeight, BORDER_RADIUS);
 
         setTimeout(() => {
-            this.gfx.clear();
-            this.gfx.beginFill(0xffff00, .5);
-            this.gfx.drawRoundedRect(0, 0, this.boxWidth, this.boxHeight, 20);
+            this.drawNormal();
         }, 1000);
     }
 
@@ -33,12 +32,20 @@ export default class Bin extends PIXI.Container {
         this.boxWidth = width;
         this.boxHeight = height;
 
-        this.gfx.clear();
-        this.gfx.beginFill(0xffff00, .5);
-        this.gfx.drawRoundedRect(0, 0, this.boxWidth, this.boxHeight, 20);
+        this.drawNormal();
     }
 
     containsPoint(point: PIXI.IPointData) {
         return this.gfx.containsPoint(point)
+    }
+
+    private drawNormal() {
+        this.gfx.clear();
+        this.gfx.beginFill(0xffffff, .5);
+        this.gfx.drawRoundedRect(0, 0, this.boxWidth, this.boxHeight, BORDER_RADIUS);
+    }
+
+    private drawError() {
+
     }
 }

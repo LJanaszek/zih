@@ -4,18 +4,38 @@ import { ColorOverlayFilter } from '@pixi/filter-color-overlay';
 
 const invalidFilter = new ColorOverlayFilter(0xff0000, .45);
 
+const LABEL_WIDTH = 445;
+const LABEL_HEIGHT = 70;
+
 export default class LabelItem extends PIXI.Container {
     public id: string;
     text: PIXI.Text;
+    bg: PIXI.Graphics;
     constructor(private config: ItemData, private app: PIXI.Application) {
         super();
 
         this.id = config.id;
 
+        const containerRect = new PIXI.Rectangle(-LABEL_WIDTH / 2, -LABEL_HEIGHT / 2, 445, 70);
+
+        this.hitArea = containerRect
+
+        this.bg = new PIXI.Graphics();
+
+        this.bg.beginFill(0xDFD7CD, .8);
+        this.bg.drawShape(containerRect);
+
+        this.addChild(this.bg);
+
         this.interactive = true;
         this.buttonMode = true;
 
         this.text = new PIXI.Text(config.text);
+        this.text.anchor.set(.5);
+        this.text.style.fontSize = '45px';
+        this.text.style.fontFamily = 'Gothic'
+
+
         this.addChild(this.text);
 
         this
@@ -75,10 +95,8 @@ export default class LabelItem extends PIXI.Container {
 
             this.getBounds(true, this.rectBounds);
 
-            const itemTop = pointerViewportY - (this.grabPoint?.y || 0) - this.height/2;
-            const itemBottom = pointerViewportY - (this.grabPoint?.y || 0) + this.height/2;
-
-
+            const itemTop = pointerViewportY - (this.grabPoint?.y || 0) - this.height / 2;
+            const itemBottom = pointerViewportY - (this.grabPoint?.y || 0) + this.height / 2;
 
             if (canvasBottom > windowHeight) {
 
@@ -153,5 +171,12 @@ export default class LabelItem extends PIXI.Container {
 
     removeInvalidMark() {
         this.filters = []
+    }
+
+    transformToAnswer() {
+        this.bg.visible = false;
+        this.interactive = false;
+        this.text.style.fontSize = '20px';
+        this.text.anchor.set(0);
     }
 }
