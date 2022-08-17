@@ -77,6 +77,8 @@ export default class GameScreen extends PIXI.Container implements IScreen {
                             }
                         }
 
+                        this.updatePositions();
+
 
                     } else {
                         item.resetToLastPosition();
@@ -221,6 +223,10 @@ export default class GameScreen extends PIXI.Container implements IScreen {
         const boxWidth = this.bg.width * .4;
         const boxMargin = bgNewHeight * .05;
 
+        this.items.forEach(item => {
+            item.setFontSize(bgNewHeight*.07);
+        })
+
         this.bins.forEach(({bin, items}, index) => {
             bin.setSize(boxWidth, boxHeight);
 
@@ -249,13 +255,10 @@ export default class GameScreen extends PIXI.Container implements IScreen {
 
                 if (position) {
                     item.setPosition(bin.position.x + position.x, bin.position.y + position.y)
+                    item.setFontSize(bgNewHeight*.003)
                 }
             });
         });
-
-        this.items.forEach(item => {
-            item.setFontSize(boxWidth*.1);
-        })
     }
 
     private checkComplete() {
