@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react"
 import styled from "styled-components";
 import App from "./pixi-app/app";
+import WebFonts from 'webfontloader';
 
 type Props = {
     onComplete(): void
@@ -21,31 +22,45 @@ const TreeTask: React.FC<Props> = ({ onComplete }) => {
     const containerRef = useRef<HTMLDivElement>(null);
     const appRef = useRef<App>();
 
-    useEffect(() => {
-        const app = new App({
-            assetsPath: '/task-3/',
-            onComplete
-        });
-        appRef.current = app;
-
-
-        if (widgetContainerRef.current) {
-            widgetContainerRef.current.appendChild(app.view);
-        }
-
-        return () => {
-            app.destroy(true);
-        }
-    }, [onComplete]);
-
     const onResize = useCallback(() => {
-        if (widgetContainerRef.current && containerRef.current && appRef.current) {
+        if (widgetContainerRef.current && containerRef.current && appRef.current && appRef.current?.view) {
             const boundries = containerRef.current.getBoundingClientRect();
 
             appRef.current.view.style.height = `${boundries.height}px`;
             appRef.current.view.style.width = `${boundries.height / widgetRatio}px`;
         }
     }, []);
+
+    useEffect(() => {
+
+        WebFonts.load({
+            custom: {
+                families: ['Gothic']
+            },
+            fontactive: () => {
+                if (appRef.current) return;
+
+                const app = new App({
+                    assetsPath: '/task-3/',
+                    onComplete
+                });
+                appRef.current = app;
+
+
+                if (widgetContainerRef.current) {
+                    widgetContainerRef.current.appendChild(app.view);
+                }
+
+                onResize();
+            }
+        });
+
+
+        return () => {
+            appRef.current?.destroy(true);
+            appRef.current = undefined;
+        }
+    }, [onComplete, onResize]);
 
     useEffect(() => {
         window.addEventListener('resize', onResize);

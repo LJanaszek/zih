@@ -4,7 +4,7 @@ import { SCREEN } from '../data';
 import Bin from './bin';
 import LabelItem from './label';
 
-const SLIDER_HEIGHT = 220;
+const SLIDER_HEIGHT = 230;
 
 export default class GameScreen extends PIXI.Container implements IScreen {
 
