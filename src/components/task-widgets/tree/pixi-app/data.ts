@@ -119,30 +119,30 @@ export const SCREEN: {
     ,
     ANSWERS: [
         ['bin1', [
-            { id: 'item11', position: { x: 20, y: 20 } },
-            { id: 'item12', position: { x: 20, y: 40 } },
-            { id: 'item13', position: { x: 20, y: 60 } },
-            { id: 'item14', position: { x: 20, y: 80 } },
-            { id: 'item15', position: { x: 20, y: 100 } }
+            { id: 'item11', position: { x: .11, y: .54 } },
+            { id: 'item12', position: { x: .56, y: .54 } },
+            { id: 'item13', position: { x: .27, y: .74 } },
+            { id: 'item14', position: { x: .48, y: .34 } },
+            { id: 'item15', position: { x: .22, y: .34 } }
         ]
         ],
         ['bin2', [
-            { id: 'item21', position: { x: 20, y: 20 } },
-            { id: 'item22', position: { x: 20, y: 40 } },
-            { id: 'item23', position: { x: 20, y: 60 } },
-            { id: 'item24', position: { x: 20, y: 80 } }
+            { id: 'item21', position: { x: .51, y: .34 } },
+            { id: 'item22', position: { x: .09, y: .54 } },
+            { id: 'item23', position: { x: .12, y: .34 } },
+            { id: 'item24', position: { x: .14, y: .74 } }
         ]],
         ['bin3', [
-            { id: 'item31', position: { x: 20, y: 20 } },
-            { id: 'item32', position: { x: 20, y: 40 } },
-            { id: 'item33', position: { x: 20, y: 60 } },
-            { id: 'item34', position: { x: 20, y: 80 } }
+            { id: 'item31', position: { x: .13, y: .68 } },
+            { id: 'item32', position: { x: .35, y: .475 } },
+            { id: 'item33', position: { x: .07, y: .475 } },
+            { id: 'item34', position: { x: .51, y: .68 } }
         ]],
         ['bin4', [
-            { id: 'item41', position: { x: 20, y: 20 } },
-            { id: 'item42', position: { x: 20, y: 40 } },
-            { id: 'item43', position: { x: 20, y: 60 } },
-            { id: 'item44', position: { x: 20, y: 80 } }
+            { id: 'item41', position: { x: .60, y: .475 } },
+            { id: 'item42', position: { x: .41, y: .68 } },
+            { id: 'item43', position: { x: .09, y: .475 } },
+            { id: 'item44', position: { x: .09, y: .68 } }
         ]]
     ],
     ITEMS,
@@ -156,16 +156,16 @@ export const SCREEN: {
             }
         },
         {
-            id: 'bin2',
-            label: 'Higiena',
+            id: 'bin3',
+            label: 'koło pracy kulturalnej',
             position: {
                 x: .56,
                 y: .1
             }
         },
         {
-            id: 'bin3',
-            label: 'koło pracy kulturalnej',
+            id: 'bin2',
+            label: 'Higiena',
             position: {
                 x: .03,
                 y: .28

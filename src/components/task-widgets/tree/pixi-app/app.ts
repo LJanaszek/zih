@@ -18,6 +18,7 @@ export default class App extends PIXI.Application {
             backgroundColor: 0xDFD7CD,
             width: APP_WIDTH,
             height: APP_HEIGHT,
+            antialias: true
         });
 
         this.renderer.plugins.interaction.autoPreventDefault = false;

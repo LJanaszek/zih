@@ -27,6 +27,8 @@ export default class GameScreen extends PIXI.Container implements IScreen {
     constructor(private app: PIXI.Application, private onComplete: () => void) {
         super();
 
+        this.sortableChildren = true;
+
         this.initBackground();
 
         SCREEN.ITEMS.forEach((i, index) => {
@@ -51,7 +53,10 @@ export default class GameScreen extends PIXI.Container implements IScreen {
                     const answer = binAnswers[1].find(a => a.id === item.id)
 
                     if (answer) {
-                        item.setPosition(binData.bin.position.x + answer.position.x, binData.bin.position.y + answer.position.y);
+                        item.setPosition(
+                            binData.bin.position.x + answer.position.x * binData.bin.width,
+                            binData.bin.position.y + answer.position.y * binData.bin.height
+                        );
 
                         this.pages.forEach(page => {
                             page.items = page.items.filter(i => i.id !== item.id);
@@ -87,7 +92,7 @@ export default class GameScreen extends PIXI.Container implements IScreen {
         this.bg.anchor.set(.5, 0);
 
         this.resizeBackground();
-        this.bg.position.set(APP_WIDTH/2, 0)
+        this.bg.position.set(APP_WIDTH / 2, 0)
 
         this.addChild(this.bg);
     }
@@ -102,7 +107,7 @@ export default class GameScreen extends PIXI.Container implements IScreen {
 
     private initBins() {
         SCREEN.BINS.forEach(data => {
-            const bin = new Bin();
+            const bin = new Bin(data.label);
             bin.id = data.id;
             bin.zIndex = 10;
 
@@ -212,71 +217,6 @@ export default class GameScreen extends PIXI.Container implements IScreen {
             p.items.forEach(i => {
                 i.visible = index === this.activePage;
             })
-        });
-    }
-
-    private updatePositions() {
-
-        const appWidth = APP_WIDTH;
-        const appHeight = APP_HEIGHT;
-
-        console.log({ appWidth, appHeight });
-
-
-        this.bg.position.set(appWidth / 2, 0);
-
-        const bgNewHeight = appHeight - SLIDER_HEIGHT;
-
-        const bgRealHeight = this.bg.height / this.bg.scale.y;
-        const bgNewScale = bgNewHeight / bgRealHeight;
-
-        this.bg.scale.set(bgNewScale);
-
-        this.pages.forEach(p => {
-            p.items.forEach((item, index) => {
-                item.setPosition(300 + 0, (appHeight - SLIDER_HEIGHT) + 20 + 40 * index);
-            });
-        });
-
-        const boxHeight = bgNewHeight * .3;
-        const boxWidth = this.bg.width * .4;
-        const boxMargin = bgNewHeight * .05;
-
-        this.items.forEach(item => {
-            item.setFontSize(bgNewHeight * .07);
-        })
-
-        this.bins.forEach(({ bin, items }, index) => {
-            bin.setSize(boxWidth, boxHeight);
-
-            switch (index) {
-                case 0:
-                    bin.position.set((appWidth / 2) - (boxWidth + boxMargin), boxMargin);
-                    break;
-
-                case 1:
-                    bin.position.set((appWidth / 2) + boxMargin, boxMargin);
-                    break;
-
-                case 2:
-                    bin.position.set((appWidth / 2) - (boxWidth + boxMargin), boxMargin * 2 + boxHeight);
-                    break;
-
-                case 3:
-                    bin.position.set((appWidth / 2) + boxMargin, boxMargin * 2 + boxHeight);
-                    break;
-            }
-
-            items.forEach((item, index) => {
-                const position = SCREEN.ANSWERS
-                    .find(a => a[0] === bin.id)?.[1]
-                    .find(i => i.id === item.id)?.position;
-
-                if (position) {
-                    item.setPosition(bin.position.x + position.x, bin.position.y + position.y)
-                    item.setFontSize(bgNewHeight * .003)
-                }
-            });
         });
     }
 

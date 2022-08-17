@@ -34,6 +34,7 @@ export default class LabelItem extends PIXI.Container {
         this.text.anchor.set(.5);
         this.text.style.fontSize = '45px';
         this.text.style.fontFamily = 'Gothic'
+        this.text.style.fill = 0x666699;
 
 
         this.addChild(this.text);
@@ -124,7 +125,7 @@ export default class LabelItem extends PIXI.Container {
         this.dragging = false;
         // set the interaction data to null
         this.grabData = null;
-        this.zIndex = 0;
+        this.zIndex = 10;
 
         this.app.renderer.view.removeEventListener('touchmove', this.disableScrolling)
 
@@ -176,7 +177,8 @@ export default class LabelItem extends PIXI.Container {
     transformToAnswer() {
         this.bg.visible = false;
         this.interactive = false;
-        this.text.style.fontSize = '20px';
+        this.text.style.fontSize = '18px';
         this.text.anchor.set(0);
+        this.text.style.fill = 0xda783c;
     }
 }
