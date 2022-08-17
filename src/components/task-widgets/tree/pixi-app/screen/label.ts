@@ -129,7 +129,10 @@ export default class LabelItem extends PIXI.Container {
 
         this.app.renderer.view.removeEventListener('touchmove', this.disableScrolling)
 
-        this.emit('new-position', { position: this.position });
+        this.emit('new-position', {
+            position: this.position,
+            grabPosition: this.grabPoint ? new PIXI.Point(this.position.x + this.grabPoint.x, this.position.y + this.grabPoint.y) : this.position
+        });
     }
 
     public resetToLastPosition() {

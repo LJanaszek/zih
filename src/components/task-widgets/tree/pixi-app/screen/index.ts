@@ -1,5 +1,4 @@
 import * as PIXI from 'pixi.js';
-import { Layer } from '@pixi/layers';
 import { APP_HEIGHT, APP_WIDTH, IScreen } from "../app";
 import { SCREEN } from '../data';
 import Bin from './bin';
@@ -42,13 +41,13 @@ export default class GameScreen extends PIXI.Container implements IScreen {
 
             this.items.push(item);
 
-            item.on('new-position', ({ position }) => {
-                const binData = this.bins.find(l => l.bin.containsPoint(position));
+            item.on('new-position', ({ position, grabPosition }) => {
+                const  binData = this.bins.find(l => l.bin.containsPoint(grabPosition));
 
                 if (binData) {
 
                     const binAnswers = SCREEN.ANSWERS.find(answ => {
-                        return answ[0] === binData.bin.id;
+                        return answ[0] === binData?.bin.id;
                     });
 
                     if (!binAnswers) {

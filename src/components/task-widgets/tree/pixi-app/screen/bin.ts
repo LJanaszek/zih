@@ -1,4 +1,3 @@
-import { Layer } from '@pixi/layers';
 import * as PIXI from 'pixi.js';
 
 const BORDER_RADIUS = 50;

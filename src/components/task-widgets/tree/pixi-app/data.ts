@@ -39,7 +39,7 @@ const ITEMS = [
     },
     {
         id: 'item22',
-        text: 'mierzenie temp.'
+        text: 'mierzenie temperatury'
     },
     {
         id: 'item23',
