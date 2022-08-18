@@ -1,15 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Box from "../../components/layout/box";
-import {  getGamePageRoute, getHomeRoute } from "../routes";
+import { getGamePageRoute, getHomeRoute } from "../routes";
 import useGameStarted from "../../modules/game/hooks/use-game-started";
 import { useCallback, useState } from "react";
 import { GAME_MODULE_ACTION, useGameModuleDispatch } from "../../modules/game";
 import logo from './instrukcja.svg';
-import GameRestart from '../game/img/ikonsButton/zrestartuj.svg';
-import GameStart from '../game/img/ikonsButton/uruchom.svg';
-import GameContinue from '../game/img/ikonsButton/kontynuujGre.svg';
-import Knowledge from '../game/img/ikonsButton/bazaWiedzy.svg';
 import Popup from "../../components/elements/popup";
 import WikiPopup from "../../components/wiki-popup";
 import { useRef } from "react";
@@ -46,7 +42,7 @@ li::marker{
     border: 1px solid var(--color1);
 }
 #content{
-    
+
     // width: 80%;
     margin: 0 auto;
     border-radius: 50px;
@@ -163,39 +159,43 @@ export default function HomePage() {
         <Box>
 
             <div id='content'>
-            <img className="shultz" src={logo} alt="" />
+                <img className="shultz" src={logo} alt="" />
 
 
-            <div className="fill">
-            <h2>Instrukcja</h2>
-            <p>Zabierzemy Was na wycieczkę, ale kiedy, to trudno powiedzieć. Cały trik polega na tym, że cofnęliśmy czas. Spóźniamy się tu z czasem o pewien interwał, którego wielkość niepodobna określić. Będziemy przemieszczać się po określonych punktach i poznawać je z czasu, który z waszej codziennej perspektywy już minął, zbierać kawałki historii, wspomnienia, resztki pamięci. Nie dojdziemy czy wszystkie te rzeczy stały się całkiem, czy tylko próbowały się zdarzyć. Czy były to wielkie czy małe zdarzenia, również nie stwierdzimy tego ostatecznie. Jakieś zdarzenie może być co do swe prowenienci i swoich własnych środków małe i ubogie, a jednak, zbliżone do oka, może otwierać w swoim wnętrzu nieskończoną i promienną perspektywę .Dzięki temu, że wyższy byt usiłuje w nim się wyrazić i gwałtownie w nim błyszczy.
-Tak tedy będziemy zbierali te aluzje, te ziemskie przybliżenia, te stacje i etapy po drogach naszego życia, jak ułamki potłuczonego zwierciadła.
-</p>
-            <ul>
-                <li>Do wzięcia udziału w grze niezbędne jest urządzenie mobilne z dostępem do Internetu</li>
-                <li>Gra wykorzystuje aparat i lokalizację urządzenia. Udziel zgody, gdy zostaniesz zapytany/zapytana o udzielenie dostępu.</li>
-                <li>By móc rozpocząć grę musisz ja uruchomić na terenie Falenicy.</li>
-                <li>Gra jest przeznaczona dla zespołów, ale można wziąć w niej udział pojedynczo.</li>
-                <li>Informacja o lokalizacji kolejnych punktów będzie podawana na podstawie danych</li>
-            </ul>
-            
-            </div>
+                <div className="fill">
+                    <h2>Instrukcja</h2>
+                    <p>Zabierzemy Was na wycieczkę, ale kiedy, to trudno powiedzieć. Cały trik polega na tym, że cofnęliśmy czas. Spóźniamy się tu z czasem o pewien interwał, którego wielkość niepodobna określić. Będziemy przemieszczać się po określonych punktach i poznawać je z czasu, który z waszej codziennej perspektywy już minął, zbierać kawałki historii, wspomnienia, resztki pamięci. Nie dojdziemy czy wszystkie te rzeczy stały się całkiem, czy tylko próbowały się zdarzyć. Czy były to wielkie czy małe zdarzenia, również nie stwierdzimy tego ostatecznie. Jakieś zdarzenie może być co do swe prowenienci i swoich własnych środków małe i ubogie, a jednak, zbliżone do oka, może otwierać w swoim wnętrzu nieskończoną i promienną perspektywę .Dzięki temu, że wyższy byt usiłuje w nim się wyrazić i gwałtownie w nim błyszczy.
+                        Tak tedy będziemy zbierali te aluzje, te ziemskie przybliżenia, te stacje i etapy po drogach naszego życia, jak ułamki potłuczonego zwierciadła.
+                    </p>
+                    <ul>
+                        <li>Do wzięcia udziału w grze niezbędne jest urządzenie mobilne z dostępem do Internetu</li>
+                        <li>Gra wykorzystuje aparat i lokalizację urządzenia. Udziel zgody, gdy zostaniesz zapytany/zapytana o udzielenie dostępu.</li>
+                        <li>By móc rozpocząć grę musisz ja uruchomić na terenie Falenicy.</li>
+                        <li>Gra jest przeznaczona dla zespołów, ale można wziąć w niej udział pojedynczo.</li>
+                        <li>Informacja o lokalizacji kolejnych punktów będzie podawana na podstawie danych</li>
+                    </ul>
+
+                </div>
             </div>
             <nav>
 
-                {!gameStarted && <button className="button" onClick={() => { setShowGPSInfo(true) }}>Rozpocznij grę <img className="icon" src={GameStart} alt=""></img></button>}
-                {gameStarted && <Link className="button" to={getGamePageRoute()}>Kontynuuj grę <img className="icon" src={GameContinue} alt=""></img></Link>}
+                {!gameStarted &&
+                    <button className="button with-icon" onClick={() => { setShowGPSInfo(true) }}>Rozpocznij grę <i className="icon game-start" /></button>
+                }
 
-            {gameStarted &&
-                <Link className="button"  to={getHomeRoute()} onClick={()=>{onGameRestart() }}>Zrestartuj grę <img className="icon" src={GameRestart} alt=""></img> </Link>}
-                <button className="button" ref={wikiRef} onClick={() => {setShowWikiPopup(true)}} >Baza wiedzy <img className="icon" src={Knowledge} alt="" /></button>
-            
-            
-                </nav>
-                {
-            showWikiPopup && <WikiPopup onClick={closeWikiPopup}>
+                {gameStarted &&
+                    <>
+                        <Link className="button with-icon" to={getGamePageRoute()}>Kontynuuj grę <i className="icon game-continue" /></Link>
+                        <Link className="button with-icon" to={getHomeRoute()} onClick={() => { onGameRestart() }}>Zrestartuj grę <i className="icon game-restart" /> </Link>
+                    </>
+                }
 
-            </WikiPopup>
+                <button className="button with-icon" ref={wikiRef} onClick={() => { setShowWikiPopup(true) }} >Baza wiedzy <i className="icon knowledge" /></button>
+            </nav>
+            {
+                showWikiPopup && <WikiPopup onClick={closeWikiPopup}>
+
+                </WikiPopup>
             }
         </Box>
 
