@@ -13,7 +13,7 @@ import { CONFIG_MODULE_ACTION, useConfigModuleDispatch } from './modules/config'
 import StreetPhotoTestPage from './components/task-widgets/street-photo';
 import TravelersTestPage from './components/task-widgets/travelers';
 import PuzzleTestPage from './components/task-widgets/puzzle';
-import ButtonStyle from './components/elements/buttons';
+import ButtonStyle from './button-style';
 
 const HomePage = React.lazy(() => import('./routes/home'));
 const GamePage = React.lazy(() => import('./routes/game'));

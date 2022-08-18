@@ -94,35 +94,3 @@ p {
         }
     }
 }
-
-.button {
-    display: inline-block;
-    background: var(--color3);
-    color: white;
-    padding: .3em 1em;
-    border-radius: 10em;
-
-    text-decoration: none;
-
-    font-size: 16pt;
-    font-family: DidactGothic-Regular;
-
-    text-align: center;
-    box-sizing: border-box;
-
-    border: none;
-    cursor: pointer;
-
-    &:hover {
-        background: var(--color5);
-    }
-
-    &:focus {
-        outline: 3px black solid;
-    }
-
-    @media (max-width: 1200px) {
-        font-size: 16pt;
-        width: 60%;
-    }
-}
