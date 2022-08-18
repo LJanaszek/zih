@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Box from "../../components/layout/box";
-import {  getGamePageRoute } from "../routes";
+import {  getGamePageRoute, getHomeRoute } from "../routes";
 import useGameStarted from "../../modules/game/hooks/use-game-started";
 import { useCallback, useState } from "react";
 import { GAME_MODULE_ACTION, useGameModuleDispatch } from "../../modules/game";
@@ -70,8 +70,11 @@ nav{
 .button{
     margin: 0 auto;
     width:80%;
+    height: 3em;
     margin-top:0.5em;
     font-size: 20px;
+    line-height:2.3em;
+    margin-right:1em;
 }
 
 
@@ -112,13 +115,15 @@ nav{
   }
     .button{
         width:70%;
+        margin-right:0;
     }
 
   }
   @media (max-width: 490px) {
   .button{
             font-size: 16px;
-            width:80%
+            width:80%;
+            line-height:2.3em;
   }
         .icon{
             height:1rem;
@@ -175,7 +180,7 @@ Tak tedy będziemy zbierali te aluzje, te ziemskie przybliżenia, te stacje i et
                 {gameStarted && <Link className="button" to={getGamePageRoute()}>Kontynuuj grę <img className="icon" src={GameContinue} alt=""></img></Link>}
 
             {gameStarted &&
-                <Link className="button" to={getGamePageRoute()} onClick={onGameRestart}>Zrestartuj grę <img className="icon" src={GameRestart} alt=""></img> </Link>}
+                <Link className="button"  to={getHomeRoute()} onClick={()=>{onGameRestart() }}>Zrestartuj grę <img className="icon" src={GameRestart} alt=""></img> </Link>}
                 <a href="baza_wiedzy.pdf" id="knowledge" className="button">Baza wiedzy<img className="icon" src={Knowledge} alt=""></img> </a></nav>
         </Box>
 
