@@ -29,9 +29,9 @@ const Container = styled.div`
     p{
         text-align: center;
     }
-    .inner {
+    .innerpop {
 
-        background:  white;
+        background-color:  white;
         border:3px solid var(--color3);
         width: 100%;
         max-width: 700px;
@@ -164,7 +164,7 @@ export default function WikiPopup({ children, onClick }: Props) {
 
     return <Container aria-modal="true">
         
-        <div className="inner">
+        <div className="innerpop">
             <div className="head"><img className="headimg" src={headimg} alt="" /></div>
             <h2 id="wiki-modal-header">Wpisz hasło:</h2>
             <div className="inner-2">
