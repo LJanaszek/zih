@@ -5,12 +5,13 @@ import WebFonts from 'webfontloader';
 
 type Props = {
     onComplete(): void
-    onGameStateChange(data: BirdTaskState): void
+    onGameStateChanged(data: BirdTaskState): void
 }
 
 export type BirdTaskState = {
     birdCount: number,
-    findedBirdCount: number
+    findedBirdCount: number,
+    isComplete: boolean
 }
 
 const Container = styled.div`
@@ -27,7 +28,7 @@ const Container = styled.div`
 
 const widgetRatio = 1.35;
 
-const BirdsTask: React.FC<Props> = ({ onComplete }) => {
+const BirdsTask: React.FC<Props> = ({ onComplete, onGameStateChanged }) => {
     const widgetContainerRef = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const appRef = useRef<App>();
@@ -68,7 +69,8 @@ const BirdsTask: React.FC<Props> = ({ onComplete }) => {
 
                 const app = new App({
                     assetsPath: '/task-2/',
-                    onComplete
+                    onComplete,
+                    onGameStateChanged
                 });
                 appRef.current = app;
 

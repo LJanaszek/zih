@@ -35,7 +35,8 @@ export default class GameScreen extends PIXI.Container implements IScreen {
     private sendInfo() {
         this.emit('update-game-state', {
             birdCount: SCREEN.ITEMS.length,
-            findedBirdCount: this.findedBirds.length
+            findedBirdCount: this.findedBirds.length,
+            isComplete: SCREEN.ITEMS.length === this.findedBirds.length
         } as BirdTaskState)
     }
 

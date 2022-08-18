@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
+import Popup from "../../../../components/elements/popup";
 import SmallPageHeader from "../../../../components/layout/header/small-header";
 import BirdsTask, { BirdTaskState } from "../../../../components/task-widgets/birds";
 import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header";
@@ -53,7 +54,7 @@ const Container = styled.div`
         .state {
             span {
                 display: inline-block;
-                padding: 0 2em;
+                min-width: 5em;
             }
         }
     }
@@ -99,23 +100,35 @@ export default function TaskMain({ onComplete }: Props) {
 
     const [gameState, setGameState] = useState<BirdTaskState>({
         birdCount: 0,
-        findedBirdCount: 0
+        findedBirdCount: 0,
+        isComplete: false
     });
 
-    return <Container>
-        <div className="header">
-            <SmallPageHeader />
-        </div>
-        <div className="controlls">
-            <button className="button">Podgląd</button>
-            <button className="button">Pomoc</button>
-            <button className="button">Zakończ</button>
-        </div>
-        <div className="widget">
-            <BirdsTask onComplete={onComplete} onGameStateChange={setGameState} />
-        </div>
-        <div className="state">
-            <span>{gameState.findedBirdCount}/{gameState.birdCount}</span>
-        </div>
-    </Container>
+    const [showInfoPopup, setShowInfoPopup] = useState(false);
+    const [showPreviewPopup, setShowPreviewPopup] = useState(false);
+
+    return <>
+        <Container>
+            <div className="header">
+                <SmallPageHeader />
+            </div>
+            <div className="controlls">
+                <button className="button" onClick={() => { setShowPreviewPopup(true) }}>Podgląd</button>
+                <button className="button" onClick={() => { setShowInfoPopup(true) }}>Pomoc</button>
+                {gameState.isComplete && <button className="button" onClick={onComplete}>Zakończ</button>}
+            </div>
+            <div className="widget">
+                <BirdsTask onComplete={onComplete} onGameStateChanged={setGameState} />
+            </div>
+            <div className="state">
+                <span>{gameState.findedBirdCount}/{gameState.birdCount}</span>
+            </div>
+        </Container>
+        {showPreviewPopup && <Popup onClick={() => { setShowPreviewPopup(false) }}>
+            Tu coś będzie....
+        </Popup>}
+        {showInfoPopup && <Popup onClick={() => { setShowInfoPopup(false) }}>
+            Znajdź ukryte ptaki i kliknij w nie by je złapać. Kliknij w ikonę [oko] by zobaczyć podpowiedź.
+        </Popup>}
+    </>
 }
