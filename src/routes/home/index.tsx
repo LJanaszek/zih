@@ -11,6 +11,8 @@ import GameStart from '../game/img/ikonsButton/uruchom.svg';
 import GameContinue from '../game/img/ikonsButton/kontynuujGre.svg';
 import Knowledge from '../game/img/ikonsButton/bazaWiedzy.svg';
 import Popup from "../../components/elements/popup";
+import WikiPopup from "../../components/wiki-popup";
+import { useRef } from "react";
 /* <meta name="viewport" content="width=device-width, initial-scale=1"></meta> */
 // import meta
 
@@ -134,7 +136,7 @@ nav{
 `;
 
 export default function HomePage() {
-
+    const [showWikiPopup, setShowWikiPopup] = useState(false);
     const navigate = useNavigate()
 
     const [showGPSInfo, setShowGPSInfo] = useState(false);
@@ -151,12 +153,17 @@ export default function HomePage() {
             type: GAME_MODULE_ACTION.RESET_GAME
         });
     }, [dispatch]);
+    const wikiRef = useRef<HTMLButtonElement>(null);
+    const closeWikiPopup = useCallback(() => {
+        setShowWikiPopup(false)
+        wikiRef.current?.focus();
+    }, [setShowWikiPopup]);
 
     return <Container>
         <Box>
 
             <div id='content'>
-            <img className="shultz" src={logo} alt="dupa" />
+            <img className="shultz" src={logo} alt="" />
 
 
             <div className="fill">
@@ -181,7 +188,15 @@ Tak tedy będziemy zbierali te aluzje, te ziemskie przybliżenia, te stacje i et
 
             {gameStarted &&
                 <Link className="button"  to={getHomeRoute()} onClick={()=>{onGameRestart() }}>Zrestartuj grę <img className="icon" src={GameRestart} alt=""></img> </Link>}
-                <a href="baza_wiedzy.pdf" id="knowledge" className="button">Baza wiedzy<img className="icon" src={Knowledge} alt=""></img> </a></nav>
+                <button className="button" ref={wikiRef} onClick={() => {setShowWikiPopup(true)}} >Baza wiedzy <img className="icon" src={Knowledge} alt="" /></button>
+            
+            
+                </nav>
+                {
+            showWikiPopup && <WikiPopup onClick={closeWikiPopup}>
+
+            </WikiPopup>
+            }
         </Box>
 
         {showGPSInfo && <Popup onClick={goToGame}>

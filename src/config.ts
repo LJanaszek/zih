@@ -4,6 +4,7 @@ const CONFIG = {
 
     // Minimalna dokładność GPS aby gra działała
     MIN_GEO_ACCURACY: 40, // m
+    PASSWORD: 'perazja'
 }
 
 export default CONFIG;
