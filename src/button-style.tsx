@@ -1,7 +1,7 @@
-import GameRestartIconSrc from '../../assets/icons/zrestartuj.svg';
-import GameStartIconSrc from '../../assets/icons/uruchom.svg';
-import GameContinueIconSrc from '../../assets/icons/kontynuujGre.svg';
-import KnowledgeIconSrc from '../../assets/icons/bazaWiedzy.svg';
+import GameRestartIconSrc from './assets/icons/zrestartuj.svg';
+import GameStartIconSrc from './assets/icons/uruchom.svg';
+import GameContinueIconSrc from './assets/icons/kontynuujGre.svg';
+import KnowledgeIconSrc from './assets/icons/bazaWiedzy.svg';
 
 import { createGlobalStyle } from "styled-components";
 
@@ -16,7 +16,7 @@ const ButtonStyle = createGlobalStyle`
         text-decoration: none;
 
         font-size: 16pt;
-        font-family: DidactGothic-Regular;
+        font-family: Gothic;
 
         text-align: center;
         box-sizing: border-box;
