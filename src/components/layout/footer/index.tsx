@@ -8,12 +8,14 @@ const Container = styled.footer`
     color: var(--color1);
     border: 1px solid;
     border-radius: 25px;
-    width: 60%;
-    margin: 0 auto;
+    width: 80%;
+    margin: auto;
     padding:0.5em;
-    margin-bottom: 1em;
     font-family: DidactGothic-Regular;
     display: flex;
+    text-align: center;
+    margin-bottom:1em;
+    padding: 1em;
 
     @media (max-width: 1560px) {
         border:none;
@@ -22,44 +24,34 @@ const Container = styled.footer`
     }
     @media(max-width: 950px){
         padding:0;
-        width:80%;
-    }
-    @media(max-width: 490px){
+        // width:80%;
     }
     
     .logo1,.logo2{
         height: 5em;
-        margin:1em 2em;
-        width: 50%;
-        @media(max-width: 950px){
-            margin: 0.5em 0.5em;
-        }
-        @media(max-width: 490px){
-            margin:0;
-        }
+        margin:0 auto;
+        width:50%;
+        height:50%;
     }
     .logo1{
-        width:40%;
+        width:10%;
         text-align: center;
         vertical-align:middle;
-        background: url(${logoFirst})50% 50% no-repeat;
+        
     }
     .logo2{
-        width: 50%;
+        height: auto;
         text-align: center;
         vertical-align:middle;
-        background: url(${logoSec})50% 50% no-repeat;
+        
         
         @media (max-width: 1560px) {
-            background: url(${logoSecMob})50% 50% no-repeat;
-            // width: 40%;
-            margin: 0 auto;
             padding:2.5em;
             
         }
         @media(max-width: 950px){
-            margin:0 auto;
-            margin-bottom: 0.5em;
+            // margin:0 auto;
+            // margin-bottom: 0.5em;
         }
     }
     
@@ -68,11 +60,7 @@ const Container = styled.footer`
 
 export default function PageFooter() {
     return <Container>
-        <div className="logo1">
-
-        </div>
-        <div className="logo2">
-
-        </div>
+        <img className="logo1" src={logoFirst} alt="Brunon Schultz, artysta genialny"/>
+        <img className="logo2" src={logoSec} alt="Ministerstwo Kultury i Dziedzictwa Narodowego. Dofinansowano ze środków Ministra Kultury i DziedzictwaNarodowego pochodzących z Funduszu Promocji Kultury – państwowego funduszu celowego"/>
     </Container>
 }
