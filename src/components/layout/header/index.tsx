@@ -4,36 +4,36 @@ const Container = styled.header`
     
     text-align: center;
     vertical-align:middle;
-    // margin: 0 auto;
-    margin-top: 2em;
-    height: 3.5em;
     position: relative;
-    // width: inherit;
-   
+    background-color: var(--color3);
+    border-radius: 50px;
+    padding: 1.5em 2em;
+    width: 50%;
+    margin: 0 auto;
+    margin-top:1em;
+    @media(max-width: 950px){
+        width:max-content;
+        font-size:18px;
+    }
+    @media(max-width: 490px){
+        width:60%;
+        padding:0.8em 0.6em;
+        border-radius:45px;
+        
+    }
     h1{
+        margin:0 auto;
         letter-spacing: 3px;
-        border-radius: 50px;
         font-family: Bristol;
-        // min-height: 10px;
-        background-color: var(--color3);
         color: var(--color2);
         font-size: 30px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width:max-content;
-        padding: 1em 2em;
-        width: max-content;
+        position: relative;
+        // width: max-content;
 
-        @media(max-width: 950px){
-            width:max-content;
-            font-size:18px;
-            margin-top:-1em;
+        @media(max-width: 490px){
+            font-size: 16px;
         }
-        @media(max-width: 300px){
-            width:70%;
-        }
+
     }
     .shultz{
         color: var(--color1);
