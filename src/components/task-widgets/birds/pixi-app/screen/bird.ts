@@ -1,7 +1,7 @@
 import * as PIXI from 'pixi.js';
 
 export default class Bird extends PIXI.Container {
-    constructor(spriteId: string) {
+    constructor(public id: string, spriteId: string) {
         super()
 
         const sprite = PIXI.Sprite.from(spriteId);
@@ -12,5 +12,15 @@ export default class Bird extends PIXI.Container {
         this.hitArea = new PIXI.Rectangle(-20, -20, 40, 40);
 
         this.interactive = true;
+
+        this.on('pointerdown', () => {
+            console.log('kliklem ptaka!');
+
+            this.emit('bird-clicked');
+        })
+    }
+
+    hide() {
+        this.visible = false;
     }
 }

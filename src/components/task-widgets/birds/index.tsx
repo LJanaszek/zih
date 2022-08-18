@@ -5,6 +5,12 @@ import WebFonts from 'webfontloader';
 
 type Props = {
     onComplete(): void
+    onGameStateChange(data: BirdTaskState): void
+}
+
+export type BirdTaskState = {
+    birdCount: number,
+    findedBirdCount: number
 }
 
 const Container = styled.div`
@@ -13,9 +19,13 @@ const Container = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
 
-const widgetRatio = 1/1.35;
+const widgetRatio = 1.35;
 
 const BirdsTask: React.FC<Props> = ({ onComplete }) => {
     const widgetContainerRef = useRef<HTMLDivElement>(null);
@@ -26,8 +36,24 @@ const BirdsTask: React.FC<Props> = ({ onComplete }) => {
         if (widgetContainerRef.current && containerRef.current && appRef.current && appRef.current?.view) {
             const boundries = containerRef.current.getBoundingClientRect();
 
-            appRef.current.view.style.height = `${boundries.height}px`;
-            appRef.current.view.style.width = `${boundries.height / widgetRatio}px`;
+            const ratio = boundries.width / boundries.height;
+
+            console.log(ratio);
+
+            if (ratio >= widgetRatio) {
+                console.log('DO WYSOKOSCI!')
+                appRef.current.view.style.height = `${boundries.height}px`;
+                appRef.current.view.style.width = `${boundries.height * widgetRatio}px`;
+            } else {
+                console.log('DO SZEROKOSCI!')
+                appRef.current.view.style.height = `${boundries.width / widgetRatio}px`;
+                appRef.current.view.style.width = `${boundries.width}px`;
+            }
+
+
+            appRef.current.view.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+            });
         }
     }, []);
 
@@ -74,7 +100,7 @@ const BirdsTask: React.FC<Props> = ({ onComplete }) => {
 
     return <Container ref={containerRef}>
         <div ref={widgetContainerRef} style={{
-            width: '100%',
+            // width: '100%',
             margin: '0 auto',
             display: 'flex',
             justifyContent: 'center',
