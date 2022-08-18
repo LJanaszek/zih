@@ -22,8 +22,8 @@ export const SCENARIO: GameScenario = {
             id: '1.1',
             type: GAME_STEP_TYPE.GEO_STEP,//dojście w terenie
             position: {
-                lat: 52.15414609929565,
-                lng: 20.91776308234229
+                lat: 52.16383572337064,
+                lng: 21.21937101781457
             },
             name: ['Punkt geo 1'],
             nextStep: '1.2'
@@ -38,8 +38,8 @@ export const SCENARIO: GameScenario = {
             id: '2.1',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 52.15376456305676,
-                lng: 20.919047105253416
+                lat: 52.16805363672106,
+                lng: 21.223030642885533
             },
             name: ["Punkt geo 2"],
             nextStep: '2.2'
@@ -54,8 +54,8 @@ export const SCENARIO: GameScenario = {
             id: '3.1',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 52.15057526976408,
-                lng: 20.915680744642703
+                lat: 52.16896284983934,
+                lng: 21.216436812891743
             },
             name: ["Punkt geo 3"],
             nextStep: '3.2'
@@ -71,8 +71,8 @@ export const SCENARIO: GameScenario = {
             id: '4.1',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 52.15376456305676,
-                lng: 20.919047105253416
+                lat: 52.16379517815583,
+                lng: 21.210987653919734
             },
             name: ["Punkt geo 4"],
             nextStep: '4.2'
@@ -87,8 +87,8 @@ export const SCENARIO: GameScenario = {
             id: '5.1',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 52.15376456305676,
-                lng: 20.919047105253416
+                lat: 52.15935776350059,
+                lng: 21.208431439628814
             },
             name: ["Punkt geo 5"],
             nextStep: '5.2'
@@ -103,8 +103,8 @@ export const SCENARIO: GameScenario = {
             id: '6.1',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 52.15376456305676,
-                lng: 20.919047105253416
+                lat: 52.16211034733332,
+                lng: 21.21154192886253
             },
             name: ["Punkt geo 6"],
             nextStep: '6.2'
@@ -128,8 +128,8 @@ export const SCENARIO: GameScenario = {
             id: '8.1',
             type: GAME_STEP_TYPE.GEO_STEP,
             position:{ 
-                lat: 52.15057526976408,
-                lng: 20.915680744642703
+                lat: 52.16162878122313,
+                lng: 21.21137303357458
             },
             name: ["Punkt końcowy"],
             nextStep: '7.1'
