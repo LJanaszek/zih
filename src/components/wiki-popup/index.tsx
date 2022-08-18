@@ -13,7 +13,7 @@ type Props = React.PropsWithChildren<{
 
 const Container = styled.div`
     background: rgba(0,0,0,.8);
-
+    font-family:Gothic;
     margin: 0 auto;
 
     display: flex;
@@ -28,6 +28,7 @@ const Container = styled.div`
     height: 100vh;
     p{
         text-align: center;
+        margin:0
     }
     .innerpop {
 
@@ -41,7 +42,6 @@ const Container = styled.div`
             width: 100%;
             max-width: 700px;
             padding: 0 10%;
-            height: 500px;
 
 
             display: flex;
@@ -62,8 +62,11 @@ const Container = styled.div`
                 padding: .5em;
                 border-radius: 2em;
                 border: 6px solid var(--color3);
-
+                font-family: Gothic;
                 text-align: center;
+                margin:0 auto;
+                color: var(--color3);
+                text-transform: uppercase;
             }
         }
         // border: 1px solid var(--color3);
@@ -87,6 +90,9 @@ const Container = styled.div`
         padding:.5em;
         border-color: var(--color3);
         color: var(--color3);
+        margin-bottom: 2em;
+        margin-top:1em;
+        font-family: Gothic;
     }
     .head{
         background: var(--color3);
@@ -97,12 +103,13 @@ const Container = styled.div`
     }
     .headimg{
         position: relative;
-        top:32%;
-        height: 40%;
+        top:20%;
+        height: 60%;
         margin: 0 auto;
         vertical-align: middle;
     }
     h2{
+        font-family: Gothic;
         color: var(--color3);
     }
     .error{

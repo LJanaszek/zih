@@ -16,7 +16,7 @@ const ButtonStyle = createGlobalStyle`
         text-decoration: none;
 
         font-size: 16pt;
-        font-family: DidactGothic-Regular;
+        font-family: Gothic;
 
         text-align: center;
         box-sizing: border-box;
