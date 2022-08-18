@@ -24,7 +24,7 @@
       local('Gothic'),
       url('DidactGothic-Regular.otf')
       format('opentype');
-    }    
+    }
 html, body, div, h1 {
     margin: 0;
     padding: 0;
@@ -39,7 +39,7 @@ html {
 
 body {
     background: var(--color3);
-    
+
 }
 
 #root {
@@ -125,6 +125,4 @@ p {
         font-size: 16pt;
         width: 60%;
     }
-    
-
 }
