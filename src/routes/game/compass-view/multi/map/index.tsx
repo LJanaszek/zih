@@ -1,9 +1,16 @@
-import { useCallback, useEffect, useRef } from "react"
+import { PropsWithChildren, useCallback, useEffect, useRef } from "react"
 import styled from "styled-components";
 import App from "./pixi-app/app";
 import WebFonts from 'webfontloader';
 
-type Props = {}
+type Props = {
+    onPointerClicked(id: string): void;
+    points: {
+        active: string[],
+        inactive: string[]
+    }
+
+}
 
 const Container = styled.div`
     position: absolute;
@@ -19,7 +26,7 @@ const Container = styled.div`
 
 const widgetRatio = 1.35;
 
-const MapComponent: React.FC<Props> = () => {
+export default function MapComponent({ onPointerClicked, points }: PropsWithChildren<Props>) {
     const widgetContainerRef = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const appRef = useRef<App>();
@@ -52,6 +59,8 @@ const MapComponent: React.FC<Props> = () => {
 
         const app = new App({
             assetsPath: '/',
+            onPointerClicked,
+            points
         });
 
         appRef.current = app;
@@ -70,6 +79,13 @@ const MapComponent: React.FC<Props> = () => {
             appRef.current = undefined;
         }
     }, [onResize]);
+
+    useEffect(() => {
+        console.log('new POints!', points, appRef.current);
+        if (appRef.current) {
+            appRef.current.setPoints(points.active, points.inactive);
+        }
+    }, [points]);
 
     useEffect(() => {
         window.addEventListener('resize', onResize);
@@ -92,5 +108,3 @@ const MapComponent: React.FC<Props> = () => {
 
     </Container>
 }
-
-export default MapComponent;

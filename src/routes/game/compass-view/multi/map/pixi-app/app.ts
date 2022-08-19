@@ -3,7 +3,12 @@ import GameScreen from './screen';
 import loadSprites from './utils/load-sprites';
 
 type AppConfig = {
-    assetsPath: string
+    assetsPath: string,
+    onPointerClicked(id: string): void;
+    points: {
+        active: string[],
+        inactive: string[]
+    }
 }
 
 export const MAP_WIDTH = 687;
@@ -17,6 +22,8 @@ export default class App extends PIXI.Application {
             backgroundColor: 0xDFD7CD,
             antialias: true
         });
+
+        console.log('APP INIT', config);
 
         this.renderer.plugins.interaction.autoPreventDefault = false;
         this.renderer.view.style.touchAction = 'auto';
@@ -38,7 +45,13 @@ export default class App extends PIXI.Application {
     private initApp() {
         this.gameScreen = new GameScreen(this);
 
+        this.gameScreen.on('pointer-clicked', (id) => {
+            this.config.onPointerClicked(id);
+        })
+
         this.stage.addChild(this.gameScreen);
+
+        this.gameScreen.setPoints(this.config.points.active, this.config.points.inactive);
 
         this.onResize();
     }
@@ -78,6 +91,10 @@ export default class App extends PIXI.Application {
 
     public destroy(x: boolean) {
         super.destroy(x);
+    }
+
+    setPoints(active: string[], inactive: string[]) {
+        this.gameScreen?.setPoints(active, inactive);
     }
 }
 

@@ -59,11 +59,11 @@ export default function MultiPointCompassView({ stepId }: { stepId: string }) {
     const { showDebug } = useConfigModuleState();
     const [{ step, noCompletedPoints, completedPoints, selectedStep, openDrawer }, reducer] = useMultiGeoViewData(stepId);
 
-    return <>
+    return <GeoModuleProvider>
         <FillScreenWithHeader>
             <ScrollToMe trigger={step?.id} behavior="smooth" />
             <MapScreenContainer>
-                {step && <GeoModuleProvider>
+                {step && <>
                     <div className="map-wrapper">
                         <MultiPointCompassViewContent geoSteps={noCompletedPoints} onPointClicked={(id: string) => {
                             reducer({
@@ -80,12 +80,12 @@ export default function MultiPointCompassView({ stepId }: { stepId: string }) {
                     <div className="drawer">
                         <GeoPointDrawer step={selectedStep} isOpen={openDrawer} onToggleClicked={() => reducer({ type: 'toggleDrawer' })} />
                     </div>
-                </GeoModuleProvider>}
+                </>}
                 {!step && <GameErrorPage />}
             </MapScreenContainer>
         </FillScreenWithHeader>
         {showDebug && <CompassDebugTools />}
-    </>
+    </GeoModuleProvider>
 }
 
 function useMultiGeoViewData(stepId: string): [ScreenState, (action: ScreenAction) => void] {
@@ -109,11 +109,11 @@ function useMultiGeoViewData(stepId: string): [ScreenState, (action: ScreenActio
         }
     }, [completedPoints, step, finishStep]);
 
-    return useReducer((state: ScreenState, action: ScreenAction) => {
+    const [state, reducer] = useReducer((state: Pick<ScreenState, 'selectedStep' | 'openDrawer'>, action: ScreenAction) => {
 
         switch (action.type) {
             case 'selectPoint':
-                const point = state.noCompletedPoints.find(p => p.id === action.payload?.pointId);
+                const point = noCompletedPoints.find(p => p.id === action.payload?.pointId);
 
                 if (point) {
                     return {
@@ -133,10 +133,14 @@ function useMultiGeoViewData(stepId: string): [ScreenState, (action: ScreenActio
 
         return state;
     }, {
-        step,
-        noCompletedPoints,
-        completedPoints,
         selectedStep: null,
         openDrawer: false
     });
+
+    return [{
+        ...state,
+        step,
+        noCompletedPoints,
+        completedPoints,
+    }, reducer]
 }

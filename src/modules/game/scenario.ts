@@ -26,7 +26,7 @@ export const SCENARIO: GameScenario = {
                 lng: 21.21937101781457
             },
             name: ['Punkt geo 1'],
-            nextStep: '1.2'
+            nextStep: '0.2'
         },
         {
             id: '1.2',
@@ -42,7 +42,7 @@ export const SCENARIO: GameScenario = {
                 lng: 21.223030642885533
             },
             name: ["Punkt geo 2"],
-            nextStep: '2.2'
+            nextStep: '0.2'
         },
         {
             id: '2.2',
@@ -58,7 +58,7 @@ export const SCENARIO: GameScenario = {
                 lng: 21.216436812891743
             },
             name: ["Punkt geo 3"],
-            nextStep: '3.2'
+            nextStep: '0.2'
         },
         {
             id: '3.2',
@@ -75,7 +75,7 @@ export const SCENARIO: GameScenario = {
                 lng: 21.210987653919734
             },
             name: ["Punkt geo 4"],
-            nextStep: '4.2'
+            nextStep: '0.2'
         },
         {
             id: '4.2',
@@ -91,7 +91,7 @@ export const SCENARIO: GameScenario = {
                 lng: 21.208431439628814
             },
             name: ["Punkt geo 5"],
-            nextStep: '5.2'
+            nextStep: '0.2'
         },
         {
             id: '5.2',
@@ -107,7 +107,7 @@ export const SCENARIO: GameScenario = {
                 lng: 21.21154192886253
             },
             name: ["Punkt geo 6"],
-            nextStep: '6.2'
+            nextStep: '0.2'
         },
         {
             id: '6.2',

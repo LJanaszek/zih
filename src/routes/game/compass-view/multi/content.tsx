@@ -35,7 +35,10 @@ export default function MultiPointCompassViewContent({ geoSteps, onPointClicked 
         </Box>}
         {showAccuracyError && <AccuracyError />}
 
-        {showGeoInfo && <MapComponent />}
+        {showGeoInfo && <MapComponent onPointerClicked={onPointClicked} points={{
+            active: geoSteps.map(g => g.id),
+            inactive: []
+        }} />}
 
         {/* {showGeoInfo && points.map(point => {
             // return <GeoInfo key={point.point.id} bering={point.bearing} name={point.point.name} distance={point.distance} />

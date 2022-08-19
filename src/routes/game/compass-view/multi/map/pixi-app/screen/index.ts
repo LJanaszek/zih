@@ -4,9 +4,11 @@ import { MAP } from '../data';
 
 export default class GameScreen extends PIXI.Container implements IScreen {
 
-    errorLayer = new PIXI.Container();
+    activePoints: string[] = [];
+    inactivePoints: string[] = [];
 
-    findedBirds: string[] = [];
+    points: PIXI.Container[] = [];
+
 
     constructor(private app: PIXI.Application) {
         super();
@@ -14,8 +16,6 @@ export default class GameScreen extends PIXI.Container implements IScreen {
         this.sortableChildren = true;
 
         this.initMap();
-
-
     }
 
     private initMap() {
@@ -23,13 +23,32 @@ export default class GameScreen extends PIXI.Container implements IScreen {
 
         this.addChild(bg);
 
-        MAP.POINTS.forEach((p) => {
-            const point = PIXI.Sprite.from('pinezka');
+        this.updatePoints();
+    }
 
-            point.position.set(p.position.x, p.position.y);
+    private updatePoints() {
+        console.log('updatePoints', this.activePoints);
+        this.points.forEach(p => p.destroy());
+        this.points.length = 0;
 
-            this.addChild(point);
-        });
+        MAP.POINTS
+            .filter(p => this.activePoints.includes(p.id))
+            .forEach((p) => {
+                const point = PIXI.Sprite.from('pinezka');
+
+                point.position.set(p.position.x, p.position.y);
+
+                this.addChild(point);
+
+                point.interactive = true;
+                point.buttonMode = true;
+
+                point.on('pointerdown', () => {
+                    this.emit('pointer-clicked', p.id);
+                });
+
+                this.points.push(point);
+            });
     }
 
     isValid(): boolean {
@@ -37,5 +56,14 @@ export default class GameScreen extends PIXI.Container implements IScreen {
     }
     reset(): void {
         throw new Error('Method not implemented.');
+    }
+
+
+
+    setPoints(active: string[], inactive: string[]) {
+        this.activePoints = active;
+        this.inactivePoints = inactive;
+
+        this.updatePoints();
     }
 }
