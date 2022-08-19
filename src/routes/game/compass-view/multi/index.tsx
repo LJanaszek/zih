@@ -40,6 +40,8 @@ const MapScreenContainer = styled.div`
 
     .map-wrapper {
         flex-grow: 1;
+        position: relative;
+        margin: 1em;
     }
 
     .drawer {
@@ -73,7 +75,7 @@ export default function MultiPointCompassView({ stepId }: { stepId: string }) {
                         }} />
                     </div>
                     <div className="buttons">
-
+                        <button className="button">Pomoc</button>
                     </div>
                     <div className="drawer">
                         <GeoPointDrawer step={selectedStep} isOpen={openDrawer} onToggleClicked={() => reducer({ type: 'toggleDrawer' })} />
