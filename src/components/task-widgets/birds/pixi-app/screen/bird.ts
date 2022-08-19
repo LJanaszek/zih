@@ -14,8 +14,6 @@ export default class Bird extends PIXI.Container {
         this.interactive = true;
 
         this.on('pointerdown', () => {
-            console.log('kliklem ptaka!');
-
             this.emit('bird-clicked');
         })
     }
