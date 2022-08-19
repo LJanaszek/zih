@@ -22,7 +22,7 @@ export default class LabelItem extends PIXI.Container {
 
         this.bg = new PIXI.Graphics();
 
-        this.bg.beginFill(0xDFD7CD, .8);
+        this.bg.beginFill(0xDFD7CD, .0);
         this.bg.drawShape(containerRect);
 
         this.addChild(this.bg);
@@ -34,7 +34,7 @@ export default class LabelItem extends PIXI.Container {
         this.text.anchor.set(.5);
         this.text.style.fontSize = '45px';
         this.text.style.fontFamily = 'Gothic'
-        this.text.style.fill = 0x666699;
+        this.text.style.fill =0x666699;
 
 
         this.addChild(this.text);
