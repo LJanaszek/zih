@@ -1,0 +1,37 @@
+import styled from "styled-components"
+
+const Container = styled.header`
+
+    text-align: center;
+    vertical-align:middle;
+    position: relative;
+    margin: 0 auto;
+    margin-top:1em;
+    font-size: 10px;
+    width: 100%;
+
+    h1{
+        display: inline-block;
+        border-radius: .5em;
+        padding: .2em .5em;
+        background-color: var(--color3);
+        margin:0 auto;
+        letter-spacing: 1px;
+        font-family: Bristol;
+        color: var(--color2);
+        position: relative;
+
+        line-height: 1em;
+        font-size: 1em;
+    }
+
+    .shultz{
+        color: var(--color1);
+    }
+`;
+
+export default function SmallPageHeader() {
+    return <Container>
+        <h1>Z <span className="shultz">Schulzem</span> przez Falenicę</h1>
+    </Container>
+}
