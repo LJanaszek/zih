@@ -1,4 +1,4 @@
-import  {useNavigate}  from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { getGamePageRoute } from "../../../routes";
 import { useCallback, useState } from "react";
 import Box from "../../../../components/layout/box";
@@ -70,7 +70,7 @@ type Props = {
     onComplete(): void
 }
 
-export default function TaskIntro({onComplete}: Props) {
+export default function TaskIntro({ onComplete }: Props) {
 
     const [showGPSInfo, setShowGPSInfo] = useState(false);
     const navigate = useNavigate()
@@ -80,24 +80,24 @@ export default function TaskIntro({onComplete}: Props) {
 
     useRemoveFooter()
     return <Container>
-    <Box>
-        <div className="content">
-            <img className="pointer" src={pointer} alt="" />
-        <p className="title">"ul.Krokodyli" - Walcownicza daw. Handlowa</p>
-        <img className="taskImg" src={Taskimg} alt="" />
-        <div className="tekst">
-            <h2>Szukaj ukrytego</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus alias quia asperiores natus iusto, pariatur ab provident officiis veniam culpa, distinctio consequatur accusamus, porro autem itaque omnis et? Repellendus, velit?</p>
-        </div>
-        <button className="startTask" onClick={onComplete}>Uruchom zadanie <i className="buttonIcon"/></button>
-        <button className="help" onClick={() => { setShowGPSInfo(true) }}>Pomoc <i className="helpimg"/></button>
-        </div>
-        {showGPSInfo && <Popup onClick={()=>{setShowGPSInfo(false)}}>
-            <p>
-            Gra wykorzystuje technologię rozszerzonej rzeczywistości. <br/><br/>
-            Jeśli chcesz wykonać to zadanie, prosimy, wyraź zgodę na dostęp do kamery.
-            </p>
-        </Popup>}
-    </Box>
+        <Box>
+            <div className="content">
+                <img className="pointer" src={pointer} alt="" />
+                <p className="title">"ul.Krokodyli" - Walcownicza daw. Handlowa</p>
+                <img className="taskImg" src={Taskimg} alt="" />
+                <div className="tekst">
+                    <h2>Szukaj ukrytego</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus alias quia asperiores natus iusto, pariatur ab provident officiis veniam culpa, distinctio consequatur accusamus, porro autem itaque omnis et? Repellendus, velit?</p>
+                </div>
+                <button className="startTask" onClick={onComplete}>Uruchom zadanie <i className="buttonIcon" /></button>
+                <button className="help" onClick={() => { setShowGPSInfo(true) }}>Pomoc <i className="helpimg" /></button>
+            </div>
+            {showGPSInfo && <Popup onClick={() => { setShowGPSInfo(false) }}>
+                <p>
+                    Gra wykorzystuje technologię rozszerzonej rzeczywistości. <br /><br />
+                    Jeśli chcesz wykonać to zadanie, prosimy, wyraź zgodę na dostęp do kamery.
+                </p>
+            </Popup>}
+        </Box>
     </Container>
 }
