@@ -9,7 +9,12 @@ import GeoInfo from "../geo-info";
 const Container = styled.div`
 `
 
-export default function MultiPointCompassViewContent({ geoSteps }: { geoSteps: GeoStep[] }) {
+type Props = {
+    onPointClicked(id: string): void,
+    geoSteps: GeoStep[]
+}
+
+export default function MultiPointCompassViewContent({ geoSteps, onPointClicked }: Props) {
 
     const { isAccuracyOk, error, points } = useCompassView(geoSteps);
 
@@ -24,7 +29,8 @@ export default function MultiPointCompassViewContent({ geoSteps }: { geoSteps: G
         </Box>}
         {showAccuracyError && <AccuracyError />}
         {showGeoInfo && points.map(point => {
-            return <GeoInfo key={point.point.id} bering={point.bearing} name={point.point.name} distance={point.distance} />
+            // return <GeoInfo key={point.point.id} bering={point.bearing} name={point.point.name} distance={point.distance} />
+            return <button onClick={() => {onPointClicked(point.point.id)}}>{point.point.name}</button>
         })
 
         }
