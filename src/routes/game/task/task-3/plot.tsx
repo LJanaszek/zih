@@ -8,7 +8,7 @@ const Container = styled.div`
 position: absolute;
 top:0;
 width:90%;
-height:100%;
+min-height:100%;
 background:var(--color3);
 text-align: center;
 #root{
@@ -38,7 +38,7 @@ header{
         width:60%;
         padding:0.8em 0.6em;
         border-radius:45px;
-        
+
     }
 }
 h1{
@@ -87,7 +87,7 @@ h1{
             padding:.3em;
         }
     }
-    
+
 }
 .perazja{
     width: 20%;
@@ -104,7 +104,7 @@ h1{
 .pointer{
     margin-top:2em;
     width:10%;
-}   
+}
 .back-image{
     background: url(${back}) 100% 100% no-repeat;
 }
@@ -132,7 +132,7 @@ export default function TaskPlot({onComplete}: Props) {
         <div className="content">
         <img className="pointer" src={pointer} alt="" />
         <p className="adres">Sanatorium Dziecięce<br/>im. W. Medema - Lokalna 51</p>
-        
+
         <p className="congrat">Zadanie wykonane! <br/> znaleźliście karteczkę z literą:</p>
         <img className="perazja" src={Rimg} alt="P" />
         </div>
