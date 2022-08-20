@@ -7,16 +7,13 @@ import pointer from "../img/pointer.svg";
 import Taskimg from "../img/taskImages/task1.svg";
 import startTask from "../img/startTask.svg";
 import useRemoveFooter from "../../../../modules/main/hooks/use-remove-footer";
-import help from "../img/pomoc.svg";
 import Popup from "../../../../components/elements/task-popup";
 const Container = styled.div`
-*{
-    font-family: Gothic;
-}
+
 .content{
-width:100%;
-background-color:var(--color2);
-text-align:center;
+    width:100%;
+    background-color:var(--color2);
+    text-align:center;
 }
 .pointer{
     width:10%;
@@ -38,31 +35,6 @@ text-align:center;
 }
 .title{
     color:var(--color1);
-}
-.startTask,.help{
-    margin: auto;
-    padding: .5em 2em;
-    border:none;
-    border-radius:50px;
-    background-color: var(--color3);
-    color:white;
-    font-size:22px;
-    margin-top:2em;
-    display:flex;
-}
-.buttonIcon{
-    background: url(${startTask})100% 100% no-repeat;
-    display:flex;
-    margin: auto;
-    margin-left:.5em;
-    padding:.6em;
-}
-.helpimg{
-    background:url(${help})100% 100% no-repeat;
-    display:flex;
-    margin: auto;
-    margin-left:.5em;
-    padding:.6em;
 }
 
 `
@@ -89,8 +61,8 @@ export default function TaskIntro({ onComplete }: Props) {
                     <h2>Szukaj ukrytego</h2>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus alias quia asperiores natus iusto, pariatur ab provident officiis veniam culpa, distinctio consequatur accusamus, porro autem itaque omnis et? Repellendus, velit?</p>
                 </div>
-                <button className="startTask" onClick={onComplete}>Uruchom zadanie <i className="buttonIcon" /></button>
-                <button className="help" onClick={() => { setShowGPSInfo(true) }}>Pomoc <i className="helpimg" /></button>
+                <button className="button" onClick={onComplete}>Uruchom zadanie <i className="icon help" /></button>
+                <button className="button" onClick={() => { setShowGPSInfo(true) }}>Pomoc <i className="icon help" /></button>
             </div>
             {showGPSInfo && <Popup onClick={() => { setShowGPSInfo(false) }}>
                 <p>

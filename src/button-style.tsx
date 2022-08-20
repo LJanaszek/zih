@@ -5,6 +5,7 @@ import GameStartIconSrc from './assets/icons/uruchom.svg';
 import GameContinueIconSrc from './assets/icons/kontynuujGre.svg';
 import KnowledgeIconSrc from './assets/icons/bazaWiedzy.svg';
 import HelpIconSrc from './assets/icons/help.svg';
+import StartTaskIconSrc from './assets/icons/startTask.svg';
 
 // eslint-disable-next-line
 import MapIconSrc from '!file-loader!./assets/icons/mapa.svg';
@@ -77,6 +78,10 @@ const ButtonStyle = createGlobalStyle`
 
             &.help {
                 background-image: url(${HelpIconSrc})
+            }
+
+            &.start-task {
+                background-image: url(${StartTaskIconSrc})
             }
         }
     }

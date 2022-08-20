@@ -2,7 +2,6 @@ import Box from "../../../../components/layout/box";
 import styled from "styled-components";
 import pointer from "../img/pointer.svg"
 import Taskimg from "../img/taskImages/task5.svg"
-import startTask from "../img/startTask.svg"
 import useRemoveFooter from "../../../../modules/main/hooks/use-remove-footer";
 const Container = styled.div`
 *{
@@ -33,24 +32,6 @@ text-align:center;
 }
 .title{
     color:var(--color1);
-}
-button{
-    margin: auto;
-    padding: .5em 2em;
-    border:none;
-    border-radius:50px;
-    background-color: var(--color3);
-    color:white;
-    font-size:22px;
-    margin-top:2em;
-    display:flex;
-}
-.buttonIcon{
-    background: url(${startTask})100% 100% no-repeat;
-    display:flex;
-    margin: auto;
-    margin-left:.5em;
-    padding:.6em;
 }
 `
 type Props = {
