@@ -96,24 +96,8 @@ nav{
         padding:0.6em;
 
   }
-    .button{
-        width:70%;
-        margin-right:0;
-    }
 
   }
-  @media (max-width: 490px) {
-  .button{
-            font-size: 16px;
-            width:80%;
-            line-height:2.3em;
-  }
-        .icon{
-            height:1rem;
-        }
-  }
-  #knowledge:
-  margin-right: null;
 `;
 
 export default function HomePage() {

@@ -29,6 +29,7 @@ const ButtonStyle = createGlobalStyle`
         box-sizing: border-box;
 
         border: none;
+        border-collapse: collapse;
         cursor: pointer;
 
         &:hover {
@@ -37,11 +38,6 @@ const ButtonStyle = createGlobalStyle`
 
         &:focus {
             outline: 3px black solid;
-        }
-
-        @media (max-width: 1200px) {
-            font-size: 16pt;
-            width: 60%;
         }
 
         i.icon {
@@ -60,6 +56,7 @@ const ButtonStyle = createGlobalStyle`
                 background-image: url(${GameStartIconSrc})
             }
 
+            &.next,
             &.game-continue {
                 background-image: url(${GameContinueIconSrc})
             }
