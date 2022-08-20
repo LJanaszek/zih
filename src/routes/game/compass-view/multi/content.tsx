@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import styled from "styled-components";
 import Box from "../../../../components/layout/box";
 import { GeoStep } from "../../../../modules/game/types";
@@ -28,6 +29,13 @@ export default function MultiPointCompassViewContent({ geoSteps, onPointClicked,
     const showAccuracyError = !isAccuracyOk && !error;
     const showGeoInfo = isAccuracyOk && !error;
 
+    const points = useMemo(() => {
+        return {
+                active: geoSteps.map(g => g.id),
+                inactive: []
+            }
+    }, [geoSteps])
+
     return <Container>
         {showPermitionError && <Box>
             <h3>Błąd uprawnień.</h3>
@@ -37,10 +45,7 @@ export default function MultiPointCompassViewContent({ geoSteps, onPointClicked,
 
         {showGeoInfo && <MapComponent
             onPointerClicked={onPointClicked}
-            points={{
-                active: geoSteps.map(g => g.id),
-                inactive: []
-            }}
+            points={points}
             activePoint={activePoint}
         />}
 

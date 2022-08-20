@@ -1,4 +1,4 @@
-import { PropsWithChildren, useEffect, useRef } from "react"
+import { PropsWithChildren, useEffect, useRef, useState } from "react"
 import styled from "styled-components";
 import App from "./pixi-app/app";
 
@@ -28,16 +28,21 @@ export default function MapComponent({ onPointerClicked, points, activePoint }: 
     const containerRef = useRef<HTMLDivElement>(null);
     const appRef = useRef<App>();
 
+    const [appReady, setAppReady] = useState(false);
+
     useEffect(() => {
         if (appRef.current) return;
 
         const app = new App({
             assetsPath: '/',
-            onPointerClicked,
-            points
+            onPointerClicked
         });
 
         appRef.current = app;
+
+        app.stage.on('ready', () => {
+            setAppReady(true);
+        });
 
 
         if (widgetContainerRef.current) {
@@ -45,24 +50,23 @@ export default function MapComponent({ onPointerClicked, points, activePoint }: 
             widgetContainerRef.current.appendChild(app.view);
         }
 
-
         return () => {
             appRef.current?.destroy(true);
             appRef.current = undefined;
         }
-    }, [onPointerClicked, points]);
+    }, [onPointerClicked, setAppReady]);
 
     useEffect(() => {
-        if (appRef.current) {
+        if (appRef.current && appReady) {
             appRef.current.setPoints(points.active, points.inactive);
         }
-    }, [points]);
+    }, [points, appReady]);
 
     useEffect(() => {
-        if (appRef.current) {
+        if (appRef.current && appReady) {
             appRef.current.setActivePoint(activePoint || null);
         }
-    }, [activePoint]);
+    }, [activePoint, appReady]);
 
     return <Container ref={containerRef}>
         <div ref={widgetContainerRef} style={{

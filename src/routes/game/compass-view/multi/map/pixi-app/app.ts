@@ -5,10 +5,6 @@ import loadSprites from './utils/load-sprites';
 type AppConfig = {
     assetsPath: string,
     onPointerClicked(id: string): void;
-    points: {
-        active: string[],
-        inactive: string[]
-    }
 }
 
 export const MAP_WIDTH = 687;
@@ -51,7 +47,7 @@ export default class App extends PIXI.Application {
 
         this.stage.addChild(this.gameScreen);
 
-        this.gameScreen.setPoints(this.config.points.active, this.config.points.inactive);
+        this.stage.emit('ready');
 
         this.onResize();
     }
