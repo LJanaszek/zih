@@ -1,4 +1,4 @@
-import { PropsWithChildren, useCallback, useEffect, useRef } from "react"
+import { PropsWithChildren, useEffect, useRef } from "react"
 import styled from "styled-components";
 import App from "./pixi-app/app";
 
@@ -22,8 +22,6 @@ const Container = styled.div`
     justify-content: stretch;
     align-items: stretch;
 `;
-
-const widgetRatio = 1.35;
 
 export default function MapComponent({ onPointerClicked, points, activePoint }: PropsWithChildren<Props>) {
     const widgetContainerRef = useRef<HTMLDivElement>(null);
@@ -52,17 +50,15 @@ export default function MapComponent({ onPointerClicked, points, activePoint }: 
             appRef.current?.destroy(true);
             appRef.current = undefined;
         }
-    }, []);
+    }, [onPointerClicked, points]);
 
     useEffect(() => {
-        console.log('new Points!', points, appRef.current);
         if (appRef.current) {
             appRef.current.setPoints(points.active, points.inactive);
         }
     }, [points]);
 
     useEffect(() => {
-        console.log('new activePoint!', points, appRef.current);
         if (appRef.current) {
             appRef.current.setActivePoint(activePoint || null);
         }

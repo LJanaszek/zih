@@ -49,7 +49,7 @@ export default function GeoPointDrawer({ step, isOpen, onToggleClicked }: Props)
 
 
 function StepInfo({ step }: { step: GeoStep }) {
-    const { isAccuracyOk, error, points } = useCompassView([step]);
+    const { points } = useCompassView([step]);
 
     const distance = points[0].distance | 0;
 

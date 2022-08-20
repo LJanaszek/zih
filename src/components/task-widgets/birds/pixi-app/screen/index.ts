@@ -1,6 +1,6 @@
 import * as PIXI from 'pixi.js';
 import { BirdTaskState } from '../..';
-import { APP_HEIGHT, APP_WIDTH, IScreen } from "../app";
+import { IScreen } from "../app";
 import { SCREEN } from '../data';
 import Bird from './bird';
 

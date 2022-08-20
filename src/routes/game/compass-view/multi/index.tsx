@@ -1,4 +1,3 @@
-import { State } from "pixi.js";
 import { useEffect, useReducer, useState } from "react";
 import styled from "styled-components";
 import CompassDebugTools from "../../../../components/dev/compass-debug-tools";
@@ -10,7 +9,6 @@ import useFinishGameStep from "../../../../modules/game/hooks/use-finish-game-st
 import useMultiGeoStep from "../../../../modules/game/hooks/use-multi-geo-step";
 import useScenario from "../../../../modules/game/hooks/use-scenario";
 import { GAME_STEP_TYPE, GeoStep, MultiGeoStep } from "../../../../modules/game/types";
-import useCompassView from "../../../../modules/game/view-hooks/use-compass-view";
 import { GeoModuleProvider } from "../../../../modules/geo";
 import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header";
 import ScrollToMe from "../../../../utils/widgets/scroll-to-me";
@@ -58,7 +56,7 @@ export default function MultiPointCompassView({ stepId }: { stepId: string }) {
     useRemoveHeader();
 
     const { showDebug } = useConfigModuleState();
-    const [{ step, noCompletedPoints, completedPoints, selectedStep, openDrawer }, reducer] = useMultiGeoViewData(stepId);
+    const [{ step, noCompletedPoints, selectedStep, openDrawer }, reducer] = useMultiGeoViewData(stepId);
     const [showHelp, setShowHelp] = useState(false);
 
     return <GeoModuleProvider>

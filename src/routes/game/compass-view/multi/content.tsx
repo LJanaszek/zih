@@ -22,7 +22,7 @@ type Props = {
 
 export default function MultiPointCompassViewContent({ geoSteps, onPointClicked, activePoint }: Props) {
 
-    const { isAccuracyOk, error, points } = useCompassView(geoSteps);
+    const { isAccuracyOk, error } = useCompassView(geoSteps);
 
     const showPermitionError = error?.type === GEO_MODULE_ERROR.PERMISSION_DENIED;
     const showAccuracyError = !isAccuracyOk && !error;
