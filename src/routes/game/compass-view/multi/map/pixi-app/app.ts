@@ -16,6 +16,8 @@ export default class App extends PIXI.Application {
         super({
             backgroundAlpha: 1,
             backgroundColor: 0xDFD7CD,
+            width: MAP_WIDTH,
+            height: MAP_HEIGHT,
             antialias: true
         });
 

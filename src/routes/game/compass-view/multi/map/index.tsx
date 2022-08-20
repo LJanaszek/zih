@@ -44,9 +44,7 @@ export default function MapComponent({ onPointerClicked, points, activePoint }: 
             setAppReady(true);
         });
 
-
         if (widgetContainerRef.current) {
-            app.resizeTo = widgetContainerRef.current;
             widgetContainerRef.current.appendChild(app.view);
         }
 
