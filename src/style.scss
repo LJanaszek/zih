@@ -7,24 +7,25 @@
     --color4: #84CE55;
     --color5: #434357;
 }
-@font-face {
 
+@font-face {
     font-family: 'Bristol';
     src: url('Bristol.otf');
     src:
       local('Bristol'),
       url('Bristol.otf')
       format('opentype');
-    }
-@font-face {
+}
 
+@font-face {
     font-family: 'Gothic';
     src: url('DidactGothic-Regular.otf');
     src:
       local('Gothic'),
       url('DidactGothic-Regular.otf')
       format('opentype');
-    }
+}
+
 html, body, div, h1 {
     margin: 0;
     padding: 0;
@@ -49,13 +50,18 @@ body {
     align-items: stretch;
     height: auto;
     width: 90%;
+    max-width: 1400px;
+    min-width: 320px;
     margin: 0 auto;
     background: var(--color2);
+
     & > main {
         flex: 1 1 auto;
     }
+
     @media (max-width: 1560px){
         width: 100%;
+        max-width: auto;
     }
 }
 

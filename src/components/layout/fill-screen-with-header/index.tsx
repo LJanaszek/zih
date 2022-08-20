@@ -9,6 +9,11 @@ const Container = styled.div`
     align-items: stretch;
     flex-direction: column;
 
+    .header {
+        display: flex;
+        justify-content: center;
+    }
+
     .content {
         flex-grow: 1;
         flex-shrink: 1;
