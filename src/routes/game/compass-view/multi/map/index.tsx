@@ -1,7 +1,6 @@
 import { PropsWithChildren, useCallback, useEffect, useRef } from "react"
 import styled from "styled-components";
 import App from "./pixi-app/app";
-import WebFonts from 'webfontloader';
 
 type Props = {
     onPointerClicked(id: string): void;
@@ -9,7 +8,7 @@ type Props = {
         active: string[],
         inactive: string[]
     }
-
+    activePoint?: string
 }
 
 const Container = styled.div`
@@ -26,7 +25,7 @@ const Container = styled.div`
 
 const widgetRatio = 1.35;
 
-export default function MapComponent({ onPointerClicked, points }: PropsWithChildren<Props>) {
+export default function MapComponent({ onPointerClicked, points, activePoint }: PropsWithChildren<Props>) {
     const widgetContainerRef = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const appRef = useRef<App>();
@@ -81,11 +80,18 @@ export default function MapComponent({ onPointerClicked, points }: PropsWithChil
     }, [onResize]);
 
     useEffect(() => {
-        console.log('new POints!', points, appRef.current);
+        console.log('new Points!', points, appRef.current);
         if (appRef.current) {
             appRef.current.setPoints(points.active, points.inactive);
         }
     }, [points]);
+
+    useEffect(() => {
+        console.log('new activePoint!', points, appRef.current);
+        if (appRef.current) {
+            appRef.current.setActivePoint(activePoint || null);
+        }
+    }, [activePoint]);
 
     useEffect(() => {
         window.addEventListener('resize', onResize);

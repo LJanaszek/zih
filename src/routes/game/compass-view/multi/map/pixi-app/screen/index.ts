@@ -1,6 +1,9 @@
+import { GlowFilter } from '@pixi/filter-glow';
 import * as PIXI from 'pixi.js';
 import { IScreen } from "../app";
 import { MAP } from '../data';
+
+const glowFilter = new GlowFilter({ distance: 15, outerStrength: 3 })
 
 export default class GameScreen extends PIXI.Container implements IScreen {
 
@@ -8,6 +11,7 @@ export default class GameScreen extends PIXI.Container implements IScreen {
     inactivePoints: string[] = [];
 
     points: PIXI.Container[] = [];
+    activePointId: string | null = null;
 
 
     constructor(private app: PIXI.Application) {
@@ -47,6 +51,12 @@ export default class GameScreen extends PIXI.Container implements IScreen {
                     this.emit('pointer-clicked', p.id);
                 });
 
+                if (p.id === this.activePointId) {
+                    point.filters = [
+                        glowFilter
+                    ]
+                }
+
                 this.points.push(point);
             });
     }
@@ -64,6 +74,11 @@ export default class GameScreen extends PIXI.Container implements IScreen {
         this.activePoints = active;
         this.inactivePoints = inactive;
 
+        this.updatePoints();
+    }
+
+    setActivePoint(id: string | null) {
+        this.activePointId = id;
         this.updatePoints();
     }
 }

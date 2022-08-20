@@ -96,6 +96,10 @@ export default class App extends PIXI.Application {
     setPoints(active: string[], inactive: string[]) {
         this.gameScreen?.setPoints(active, inactive);
     }
+
+    setActivePoint(id: string | null) {
+        this.gameScreen?.setActivePoint(id);
+    }
 }
 
 

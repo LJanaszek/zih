@@ -17,10 +17,11 @@ const Container = styled.div`
 
 type Props = {
     onPointClicked(id: string): void,
-    geoSteps: GeoStep[]
+    geoSteps: GeoStep[],
+    activePoint?: string
 }
 
-export default function MultiPointCompassViewContent({ geoSteps, onPointClicked }: Props) {
+export default function MultiPointCompassViewContent({ geoSteps, onPointClicked, activePoint }: Props) {
 
     const { isAccuracyOk, error, points } = useCompassView(geoSteps);
 
@@ -35,10 +36,14 @@ export default function MultiPointCompassViewContent({ geoSteps, onPointClicked 
         </Box>}
         {showAccuracyError && <AccuracyError />}
 
-        {showGeoInfo && <MapComponent onPointerClicked={onPointClicked} points={{
-            active: geoSteps.map(g => g.id),
-            inactive: []
-        }} />}
+        {showGeoInfo && <MapComponent
+            onPointerClicked={onPointClicked}
+            points={{
+                active: geoSteps.map(g => g.id),
+                inactive: []
+            }}
+            activePoint={activePoint}
+        />}
 
         {/* {showGeoInfo && points.map(point => {
             // return <GeoInfo key={point.point.id} bering={point.bearing} name={point.point.name} distance={point.distance} />

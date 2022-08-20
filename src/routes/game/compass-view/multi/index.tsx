@@ -1,7 +1,8 @@
 import { State } from "pixi.js";
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import styled from "styled-components";
 import CompassDebugTools from "../../../../components/dev/compass-debug-tools";
+import Popup from "../../../../components/elements/popup";
 import FillScreenWithHeader from "../../../../components/layout/fill-screen-with-header";
 import { useConfigModuleState } from "../../../../modules/config";
 import { useGameModuleState } from "../../../../modules/game";
@@ -58,6 +59,7 @@ export default function MultiPointCompassView({ stepId }: { stepId: string }) {
 
     const { showDebug } = useConfigModuleState();
     const [{ step, noCompletedPoints, completedPoints, selectedStep, openDrawer }, reducer] = useMultiGeoViewData(stepId);
+    const [showHelp, setShowHelp] = useState(false);
 
     return <GeoModuleProvider>
         <FillScreenWithHeader>
@@ -65,7 +67,7 @@ export default function MultiPointCompassView({ stepId }: { stepId: string }) {
             <MapScreenContainer>
                 {step && <>
                     <div className="map-wrapper">
-                        <MultiPointCompassViewContent geoSteps={noCompletedPoints} onPointClicked={(id: string) => {
+                        <MultiPointCompassViewContent activePoint={selectedStep?.id} geoSteps={noCompletedPoints} onPointClicked={(id: string) => {
                             reducer({
                                 type: 'selectPoint',
                                 payload: {
@@ -75,7 +77,7 @@ export default function MultiPointCompassView({ stepId }: { stepId: string }) {
                         }} />
                     </div>
                     <div className="buttons">
-                        <button className="button">Pomoc</button>
+                        <button className="button" onClick={() => { setShowHelp(true) }}>Pomoc</button>
                     </div>
                     <div className="drawer">
                         <GeoPointDrawer step={selectedStep} isOpen={openDrawer} onToggleClicked={() => reducer({ type: 'toggleDrawer' })} />
@@ -84,6 +86,11 @@ export default function MultiPointCompassView({ stepId }: { stepId: string }) {
                 {!step && <GameErrorPage />}
             </MapScreenContainer>
         </FillScreenWithHeader>
+        {showHelp && <Popup onClick={() => { setShowHelp(false) }}>
+            <p>
+                Kliknij w pinezkę na mapie aby sprawdzić odległość dzielącą Cię w prostej linii od wybranej lokalizacji. Możesz dowolnie zmieniać wybór. Po dojściu do lokalizacji, automatycznie wczyta się związany z nią ekran gry.
+            </p>
+        </Popup>}
         {showDebug && <CompassDebugTools />}
     </GeoModuleProvider>
 }
