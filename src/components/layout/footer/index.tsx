@@ -26,7 +26,7 @@ const Container = styled.footer`
         padding:0;
         // width:80%;
     }
-    
+
     .logo1,.logo2{
         padding:1em 0em;
     }
@@ -45,7 +45,7 @@ const Container = styled.footer`
             margin:0 auto;
             margin-bottom: 0.5em;
         }
-        
+
     }
     .logo2{
         height: auto;
@@ -53,16 +53,16 @@ const Container = styled.footer`
         vertical-align:middle;
         width:40%;
         margin: 0 auto;
-        
+
         @media (max-width: 1560px) {
             // padding:2.5em;
             width:70%;
-            
+
         }
         @media(max-width: 950px){
             padding:0;
             width:100%;
-            height:40%; 
+            height:40%;
             margin:0 auto;
             margin-bottom: 0.5em;
         }
@@ -93,14 +93,14 @@ const Container = styled.footer`
             }
         }
     }
-    
+
 `;
 
 export default function PageFooter() {
     return <Container>
         <img className="logo1" src={logoFirst} alt="Brunon Schultz, artysta genialny"/>
         <div className="mkid">
-        <img className="logo2" src={logoSec} alt="Ministerstwo Kultury i Dziedzictwa Narodowego. Dofinansowano ze środków Ministra Kultury i DziedzictwaNarodowego pochodzących z Funduszu Promocji Kultury – państwowego funduszu celowego"/>
+        <img className="logo2" src={logoSec} alt="Ministerstwo Kultury i Dziedzictwa Narodowego."/>
         <p>Dofinansowano ze środków Ministra Kultury i Dziedzictwa Narodowego pochodzących z Funduszu Promocji Kultury – państwowego funduszu celowego</p>
         </div>
     </Container>
