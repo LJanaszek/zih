@@ -4,7 +4,6 @@ import { GeoStep } from "../../../../modules/game/types";
 import useCompassView from "../../../../modules/game/view-hooks/use-compass-view";
 import { GEO_MODULE_ERROR } from "../../../../modules/geo";
 import AccuracyError from "../accuracy-error";
-import GeoInfo from "../geo-info";
 import MapComponent from "./map";
 
 const Container = styled.div`
@@ -44,11 +43,6 @@ export default function MultiPointCompassViewContent({ geoSteps, onPointClicked,
             }}
             activePoint={activePoint}
         />}
-
-        {/* {showGeoInfo && points.map(point => {
-            // return <GeoInfo key={point.point.id} bering={point.bearing} name={point.point.name} distance={point.distance} />
-            return <button onClick={() => {onPointClicked(point.point.id)}}>{point.point.name}</button>
-        }) */}
 
 
     </Container>

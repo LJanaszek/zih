@@ -53,8 +53,6 @@ export default function CompassDebugTools() {
 
     return <Container>
         <h3>Compass Dev Tools</h3>
-        x{JSON.stringify(position)}x
-        x{JSON.stringify(error)}x
         <div>
             {geoPoints.map((id) => {
                 return <div key={id}><GoToPointButton pointId={id} /></div>

@@ -40,10 +40,6 @@ export default function useCompassView(steps: GeoStep[]) : CompassViewData {
     const {ignoreAccuracy} = useGameModuleState();
     const finishStep = useFinishGameStep();
 
-    useEffect(() => {
-        console.log('KURWA!!!!', activePoints);
-    }, [position, activePoints])
-
     const activePointsWithData = useMemo(() => activePoints.map(point => {
         const distance = (() => {
             if (!position || !point) return Infinity;
@@ -80,7 +76,6 @@ export default function useCompassView(steps: GeoStep[]) : CompassViewData {
     });
 
     useEffect(() => {
-        console.log('check points!');
         if (!isAccuracyOk) return;
 
         const pointInRange = activePointsWithData.reduce<string | null>((result, point) => {
@@ -94,7 +89,6 @@ export default function useCompassView(steps: GeoStep[]) : CompassViewData {
         }, null);
 
         if (pointInRange) {
-            console.log('POINT IN RANGE: ', pointInRange)
             const id = window.setTimeout(() => {
                 finishStep(pointInRange);
             }, 1000);

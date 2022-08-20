@@ -30,29 +30,6 @@ export default function MapComponent({ onPointerClicked, points, activePoint }: 
     const containerRef = useRef<HTMLDivElement>(null);
     const appRef = useRef<App>();
 
-    const onResize = useCallback(() => {
-        // if (widgetContainerRef.current && containerRef.current && appRef.current && appRef.current?.view) {
-        //     const boundries = containerRef.current.getBoundingClientRect();
-
-        //     const ratio = boundries.width / boundries.height;
-
-        //     console.log(ratio);
-
-        //     if (ratio >= widgetRatio) {
-        //         appRef.current.view.style.height = `${boundries.height}px`;
-        //         appRef.current.view.style.width = `${boundries.height * widgetRatio}px`;
-        //     } else {
-        //         appRef.current.view.style.height = `${boundries.width / widgetRatio}px`;
-        //         appRef.current.view.style.width = `${boundries.width}px`;
-        //     }
-
-
-        //     appRef.current.view.addEventListener('mousedown', (e) => {
-        //         e.preventDefault();
-        //     });
-        // }
-    }, []);
-
     useEffect(() => {
         if (appRef.current) return;
 
@@ -70,14 +47,12 @@ export default function MapComponent({ onPointerClicked, points, activePoint }: 
             widgetContainerRef.current.appendChild(app.view);
         }
 
-        onResize();
-
 
         return () => {
             appRef.current?.destroy(true);
             appRef.current = undefined;
         }
-    }, [onResize]);
+    }, []);
 
     useEffect(() => {
         console.log('new Points!', points, appRef.current);
@@ -92,16 +67,6 @@ export default function MapComponent({ onPointerClicked, points, activePoint }: 
             appRef.current.setActivePoint(activePoint || null);
         }
     }, [activePoint]);
-
-    useEffect(() => {
-        window.addEventListener('resize', onResize);
-
-        onResize();
-
-        return () => {
-            window.removeEventListener('resize', onResize);
-        }
-    }, [onResize]);
 
     return <Container ref={containerRef}>
         <div ref={widgetContainerRef} style={{
