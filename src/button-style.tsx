@@ -1,8 +1,15 @@
+import { createGlobalStyle } from "styled-components";
+
 import GameRestartIconSrc from './assets/icons/zrestartuj.svg';
 import GameStartIconSrc from './assets/icons/uruchom.svg';
 import GameContinueIconSrc from './assets/icons/kontynuujGre.svg';
 import KnowledgeIconSrc from './assets/icons/bazaWiedzy.svg';
-import { createGlobalStyle } from "styled-components";
+import HelpIconSrc from './assets/icons/help.svg';
+
+// eslint-disable-next-line
+import MapIconSrc from '!file-loader!./assets/icons/mapa.svg';
+
+
 
 const ButtonStyle = createGlobalStyle`
     .button {
@@ -40,12 +47,13 @@ const ButtonStyle = createGlobalStyle`
             display: inline-block;
 
             width: 2em;
-            line-height: inherit;
+            height: 1.5em;
+            vertical-align: middle;
             background-position: 50% 50%;
             background-repeat: no-repeat;
             background-size: auto 100%;
 
-            margin-left: .8em;
+            margin-left: .2em;
 
             &.game-start {
                 background-image: url(${GameStartIconSrc})
@@ -61,6 +69,14 @@ const ButtonStyle = createGlobalStyle`
 
             &.knowledge {
                 background-image: url(${KnowledgeIconSrc})
+            }
+
+            &.map {
+                background-image: url(${MapIconSrc})
+            }
+
+            &.help {
+                background-image: url(${HelpIconSrc})
             }
         }
     }

@@ -65,22 +65,7 @@ nav{
     display:flex;
     text-align: center;
 }
-.button{
-    margin: 0 auto;
-    width:80%;
-    height: 3em;
-    margin-top:0.5em;
-    font-size: 20px;
-    line-height:2.3em;
-    margin-right:1em;
-}
 
-
-.icon{
-    height: 1.5rem;
-    vertical-align: middle;
-    margin-left: 0.5em;
-}
 @media (max-width: 1560px) {
     .fill {
         width: auto;

@@ -105,7 +105,7 @@ export default function MultiPointCompassView({ stepId }: { stepId: string }) {
                         <MultiPointCompassViewContent activePoint={selectedStep?.id} geoSteps={noCompletedPoints} onPointClicked={onPointClicked} />
                     </div>
                     <div className="buttons">
-                        <button className="button" onClick={() => { setShowHelp(true) }}>Pomoc</button>
+                        <button className="button" onClick={() => { setShowHelp(true) }}>Pomoc<i className="icon help" /></button>
                     </div>
                     <div className="drawer">
                         <GeoPointDrawer step={selectedStep} isOpen={openDrawer} onToggleClicked={() => reducer({ type: 'toggleDrawer' })} />
