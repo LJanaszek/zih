@@ -17,7 +17,7 @@ const Container = styled.div`
 
 export default function CompassDebugTools() {
     const step = useGameStep();
-    const {position} = useGeo();
+    const { position, error } = useGeo();
 
     const dispatch = useGameModuleDispatch()
     const { ignoreAccuracy, } = useGameModuleState();
@@ -76,7 +76,7 @@ export default function CompassDebugTools() {
                         distance: debugPointsDistance / 1000
                     }
                 })
-            }}>Rozstaw punkty</button> w promieniu <input type="number" {...register('debugPointsDistance', {valueAsNumber: true})} />
+            }}>Rozstaw punkty</button> w promieniu <input type="number" {...register('debugPointsDistance', { valueAsNumber: true })} />
         </div>
     </Container>
 }
@@ -90,7 +90,7 @@ function GoToPointButton({ pointId }: { pointId: string }) {
     const point = useGeoStep(pointId);
 
     const onGoToPoint = useCallback(() => {
-        if (point) {
+        if (point && position) {
             dispatch({
                 type: GAME_MODULE_ACTION.SET_POINT_POSITION,
                 payload: {
@@ -101,5 +101,8 @@ function GoToPointButton({ pointId }: { pointId: string }) {
         }
     }, [dispatch, position, point]);
 
-    return <button onClick={onGoToPoint}>Dojdź do punktu: {pointId} {point?.name}</button>
+    return <>
+        {position && <button onClick={onGoToPoint}>Dojdź do punktu: {pointId} {point?.name}</button>}
+        {!position && <p>Brak pozycji GPS</p>}
+    </>
 }
