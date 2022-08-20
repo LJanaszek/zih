@@ -5,7 +5,6 @@ import Box from "../../../../components/layout/box";
 import styled from "styled-components";
 import pointer from "../img/pointer.svg";
 import Taskimg from "../img/taskImages/task1.svg";
-import startTask from "../img/startTask.svg";
 import useRemoveFooter from "../../../../modules/main/hooks/use-remove-footer";
 import Popup from "../../../../components/elements/task-popup";
 const Container = styled.div`
@@ -58,8 +57,8 @@ export default function TaskIntro({ onComplete }: Props) {
                 <p className="title">"ul.Krokodyli" - Walcownicza daw. Handlowa</p>
                 <img className="taskImg" src={Taskimg} alt="" />
                 <div className="tekst">
-                    <h2>Szukaj ukrytego</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus alias quia asperiores natus iusto, pariatur ab provident officiis veniam culpa, distinctio consequatur accusamus, porro autem itaque omnis et? Repellendus, velit?</p>
+                    <h2>Spójrz na dawną ulicę Handlową</h2>
+                    <p>Wykonajcie sobie zdjęcie na tle ulicy Handlowej. Wyobraźcie sobie jakich dźwięków i zapachów można było tam doświadczyć. Co można było tam kupić?</p>
                 </div>
                 <button className="button" onClick={onComplete}>Uruchom zadanie <i className="icon help" /></button>
                 <button className="button" onClick={() => { setShowGPSInfo(true) }}>Pomoc <i className="icon help" /></button>

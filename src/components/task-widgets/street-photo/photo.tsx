@@ -2,12 +2,12 @@ import { useReducer, useRef, useCallback } from "react";
 import styled from "styled-components";
 import VideoComponent from "./video";
 
-import Sticker from './placeholder.png';
+import Sticker from './street.png';
 
-import ChangeCamera from '../../../assets/icons/x.svg';
-import CameraOn from '../../../assets/icons/x.svg';
-import CameraOff from '../../../assets/icons/x.svg';
-import makePhotoIcon from '../../../assets/icons/x.svg';
+import ChangeCamera from '../../../assets/icons/camera/change.svg';
+import CameraOn from '../../../assets/icons/camera/on.svg';
+import CameraOff from '../../../assets/icons/camera/off.svg';
+import makePhotoIcon from '../../../assets/icons/camera/make-photo.svg';
 
 import { useState } from "react";
 import { useEffect } from "react";
@@ -20,7 +20,7 @@ type Props = {
 }
 
 const Container = styled.div`
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 
     margin: 0 auto;
@@ -206,30 +206,32 @@ export default function Zad1Photo({ onComplete }: Props) {
             img.onload = () => {
                 if (ctx) {
 
-                    const stickerSpaceWidth = capture.width * .5;
-                    const stickerSpaceHeight = capture.height * .66;
+                    const stickerSpaceWidth = capture.width;
+                    const stickerSpaceHeight = capture.height;
 
-                    const imgWidth = 680;
-                    const imgHeight = 974;
+                    const captuteRatio = capture.width / capture.height;
 
-                    const stickerSpaceRatio = stickerSpaceWidth / stickerSpaceHeight;
+                    const imgWidth = 896;
+                    const imgHeight = 577;
+
                     const imgRatio = imgWidth / imgHeight;
 
                     let stickerWidth = imgWidth;
                     let stickerHeight = imgHeight;
 
-                    if (imgRatio >= stickerSpaceRatio) {
+                    if (imgRatio >= captuteRatio) {
                         stickerWidth = Math.min(imgWidth, stickerSpaceWidth);
                         stickerHeight = stickerWidth / imgRatio;
                     } else {
-                        stickerHeight = Math.min(imgHeight, stickerSpaceHeight);
-                        stickerWidth = stickerHeight * imgRatio;
+                        console.log('POZIOMO?')
+                        stickerWidth = capture.width;
+                        stickerHeight = stickerWidth / imgRatio;
                     }
 
                     ctx.drawImage(videoRef.current.getVideo(), 0, 0, capture.width, capture.height);
                     ctx.drawImage(img,
-                        capture.width - stickerWidth,
-                        capture.height * (1 - .66),
+                        0,
+                        0,
                         stickerWidth,
                         stickerHeight);
 
