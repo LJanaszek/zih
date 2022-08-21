@@ -18,6 +18,9 @@ const Container = styled.div`
         flex-grow: 1;
         flex-shrink: 1;
         position: relative;
+
+        display: flex;
+        flex-direction: column;
     }
 `;
 
