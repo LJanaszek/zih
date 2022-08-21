@@ -4,7 +4,7 @@ type Props = {
     onNext(): void
 }
 
-export default function Page1({onNext}: Props) {
+export default function PageEnd({onNext}: Props) {
     return <Box>
         <p>Strona 2</p>
         <button onClick={onNext}>Dalej</button>
