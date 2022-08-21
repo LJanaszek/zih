@@ -15,15 +15,15 @@ import MapIconSrc from '!file-loader!./assets/icons/mapa.svg';
 
 const ButtonStyle = createGlobalStyle`
     .button {
-        display: inline-block;
+        /* display: inline-block; */
         background: var(--color3);
         color: white;
-        padding: .3em 1em;
+        padding: .2em .7em .2em 1.1em;
         border-radius: 10em;
 
         text-decoration: none;
 
-        font-size: 16pt;
+        font-size: 1.1rem;
         font-family: Gothic;
 
         text-align: center;
@@ -45,13 +45,13 @@ const ButtonStyle = createGlobalStyle`
             display: inline-block;
 
             width: 2em;
-            height: 1.5em;
+            height: 1.4em;
             vertical-align: middle;
             background-position: 50% 50%;
             background-repeat: no-repeat;
             background-size: auto 100%;
 
-            margin-left: .2em;
+            margin-left: .3em;
 
             &.game-start {
                 background-image: url(${GameStartIconSrc})
