@@ -1,14 +1,15 @@
 import styled from "styled-components"
 
-const Container = styled.header`
+type Props = {
+    theme?: 'normal' | 'violet'
+}
+
+const Container = styled.header<{theme: 'normal' | 'violet'}>`
 
     text-align: center;
     vertical-align:middle;
     position: relative;
-    background-color: var(--color3);
-    border-radius: 50px;
     margin: 0 auto;
-    margin-top:1em;
 
     @media(max-width: 800px) {
         width: 96%;
@@ -17,10 +18,13 @@ const Container = styled.header`
     h1{
         display: inline-block;
         margin:0 auto;
+        background-color: ${({theme: mode}) => mode ==='violet' ? 'white' : 'var(--color3)'};
+
         padding: .65em 1.2em;
         letter-spacing: -1px;
         font-family: Bristol;
-        color: var(--color2);
+        border-radius: 50px;
+        color: ${({theme: mode}) => mode ==='violet' ? 'var(--color3)' : 'var(--color2)'};
         position: relative;
 
         font-weight: normal;
@@ -40,8 +44,8 @@ const Container = styled.header`
     }
 `;
 
-export default function PageHeader() {
-    return <Container>
+export default function PageHeader({theme: mode}: Props) {
+    return <Container theme={mode || 'normal'}>
         <h1>Z <span className="shultz">Schulzem</span> przez Falenicę</h1>
     </Container>
 }

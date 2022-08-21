@@ -86,6 +86,20 @@ const ButtonStyle = createGlobalStyle`
                 background-image: url(${OkIconSrc})
             }
         }
+
+        &.inverted {
+            background: var(--color2);
+            color: var(--color5);
+
+            i.icon {
+                /**
+                 * to jest sposób na pzrekolorowanie SVG który jest w tle bez jego edycji
+                 * piewsze dwa filtry sprowadzają grafikę do czerni: brightness(0) saturate(100%)
+                 * kolejne wyczarowałem używając tego kalkulatora: https://codepen.io/sosuke/pen/Pjoqqp
+                */
+                filter: brightness(0) saturate(100%) invert(25%) sepia(5%) saturate(1990%) hue-rotate(202deg) brightness(94%) contrast(89%);
+            }
+        }
     }
 `;
 
