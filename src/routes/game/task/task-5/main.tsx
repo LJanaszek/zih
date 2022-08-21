@@ -1,4 +1,3 @@
-import Box from "../../../../components/layout/box"
 import Zad5Scene from "../../../../components/task-widgets/travelers/scene"
 
 type Props = {
@@ -6,8 +5,8 @@ type Props = {
 }
 
 export default function TaskMain({ onComplete }: Props) {
-    return <Box>
+    return <>
         <Zad5Scene onComplete={onComplete} />
         <button onClick={onComplete}>Zrobione!</button>
-    </Box>
+    </>
 }

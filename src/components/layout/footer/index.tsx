@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import logoFirst from './img/krokodylKomp.svg';
 import logoSec from './img/ministerstwoKomp.png';
-import logoSecMob from './img/ministerstwoMobilna.svg';
 const Container = styled.footer`
 
     background: var(--color2);

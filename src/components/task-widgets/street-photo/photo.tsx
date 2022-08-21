@@ -207,7 +207,6 @@ export default function Zad1Photo({ onComplete }: Props) {
                 if (ctx) {
 
                     const stickerSpaceWidth = capture.width;
-                    const stickerSpaceHeight = capture.height;
 
                     const captuteRatio = capture.width / capture.height;
 

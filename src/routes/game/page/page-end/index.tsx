@@ -1,8 +1,6 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Box from "../../../../components/layout/box";
 import ScrollToMe from "../../../../utils/widgets/scroll-to-me";
-import { getHomeRoute } from "../../../routes";
 import end from "./end.jpg";
 
 const Container = styled.div`

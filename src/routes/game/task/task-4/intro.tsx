@@ -46,20 +46,20 @@ type Props = {
     onComplete(): void
 }
 
-export default function TaskIntro({onComplete}: Props) {
+export default function TaskIntro({ onComplete }: Props) {
     useRemoveFooter()
     return <Container>
-    <Box>
-        <div className="content">
-            <img className="pointer" src={pointer} alt="" />
-        <p className="title">Dawna synagoga - Bambusowa 11</p>
-        <img className="taskImg" src={Taskimg} alt="" />
-        <div className="tekst">
-            <h2>Szukaj ukrytego</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus alias quia asperiores natus iusto, pariatur ab provident officiis veniam culpa, distinctio consequatur accusamus, porro autem itaque omnis et? Repellendus, velit?</p>
-        </div>
-        <button className="button" onClick={onComplete}>Uruchom zadanie <i className="icon start-task"/></button>
-        </div>
-    </Box>
+        <Box>
+            <div className="content">
+                <img className="pointer" src={pointer} alt="" />
+                <p className="title">Dawna synagoga - Bambusowa 11</p>
+                <img className="taskImg" src={Taskimg} alt="" />
+                <div className="tekst">
+                    <h2>ekran 4.1 - wprowadzenie do zadania nazwy przedmiotów kultury żydowskiej </h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus alias quia asperiores natus iusto, pariatur ab provident officiis veniam culpa, distinctio consequatur accusamus, porro autem itaque omnis et? Repellendus, velit?</p>
+                </div>
+                <button className="button" onClick={onComplete}>Uruchom zadanie <i className="icon start-task" /></button>
+            </div>
+        </Box>
     </Container>
 }

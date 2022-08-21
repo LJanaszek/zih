@@ -44,7 +44,7 @@ export default function TaskIntro({onComplete}: Props) {
     <Box>
         <div className="content">
             <img className="pointer" src={pointer} alt="" />
-        <p className="title">Budynek dawnej stacji Falenica (Kolej Jabłonowska) - kolej wąsk torowa</p>
+        <p className="title">Budynek dawnej stacji Falenica (Kolej Jabłonowska) - kolej wąskotorowa</p>
         <img className="taskImg" src={Taskimg} alt="" />
         <div className="tekst">
             <h2>Szukaj ukrytego</h2>
