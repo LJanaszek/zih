@@ -5,7 +5,7 @@ import { getGamePageRoute, getHomeRoute } from "../routes";
 import useGameStarted from "../../modules/game/hooks/use-game-started";
 import { useCallback, useState } from "react";
 import { GAME_MODULE_ACTION, useGameModuleDispatch } from "../../modules/game";
-import logo from './instrukcja.svg';
+import logo from './instrukcja.jpg';
 import Popup from "../../components/elements/popup";
 import WikiPopup from "../../components/wiki-popup";
 import { useRef } from "react";
