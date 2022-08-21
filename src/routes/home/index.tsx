@@ -81,7 +81,7 @@ nav{
         margin: auto;
         font-size: 18px;
     }
-    #content{
+    .content{
         display:block;
         align-items: center;
     }

@@ -20,7 +20,7 @@ export const MAP: {
         {
             id: '2.1',
             position: {
-                x: 200,
+                x: 300,
                 y: 100
             }
         },
@@ -28,20 +28,20 @@ export const MAP: {
             id: '3.1',
             position: {
                 x: 100,
-                y: 200
+                y: 300
             }
         },
         {
             id: '4.1',
             position: {
-                x: 200,
-                y: 200
+                x: 300,
+                y: 300
             }
         },
         {
             id: '5.1',
             position: {
-                x: 300,
+                x: 500,
                 y: 100
             }
         },
@@ -49,14 +49,14 @@ export const MAP: {
             id: '6.1',
             position: {
                 x: 100,
-                y: 300
+                y: 500
             }
         },
         {
             id: '8.1',
             position: {
-                x: 300,
-                y: 300
+                x: 500,
+                y: 500
             }
         }
     ]
