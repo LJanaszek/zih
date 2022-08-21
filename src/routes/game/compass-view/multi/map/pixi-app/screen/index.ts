@@ -1,6 +1,5 @@
 import { GlowFilter } from '@pixi/filter-glow';
 import * as PIXI from 'pixi.js';
-import { Graphics } from 'pixi.js';
 import { IScreen } from "../app";
 import { MAP } from '../data';
 
