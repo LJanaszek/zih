@@ -1,10 +1,6 @@
 import { useMemo } from "react";
 import styled from "styled-components";
-import Box from "../../../../components/layout/box";
 import { GeoStep } from "../../../../modules/game/types";
-import useCompassView from "../../../../modules/game/view-hooks/use-compass-view";
-import { GEO_MODULE_ERROR } from "../../../../modules/geo";
-import AccuracyError from "../accuracy-error";
 import MapComponent from "./map";
 
 const Container = styled.div`

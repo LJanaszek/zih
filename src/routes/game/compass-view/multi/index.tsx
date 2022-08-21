@@ -44,7 +44,7 @@ const MapScreenContainer = styled.div`
     }
 
     .drawer {
-        height: 10%;
+        height: 5em;
         position: relative;
     }
 `;
