@@ -13,6 +13,7 @@ import PageView from "./page";
 import WidgetView from "./task";
 import MultiPointCompassView from "./compass-view/multi";
 import { GeoModuleProvider } from "../../modules/geo";
+import ScrollToTop from "../../utils/widgets/scroll-to-top";
 
 const Container = styled.div`
 `;
@@ -31,6 +32,7 @@ export default function GamePage() {
     }, [dispatch]);
 
     return <Container>
+        <ScrollToTop trigger={step?.id} behavior={'smooth'} />
         {!gameComplete && !step && <GameErrorPage />}
         {!gameComplete && step && <GameStepView step={step} />}
         {gameComplete && <EndGamePage />}

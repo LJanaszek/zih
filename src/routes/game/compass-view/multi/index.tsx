@@ -1,16 +1,16 @@
-import { useCallback, useEffect, useMemo, useReducer, useState } from "react";
+import { useCallback, useReducer, useState } from "react";
 import styled from "styled-components";
 import CompassDebugTools from "../../../../components/dev/compass-debug-tools";
 import Popup from "../../../../components/elements/popup";
-import Box from "../../../../components/layout/box";
 import FillScreenWithHeader from "../../../../components/layout/fill-screen-with-header";
 import { useConfigModuleState } from "../../../../modules/config";
 import { GeoStep, MultiGeoStep } from "../../../../modules/game/types";
 import useCompassView from "../../../../modules/game/view-hooks/use-compass-view";
-import { GeoModuleProvider, GEO_MODULE_ERROR } from "../../../../modules/geo";
+import { GEO_MODULE_ERROR } from "../../../../modules/geo";
 import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header";
-import ScrollToMe from "../../../../utils/widgets/scroll-to-me";
+import ScrollToTop from "../../../../utils/widgets/scroll-to-top";
 import GameErrorPage from "../../error";
+import AccessError from "../access-error";
 import AccuracyError from "../accuracy-error";
 import MultiPointCompassViewContent from "./content";
 import GeoPointDrawer from "./geo-point-drawer";
@@ -103,14 +103,10 @@ export default function MultiPointCompassView({ stepId }: { stepId: string }) {
     }, [reducer]);
 
     return <>
+        <ScrollToTop trigger={step?.id} behavior="smooth" />
         <FillScreenWithHeader>
-            <ScrollToMe trigger={step?.id} behavior="smooth" />
 
-            {showPermitionError && <Box>
-                <h3>Błąd uprawnień.</h3>
-                <p>Gra nie uzyskała dostępu do lokalizacji urządzenia. <br />Przyznaj uprawnienia stronie z grą, a następnie odśwież stronę.</p>
-            </Box>}
-
+            {showPermitionError && <AccessError />}
             {showAccuracyError && <AccuracyError />}
 
             {showMap && <MapScreenContainer>

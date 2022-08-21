@@ -1,8 +1,6 @@
-import styled from "styled-components";
-import CONFIG from "../../../config";
-import { useGeo } from "../../../modules/geo";
-import rozaIcon from '../../../assets/roza.svg';
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+import rozaIcon from '../../../assets/roza.svg';
 import { getHomeRoute } from "../../routes";
 
 
@@ -17,13 +15,15 @@ const Container = styled.div`
     flex-direction: column;
     justify-content: center;
 
+    color: var(--color1);
+
     border: none;
 
     .inner {
 
         padding-top: 20vh;
 
-        background: url(${rozaIcon}) 50% 1vh no-repeat;
+        background: url(${rozaIcon}) 50% 0 no-repeat;
         background-size: auto 15vh;
 
         display: flex;
@@ -53,23 +53,14 @@ const Container = styled.div`
     }
 `;
 
-export default function AccuracyError() {
-
-    const { accuracy } = useGeo();
-
+export default function AccessError() {
     return <Container>
         <div className="inner">
+
             <div className="box">
-                <h3>Zaczekaj chwilę, trwa kalibracja urządzenia!</h3>
-                <p>
-                    Twoje urządzenie musi udostępniać lokalizację z dokładnością przynajmniej{'\u00A0'}<strong>{CONFIG.MIN_GEO_ACCURACY} metrów</strong>.
-                </p>
-                <p>
-                    Aktualna dokładność pomiaru: <strong>{Math.round(accuracy || 0)} metrów</strong>.
-                </p>
-                <p>
-                    Upewnij się, że korzystasz z urządzenia z modułem gps.
-                </p>
+                <h3>Błąd uprawnień.</h3>
+                <p>Gra nie uzyskała dostępu do lokalizacji urządzenia. <br />Przyznaj uprawnienia stronie z grą, a następnie odśwież stronę.</p>
+                <p>Upewnij się, że korzystasz z urządzenia z modułem gps.</p>
             </div>
             <div className="buttons">
                 <Link to={getHomeRoute()} className="button">Powrót do strony głównej</Link>
