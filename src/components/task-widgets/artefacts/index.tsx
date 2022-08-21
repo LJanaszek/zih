@@ -101,7 +101,7 @@ export default function ArtefactsWidget({onComplete}: Props) {
         if (gameState.isComplete) {
             onComplete();
         }
-    }, [gameState])
+    }, [gameState, onComplete])
 
 
     const showArtefactInfo = Boolean(gameState.showArtefactInfo);

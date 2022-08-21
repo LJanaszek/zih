@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { GeoStep } from "../../../modules/game/types";
 
 import pointer from "../../../assets/pointer.svg";
-import back from "../../../assets/back.svg";
 import PageHeader from "../header";
 import ScrollToTop from "../../../utils/widgets/scroll-to-top";
 

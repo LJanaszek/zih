@@ -1,6 +1,4 @@
-import { useNavigate } from "react-router-dom";
-import { getGamePageRoute } from "../../../routes";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import Box from "../../../../components/layout/box";
 import styled from "styled-components";
 import pointer from "../img/pointer.svg";
@@ -44,10 +42,6 @@ type Props = {
 export default function TaskIntro({ onComplete }: Props) {
 
     const [showGPSInfo, setShowGPSInfo] = useState(false);
-    const navigate = useNavigate()
-    const goToGame = useCallback(() => {
-        navigate(getGamePageRoute())
-    }, [navigate]);
 
     useRemoveFooter()
     return <Container>

@@ -7,7 +7,6 @@ import usePageStep from "../../../modules/game/hooks/use-page-step";
 
 const Page1 = lazy(() => import('./page-1'));
 const PageEnd = lazy(() => import('./page-end'));
-const Page3 = lazy(() => import('./page-3'));
 
 type Props = {
     id: string

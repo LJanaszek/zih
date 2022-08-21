@@ -32,7 +32,7 @@ export default function ArtefactMenu({ onClose, onShowInfo, onSelectAnswer, sele
                 return [...prev, next]
             }
 
-            if ((index + 1 % WIDGET_DATA.ITEMS.length) != artIndex) {
+            if ((index + 1 % WIDGET_DATA.ITEMS.length) !== artIndex) {
                 return [...prev, next]
             }
 

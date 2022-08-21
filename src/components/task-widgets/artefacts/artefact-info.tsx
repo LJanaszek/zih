@@ -7,15 +7,15 @@ type Props = {
 }
 
 export default function ArtefactInfo({ artefactId, onClose }: Props) {
-    const [artefact, artIndex] = useMemo(() => {
-        const index = WIDGET_DATA.ITEMS.findIndex(a => a.id === artefactId);
-
-        return [WIDGET_DATA.ITEMS[index], index]
+    const artefact = useMemo(() => {
+        return WIDGET_DATA.ITEMS.find(a => a.id === artefactId);
     }, [artefactId])
 
     return <div>
         <button onClick={onClose}>Zamknij</button>
-        <h3>{artefact.name}</h3>
-        <p>{artefact.description}</p>
+        {artefact && <>
+            <h3>{artefact.name}</h3>
+            <p>{artefact.description}</p>
+        </>}
     </div>
 }
