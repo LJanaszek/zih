@@ -3,10 +3,11 @@ import OrientationControls from './controls';
 
 
 
-import Sticker1 from '../placeholder.png';
-import Sticker2 from '../placeholder.png';
-import Sticker3 from '../placeholder.png';
-import Sticker4 from '../placeholder.png';
+import Sticker1 from '../person1.png';
+import Sticker2 from '../person2.png';
+import Sticker3 from '../person3.png';
+import Sticker4 from '../person4.png';
+import Sticker5 from '../person5.png';
 
 import TWEEN from '@tweenjs/tween.js';
 
@@ -30,6 +31,10 @@ const stickers: StickerData[] = [
     },
     {
         texture: Sticker4,
+        scale: [2, 4, 2]
+    },
+    {
+        texture: Sticker5,
         scale: [2, 4, 2]
     }
 ]
