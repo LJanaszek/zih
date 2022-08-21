@@ -6,7 +6,7 @@ import styled from "styled-components";
 import pointer from "../img/pointer.svg";
 import Taskimg from "../img/taskImages/task1.svg";
 import useRemoveFooter from "../../../../modules/main/hooks/use-remove-footer";
-import Popup from "../../../../components/elements/task-popup";
+import TaskPopup from "../../../../components/elements/task-popup";
 const Container = styled.div`
 
 .content{
@@ -63,12 +63,12 @@ export default function TaskIntro({ onComplete }: Props) {
                 <button className="button" onClick={onComplete}>Uruchom zadanie <i className="icon help" /></button>
                 <button className="button" onClick={() => { setShowGPSInfo(true) }}>Pomoc <i className="icon help" /></button>
             </div>
-            {showGPSInfo && <Popup onClick={() => { setShowGPSInfo(false) }}>
+            {showGPSInfo && <TaskPopup onClick={() => { setShowGPSInfo(false) }}>
                 <p>
                     Gra wykorzystuje technologię rozszerzonej rzeczywistości. <br /><br />
                     Jeśli chcesz wykonać to zadanie, prosimy, wyraź zgodę na dostęp do kamery.
                 </p>
-            </Popup>}
+            </TaskPopup>}
         </Box>
     </Container>
 }
