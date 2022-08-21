@@ -18,7 +18,7 @@ const ButtonStyle = createGlobalStyle`
         /* display: inline-block; */
         background: var(--color3);
         color: white;
-        padding: .2em .7em .2em 1.1em;
+        padding: .3em 1.1em .3em 1.1em;
         border-radius: 10em;
 
         text-decoration: none;
@@ -33,6 +33,10 @@ const ButtonStyle = createGlobalStyle`
         border-collapse: collapse;
         cursor: pointer;
 
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
         &:hover {
             background: var(--color5);
         }
@@ -42,16 +46,16 @@ const ButtonStyle = createGlobalStyle`
         }
 
         i.icon {
+            content: ' ';
             display: inline-block;
 
             width: 2em;
             height: 1.4em;
-            vertical-align: middle;
             background-position: 50% 50%;
             background-repeat: no-repeat;
             background-size: auto 100%;
 
-            margin-left: .3em;
+            margin-left: .4em;
 
             &.game-start {
                 background-image: url(${GameStartIconSrc})

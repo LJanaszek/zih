@@ -87,16 +87,4 @@ p {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-
-    .button {
-        width: 100%;
-        max-width: 80%;
-        margin: .5em 0;
-    }
-
-    @media (min-width: 900px) {
-        .button {
-            max-width: 50%;
-        }
-    }
 }

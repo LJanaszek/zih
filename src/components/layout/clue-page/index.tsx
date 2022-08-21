@@ -67,7 +67,7 @@ export default function CluePage({ step, clueImg, onComplete }: Props) {
             <p className="congrat">Zadanie wykonane! <br /> znaleźliście karteczkę z literą:</p>
             <img className="perazja" src={clueImg} alt="P" />
         </div>
-        <div className="button-wroc">
+        <div className="button-list">
             <button className="button inverted" onClick={onComplete}>Powrót do mapy<i className="icon map" /></button>
         </div>
     </Container>

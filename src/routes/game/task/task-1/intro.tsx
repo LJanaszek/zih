@@ -44,25 +44,27 @@ export default function TaskIntro({ onComplete }: Props) {
     const [showGPSInfo, setShowGPSInfo] = useState(false);
 
     useRemoveFooter()
-    return <Container>
-        <Box>
-            <div className="content">
-                <img className="pointer" src={pointer} alt="" />
-                <p className="title">"ul.Krokodyli" - Walcownicza daw. Handlowa</p>
-                <img className="taskImg" src={Taskimg} alt="" />
-                <div className="tekst">
-                    <h2>Spójrz na dawną ulicę Handlową</h2>
-                    <p>Wykonajcie sobie zdjęcie na tle ulicy Handlowej. Wyobraźcie sobie jakich dźwięków i zapachów można było tam doświadczyć. Co można było tam kupić?</p>
+    return <>
+        <Container>
+            <Box>
+                <div className="content">
+                    <img className="pointer" src={pointer} alt="" />
+                    <p className="title">"ul.Krokodyli" - Walcownicza daw. Handlowa</p>
+                    <img className="taskImg" src={Taskimg} alt="" />
+                    <div className="tekst">
+                        <h2>Spójrz na dawną ulicę Handlową</h2>
+                        <p>Wykonajcie sobie zdjęcie na tle ulicy Handlowej. Wyobraźcie sobie jakich dźwięków i zapachów można było tam doświadczyć. Co można było tam kupić?</p>
+                    </div>
+                    <button className="button" onClick={onComplete}>Uruchom zadanie <i className="icon help" /></button>
+                    <button className="button" onClick={() => { setShowGPSInfo(true) }}>Pomoc <i className="icon help" /></button>
                 </div>
-                <button className="button" onClick={onComplete}>Uruchom zadanie <i className="icon help" /></button>
-                <button className="button" onClick={() => { setShowGPSInfo(true) }}>Pomoc <i className="icon help" /></button>
-            </div>
-            {showGPSInfo && <TaskPopup onClick={() => { setShowGPSInfo(false) }}>
-                <p>
-                    Gra wykorzystuje technologię rozszerzonej rzeczywistości. <br /><br />
-                    Jeśli chcesz wykonać to zadanie, prosimy, wyraź zgodę na dostęp do kamery.
-                </p>
-            </TaskPopup>}
-        </Box>
-    </Container>
+            </Box>
+        </Container>
+        {showGPSInfo && <TaskPopup onClick={() => { setShowGPSInfo(false) }}>
+            <p>
+                Gra wykorzystuje technologię rozszerzonej rzeczywistości. <br /><br />
+                Jeśli chcesz wykonać to zadanie, prosimy, wyraź zgodę na dostęp do kamery.
+            </p>
+        </TaskPopup>}
+    </>
 }

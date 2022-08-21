@@ -72,7 +72,7 @@ nav{
     margin-bottom: 2em;
     display:flex;
     text-align: center;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 @media (max-width: 1560px) {

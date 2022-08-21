@@ -21,14 +21,14 @@ export default function useMultiGeoViewData(stepId: string) {
             noCompletedPoints: geoPoints.filter(p => !completedSteps.includes(p.id)),
             completedPoints: geoPoints.filter(p => completedSteps.includes(p.id)),
         }
-    }, [geoPoints, completedSteps]);
+    }, [geoPoints, completedSteps, step]);
 
     // Jeżeli gracz zaliczył już określoną ilość punktów to wykonujemy `finishStep`
     useEffect(() => {
         if (step && result.completedPoints.length >= step.minVisitedPoints) {
             finishStep(step.id);
         }
-    }, [result, finishStep]);
+    }, [result, finishStep, step]);
 
     return result
 }

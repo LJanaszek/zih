@@ -54,7 +54,7 @@ export default function GeoPointDrawer({ step, isOpen, onToggleClicked }: Props)
 
     return <Container isOpen={isOpen}>
         <div className="head">
-            <input type='image' src={arrowSrc} className="toggle-button" onClick={onToggleClicked} />
+            <input type='image' alt="Otwórzy info" src={arrowSrc} className="toggle-button" onClick={onToggleClicked} />
         </div>
         <div className="content">
             {!step && <p>Zaznacz na mapie punkt którego szukasz</p>}
