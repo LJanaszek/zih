@@ -86,7 +86,7 @@ const BirdsTask: React.FC<Props> = ({ onComplete, onGameStateChanged }) => {
             appRef.current?.destroy(true);
             appRef.current = undefined;
         }
-    }, [onComplete, onResize]);
+    }, [onComplete, onResize, onGameStateChanged]);
 
     useEffect(() => {
         window.addEventListener('resize', onResize);

@@ -20,6 +20,19 @@ export default class GameScreen extends PIXI.Container implements IScreen {
         this.sortableChildren = true;
 
         this.initMap();
+
+        // this.interactive = true;
+
+        // this.on('pointerdown', (e: PIXI.InteractionEvent) => {
+        //     const gfx = new PIXI.Graphics();
+
+        //     console.log(e);
+
+        //     gfx.beginFill(0xff0000);
+        //     gfx.drawCircle(e.data.global.x, e.data.global.y, 10);
+
+        //     this.addChild(gfx);
+        // })
     }
 
     private initMap() {
@@ -39,6 +52,7 @@ export default class GameScreen extends PIXI.Container implements IScreen {
             .filter(p => this.activePoints.includes(p.id))
             .forEach((p) => {
                 const point = PIXI.Sprite.from('pinezka');
+                point.anchor.set(.5, 1);
 
                 point.position.set(p.position.x, p.position.y);
 
@@ -46,6 +60,17 @@ export default class GameScreen extends PIXI.Container implements IScreen {
 
                 point.interactive = true;
                 point.buttonMode = true;
+
+                const hisBoxSize = point.height * 1.2;
+
+                const rect = new PIXI.Rectangle(-hisBoxSize / 2, -hisBoxSize, hisBoxSize, hisBoxSize);
+
+                // const gfx = new PIXI.Graphics();
+                // gfx.beginFill(0xffff00);
+                // gfx.drawRect(p.position.x + rect.x, p.position.y + rect.y, rect.width, rect.height);
+                // this.addChild(gfx);
+
+                point.hitArea = rect;
 
                 point.on('pointerdown', () => {
                     this.emit('pointer-clicked', p.id);

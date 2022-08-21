@@ -1,8 +1,7 @@
 import Box from "../../../../components/layout/box";
 import styled from "styled-components";
 import pointer from "../img/pointer.svg"
-import Taskimg from "../img/taskImages/task5.svg"
-import startTask from "../img/startTask.svg"
+import Taskimg from "../img/taskImages/task5.jpg"
 import useRemoveFooter from "../../../../modules/main/hooks/use-remove-footer";
 const Container = styled.div`
 *{
@@ -34,24 +33,6 @@ text-align:center;
 .title{
     color:var(--color1);
 }
-button{
-    margin: auto;
-    padding: .5em 2em;
-    border:none;
-    border-radius:50px;
-    background-color: var(--color3);
-    color:white;
-    font-size:22px;
-    margin-top:2em;
-    display:flex;
-}
-.buttonIcon{
-    background: url(${startTask})100% 100% no-repeat;
-    display:flex;
-    margin: auto;
-    margin-left:.5em;
-    padding:.6em;
-}
 `
 type Props = {
     onComplete(): void
@@ -63,13 +44,13 @@ export default function TaskIntro({onComplete}: Props) {
     <Box>
         <div className="content">
             <img className="pointer" src={pointer} alt="" />
-        <p className="title">Budynek dawnej stacji Falenica (Kolej Jabłonowska) - kolej wąsk torowa</p>
+        <p className="title">Budynek dawnej stacji Falenica (Kolej Jabłonowska) - kolej wąskotorowa</p>
         <img className="taskImg" src={Taskimg} alt="" />
         <div className="tekst">
             <h2>Szukaj ukrytego</h2>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus alias quia asperiores natus iusto, pariatur ab provident officiis veniam culpa, distinctio consequatur accusamus, porro autem itaque omnis et? Repellendus, velit?</p>
         </div>
-        <button onClick={onComplete}>Uruchom zadanie <i className="buttonIcon"/></button>
+        <button className="button" onClick={onComplete}>Uruchom zadanie <i className="icon start-task"/></button>
         </div>
     </Box>
     </Container>

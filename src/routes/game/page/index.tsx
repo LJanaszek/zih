@@ -6,8 +6,7 @@ import useFinishGameStep from "../../../modules/game/hooks/use-finish-game-step"
 import usePageStep from "../../../modules/game/hooks/use-page-step";
 
 const Page1 = lazy(() => import('./page-1'));
-const Page2 = lazy(() => import('./page-2'));
-const Page3 = lazy(() => import('./page-3'));
+const PageEnd = lazy(() => import('./page-end'));
 
 type Props = {
     id: string
@@ -28,10 +27,8 @@ export default function PageView({ id }: Props) {
         switch (page?.pageId) {
             case 'page-1':
                 return <Page1 onNext={onNext} />
-            case 'page-2':
-                return <Page2 onNext={onNext} />
-            case 'page-3':
-                return <Page3 onNext={onNext} />
+            case 'end':
+                return <PageEnd onNext={onNext} />
             default:
                 return <PagePlaceholder onNext={onNext} />
         }

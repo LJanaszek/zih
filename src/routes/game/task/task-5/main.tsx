@@ -1,12 +1,12 @@
-import Box from "../../../../components/layout/box"
+import Zad5Scene from "../../../../components/task-widgets/travelers/scene"
 
 type Props = {
     onComplete(): void
 }
 
-export default function TaskMain({onComplete}: Props) {
-    return <Box>
-        <p>Tutaj będzie zadanie do wykonania 5.</p>
+export default function TaskMain({ onComplete }: Props) {
+    return <>
+        <Zad5Scene onComplete={onComplete} />
         <button onClick={onComplete}>Zrobione!</button>
-    </Box>
+    </>
 }

@@ -55,6 +55,7 @@ export default class App extends PIXI.Application {
     }
 
     private onResize() {
+        console.log('onResize', this.renderer.width, this.renderer.height);
 
         if (this.gameScreen) {
             const appWidth = this.renderer.width;

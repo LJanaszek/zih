@@ -231,7 +231,7 @@ export default class GameScreen extends PIXI.Container implements IScreen {
         if (isComplete) {
             this.nextPageButton.visible = false;
             this.prevPageButton.visible = false;
-            this.completeButton.visible = true;
+            this.onComplete();
         }
 
         return isComplete;

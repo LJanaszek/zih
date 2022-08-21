@@ -17,7 +17,7 @@ const Container = styled.div`
 
 export default function CompassDebugTools() {
     const step = useGameStep();
-    const { position, error } = useGeo();
+    const { position } = useGeo();
 
     const dispatch = useGameModuleDispatch()
     const { ignoreAccuracy, } = useGameModuleState();

@@ -74,7 +74,6 @@ export default function orientationControl(object: any) {
   }
 
   function createObjectQuaterionSetter() {
-    debugger;
     var deviceEuler = new THREE.Euler();
     var deviceQuaternion = new THREE.Quaternion();
     var screenTransform = new THREE.Quaternion();

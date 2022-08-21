@@ -3,9 +3,9 @@ import { useRef, useState, useCallback } from "react";
 import styled from "styled-components";
 import VideoComponent from "./scene/video";
 
-import ChangeCamera from '../../../assets/icons/x.svg';
-import CameraOn from '../../../assets/icons/x.svg';
-import CameraOff from '../../../assets/icons/x.svg';
+import ChangeCamera from '../../../assets/icons/camera/change.svg';
+import CameraOn from '../../../assets/icons/camera/on.svg';
+import CameraOff from '../../../assets/icons/camera/off.svg';
 
 import createScene, { SceneAPI } from "./scene/scene";
 import { useMemo } from "react";
@@ -19,7 +19,7 @@ type Props = {
 }
 
 const Container = styled.div`
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 
     margin: 0 auto;

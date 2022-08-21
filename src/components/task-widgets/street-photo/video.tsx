@@ -2,7 +2,7 @@ import React, { useImperativeHandle } from "react";
 import { useRef, useEffect, useCallback } from "react";
 import styled from "styled-components";
 
-import Sticker from './placeholder.png';
+import Sticker from './street.png';
 import ScrollToTop from "../../../utils/widgets/scroll-to-top";
 
 type Props = {
@@ -37,15 +37,15 @@ const Container = styled.div`
     }
 
     .sticker {
-        width: 50%;
-        height: 66%;
+        width: 100%;
+        height: 100%;
 
         position: absolute;
         bottom: 0;
         right: 0;
 
         background: url(${Sticker}) 100% 0 no-repeat;
-        background-size: contain;
+        background-size: cover;
     }
 `;
 

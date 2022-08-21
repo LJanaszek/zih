@@ -118,7 +118,7 @@ export const SCENARIO: GameScenario = {
 
         {
             //mapa v2
-            id:'7.1',
+            id: '7.1',
             type: GAME_STEP_TYPE.MULTI_GEO_STEP,
             stepsId: ['8.1'],
             minVisitedPoints: 1,
@@ -127,17 +127,17 @@ export const SCENARIO: GameScenario = {
         {
             id: '8.1',
             type: GAME_STEP_TYPE.GEO_STEP,
-            position:{
+            position: {
                 lat: 52.16162878122313,
                 lng: 21.21137303357458
             },
             name: ["Punkt końcowy"],
             nextStep: '7.1'
-            },
+        },
         {
             id: '9.1',
-            type:GAME_STEP_TYPE.PAGE,
-            pageId: '9',
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'end',
             nextStep: null
         }
     ]

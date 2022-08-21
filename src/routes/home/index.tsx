@@ -5,7 +5,7 @@ import { getGamePageRoute, getHomeRoute } from "../routes";
 import useGameStarted from "../../modules/game/hooks/use-game-started";
 import { useCallback, useState } from "react";
 import { GAME_MODULE_ACTION, useGameModuleDispatch } from "../../modules/game";
-import logo from './instrukcja.svg';
+import logo from './instrukcja.jpg';
 import Popup from "../../components/elements/popup";
 import WikiPopup from "../../components/wiki-popup";
 import { useRef } from "react";
@@ -19,44 +19,52 @@ const Container = styled.div`
 .fill{
     display: block;
     background-color: white;
-    border-radius: 50px;
-    width: 60%;
-    margin-left: 5%;
+    border-radius: 4rem;
+    flex: 0 0 54%;
     padding-bottom: 2em;
     padding-top:0.5em;
 }
+
 ul{
     padding: 0em 1em;
     width: 80%;
     margin: 0 auto;
 }
+
 li::marker{
     color:var(--color1);
 }
-.shultz{
-    margin-top:0;
-    margin-bottom:1em;
-    height: auto;
-    width: 45%;
-    border-radius: 50px;
-    border: 1px solid var(--color1);
-}
-#content{
 
-    // width: 80%;
+.img-shulz {
+    flex: 0 0 39%;
+
+    img {
+        margin-top:0;
+        height: auto;
+        width: 100%;
+        border-radius: 4rem;
+        border: 1px solid var(--color1);
+    }
+}
+
+
+.content{
+
+    width: 84%;
     margin: 0 auto;
     border-radius: 50px;
-    padding: 0em 1.5em;
-    // height: 20em;
     margin-top:1em;
     margin-bottom: 1em;
     height: fit-content;
     display:flex;
+    justify-content: space-between;
 }
+
 p{
     padding:0em 3em;
     padding-bottom: 2em;
 }
+
 nav{
     width:70%;
     margin: auto;
@@ -64,30 +72,16 @@ nav{
     margin-bottom: 2em;
     display:flex;
     text-align: center;
-}
-.button{
-    margin: 0 auto;
-    width:80%;
-    height: 3em;
-    margin-top:0.5em;
-    font-size: 20px;
-    line-height:2.3em;
-    margin-right:1em;
+    justify-content: space-around;
 }
 
-
-.icon{
-    height: 1.5rem;
-    vertical-align: middle;
-    margin-left: 0.5em;
-}
 @media (max-width: 1560px) {
     .fill {
         width: auto;
         margin: auto;
         font-size: 18px;
     }
-    #content{
+    .content{
         display:block;
         align-items: center;
     }
@@ -111,24 +105,8 @@ nav{
         padding:0.6em;
 
   }
-    .button{
-        width:70%;
-        margin-right:0;
-    }
 
   }
-  @media (max-width: 490px) {
-  .button{
-            font-size: 16px;
-            width:80%;
-            line-height:2.3em;
-  }
-        .icon{
-            height:1rem;
-        }
-  }
-  #knowledge:
-  margin-right: null;
 `;
 
 export default function HomePage() {
@@ -158,8 +136,10 @@ export default function HomePage() {
     return <Container>
         <Box>
 
-            <div id='content'>
-                <img className="shultz" src={logo} alt="" />
+            <div className='content'>
+                <div className="img-shulz">
+                    <img src={logo} alt="" />
+                </div>
 
 
                 <div className="fill">

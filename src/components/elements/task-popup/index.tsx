@@ -24,7 +24,6 @@ const Container = styled.div`
     .inner {
         text-align: center;
         max-width: 1200px;
-        padding: 1rem 4rem;
         background: white;
         border: 1px solid var(--color3);
 
@@ -32,38 +31,33 @@ const Container = styled.div`
         flex-direction: column;
         align-items: center;
     }
-    button{
-        background:white;
-        width:auto;
-        padding:0;
+
+    .content {
+        padding: 1rem 4rem;
     }
-    .agree {
-        margin:0 auto;
-        background: url(${agree})100% 100% no-repeat;
-        padding:2em;
-        display:block;
+
+    input[type=image] {
+        height: 6em;
     }
+
     header{
         width:100%;
         height:4em;
-        background:var(--color3);
+        background: url(${help}) 50% 50% no-repeat var(--color3);
+        background-size: auto 80%;
         text-align:center;
         display:flex;
-        img{
-            margin: auto;
-            width:12%;
-        }
     }
 `;
-export default function Popup({ children, onClick }: Props) {
+export default function TaskPopup({ children, onClick }: Props) {
     return <Container aria-modal="true">
-        <header>
-            <img src={help} alt="" />
-        </header>
         <div className="inner">
-            
-            {children}
-            <button className="button" onClick={onClick}><i className="agree"/></button>
+            <header>
+            </header>
+            <div className="content">
+                {children}
+                <input type="image" alt="ok" src={agree} onClick={onClick} />
+            </div>
         </div>
     </Container>
 }

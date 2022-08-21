@@ -44,6 +44,9 @@ export default function MapComponent({ onPointerClicked, points, activePoint }: 
             setAppReady(true);
         });
 
+        app.renderer.view.style.objectFit = 'contain';
+        app.renderer.view.style.maxWidth = '100%';
+
         if (widgetContainerRef.current) {
             widgetContainerRef.current.appendChild(app.view);
         }
