@@ -23,32 +23,18 @@ type Props = {
 
 export default function MultiPointCompassViewContent({ geoSteps, onPointClicked, activePoint }: Props) {
 
-    const { isAccuracyOk, error } = useCompassView(geoSteps);
-
-    const showPermitionError = error?.type === GEO_MODULE_ERROR.PERMISSION_DENIED;
-    const showAccuracyError = !isAccuracyOk && !error;
-    const showGeoInfo = isAccuracyOk && !error;
-
     const points = useMemo(() => {
         return {
-                active: geoSteps.map(g => g.id),
-                inactive: []
-            }
+            active: geoSteps.map(g => g.id),
+            inactive: []
+        }
     }, [geoSteps])
 
     return <Container>
-        {showPermitionError && <Box>
-            <h3>Błąd uprawnień.</h3>
-            <p>Gra nie uzyskała dostępu do lokalizacji urządzenia. <br />Przyznaj uprawnienia stronie z grą, a następnie odśwież stronę.</p>
-        </Box>}
-        {showAccuracyError && <AccuracyError />}
-
-        {showGeoInfo && <MapComponent
+        <MapComponent
             onPointerClicked={onPointClicked}
             points={points}
             activePoint={activePoint}
-        />}
-
-
+        />
     </Container>
 }

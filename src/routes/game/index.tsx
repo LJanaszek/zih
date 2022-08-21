@@ -12,6 +12,7 @@ import GameErrorPage from "./error";
 import PageView from "./page";
 import WidgetView from "./task";
 import MultiPointCompassView from "./compass-view/multi";
+import { GeoModuleProvider } from "../../modules/geo";
 
 const Container = styled.div`
 `;
@@ -41,7 +42,9 @@ function GameStepView({ step }: { step: GameStep }) {
     return useMemo(() => {
         switch (step.type) {
             case GAME_STEP_TYPE.GEO_STEP:
-                return <SingleCompassView pointId={step.id} />
+                return <GeoModuleProvider>
+                    <SingleCompassView pointId={step.id} />
+                </GeoModuleProvider>
 
             case GAME_STEP_TYPE.TASK:
                 return <WidgetView id={step.id} />
@@ -50,7 +53,9 @@ function GameStepView({ step }: { step: GameStep }) {
                 return <PageView id={step.id} />
 
             case GAME_STEP_TYPE.MULTI_GEO_STEP:
-                return <MultiPointCompassView stepId={step.id} />
+                return <GeoModuleProvider>
+                    <MultiPointCompassView stepId={step.id} />
+                </GeoModuleProvider>
 
             default:
                 return <GameErrorPage />

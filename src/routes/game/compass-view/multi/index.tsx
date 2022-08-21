@@ -2,19 +2,19 @@ import { useCallback, useEffect, useMemo, useReducer, useState } from "react";
 import styled from "styled-components";
 import CompassDebugTools from "../../../../components/dev/compass-debug-tools";
 import Popup from "../../../../components/elements/popup";
+import Box from "../../../../components/layout/box";
 import FillScreenWithHeader from "../../../../components/layout/fill-screen-with-header";
 import { useConfigModuleState } from "../../../../modules/config";
-import { useGameModuleState } from "../../../../modules/game";
-import useFinishGameStep from "../../../../modules/game/hooks/use-finish-game-step";
-import useMultiGeoStep from "../../../../modules/game/hooks/use-multi-geo-step";
-import useScenario from "../../../../modules/game/hooks/use-scenario";
-import { GAME_STEP_TYPE, GeoStep, MultiGeoStep } from "../../../../modules/game/types";
-import { GeoModuleProvider } from "../../../../modules/geo";
+import { GeoStep, MultiGeoStep } from "../../../../modules/game/types";
+import useCompassView from "../../../../modules/game/view-hooks/use-compass-view";
+import { GeoModuleProvider, GEO_MODULE_ERROR } from "../../../../modules/geo";
 import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header";
 import ScrollToMe from "../../../../utils/widgets/scroll-to-me";
 import GameErrorPage from "../../error";
+import AccuracyError from "../accuracy-error";
 import MultiPointCompassViewContent from "./content";
 import GeoPointDrawer from "./geo-point-drawer";
+import useMultiGeoViewData from "./use-multi-geo-view-data";
 
 type ScreenState = {
     step: MultiGeoStep | null,
@@ -59,6 +59,12 @@ export default function MultiPointCompassView({ stepId }: { stepId: string }) {
     const { step, noCompletedPoints } = useMultiGeoViewData(stepId);
     const [showHelp, setShowHelp] = useState(false);
 
+    const { hasPosition, isAccuracyOk, error } = useCompassView(noCompletedPoints);
+    const showPermitionError = error?.type === GEO_MODULE_ERROR.PERMISSION_DENIED;
+
+    const showMap = hasPosition && isAccuracyOk;
+    const showAccuracyError = !isAccuracyOk && !error;
+
     const [{ selectedStep, openDrawer }, reducer] = useReducer((state: Pick<ScreenState, 'selectedStep' | 'openDrawer'>, action: ScreenAction) => {
 
         switch (action.type) {
@@ -96,10 +102,18 @@ export default function MultiPointCompassView({ stepId }: { stepId: string }) {
         })
     }, [reducer]);
 
-    return <GeoModuleProvider>
+    return <>
         <FillScreenWithHeader>
             <ScrollToMe trigger={step?.id} behavior="smooth" />
-            <MapScreenContainer>
+
+            {showPermitionError && <Box>
+                <h3>Błąd uprawnień.</h3>
+                <p>Gra nie uzyskała dostępu do lokalizacji urządzenia. <br />Przyznaj uprawnienia stronie z grą, a następnie odśwież stronę.</p>
+            </Box>}
+
+            {showAccuracyError && <AccuracyError />}
+
+            {showMap && <MapScreenContainer>
                 {step && <>
                     <div className="map-wrapper">
                         <MultiPointCompassViewContent activePoint={selectedStep?.id} geoSteps={noCompletedPoints} onPointClicked={onPointClicked} />
@@ -112,41 +126,17 @@ export default function MultiPointCompassView({ stepId }: { stepId: string }) {
                     </div>
                 </>}
                 {!step && <GameErrorPage />}
-            </MapScreenContainer>
+            </MapScreenContainer>}
         </FillScreenWithHeader>
-        {showHelp && <Popup onClick={() => { setShowHelp(false) }}>
-            <p>
-                Kliknij w pinezkę na mapie aby sprawdzić odległość dzielącą Cię w prostej linii od wybranej lokalizacji. Możesz dowolnie zmieniać wybór. Po dojściu do lokalizacji, automatycznie wczyta się związany z nią ekran gry.
-            </p>
-        </Popup>}
+        {
+            showHelp && <Popup onClick={() => { setShowHelp(false) }}>
+                <p>
+                    Kliknij w pinezkę na mapie aby sprawdzić odległość dzielącą Cię w prostej linii od wybranej lokalizacji. Możesz dowolnie zmieniać wybór. Po dojściu do lokalizacji, automatycznie wczyta się związany z nią ekran gry.
+                </p>
+            </Popup>
+        }
         {showDebug && <CompassDebugTools />}
-    </GeoModuleProvider>
+    </>
 }
 
-function useMultiGeoViewData(stepId: string) {
-    const { completedSteps } = useGameModuleState();
-    const step = useMultiGeoStep(stepId)
-    const scenario = useScenario();
-    const finishStep = useFinishGameStep();
 
-    const geoPoints = scenario.steps
-        .filter(s => (step?.stepsId || []).includes(s.id))
-        .filter(s => s.type === GAME_STEP_TYPE.GEO_STEP) as GeoStep[];
-
-    const result = useMemo(() => {
-        return {
-            step,
-            noCompletedPoints: geoPoints.filter(p => !completedSteps.includes(p.id)),
-            completedPoints: geoPoints.filter(p => completedSteps.includes(p.id)),
-        }
-    }, [geoPoints, completedSteps]);
-
-    // Jeżeli gracz zaliczył już określoną ilość punktów to wykonujemy `finishStep`
-    useEffect(() => {
-        if (step && result.completedPoints.length >= step.minVisitedPoints) {
-            finishStep(step.id);
-        }
-    }, [result, finishStep]);
-
-    return result
-}
