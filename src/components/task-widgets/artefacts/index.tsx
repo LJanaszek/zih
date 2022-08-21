@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import styled from "styled-components";
 import Artefact from "./artefact";
 import ArtefactInfo from "./artefact-info";
@@ -43,10 +43,11 @@ type GameState = {
     selectedArtefact: string | null;
     selectedAnswer: string | null;
     showArtefactInfo: string | null;
-    isPairValid: boolean
+    isPairValid: boolean,
+    isComplete: boolean
 }
 
-export default function ArtefactsWidget({ }: Props) {
+export default function ArtefactsWidget({onComplete}: Props) {
 
     const [gameState, reducer] = useReducer((state: GameState, action: any) => {
         const { type, id } = action;
@@ -79,7 +80,8 @@ export default function ArtefactsWidget({ }: Props) {
                         correctAnswers: [
                             ...state.correctAnswers,
                             state.selectedArtefact
-                        ]
+                        ],
+                        isComplete: state.correctAnswers.length+1 === WIDGET_DATA.ITEMS.length
                     }
                 }
                 break;
@@ -92,12 +94,19 @@ export default function ArtefactsWidget({ }: Props) {
         selectedAnswer: null,
         showArtefactInfo: null,
         isPairValid: false,
+        isComplete: false
     });
+
+    useEffect(() => {
+        if (gameState.isComplete) {
+            onComplete();
+        }
+    }, [gameState])
 
 
     const showArtefactInfo = Boolean(gameState.showArtefactInfo);
     const showArtefactMenu = !showArtefactInfo && Boolean(gameState.selectedArtefact);
-    const showGrid = !showArtefactInfo && !showArtefactMenu
+    const showGrid = !showArtefactInfo && !showArtefactMenu;
 
     return <Container>
         {showGrid && <div className="items-grid">

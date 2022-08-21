@@ -50,7 +50,7 @@ export default function TaskIntro({onComplete}: Props) {
             <h2>Szukaj ukrytego</h2>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus alias quia asperiores natus iusto, pariatur ab provident officiis veniam culpa, distinctio consequatur accusamus, porro autem itaque omnis et? Repellendus, velit?</p>
         </div>
-        <button onClick={onComplete}>Uruchom zadanie <i className="buttonIcon"/></button>
+        <button className="button" onClick={onComplete}>Uruchom zadanie <i className="icon start-task"/></button>
         </div>
     </Box>
     </Container>

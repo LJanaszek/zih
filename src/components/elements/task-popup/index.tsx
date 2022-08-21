@@ -43,20 +43,16 @@ const Container = styled.div`
     header{
         width:100%;
         height:4em;
-        background:var(--color3);
+        background: url(${help}) 50% 50% no-repeat var(--color3);
+        background-size: auto 80%;
         text-align:center;
         display:flex;
-        img{
-            margin: auto;
-            width:12%;
-        }
     }
 `;
 export default function TaskPopup({ children, onClick }: Props) {
     return <Container aria-modal="true">
         <div className="inner">
             <header>
-                <img src={help} alt="" />
             </header>
             <div className="content">
                 {children}
