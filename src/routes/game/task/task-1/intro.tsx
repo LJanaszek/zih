@@ -2,7 +2,7 @@ import { useState } from "react";
 import Box from "../../../../components/layout/box";
 import styled from "styled-components";
 import pointer from "../img/pointer.svg";
-import Taskimg from "../img/taskImages/task1.svg";
+import Taskimg from "../img/taskImages/task1.jpg";
 import useRemoveFooter from "../../../../modules/main/hooks/use-remove-footer";
 import TaskPopup from "../../../../components/elements/task-popup";
 const Container = styled.div`

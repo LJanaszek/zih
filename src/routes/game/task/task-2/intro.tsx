@@ -1,7 +1,7 @@
 import Box from "../../../../components/layout/box";
 import styled from "styled-components";
 import pointer from "../img/pointer.svg"
-import Taskimg from "../img/taskImages/task2.svg"
+import Taskimg from "../img/taskImages/task2.jpg"
 import useRemoveFooter from "../../../../modules/main/hooks/use-remove-footer";
 const Container = styled.div`
 .content{
