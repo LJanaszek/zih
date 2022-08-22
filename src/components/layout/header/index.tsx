@@ -18,13 +18,13 @@ const Container = styled.header<{theme: 'normal' | 'violet'}>`
     h1{
         display: inline-block;
         margin:0 auto;
-        background-color: ${({theme: mode}) => mode ==='violet' ? 'white' : 'var(--color3)'};
+        background-color: ${({theme}) => theme ==='violet' ? 'white' : 'var(--color3)'};
 
         padding: .65em 1.2em;
         letter-spacing: -1px;
         font-family: Bristol;
         border-radius: 50px;
-        color: ${({theme: mode}) => mode ==='violet' ? 'var(--color3)' : 'var(--color2)'};
+        color: ${({theme}) => theme ==='violet' ? 'var(--color3)' : 'var(--color2)'};
         position: relative;
 
         font-weight: normal;
@@ -44,8 +44,8 @@ const Container = styled.header<{theme: 'normal' | 'violet'}>`
     }
 `;
 
-export default function PageHeader({theme: mode}: Props) {
-    return <Container theme={mode || 'normal'}>
+export default function PageHeader({theme}: Props) {
+    return <Container theme={theme || 'normal'}>
         <h1>Z <span className="shultz">Schulzem</span> przez Falenicę</h1>
     </Container>
 }
