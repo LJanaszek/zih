@@ -6,7 +6,8 @@ import Sticker from './street.png';
 import ScrollToTop from "../../../utils/widgets/scroll-to-top";
 
 type Props = {
-    srcObject: MediaStream
+    srcObject: MediaStream,
+    stickerAlpha: number
 }
 
 type API = {
@@ -49,7 +50,7 @@ const Container = styled.div`
     }
 `;
 
-const VideoComponent = React.forwardRef<API, Props>(({ srcObject }, ref) => {
+const VideoComponent = React.forwardRef<API, Props>(({ srcObject, stickerAlpha }, ref) => {
     // const VideoComponent = ({ srcObject }: Props) => {
 
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -136,7 +137,9 @@ const VideoComponent = React.forwardRef<API, Props>(({ srcObject }, ref) => {
     return <Container>
         <ScrollToTop behavior="smooth" />
         <video ref={videoRef} autoPlay={true} playsInline></video>
-        <div className="sticker-overlay" ref={sticketOverlayRef}>
+        <div className="sticker-overlay" ref={sticketOverlayRef} style={{
+            opacity: stickerAlpha/100
+        }}>
             <div className="sticker-wrapper" ref={sticketWrapperRef}>
                 <div className="sticker"></div>
             </div>

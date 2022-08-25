@@ -9,8 +9,8 @@ type Props = {
 export default function TaskMain({onComplete}: Props) {
     useRemoveHeader();
 
-    return <Box>
+    return <>
         <Zad1Photo onComplete={() => {}} />
         <button onClick={onComplete}>Zrobione!</button>
-    </Box>
+    </>
 }
