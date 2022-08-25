@@ -12,19 +12,26 @@ type Props = {
 const Container = styled.div`
 
     height: 100%;
-    width: 100%;
+    width: 96%;
+    margin: 0 auto;
 
     display: flex;
     justify-content: stretch;
     align-items: stretch;
 
     .items-grid {
-        width: 100%;
-        max-height: 100%;
+        width: calc(100% - 1rem);
+        max-height: calc(100% - 2rem);
         display: grid;
+
+        border: 3px solid var(--color1);
+        border-radius: 2rem;
+        padding: 1rem .5rem;
 
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: repeat(3, 1fr);
+
+        gap: 1rem;
 
         & > * {
             grid-column: span 2;
@@ -35,6 +42,10 @@ const Container = styled.div`
         }
 
 
+    }
+
+    .item-menu {
+        width: 100%;
     }
 `;
 

@@ -11,7 +11,42 @@ type Props = {
     onClose(): void
 }
 
-const Container = styled.div``
+const Container = styled.div`
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    .close {
+        flex: 0 0 2rem;
+    }
+
+    .item-info {
+        flex-grow: 1;
+        max-height: 40%;
+        margin: 1rem 0;
+
+        background-size: contain;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+    }
+
+    .answers {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    .answer {
+        display: flex;
+        flex-direction: column;
+    }
+`
 
 
 export default function ArtefactMenu({ onClose, onShowInfo, onSelectAnswer, selectedAnswer, artefactId, onValidate }: Props) {
@@ -41,15 +76,16 @@ export default function ArtefactMenu({ onClose, onShowInfo, onSelectAnswer, sele
     }, [artIndex]);
 
     return <Container>
-        <button onClick={onClose}>Zamknij</button>
+        <button className="close" onClick={onClose}>Zamknij</button>
         {
             artefact && <>
-                {artefact.name}
+                <div className="item-info" style={{backgroundImage: `url(${artefact.image})`}}>
 
-                <div>
+                </div>
+                <div className="answers">
                     {
                         answers.map((a) => {
-                            return <div key={a.id}>
+                            return <div className="answer" key={a.id}>
                                 {a.id === selectedAnswer && <span>ZAZNACZONE</span>}
                                 <button onClick={() => onSelectAnswer(a.id)}>{a.name}</button>
                                 <button onClick={() => onShowInfo(a.id)}>info</button>
@@ -59,7 +95,7 @@ export default function ArtefactMenu({ onClose, onShowInfo, onSelectAnswer, sele
                 </div>
 
                 {!isValid && selectedAnswer && <button onClick={() => check(selectedAnswer)}>SPRAWDŹ</button>}
-                {isValid && <button onClick={onValidate}>OK</button> }
+                {isValid && <button onClick={onValidate}>OK</button>}
             </>
         }
     </Container>
