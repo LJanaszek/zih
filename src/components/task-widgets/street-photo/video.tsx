@@ -125,8 +125,6 @@ const VideoComponent = React.forwardRef<API, Props>(({ srcObject, stickerAlpha }
                 video.removeEventListener('loadedmetadata', formatVideoTag);
                 video.srcObject = null;
 
-                srcObject.getTracks()[0].stop()
-
                 window.removeEventListener('resize', formatVideoTag);
                 window.removeEventListener('orientationchange', formatVideoTag);
             }
