@@ -6,25 +6,33 @@ import ArtefactMenu from "./artefact-menu";
 import WIDGET_DATA from "./data";
 
 type Props = {
-    onComplete(): void
+    onComplete(): void,
+    onShowButtons(value: boolean): void;
 }
 
 const Container = styled.div`
 
     height: 100%;
-    width: 100%;
+    width: 96%;
+    margin: 0 auto;
 
     display: flex;
     justify-content: stretch;
     align-items: stretch;
 
     .items-grid {
-        width: 100%;
-        max-height: 100%;
+        width: calc(100% - 1rem);
+        max-height: calc(100% - 2rem);
         display: grid;
+
+        border: 3px solid var(--color1);
+        border-radius: 2rem;
+        padding: 1rem .5rem;
 
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: repeat(3, 1fr);
+
+        gap: 1rem;
 
         & > * {
             grid-column: span 2;
@@ -34,7 +42,27 @@ const Container = styled.div`
             }
         }
 
+        @media(orientation: landscape) {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
 
+            & > * {
+                grid-column: span 1;
+
+                &:nth-child(7) {
+                    grid-column: span 1;
+                }
+            }
+
+        }
+    }
+
+    .item-menu {
+        width: 100%;
+    }
+
+    .item-info {
+        width: 100%;
     }
 `;
 
@@ -47,7 +75,7 @@ type GameState = {
     isComplete: boolean
 }
 
-export default function ArtefactsWidget({onComplete}: Props) {
+export default function ArtefactsWidget({ onComplete, onShowButtons }: Props) {
 
     const [gameState, reducer] = useReducer((state: GameState, action: any) => {
         const { type, id } = action;
@@ -56,7 +84,8 @@ export default function ArtefactsWidget({onComplete}: Props) {
             case 'select-item':
                 return {
                     ...state,
-                    selectedArtefact: id
+                    selectedArtefact: id,
+                    selectedAnswer: null
                 }
 
             case 'select-answer':
@@ -81,7 +110,7 @@ export default function ArtefactsWidget({onComplete}: Props) {
                             ...state.correctAnswers,
                             state.selectedArtefact
                         ],
-                        isComplete: state.correctAnswers.length+1 === WIDGET_DATA.ITEMS.length
+                        isComplete: state.correctAnswers.length + 1 === WIDGET_DATA.ITEMS.length
                     }
                 }
                 break;
@@ -101,7 +130,8 @@ export default function ArtefactsWidget({onComplete}: Props) {
         if (gameState.isComplete) {
             onComplete();
         }
-    }, [gameState, onComplete])
+        onShowButtons(Boolean(!gameState.selectedArtefact));
+    }, [gameState, onComplete, onShowButtons])
 
 
     const showArtefactInfo = Boolean(gameState.showArtefactInfo);
@@ -137,8 +167,8 @@ export default function ArtefactsWidget({onComplete}: Props) {
         {showArtefactInfo && <div className="item-info">
             <ArtefactInfo
                 artefactId={gameState.showArtefactInfo}
-                onClose={() => { reducer({type: 'show-info', id: null})}}
-                />
+                onClose={() => { reducer({ type: 'show-info', id: null }) }}
+            />
         </div>}
     </Container>
 }
