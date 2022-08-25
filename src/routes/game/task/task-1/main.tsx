@@ -11,6 +11,6 @@ export default function TaskMain({onComplete}: Props) {
 
     return <>
         <Zad1Photo onComplete={() => {}} />
-        <button onClick={onComplete}>Zrobione!</button>
+        <button className="button" onClick={onComplete}>Zrobione!<i className="icon ok" /></button>
     </>
 }
