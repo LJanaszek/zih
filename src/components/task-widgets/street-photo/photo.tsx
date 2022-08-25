@@ -255,7 +255,7 @@ export default function Zad1Photo({ onComplete }: Props) {
                     ctx.drawImage(videoRef.current.getVideo(), 0, 0, capture.width, capture.height);
                     ctx.drawImage(img,
                         0,
-                        0,
+                        (capture.height - stickerHeight) / 2,
                         stickerWidth,
                         stickerHeight);
 

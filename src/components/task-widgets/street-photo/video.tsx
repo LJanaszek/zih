@@ -45,7 +45,7 @@ const Container = styled.div`
         bottom: 0;
         right: 0;
 
-        background: url(${Sticker}) 100% 0 no-repeat;
+        background: url(${Sticker}) 50% 50% no-repeat;
         background-size: cover;
     }
 `;
