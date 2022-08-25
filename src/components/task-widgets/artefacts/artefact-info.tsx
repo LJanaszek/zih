@@ -41,7 +41,7 @@ export default function ArtefactInfo({ artefactId, onClose }: Props) {
     }, [artefactId])
 
     return <Container>
-        <input type='image' src={closeSrc} className="close" onClick={onClose} />
+        <input type='image' alt="zamknij" src={closeSrc} className="close" onClick={onClose} />
         {artefact && <>
             <h3>{artefact.name}</h3>
             <p>{artefact.description}</p>

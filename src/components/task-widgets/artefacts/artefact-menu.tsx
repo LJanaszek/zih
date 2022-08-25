@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useReducer } from "react"
 import styled from "styled-components"
-import WIDGET_DATA, { ItemsData } from "./data";
+import WIDGET_DATA from "./data";
 import infoSrc from '../../../assets/icons/info.svg';
 import closeSrc from '../../../assets/icons/close.svg';
 import okSrc from '../../../assets/icons/ok-circle.svg';
@@ -100,7 +100,7 @@ const Container = styled.div`
 export default function ArtefactMenu({ onClose, onShowInfo, onSelectAnswer, selectedAnswer, artefactId, onValidate }: Props) {
 
     const artefact = useMemo(() => {
-       return WIDGET_DATA.ITEMS.find(a => a.id === artefactId);
+        return WIDGET_DATA.ITEMS.find(a => a.id === artefactId);
     }, [artefactId])
 
     const [isValid, check] = useReducer((state: boolean | null, id: string | null) => {
@@ -116,7 +116,7 @@ export default function ArtefactMenu({ onClose, onShowInfo, onSelectAnswer, sele
     const onSelect = useCallback((id: string) => {
         onSelectAnswer(id);
         check(null);
-    }, [check]);
+    }, [check, onSelectAnswer]);
 
     useEffect(() => {
         if (isValid) {
@@ -125,7 +125,7 @@ export default function ArtefactMenu({ onClose, onShowInfo, onSelectAnswer, sele
     }, [isValid, onValidate]);
 
     return <Container>
-        <input type='image' src={closeSrc} className="close" onClick={onClose} />
+        <input type='image' alt="zamknij" src={closeSrc} className="close" onClick={onClose} />
         {
             artefact && <>
                 <div className="item-info" style={{ backgroundImage: `url(${artefact.image})` }}>
@@ -139,6 +139,7 @@ export default function ArtefactMenu({ onClose, onShowInfo, onSelectAnswer, sele
                                     className={`answer-button ${a.id === selectedAnswer ? 'selected' : ''}`}
                                     onClick={() => onSelect(a.id)}
                                     role='radio'
+                                    aria-checked={a.id === selectedAnswer}
                                 >{a.name}</button>
                                 <input className="answer-info-button" type='image' src={infoSrc} onClick={() => onShowInfo(a.id)} alt={`dodatkowa infomacja o: ${a.name}`} />
                             </div>
@@ -146,7 +147,7 @@ export default function ArtefactMenu({ onClose, onShowInfo, onSelectAnswer, sele
                     }
                 </div>
                 <div className="check-button-container">
-                    {selectedAnswer && <input type='image' disabled={!selectedAnswer} className="check-button" src={okSrc} onClick={() => check(selectedAnswer)} />}
+                    {selectedAnswer && <input type='image' alt="sprawdź" disabled={!selectedAnswer} className="check-button" src={okSrc} onClick={() => check(selectedAnswer)} />}
                 </div>
             </>
         }
