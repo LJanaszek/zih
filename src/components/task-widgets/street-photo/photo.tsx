@@ -33,6 +33,7 @@ const Container = styled.div`
 
     .camera-container {
         background: black;
+        overflow:hidden;
     }
 
     .toggle-camera {
@@ -244,8 +245,8 @@ export default function Zad1Photo({ onComplete }: Props) {
                     let stickerHeight = imgHeight;
 
                     if (imgRatio >= captuteRatio) {
-                        stickerWidth = Math.min(imgWidth, stickerSpaceWidth);
-                        stickerHeight = stickerWidth / imgRatio;
+                        stickerHeight = capture.height;
+                        stickerWidth = stickerHeight * imgRatio
                     } else {
                         console.log('POZIOMO?')
                         stickerWidth = capture.width;
@@ -254,7 +255,7 @@ export default function Zad1Photo({ onComplete }: Props) {
 
                     ctx.drawImage(videoRef.current.getVideo(), 0, 0, capture.width, capture.height);
                     ctx.drawImage(img,
-                        0,
+                        (capture.width - stickerWidth) / 2,
                         (capture.height - stickerHeight) / 2,
                         stickerWidth,
                         stickerHeight);

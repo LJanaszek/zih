@@ -33,12 +33,15 @@ export default function FillScreenWithHeader({ hideHeader, children }: PropsWith
 
     const onResize = useCallback(() => {
         if (ref.current) {
+            console.log('resize: ', window.innerHeight)
             ref.current.style.height = window.innerHeight + 'px';
         }
     }, []);
 
     useEffect(() => {
         window.addEventListener('resize', onResize);
+
+        onResize();
 
         return () => {
             window.removeEventListener('resize', onResize);
