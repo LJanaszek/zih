@@ -40,6 +40,8 @@ export default function FillScreenWithHeader({ hideHeader, children }: PropsWith
     useEffect(() => {
         window.addEventListener('resize', onResize);
 
+        onResize();
+
         return () => {
             window.removeEventListener('resize', onResize);
         }
