@@ -6,11 +6,13 @@ type Props = {
     onComplete(): void
 }
 
-export default function TaskMain({onComplete}: Props) {
+export default function TaskMain({ onComplete }: Props) {
     useRemoveHeader();
 
     return <>
-        <Zad1Photo onComplete={() => {}} />
-        <button className="button" onClick={onComplete}>Zrobione!<i className="icon ok" /></button>
+        <Zad1Photo onComplete={() => { }} />
+        <div className="button-list">
+            <button className="button" onClick={onComplete}>Zrobione!<i className="icon ok" /></button>
+        </div>
     </>
 }
