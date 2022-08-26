@@ -1,5 +1,5 @@
 import * as PIXI from 'pixi.js';
-import { APP_HEIGHT, APP_WIDTH, IScreen } from "../app";
+import { APP_HEIGHT, APP_HEIGHT_2, APP_WIDTH, APP_WIDTH_2, IScreen } from "../app";
 import { SCREEN } from '../data';
 import Bin from './bin';
 import LabelItem from './label';
@@ -24,6 +24,8 @@ export default class GameScreen extends PIXI.Container implements IScreen {
     completeButton: PIXI.Text = new PIXI.Text('Zrobione')
     bg: PIXI.Sprite = PIXI.Sprite.from('drzewo');
 
+    orientation: 'portrait' | 'landscape' = 'landscape';
+
     errorLayer = new PIXI.Container();
 
     constructor(private app: PIXI.Application, private onComplete: () => void) {
@@ -42,7 +44,7 @@ export default class GameScreen extends PIXI.Container implements IScreen {
             this.items.push(item);
 
             item.on('new-position', ({ position, grabPosition }) => {
-                const  binData = this.bins.find(l => l.bin.containsPoint(grabPosition));
+                const binData = this.bins.find(l => l.bin.containsPoint(grabPosition));
 
                 if (binData) {
 
@@ -191,10 +193,6 @@ export default class GameScreen extends PIXI.Container implements IScreen {
         this.completeButton.on('pointerdown', () => {
             this.onComplete();
         });
-
-        this.prevPageButton.position.set(40, APP_HEIGHT - (SLIDER_HEIGHT / 2));
-        this.completeButton.position.set(APP_WIDTH / 2, APP_HEIGHT - (SLIDER_HEIGHT / 2));
-        this.nextPageButton.position.set(APP_WIDTH - 40, APP_HEIGHT - (SLIDER_HEIGHT / 2));
     }
 
     showNextPage() {
@@ -242,5 +240,46 @@ export default class GameScreen extends PIXI.Container implements IScreen {
     }
     reset(): void {
         throw new Error('Method not implemented.');
+    }
+
+    changeOrientation(orientation: 'portrait' | 'landscape') {
+        let sliderBaseX = 0;
+        let sliderCenterX = 0;
+        let sliderCenterY = 0;
+        let sliderBaseY = 0;
+        let layoutColumnCount = 0;
+        let columnWidth = 0;
+
+        if (orientation === 'portrait') {
+            layoutColumnCount = 1;
+
+            columnWidth = APP_WIDTH / layoutColumnCount;
+
+            sliderBaseX = 0;
+            sliderBaseY = APP_HEIGHT - SLIDER_HEIGHT;
+            sliderCenterX = APP_WIDTH / 2;
+            sliderCenterY = sliderBaseY + SLIDER_HEIGHT / 2;
+            sliderCenterX = APP_WIDTH / 2;
+        }
+
+        if (orientation === 'landscape') {
+            layoutColumnCount = 2;
+            columnWidth = APP_WIDTH_2 / layoutColumnCount;
+
+            sliderBaseY = APP_HEIGHT_2 - SLIDER_HEIGHT;
+            sliderBaseX = APP_WIDTH_2 / 2;
+            sliderCenterX = APP_WIDTH_2 * .75;
+            sliderCenterY = APP_HEIGHT_2 / 2;
+        }
+
+        this.prevPageButton.position.set(sliderBaseX + 40, sliderCenterY);
+        this.completeButton.position.set(sliderBaseX + columnWidth / 2, sliderCenterY);
+        this.nextPageButton.position.set(sliderBaseX + columnWidth - 40, sliderCenterY);
+
+        this.pages.forEach(p => {
+            p.items.forEach((item, index) => {
+                item.setPosition(sliderCenterX, (sliderCenterY - SLIDER_HEIGHT/2) + 45 + (70 + 3) * index);
+            });
+        });
     }
 }

@@ -10,7 +10,7 @@ const LABEL_HEIGHT = 70;
 export default class LabelItem extends PIXI.Container {
     public id: string;
     text: PIXI.Text;
-    bg: PIXI.Graphics;
+    // bg: PIXI.Graphics;
     constructor(private config: ItemData, private app: PIXI.Application) {
         super();
 
@@ -20,12 +20,12 @@ export default class LabelItem extends PIXI.Container {
 
         this.hitArea = containerRect
 
-        this.bg = new PIXI.Graphics();
+        // this.bg = new PIXI.Graphics();
 
-        this.bg.beginFill(0xDFD7CD, .0);
-        this.bg.drawShape(containerRect);
+        // this.bg.beginFill(0xff0000, 1);
+        // this.bg.drawShape(containerRect);
 
-        this.addChild(this.bg);
+        // this.addChild(this.bg);
 
         this.interactive = true;
         this.buttonMode = true;
@@ -178,7 +178,7 @@ export default class LabelItem extends PIXI.Container {
     }
 
     transformToAnswer() {
-        this.bg.visible = false;
+        // this.bg.visible = false;
         this.interactive = false;
         this.text.style.fontSize = '18px';
         this.text.anchor.set(0);
