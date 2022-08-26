@@ -1,4 +1,3 @@
-import Box from "../../../../components/layout/box"
 import Zad1Photo from "../../../../components/task-widgets/street-photo/photo"
 import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header"
 
