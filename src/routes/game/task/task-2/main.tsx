@@ -6,6 +6,7 @@ import FillScreenWithHeader from "../../../../components/layout/fill-screen-with
 import SmallPageHeader from "../../../../components/layout/header/small-header";
 import BirdsTask, { BirdTaskState } from "../../../../components/task-widgets/birds";
 import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header";
+import HelpGrid from "./help-grid";
 
 type Props = {
     onComplete(): void
@@ -64,6 +65,7 @@ const Container = styled.div`
     }
 
     @media(orientation: portrait) {
+        height: 100vh;
         grid-template-columns: 1fr;
         gap: 10px;
 
@@ -85,6 +87,7 @@ const Container = styled.div`
 
         .state {
             grid-row: 3;
+            font-size: 2rem;
         }
 
 
@@ -111,8 +114,11 @@ export default function TaskMain({ onComplete }: Props) {
     const [showInfoPopup, setShowInfoPopup] = useState(false);
     const [showPreviewPopup, setShowPreviewPopup] = useState(false);
 
-    return <FillScreenWithHeader>
+    return <>
         <Container>
+            <div className="header">
+                <SmallPageHeader />
+            </div>
             <div className="controlls">
                 <button className="button" onClick={() => { setShowPreviewPopup(true) }}>Podgląd<i className="icon eye" /></button>
                 <button className="button" onClick={() => { setShowInfoPopup(true) }}>Pomoc<i className="icon help" /></button>
@@ -125,11 +131,11 @@ export default function TaskMain({ onComplete }: Props) {
                 <span>{gameState.findedBirdCount}/{gameState.birdCount}</span>
             </div>
         </Container>
-        {showPreviewPopup && <Popup onClick={() => { setShowPreviewPopup(false) }}>
-            Tu coś będzie....
+        {showPreviewPopup && <Popup padding="small" onClick={() => { setShowPreviewPopup(false) }}>
+            <HelpGrid />
         </Popup>}
         {showInfoPopup && <TaskPopup onClick={() => { setShowInfoPopup(false) }}>
             Znajdź ukryte ptaki i kliknij w nie by je złapać. Kliknij w ikonę [oko] by zobaczyć podpowiedź.
         </TaskPopup>}
-    </FillScreenWithHeader>
+    </>
 }
