@@ -6,7 +6,7 @@ import Loader from './components/elements/loader';
 import PageHeader from './components/layout/header';
 import { useMainModuleState } from './modules/main';
 import CookiesInfo from './components/cookies';
-import PageFooter from './components/layout/footer';
+// import PageFooter from './components/layout/footer';
 import PolicyPage from './routes/policy';
 import { useEffect } from 'react';
 import { CONFIG_MODULE_ACTION, useConfigModuleDispatch } from './modules/config';
@@ -46,7 +46,7 @@ export default function App() {
                         </Routes>
                     </Suspense>
                 </main>
-                {showHeader && <PageFooter />}
+                {showHeader}
             </BrowserRouter>
         </>
     )
