@@ -1,6 +1,8 @@
 import { useState } from "react";
 import styled from "styled-components";
 import Popup from "../../../../components/elements/popup";
+import TaskPopup from "../../../../components/elements/task-popup";
+import FillScreenWithHeader from "../../../../components/layout/fill-screen-with-header";
 import SmallPageHeader from "../../../../components/layout/header/small-header";
 import BirdsTask, { BirdTaskState } from "../../../../components/task-widgets/birds";
 import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header";
@@ -52,9 +54,11 @@ const Container = styled.div`
         }
 
         .state {
+            font-size: 2rem;
+            padding-top: .1em;
             span {
                 display: inline-block;
-                min-width: 5em;
+                min-width: 2.5em;
             }
         }
     }
@@ -107,15 +111,12 @@ export default function TaskMain({ onComplete }: Props) {
     const [showInfoPopup, setShowInfoPopup] = useState(false);
     const [showPreviewPopup, setShowPreviewPopup] = useState(false);
 
-    return <>
+    return <FillScreenWithHeader>
         <Container>
-            <div className="header">
-                <SmallPageHeader />
-            </div>
             <div className="controlls">
-                <button className="button" onClick={() => { setShowPreviewPopup(true) }}>Podgląd</button>
-                <button className="button" onClick={() => { setShowInfoPopup(true) }}>Pomoc</button>
-                {gameState.isComplete && <button className="button" onClick={onComplete}>Zakończ</button>}
+                <button className="button" onClick={() => { setShowPreviewPopup(true) }}>Podgląd<i className="icon eye" /></button>
+                <button className="button" onClick={() => { setShowInfoPopup(true) }}>Pomoc<i className="icon help" /></button>
+                {gameState.isComplete && <button className="button" onClick={onComplete}>Zakończ<i className="icon ok" /></button>}
             </div>
             <div className="widget">
                 <BirdsTask onComplete={onComplete} onGameStateChanged={setGameState} />
@@ -127,8 +128,8 @@ export default function TaskMain({ onComplete }: Props) {
         {showPreviewPopup && <Popup onClick={() => { setShowPreviewPopup(false) }}>
             Tu coś będzie....
         </Popup>}
-        {showInfoPopup && <Popup onClick={() => { setShowInfoPopup(false) }}>
+        {showInfoPopup && <TaskPopup onClick={() => { setShowInfoPopup(false) }}>
             Znajdź ukryte ptaki i kliknij w nie by je złapać. Kliknij w ikonę [oko] by zobaczyć podpowiedź.
-        </Popup>}
-    </>
+        </TaskPopup>}
+    </FillScreenWithHeader>
 }
