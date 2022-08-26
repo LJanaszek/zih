@@ -6,7 +6,7 @@ import useGameStarted from "../../modules/game/hooks/use-game-started";
 import { useCallback, useState } from "react";
 import { GAME_MODULE_ACTION, useGameModuleDispatch } from "../../modules/game";
 import logo from './instrukcja.jpg';
-import Popup from "../../components/elements/popup";
+import Popup from "../../components/elements/hppopup";
 import WikiPopup from "../../components/wiki-popup";
 import { useRef } from "react";
 /* <meta name="viewport" content="width=device-width, initial-scale=1"></meta> */
@@ -144,6 +144,14 @@ footer{
   }
 
   }
+  .popupdiv{
+    width: 100%;
+    height: 4em;
+    background-color: var(--color1);
+  }
+  .divp{
+    width:80%;
+  }
 `;
 
 export default function HomePage() {
@@ -218,8 +226,9 @@ export default function HomePage() {
         </Box>
 
         {showGPSInfo && <Popup onClick={goToGame}>
-            <p>
-                Dostęp do lokalizacji urządzenia jest niezbędny do przeprowadzenia gry. Udziel dostępu, jeśli zostaniesz o to poproszony.
+            <div className="popupdiv"></div>
+            <p className="divp">
+                Dostęp do lokalizacji urządzenia jest niezbędny do przeprowadzenia gry.<br/><br/> Udziel dostępu, jeśli zostaniesz o to poproszony.
             </p>
         </Popup>}
         
