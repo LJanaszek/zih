@@ -135,15 +135,6 @@ nav{
         padding:0.6em;
 
   }
-
-  }
-  .popupdiv{
-    width: 100%;
-    height: 4em;
-    background-color: var(--color1);
-  }
-  .divp{
-    width:80%;
   }
 `;
 
@@ -171,7 +162,8 @@ export default function HomePage() {
         wikiRef.current?.focus();
     }, [setShowWikiPopup]);
 
-    return <Container>
+    return <>
+        <Container>
             <div className='content'>
                 <div className="img-shulz">
                     <img src={logo} alt="" />
@@ -193,21 +185,21 @@ export default function HomePage() {
 
                 </div>
 
-            <nav>
+                <nav>
 
-                {!gameStarted &&
-                    <button className="button with-icon" onClick={() => { setShowGPSInfo(true) }}>Rozpocznij grę <i className="icon game-start" /></button>
-                }
+                    {!gameStarted &&
+                        <button className="button with-icon" onClick={() => { setShowGPSInfo(true) }}>Rozpocznij grę <i className="icon game-start" /></button>
+                    }
 
-                {gameStarted &&
-                    <>
-                        <Link className="button with-icon" to={getGamePageRoute()}>Kontynuuj grę <i className="icon game-continue" /></Link>
-                        <Link className="button with-icon" to={getHomeRoute()} onClick={() => { onGameRestart() }}>Zrestartuj grę <i className="icon game-restart" /> </Link>
-                    </>
-                }
+                    {gameStarted &&
+                        <>
+                            <Link className="button with-icon" to={getGamePageRoute()}>Kontynuuj grę <i className="icon game-continue" /></Link>
+                            <Link className="button with-icon" to={getHomeRoute()} onClick={() => { onGameRestart() }}>Zrestartuj grę <i className="icon game-restart" /> </Link>
+                        </>
+                    }
 
-                <button className="button with-icon" ref={wikiRef} onClick={() => { setShowWikiPopup(true) }} >Baza wiedzy <i className="icon knowledge" /></button>
-            </nav>
+                    <button className="button with-icon" ref={wikiRef} onClick={() => { setShowWikiPopup(true) }} >Baza wiedzy <i className="icon knowledge" /></button>
+                </nav>
             </div>
             {
                 showWikiPopup && <WikiPopup onClick={closeWikiPopup}>
@@ -215,12 +207,14 @@ export default function HomePage() {
                 </WikiPopup>
             }
 
-        {showGPSInfo && <HomePagePopup onClick={goToGame}>
-            <div className="popupdiv"></div>
-            <p className="divp">
-                Dostęp do lokalizacji urządzenia jest niezbędny do przeprowadzenia gry.<br/><br/> Udziel dostępu, jeśli zostaniesz o to poproszony.
-            </p>
-        </HomePagePopup>}
-        {PageFooter()}
-    </Container>
+            {PageFooter()}
+        </Container>
+        {
+            showGPSInfo && <HomePagePopup onClick={goToGame}>
+                <p className="divp">
+                    Dostęp do lokalizacji urządzenia jest niezbędny do przeprowadzenia gry.<br /><br /> Udziel dostępu, jeśli zostaniesz o to poproszony.
+                </p>
+            </HomePagePopup>
+        }
+    </>
 }

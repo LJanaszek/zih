@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import next from "../../../assets/icons/okpom.svg"
 import rozaIcon from '../../../assets/roza.svg';
+
+
 type Props = React.PropsWithChildren<{
     onClick(): void
 }>;
@@ -8,6 +10,7 @@ type Props = React.PropsWithChildren<{
 const Container = styled.div`
     background: rgba(0,0,0,.8);
     color: var(--color1);
+
     margin: 0 auto;
 
     display: flex;
@@ -21,44 +24,45 @@ const Container = styled.div`
     width: 100vw;
     height: 100vh;
 
-    .popinner {
-        border: 2ps solid;
+    .inner {
+        text-align: center;
         max-width: 1200px;
-        // padding: 1rem 4rem;
         background: white;
         border: 1px solid var(--color3);
-        width:90%;
+
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .content {
+        padding: 1rem 4rem;
+    }
+
+    input[type=image] {
+        height: 6em;
+    }
+
+    header{
+        width:100%;
+        height:4em;
+        background: url(${rozaIcon}) 50% 50% no-repeat var(--color1);
+        background-size: auto 80%;
         text-align:center;
-        font-size:22px;
+        display:flex;
     }
-
-    button {
-        margin-top: 2em;
-        background: none;
-        border: none;
-        margin-bottom:4em;
-    }
-    .icon{
-        background: url(${next})50% 50% no-repeat;
-        padding: 3em;
-    }
-    img{
-        width:3em;
-        position: absolute;
-        padding: .5em;
-    }
-
 `;
 export default function HomePagePopup({ children, onClick }: Props) {
     return <Container aria-modal="true">
-
-        <div className="popinner">
-        <img src={rozaIcon} alt="" />
-            {children}
-            <button onClick={onClick}><i className="icon"/></button>
+        <div className="inner">
+            <header>
+            </header>
+            <div className="content">
+                {children}
+                <div>
+                    <input type="image" alt="ok" src={next} onClick={onClick} />
+                </div>
+            </div>
         </div>
     </Container>
 }
