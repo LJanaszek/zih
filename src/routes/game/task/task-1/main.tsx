@@ -1,4 +1,3 @@
-import Box from "../../../../components/layout/box"
 import Zad1Photo from "../../../../components/task-widgets/street-photo/photo"
 import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header"
 
@@ -6,11 +5,13 @@ type Props = {
     onComplete(): void
 }
 
-export default function TaskMain({onComplete}: Props) {
+export default function TaskMain({ onComplete }: Props) {
     useRemoveHeader();
 
-    return <Box>
-        <Zad1Photo onComplete={() => {}} />
-        <button onClick={onComplete}>Zrobione!</button>
-    </Box>
+    return <>
+        <Zad1Photo onComplete={() => { }} />
+        <div className="button-list">
+            <button className="button" onClick={onComplete}>Zrobione!<i className="icon ok" /></button>
+        </div>
+    </>
 }
