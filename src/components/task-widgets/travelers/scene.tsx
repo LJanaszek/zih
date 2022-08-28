@@ -13,6 +13,7 @@ import { useEffect } from "react";
 import ScrollToTop from "../../../utils/widgets/scroll-to-top";
 import useCamera from "../../../modules/camera/use-camera";
 import Popup from "../../elements/popup";
+import SmallPageHeader from "../../layout/header/small-header";
 
 type Props = {
     onComplete(points: number): void
@@ -33,6 +34,7 @@ const Container = styled.div`
     .camera-container {
         background: black;
         position: relative;
+        overflow:hidden;
 
         .start-button-overlay {
             background: rgba(0,0,0,.5);
@@ -92,24 +94,13 @@ const Container = styled.div`
         }
     }
 
-    .logo {
-
+    .timer-container {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: flex-start;
         align-items: center;
 
-        img {
-            display: block;
-            width: 30%;
-        }
-    }
-
-    .timer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        font-family: 'Roboto Slab';
+        font-family: 'Gothic';
         font-size: 1.5em;
     }
 
@@ -139,13 +130,20 @@ const Container = styled.div`
         }
 
         .logo {
-            grid-column: 3;
-            grid-row: 5 / span 2;
+            grid-column: 1;
+            grid-row: 1;
+            padding-top: .3em;
+
+            h1 {
+                font-size: .3rem;
+                vertical-align: top;
+            }
         }
 
-        .timer {
+        .timer-container {
+            padding-top: .3em;
             grid-column: 3;
-            grid-row: 1 / span 2;
+            grid-row: 1/ span 2;
         }
     }
 
@@ -179,7 +177,7 @@ const Container = styled.div`
             grid-row: 1;
         }
 
-        .timer {
+        .timer-container {
             grid-column: 2;
             grid-row: 2;
         }
@@ -311,6 +309,9 @@ export default function Zad5Scene({ onComplete }: Props) {
 
     return <Container>
         <ScrollToTop behavior="smooth" />
+        <div className="logo">
+            <SmallPageHeader />
+        </div>
         <div className="camera-container">
             {showVideo && <VideoComponent srcObject={srcObject as MediaStream} />}
             <div ref={sceneContainerRef} className="scene-container"></div>
@@ -329,7 +330,8 @@ export default function Zad5Scene({ onComplete }: Props) {
             <input type="image" src={showVideo ? CameraOff : CameraOn} onClick={onToggleVideoClick} alt="" />
         </div>
 
-        <div className="timer">
+        <div className="timer-container">
+            <i className="icon timer" />
             {formatedTimeToEnd}
         </div>
 

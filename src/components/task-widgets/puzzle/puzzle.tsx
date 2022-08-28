@@ -4,21 +4,21 @@ import { useCallback } from "react";
 import { useRef } from "react";
 import styled from "styled-components"
 
-import piece1 from "./placeholder.png";
-import piece2 from "./placeholder.png";
-import piece3 from "./placeholder.png";
-import piece4 from "./placeholder.png";
-import piece5 from "./placeholder.png";
-import piece6 from "./placeholder.png";
-import piece7 from "./placeholder.png";
-import piece8 from "./placeholder.png";
-import piece9 from "./placeholder.png";
-import piece10 from "./placeholder.png";
-import piece11 from "./placeholder.png";
-import piece12 from "./placeholder.png";
-import piece13 from "./placeholder.png";
-import piece14 from "./placeholder.png";
-import piece15 from "./placeholder.png";
+import piece1 from "./img/cat01.png";
+import piece2 from "./img/cat02.png";
+import piece3 from "./img/cat03.png";
+import piece4 from "./img/cat04.png";
+import piece5 from "./img/cat05.png";
+import piece6 from "./img/cat06.png";
+import piece7 from "./img/cat07.png";
+import piece8 from "./img/cat08.png";
+import piece9 from "./img/cat09.png";
+import piece10 from "./img/cat10.png";
+import piece11 from "./img/cat11.png";
+import piece12 from "./img/cat12.png";
+import piece13 from "./img/cat13.png";
+import piece14 from "./img/cat14.png";
+import piece15 from "./img/cat15.png";
 
 const PIECES = [
     { id: 1, image: piece1 },
@@ -93,15 +93,13 @@ export default function Puzzle({ onComplete }: Props) {
     }, [onResize]);
 
     useEffect(() => {
-        const answer = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, null, 12, 13, 14, 15];
+        const answer = [null, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
         const isCorrect = answer.every((value, key) => {
             return state[key] === value
         })
 
         if (isCorrect) {
-            setInterval(() => {
-                onComplete();
-            }, 1000);
+            onComplete();
         }
     }, [state, onComplete]);
 
