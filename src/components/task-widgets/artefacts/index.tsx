@@ -12,7 +12,6 @@ type Props = {
 
 const Container = styled.div`
 
-    height: 100%;
     width: 96%;
     margin: 0 auto;
 

@@ -18,24 +18,24 @@ type Props = {
 const Container = styled.div`
     position: relative;
     width: 100%;
-    height: 100%;
 
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
+    display: grid;
 
     .close {
         height: 2rem;
         background: none;
         border: none;
         align-self: flex-end;
+        position: absolute;
+        top: .1rem;
+        right: .1rem;
     }
 
     .item-info {
         flex-grow: 1;
         width: 90%;
-        max-height: 40%;
+        max-height: 40vh;
+        min-height: 30vh;
         margin: 0 auto 1rem;
 
         background-size: contain;
@@ -47,7 +47,7 @@ const Container = styled.div`
         width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+        gap: .5rem;
     }
 
     .answer {
@@ -93,6 +93,23 @@ const Container = styled.div`
 
     .check-button {
         height: 4rem;
+    }
+
+    @media (orientation: portrait) {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    @media (orientation: landscape) {
+
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 2fr 1fr;
+
+        .answers {
+            grid-column: 2;
+            grid-row: 1 / span 2;
+        }
     }
 `
 
