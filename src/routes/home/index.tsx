@@ -6,7 +6,7 @@ import useGameStarted from "../../modules/game/hooks/use-game-started";
 import { useCallback, useState } from "react";
 import { GAME_MODULE_ACTION, useGameModuleDispatch } from "../../modules/game";
 import logo from './instrukcja.jpg';
-import Popup from "../../components/elements/hppopup";
+import HomePagePopup from "../../components/elements/hppopup";
 import WikiPopup from "../../components/wiki-popup";
 import { useRef } from "react";
 
@@ -217,12 +217,12 @@ export default function HomePage() {
             }
         </Box>
 
-        {showGPSInfo && <Popup onClick={goToGame}>
+        {showGPSInfo && <HomePagePopup onClick={goToGame}>
             <div className="popupdiv"></div>
             <p className="divp">
                 Dostęp do lokalizacji urządzenia jest niezbędny do przeprowadzenia gry.<br/><br/> Udziel dostępu, jeśli zostaniesz o to poproszony.
             </p>
-        </Popup>}
+        </HomePagePopup>}
 
     </Container>
 }

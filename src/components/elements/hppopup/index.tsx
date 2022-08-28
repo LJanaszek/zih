@@ -50,11 +50,11 @@ const Container = styled.div`
         position: absolute;
         padding: .5em;
     }
-    
+
 `;
-export default function Popup({ children, onClick }: Props) {
+export default function HomePagePopup({ children, onClick }: Props) {
     return <Container aria-modal="true">
-        
+
         <div className="popinner">
         <img src={rozaIcon} alt="" />
             {children}
