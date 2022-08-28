@@ -2,6 +2,7 @@ import { useCallback, useReducer, useState } from "react";
 import styled from "styled-components";
 import CompassDebugTools from "../../../../components/dev/compass-debug-tools";
 import Popup from "../../../../components/elements/popup";
+import TaskPopup from "../../../../components/elements/task-popup";
 import FillScreenWithHeader from "../../../../components/layout/fill-screen-with-header";
 import PageHeader from "../../../../components/layout/header";
 import SmallPageHeader from "../../../../components/layout/header/small-header";
@@ -49,6 +50,19 @@ const MapScreenContainer = styled.div`
         height: 2em;
         position: relative;
     }
+
+    @media (orientation: landscape) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto 1fr 2em;
+
+        .map-wrapper {
+            grid-column: 1;
+            grid-row: 1 / span 3;
+        }
+    }
+
+
 `;
 
 /**
@@ -107,9 +121,6 @@ export default function MultiPointCompassView({ stepId }: { stepId: string }) {
     return <>
         <ScrollToTop trigger={step?.id} behavior="smooth" />
         <FillScreenWithHeader hideHeader={true}>
-            <div className="hide-in-portrait">
-                <SmallPageHeader />
-            </div>
             <div className="hide-in-landscape">
                 <PageHeader />
             </div>
@@ -119,6 +130,11 @@ export default function MultiPointCompassView({ stepId }: { stepId: string }) {
 
             {showMap && <MapScreenContainer>
                 {step && <>
+                    <div className="inside-header">
+                        <div className="hide-in-portrait">
+                            <SmallPageHeader />
+                        </div>
+                    </div>
                     <div className="map-wrapper">
                         <MultiPointCompassViewContent activePoint={selectedStep?.id} geoSteps={noCompletedPoints} onPointClicked={onPointClicked} />
                     </div>
@@ -133,11 +149,11 @@ export default function MultiPointCompassView({ stepId }: { stepId: string }) {
             </MapScreenContainer>}
         </FillScreenWithHeader>
         {
-            showHelp && <Popup onClick={() => { setShowHelp(false) }}>
+            showHelp && <TaskPopup onClick={() => { setShowHelp(false) }}>
                 <p>
                     Kliknij w pinezkę na mapie aby sprawdzić odległość dzielącą Cię w prostej linii od wybranej lokalizacji. Możesz dowolnie zmieniać wybór. Po dojściu do lokalizacji, automatycznie wczyta się związany z nią ekran gry.
                 </p>
-            </Popup>
+            </TaskPopup>
         }
         {showDebug && <CompassDebugTools />}
     </>
