@@ -43,11 +43,9 @@ export default class App extends PIXI.Application {
 
     private initApp() {
         this.gameScreen = new GameScreen(this, this.config.onComplete);
-        this.gameScreen?.changeOrientation('landscape');
-
-        this.onResize();
-
+        console.log('!!!!!!!!!!!!!!!!!!!!!', this.gameScreen);
         this.stage.addChild(this.gameScreen);
+        this.onResize();
     }
 
     isValid() {
@@ -65,17 +63,24 @@ export default class App extends PIXI.Application {
         const wW = window.innerWidth;
         const wH = window.innerHeight;
 
-        if (this.screenOrientation !== 'portrait' && wW < wH) {
-            this.screenOrientation = 'portrait';
-            this.renderer.resize(APP_WIDTH, APP_HEIGHT);
-            this.gameScreen?.changeOrientation('portrait');
+        if (this.gameScreen) {
+            if (this.screenOrientation !== 'portrait' && wW < wH) {
+                this.screenOrientation = 'portrait';
+                this.renderer.resize(APP_WIDTH, APP_HEIGHT);
+                console.log('???????????????', this.screenOrientation, this.gameScreen);
+                this.gameScreen.changeOrientation(this.screenOrientation);
+            }
+
+            if (this.screenOrientation !== 'landscape' && wW > wH) {
+                this.screenOrientation = 'landscape';
+                this.renderer.resize(APP_WIDTH_2, APP_HEIGHT_2);
+                console.log('???????????????', this.screenOrientation, this.gameScreen);
+                this.gameScreen.changeOrientation(this.screenOrientation);
+            }
+
+            console.log('onResize', this.screenOrientation);
         }
 
-        if (this.screenOrientation !== 'landscape' && wW > wH) {
-            this.screenOrientation = 'landscape';
-            this.renderer.resize(APP_WIDTH_2, APP_HEIGHT_2);
-            this.gameScreen?.changeOrientation('landscape');
-        }
     }
 
     public destroy(x: boolean) {
