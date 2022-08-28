@@ -62,6 +62,21 @@ const MapScreenContainer = styled.div`
         }
     }
 
+    @media (orientation: portrait) {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto 2em;
+
+        .map-wrapper {
+            grid-column: 1;
+            grid-row: 1
+        }
+
+        .inside-header {
+            display: none;
+        }
+    }
+
 
 `;
 
