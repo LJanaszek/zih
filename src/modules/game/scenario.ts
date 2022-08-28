@@ -25,7 +25,7 @@ export const SCENARIO: GameScenario = {
                 lat: 52.16383572337064,
                 lng: 21.21937101781457
             },
-            name: ['Punkt geo 1'],
+            name: ['ul. Walcownicza 37', 'Widok na ul. Handlową'],
             nextStep: '1.2'
         },
         {
@@ -41,7 +41,7 @@ export const SCENARIO: GameScenario = {
                 lat: 52.16805363672106,
                 lng: 21.223030642885533
             },
-            name: ["Punkt geo 2"],
+            name: ["ul.Techniczna", 'Willa Féiner'],
             nextStep: '2.2'
         },
         {
@@ -57,7 +57,7 @@ export const SCENARIO: GameScenario = {
                 lat: 52.16896284983934,
                 lng: 21.216436812891743
             },
-            name: ["Punkt geo 3"],
+            name: ["ul. Lokalna 51", "Sanatorium Dziecięce im. W. Medema"],
             nextStep: '3.2'
         },
         {
@@ -74,7 +74,7 @@ export const SCENARIO: GameScenario = {
                 lat: 52.16379517815583,
                 lng: 21.210987653919734
             },
-            name: ["Punkt geo 4"],
+            name: ["ul. Bambusowa 11", "Synagoga"],
             nextStep: '4.2'
         },
         {
@@ -90,7 +90,7 @@ export const SCENARIO: GameScenario = {
                 lat: 52.15935776350059,
                 lng: 21.208431439628814
             },
-            name: ["Punkt geo 5"],
+            name: ["ul. Obszarowa 1", "Stacja kolei Jabłonowskiej"],
             nextStep: '5.2'
         },
         {
@@ -106,7 +106,7 @@ export const SCENARIO: GameScenario = {
                 lat: 52.16211034733332,
                 lng: 21.21154192886253
             },
-            name: ["Punkt geo 6"],
+            name: ["ul. Patriotów", "Pomnik pamięci 6500 Żydów z getta w Falenicy"],
             nextStep: '6.2'
         },
         {
@@ -131,7 +131,7 @@ export const SCENARIO: GameScenario = {
                 lat: 52.16162878122313,
                 lng: 21.21137303357458
             },
-            name: ["Punkt końcowy"],
+            name: ["Stacja Warszawa Falenica, Peron 1"],
             nextStep: '7.1'
         },
         {

@@ -7,7 +7,7 @@ type AppConfig = {
     onPointerClicked(id: string): void;
 }
 
-export const MAP_WIDTH = 687;
+export const MAP_WIDTH = 529;
 export const MAP_HEIGHT = 938;
 
 export default class App extends PIXI.Application {
