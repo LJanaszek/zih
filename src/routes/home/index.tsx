@@ -223,15 +223,7 @@ export default function HomePage() {
             <p className="divp">
                 Dostęp do lokalizacji urządzenia jest niezbędny do przeprowadzenia gry.<br/><br/> Udziel dostępu, jeśli zostaniesz o to poproszony.
             </p>
-<<<<<<< .mine
-        </Popup>}
+        </HomePagePopup>}
         {PageFooter()}
     </Container>
-    
-=======
-        </HomePagePopup>}
-
-
-
->>>>>>> .theirs
 }
