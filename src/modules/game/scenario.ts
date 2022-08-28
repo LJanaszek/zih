@@ -41,7 +41,7 @@ export const SCENARIO: GameScenario = {
                 lat: 52.16805363672106,
                 lng: 21.223030642885533
             },
-            name: ["ul.Techniczna", 'Willa Féiner'],
+            name: ["ul. Techniczna", 'Willa Féiner'],
             nextStep: '2.2'
         },
         {

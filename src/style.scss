@@ -92,3 +92,15 @@ p {
 button {
     font-family: 'Gothic';
 }
+
+.hide-in-portrait {
+    @media(orientation: portrait) {
+        display: none;
+    }
+}
+
+.hide-in-landscape {
+    @media(orientation: landscape) {
+        display: none;
+    }
+}

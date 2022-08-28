@@ -3,6 +3,8 @@ import styled from "styled-components";
 import CompassDebugTools from "../../../../components/dev/compass-debug-tools";
 import Popup from "../../../../components/elements/popup";
 import FillScreenWithHeader from "../../../../components/layout/fill-screen-with-header";
+import PageHeader from "../../../../components/layout/header";
+import SmallPageHeader from "../../../../components/layout/header/small-header";
 import { useConfigModuleState } from "../../../../modules/config";
 import { GeoStep, MultiGeoStep } from "../../../../modules/game/types";
 import useCompassView from "../../../../modules/game/view-hooks/use-compass-view";
@@ -44,7 +46,7 @@ const MapScreenContainer = styled.div`
     }
 
     .drawer {
-        height: 5em;
+        height: 2em;
         position: relative;
     }
 `;
@@ -104,7 +106,13 @@ export default function MultiPointCompassView({ stepId }: { stepId: string }) {
 
     return <>
         <ScrollToTop trigger={step?.id} behavior="smooth" />
-        <FillScreenWithHeader>
+        <FillScreenWithHeader hideHeader={true}>
+            <div className="hide-in-portrait">
+                <SmallPageHeader />
+            </div>
+            <div className="hide-in-landscape">
+                <PageHeader />
+            </div>
 
             {showPermitionError && <AccessError />}
             {showAccuracyError && <AccuracyError />}
@@ -114,7 +122,7 @@ export default function MultiPointCompassView({ stepId }: { stepId: string }) {
                     <div className="map-wrapper">
                         <MultiPointCompassViewContent activePoint={selectedStep?.id} geoSteps={noCompletedPoints} onPointClicked={onPointClicked} />
                     </div>
-                    <div className="buttons">
+                    <div className="button-list">
                         <button className="button" onClick={() => { setShowHelp(true) }}>Pomoc<i className="icon help" /></button>
                     </div>
                     <div className="drawer">

@@ -18,9 +18,9 @@ const Container = styled.div<{ isOpen: boolean }>`
     right: 0;
     bottom: 0;
 
-    height: ${({ isOpen }) => { return isOpen ? 'auto' : '3em' }};
+    height: ${({ isOpen }) => { return isOpen ? 'auto' : '1em' }};
 
-    padding: 1em 0;
+    padding: .5em 0;
 
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@ const Container = styled.div<{ isOpen: boolean }>`
     border-radius: 3em 3em 0 0;
 
     .head {
-        height: 3.5em;
+        height: 1.2em;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -44,7 +44,32 @@ const Container = styled.div<{ isOpen: boolean }>`
 
     .content {
         display: ${({ isOpen }) => { return isOpen ? 'block' : 'none' }};
-        padding: 2em 0;
+        padding: .2em 0;
+        text-align: center;
+    }
+
+    @media(orientation: landscape) {
+        .landscape {
+            display: block;
+        }
+
+        .portrait {
+            display: none;
+        }
+    }
+
+    @media(orientation: portrait) {
+        .portrait {
+            display: block;
+        }
+
+        .landscape {
+            display: none;
+        }
+
+        .adress-line {
+            display: block;
+        }
     }
 `;
 
@@ -69,7 +94,14 @@ function StepInfo({ step }: { step: GeoStep }) {
 
     const distance = points[0].distance | 0;
 
-    return <p>
-        Jesteś w odległości {distance} od {step.name}
-    </p>
+    return <>
+        <p className="landscape">
+            Jesteś w odległości {distance}m. od {step.name.join(' - ')}
+        </p>
+        <p className="portrait">
+            Jesteś w odległości {distance}m. od {step.name.map(line => {
+                return <span className="adress-line">{line}</span>
+            })}
+        </p>
+    </>
 }
