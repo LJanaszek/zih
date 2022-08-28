@@ -2,7 +2,6 @@ import { useState } from "react";
 import styled from "styled-components";
 import Popup from "../../../../components/elements/popup";
 import TaskPopup from "../../../../components/elements/task-popup";
-import FillScreenWithHeader from "../../../../components/layout/fill-screen-with-header";
 import SmallPageHeader from "../../../../components/layout/header/small-header";
 import BirdsTask, { BirdTaskState } from "../../../../components/task-widgets/birds";
 import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header";

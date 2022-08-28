@@ -1,7 +1,6 @@
 import { useState, useCallback } from "react"
 import styled from "styled-components"
 import TaskPopup from "../../../../components/elements/task-popup"
-import FillScreenWithHeader from "../../../../components/layout/fill-screen-with-header"
 import ArtefactsWidget from "../../../../components/task-widgets/artefacts"
 import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header"
 
