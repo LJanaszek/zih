@@ -15,12 +15,12 @@ export default function TaskPlot({ onComplete }: Props) {
 
     return <>
 
-        {step && <Box>
+        {step && <>
             <CluePage
                 step={step}
                 onComplete={onComplete}
                 clueImg={Aimg}
             />
-        </Box>}
+        </>}
     </>
 }

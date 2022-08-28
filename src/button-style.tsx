@@ -111,6 +111,11 @@ const ButtonStyle = createGlobalStyle`
         background: var(--color2);
         color: var(--color5);
 
+        &:hover {
+            background: white;
+            color: var(--color5);
+        }
+
         i.icon {
             /**
                 * to jest sposób na pzrekolorowanie SVG który jest w tle bez jego edycji
