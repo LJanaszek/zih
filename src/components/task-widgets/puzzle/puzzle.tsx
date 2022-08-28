@@ -98,8 +98,6 @@ export default function Puzzle({ onComplete }: Props) {
             return state[key] === value
         })
 
-        console.log('VALID?', isCorrect, state);
-
         if (isCorrect) {
             onComplete();
         }
