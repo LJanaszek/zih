@@ -9,6 +9,7 @@ import StartTaskIconSrc from './assets/icons/startTask.svg';
 import OkIconSrc from './assets/icons/ok.svg';
 import EyeIconSrc from './assets/icons/eye.svg';
 import TimerSrc from './assets/icons/timer.svg';
+import HomeSrc from './assets/icons/home.svg';
 
 // eslint-disable-next-line
 import MapIconSrc from '!file-loader!./assets/icons/mapa.svg';
@@ -110,6 +111,10 @@ const ButtonStyle = createGlobalStyle`
 
         &.timer {
             background-image: url(${TimerSrc})
+        }
+
+        &.home {
+            background-image: url(${HomeSrc})
         }
     }
 

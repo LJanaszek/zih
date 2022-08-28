@@ -31,7 +31,7 @@ export default function PolicyPage() {
                     <li>pliki trwałe – nie są kasowane w momencie zamknięcia okna przeglądarki; wykorzystywane są, aby pomóc nam wspierać komfort korzystania z naszych Serwisów (np. zmiana wyglądu lub wersji stron)</li>
                 </ul>
                 <p>
-                    Serwis zewnętrzny zapewniający usługi analityczne: Google LLC, ma własną <a href="https://policies.google.com/technologies/cookies" target="_blank">politykę cookies</a>. Może dodać dane zebrane podczas Twojej wizyty do zbioru danych pozyskanych na Twój temat z innych źródeł.
+                    Serwis zewnętrzny zapewniający usługi analityczne: Google LLC, ma własną <a href="https://policies.google.com/technologies/cookies" target="_blank" rel="noreferrer">politykę cookies</a>. Może dodać dane zebrane podczas Twojej wizyty do zbioru danych pozyskanych na Twój temat z innych źródeł.
                 </p>
                 <p>
                     W każdej chwili możesz edytować ustawienia prywatności na Twoim urządzeniu w ramach ustawień swojej przeglądarki m.in. w zakresie instalowania plików cookies. W każdej chwili możesz też usunąć z pamięci swojego urządzenia pliki cookies zapisane w trakcie przeglądania naszych Serwisów. Ograniczenia w stosowaniu plików cookies mogą utrudnić lub uniemożliwić komfort korzystania z naszych Serwisów.

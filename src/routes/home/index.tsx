@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import Box from "../../components/layout/box";
 import { getGamePageRoute, getHomeRoute } from "../routes";
 import useGameStarted from "../../modules/game/hooks/use-game-started";
 import { useCallback, useState } from "react";

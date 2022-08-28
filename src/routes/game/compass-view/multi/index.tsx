@@ -1,7 +1,6 @@
 import { useCallback, useReducer, useState } from "react";
 import styled from "styled-components";
 import CompassDebugTools from "../../../../components/dev/compass-debug-tools";
-import Popup from "../../../../components/elements/popup";
 import TaskPopup from "../../../../components/elements/task-popup";
 import FillScreenWithHeader from "../../../../components/layout/fill-screen-with-header";
 import PageHeader from "../../../../components/layout/header";

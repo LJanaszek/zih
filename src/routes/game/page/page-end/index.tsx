@@ -1,6 +1,4 @@
-import styled from "styled-components";
 import Box from "../../../../components/layout/box";
-import ScrollToMe from "../../../../utils/widgets/scroll-to-me";
 import end from "./end.jpg";
 import PageFooter from '../../../../components/layout/footer';
 import TextPage from "../../../../components/layout/text-page";
