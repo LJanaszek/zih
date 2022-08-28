@@ -40,7 +40,7 @@ const WIDGET_DATA: {
         {
             id: 'kipa (jarmułka)',
             image: KipaImgSrc,
-            name: 'kipa (jarmułka)',
+            name: 'kipa',
             description: 'kipa (jarmułka) kipa (jarmułka) kipa (jarmułka)'
         },
         {

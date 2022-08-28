@@ -23,6 +23,13 @@ const Container = styled.figure`
 
     .label {
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-items: flex-start;
+
+        p {
+            margin: 0;
+        }
     }
 `;
 

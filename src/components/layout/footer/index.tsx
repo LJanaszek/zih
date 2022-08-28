@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import logoFirst from './img/krokodylKomp.svg';
 import logoSec from './img/ministerstwoKomp.png';
+
 const Container = styled.footer`
     .footer{
         background: var(--color2);
@@ -14,7 +15,6 @@ const Container = styled.footer`
         text-align: center;
         margin-bottom:3em;
         padding:0.5em 0em;
-
 
     @media (max-width: 1439px) {
         border:none;
