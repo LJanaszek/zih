@@ -8,6 +8,7 @@ import HelpIconSrc from './assets/icons/help.svg';
 import StartTaskIconSrc from './assets/icons/startTask.svg';
 import OkIconSrc from './assets/icons/ok.svg';
 import EyeIconSrc from './assets/icons/eye.svg';
+import TimerSrc from './assets/icons/timer.svg';
 
 // eslint-disable-next-line
 import MapIconSrc from '!file-loader!./assets/icons/mapa.svg';
@@ -48,67 +49,75 @@ const ButtonStyle = createGlobalStyle`
         }
 
         i.icon {
-            content: ' ';
-            display: inline-block;
-
-            width: 2em;
-            height: 1.4em;
-            background-position: 50% 50%;
-            background-repeat: no-repeat;
-            background-size: contain;
-
             margin-left: .4em;
+        }
+    }
 
-            &.game-start {
-                background-image: url(${GameStartIconSrc})
-            }
+    i.icon {
+        content: ' ';
+        display: inline-block;
 
-            &.next,
-            &.game-continue {
-                background-image: url(${GameContinueIconSrc})
-            }
+        width: 2em;
+        height: 1.4em;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
 
-            &.game-restart {
-                background-image: url(${GameRestartIconSrc})
-            }
 
-            &.knowledge {
-                background-image: url(${KnowledgeIconSrc})
-            }
-
-            &.map {
-                background-image: url(${MapIconSrc})
-            }
-
-            &.help {
-                background-image: url(${HelpIconSrc})
-            }
-
-            &.start-task {
-                background-image: url(${StartTaskIconSrc})
-            }
-
-            &.ok {
-                background-image: url(${OkIconSrc})
-            }
-
-            &.eye {
-                background-image: url(${EyeIconSrc})
-            }
+        &.game-start {
+            background-image: url(${GameStartIconSrc})
         }
 
-        &.inverted {
-            background: var(--color2);
-            color: var(--color5);
+        &.next,
+        &.game-continue {
+            background-image: url(${GameContinueIconSrc})
+        }
 
-            i.icon {
-                /**
-                 * to jest sposób na pzrekolorowanie SVG który jest w tle bez jego edycji
-                 * piewsze dwa filtry sprowadzają grafikę do czerni: brightness(0) saturate(100%)
-                 * kolejne wyczarowałem używając tego kalkulatora: https://codepen.io/sosuke/pen/Pjoqqp
-                */
-                filter: brightness(0) saturate(100%) invert(25%) sepia(5%) saturate(1990%) hue-rotate(202deg) brightness(94%) contrast(89%);
-            }
+        &.game-restart,
+        &.restart {
+            background-image: url(${GameRestartIconSrc})
+        }
+
+        &.knowledge {
+            background-image: url(${KnowledgeIconSrc})
+        }
+
+        &.map {
+            background-image: url(${MapIconSrc})
+        }
+
+        &.help {
+            background-image: url(${HelpIconSrc})
+        }
+
+        &.start-task {
+            background-image: url(${StartTaskIconSrc})
+        }
+
+        &.ok {
+            background-image: url(${OkIconSrc})
+        }
+
+        &.eye {
+            background-image: url(${EyeIconSrc})
+        }
+
+        &.timer {
+            background-image: url(${TimerSrc})
+        }
+    }
+
+    &.inverted {
+        background: var(--color2);
+        color: var(--color5);
+
+        i.icon {
+            /**
+                * to jest sposób na pzrekolorowanie SVG który jest w tle bez jego edycji
+                * piewsze dwa filtry sprowadzają grafikę do czerni: brightness(0) saturate(100%)
+                * kolejne wyczarowałem używając tego kalkulatora: https://codepen.io/sosuke/pen/Pjoqqp
+            */
+            filter: brightness(0) saturate(100%) invert(25%) sepia(5%) saturate(1990%) hue-rotate(202deg) brightness(94%) contrast(89%);
         }
     }
 `;
