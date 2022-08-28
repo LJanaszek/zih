@@ -22,7 +22,6 @@ const Container = styled.div`
 
     .inner {
         max-width: 1200px;
-        padding: 1rem 4rem;
         background: white;
         border: 1px solid var(--color3);
 
