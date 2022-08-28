@@ -28,7 +28,7 @@ const Container = styled.div`
     }
 `;
 
-export default function FillScreenWithHeader({ children }: PropsWithChildren<{}>) {
+export default function FillScreenWithHeader({ hideHeader, children }: PropsWithChildren<{hideHeader?: boolean}>) {
     const ref = useRef<HTMLDivElement>(null);
 
     const onResize = useCallback(() => {
@@ -40,15 +40,17 @@ export default function FillScreenWithHeader({ children }: PropsWithChildren<{}>
     useEffect(() => {
         window.addEventListener('resize', onResize);
 
+        onResize();
+
         return () => {
             window.removeEventListener('resize', onResize);
         }
     }, [onResize]);
 
     return <Container ref={ref}>
-        <div className="header">
+        {!hideHeader && <div className="header">
             <PageHeader />
-        </div>
+        </div>}
         <div className="content">
             {children}
         </div>

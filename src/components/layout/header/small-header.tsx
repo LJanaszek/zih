@@ -6,14 +6,13 @@ const Container = styled.header`
     vertical-align:middle;
     position: relative;
     margin: 0 auto;
-    margin-top:1em;
     font-size: 10px;
     width: 100%;
 
     h1{
         display: inline-block;
-        border-radius: .5em;
-        padding: .2em .5em;
+        border-radius: 1em;
+        padding: .5em 1em;
         background-color: var(--color3);
         margin:0 auto;
         letter-spacing: 1px;

@@ -6,19 +6,15 @@ import useGameStarted from "../../modules/game/hooks/use-game-started";
 import { useCallback, useState } from "react";
 import { GAME_MODULE_ACTION, useGameModuleDispatch } from "../../modules/game";
 import logo from './instrukcja.jpg';
-import Popup from "../../components/elements/hppopup";
+import HomePagePopup from "../../components/elements/hppopup";
 import WikiPopup from "../../components/wiki-popup";
 import { useRef } from "react";
 import PageFooter from './../../components/layout/footer';
-/* <meta name="viewport" content="width=device-width, initial-scale=1"></meta> */
-// import meta
 
 const Container = styled.div`
 
 .inner{
     background-color:var(--color2);
-    // grid-template-columns: auto auto auto auto auto;
-    // grid-template-rows:70px;
 }
 .fill{
     font-family: Gothic;
@@ -92,14 +88,10 @@ nav{
 }
 .button{
     height:2em;
-    // margin-bottom:1em;
-}
-footer{
-    // margin-bottom: 3em;
 }
 
 @media (max-width: 1439px) {
-    
+
     .fill {
         display: block;
         width: auto;
@@ -184,7 +176,7 @@ export default function HomePage() {
 
             <div className='content'>
                 <div className="img-shulz">
-                    <img src={logo} alt="" /> 
+                    <img src={logo} alt="" />
                 </div>
 
 
@@ -200,9 +192,9 @@ export default function HomePage() {
                         <li>Gra jest przeznaczona dla zespołów, ale można wziąć w niej udział pojedynczo.</li>
                         <li>Informacja o lokalizacji kolejnych punktów będzie podawana na podstawie danych</li>
                     </ul>
-                
+
                 </div>
-            
+
             <nav>
 
                 {!gameStarted &&
@@ -226,13 +218,20 @@ export default function HomePage() {
             }
         </Box>
 
-        {showGPSInfo && <Popup onClick={goToGame}>
+        {showGPSInfo && <HomePagePopup onClick={goToGame}>
             <div className="popupdiv"></div>
             <p className="divp">
                 Dostęp do lokalizacji urządzenia jest niezbędny do przeprowadzenia gry.<br/><br/> Udziel dostępu, jeśli zostaniesz o to poproszony.
             </p>
+<<<<<<< .mine
         </Popup>}
         {PageFooter()}
     </Container>
     
+=======
+        </HomePagePopup>}
+
+
+
+>>>>>>> .theirs
 }

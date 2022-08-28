@@ -12,6 +12,32 @@ type Props = {
 const Cointainer = styled.div`
     .widget {
         flex-grow: 1;
+        margin: .3em 0;
+    }
+
+    .buttons {
+        width: 100%;
+        max-width: 300px;
+        margin: .2em auto;
+
+        display: flex;
+        justify-content: space-around;
+
+
+        flex-direction: column;
+
+        button {
+            margin-top: .3em;
+        }
+
+        @media(orientation: landscape) {
+            flex-direction: row;
+            max-width: 100%;
+
+            button {
+                margin: 0;
+            }
+        }
     }
 `;
 
@@ -25,17 +51,23 @@ export default function TaskMain({ onComplete }: Props) {
         setShowNextButton(true);
     }, [setShowNextButton])
 
+    const [showButtons, onShowButtons] = useState(true);
+
     return <Cointainer>
-        <FillScreenWithHeader>
+        <FillScreenWithHeader hideHeader={!showButtons}>
             <div className="widget">
-                <ArtefactsWidget onComplete={onTaskComplete} />
+                <ArtefactsWidget onComplete={onTaskComplete} onShowButtons={onShowButtons} />
             </div>
             <div className="buttons">
                 {showHelpPopup && <TaskPopup onClick={() => { setShowHelpPopup(false) }}>
                     <p>Kliknij w strzałkę aby wybrać odpowiedni obrazek i potwierdź swój wybór.</p>
                 </TaskPopup>}
-                <button className="button" onClick={() => { setShowHelpPopup(true) }}>Pomoc<i className="icon help" /></button>
-                {showNextButton && <button className="button" onClick={onComplete}>Zakończ<i className="icon ok" /></button>}
+                {showButtons && <>
+                    <div className="buttons">
+                        <button className="button" onClick={() => { setShowHelpPopup(true) }}>Pomoc<i className="icon help" /></button>
+                        {showNextButton && <button className="button" onClick={onComplete}>Zakończ<i className="icon ok" /></button>}
+                    </div>
+                </>}
             </div>
         </FillScreenWithHeader>
     </Cointainer>
