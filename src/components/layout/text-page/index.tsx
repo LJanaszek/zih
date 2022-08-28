@@ -5,6 +5,7 @@ const TextPage = styled.div`
 
     h2 {
         padding: 1em 1.5em;
+        margin: 0;
     }
 
     p.before-list {
@@ -19,6 +20,12 @@ const TextPage = styled.div`
 
     @media(max-width: 500px) {
         padding: 1rem .5em;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 3rem;
+        margin: 1rem 0;
     }
 `
 

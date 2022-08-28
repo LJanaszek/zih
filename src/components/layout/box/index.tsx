@@ -14,6 +14,12 @@ const Container = styled.div`
 
         border-radius: 3em;
     }
+
+    h2, h3 {
+        text-align: center;
+        font-weight: normal;
+        color: var(--color1);
+    }
 `;
 
 export default function Box({ children }: Props) {
