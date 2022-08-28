@@ -21,8 +21,6 @@ export default class App extends PIXI.Application {
             antialias: true
         });
 
-        console.log('APP INIT', config);
-
         this.renderer.plugins.interaction.autoPreventDefault = false;
         this.renderer.view.style.touchAction = 'auto';
 
@@ -55,8 +53,6 @@ export default class App extends PIXI.Application {
     }
 
     private onResize() {
-        console.log('onResize', this.renderer.width, this.renderer.height);
-
         if (this.gameScreen) {
             const appWidth = this.renderer.width;
             const appHeight = this.renderer.height;

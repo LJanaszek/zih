@@ -39,8 +39,6 @@ const BirdsTask: React.FC<Props> = ({ onComplete, onGameStateChanged }) => {
 
             const ratio = boundries.width / boundries.height;
 
-            console.log(ratio);
-
             if (ratio >= widgetRatio) {
                 appRef.current.view.style.height = `${boundries.height}px`;
                 appRef.current.view.style.width = `${boundries.height * widgetRatio}px`;

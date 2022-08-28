@@ -32,7 +32,6 @@ const Container = styled.div`
 `
 
 export default function TaskIntroTemplate({ image, onComplete, children, addButtons, title }: React.PropsWithChildren<Props>) {
-    console.log(addButtons);
     return <Container>
         <div className="content">
             <img className="pointer" src={pointer} alt="" />

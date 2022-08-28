@@ -20,19 +20,6 @@ export default class GameScreen extends PIXI.Container implements IScreen {
         this.sortableChildren = true;
 
         this.initMap();
-
-        // this.interactive = true;
-
-        // this.on('pointerdown', (e: PIXI.InteractionEvent) => {
-        //     const gfx = new PIXI.Graphics();
-
-        //     console.log(e);
-
-        //     gfx.beginFill(0xff0000);
-        //     gfx.drawCircle(e.data.global.x, e.data.global.y, 10);
-
-        //     this.addChild(gfx);
-        // })
     }
 
     private initMap() {
@@ -44,7 +31,6 @@ export default class GameScreen extends PIXI.Container implements IScreen {
     }
 
     private updatePoints() {
-        console.log('updatePoints', this.activePoints);
         this.points.forEach(p => p.destroy());
         this.points.length = 0;
 

@@ -246,7 +246,6 @@ export default function Zad1Photo({ onComplete }: Props) {
                         stickerHeight = capture.height;
                         stickerWidth = stickerHeight * imgRatio
                     } else {
-                        console.log('POZIOMO?')
                         stickerWidth = capture.width;
                         stickerHeight = stickerWidth / imgRatio;
                     }

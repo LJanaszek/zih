@@ -243,7 +243,6 @@ export default class GameScreen extends PIXI.Container implements IScreen {
     }
 
     changeOrientation(orientation: 'portrait' | 'landscape') {
-        console.log('------>', orientation);
         let sliderBaseX = 0;
         let sliderCenterX = 0;
         let sliderCenterY = 0;
@@ -272,8 +271,6 @@ export default class GameScreen extends PIXI.Container implements IScreen {
             sliderCenterX = APP_WIDTH_2 * .75;
             sliderCenterY = APP_HEIGHT_2 / 2;
         }
-
-        console.log('prevPageButton', sliderBaseX + 40, sliderCenterY)
 
         this.prevPageButton.position.set(sliderBaseX + 40, sliderCenterY);
         this.completeButton.position.set(sliderBaseX + columnWidth / 2, sliderCenterY);
