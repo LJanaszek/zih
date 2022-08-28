@@ -9,6 +9,7 @@ import logo from './instrukcja.jpg';
 import HomePagePopup from "../../components/elements/hppopup";
 import WikiPopup from "../../components/wiki-popup";
 import { useRef } from "react";
+import PageFooter from './../../components/layout/footer';
 
 const Container = styled.div`
 
@@ -223,6 +224,6 @@ export default function HomePage() {
                 Dostęp do lokalizacji urządzenia jest niezbędny do przeprowadzenia gry.<br/><br/> Udziel dostępu, jeśli zostaniesz o to poproszony.
             </p>
         </HomePagePopup>}
-
+        {PageFooter()}
     </Container>
 }
