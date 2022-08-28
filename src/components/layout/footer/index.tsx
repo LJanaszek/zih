@@ -14,8 +14,8 @@ const Container = styled.footer`
         text-align: center;
         margin-bottom:3em;
         padding:0.5em 0em;
-    
-    
+
+
     @media (max-width: 1439px) {
         border:none;
         flex-direction: column-reverse;
@@ -40,7 +40,6 @@ const Container = styled.footer`
         }
         @media(max-width: 950px){
             padding:0;
-            // width:30%;
             margin:0 auto;
             margin-bottom: 0.5em;
         }
@@ -54,7 +53,6 @@ const Container = styled.footer`
         margin: 0 auto;
 
         @media (max-width: 1439px) {
-            // padding:2.5em;
             width:70%;
 
         }
@@ -74,7 +72,6 @@ const Container = styled.footer`
         display:flex;
         width:50%;
         text-align: center;
-        // height: 30%;
         width:70%;
         p{
             font-size:10px;
