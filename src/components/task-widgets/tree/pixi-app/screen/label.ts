@@ -10,7 +10,7 @@ const LABEL_HEIGHT = 70;
 export default class LabelItem extends PIXI.Container {
     public id: string;
     text: PIXI.Text;
-    bg: PIXI.Graphics;
+
     constructor(private config: ItemData, private app: PIXI.Application) {
         super();
 
@@ -18,14 +18,7 @@ export default class LabelItem extends PIXI.Container {
 
         const containerRect = new PIXI.Rectangle(-LABEL_WIDTH / 2, -LABEL_HEIGHT / 2, 445, 70);
 
-        this.hitArea = containerRect
-
-        this.bg = new PIXI.Graphics();
-
-        this.bg.beginFill(0xDFD7CD, .0);
-        this.bg.drawShape(containerRect);
-
-        this.addChild(this.bg);
+        this.hitArea = containerRect;
 
         this.interactive = true;
         this.buttonMode = true;
@@ -178,7 +171,6 @@ export default class LabelItem extends PIXI.Container {
     }
 
     transformToAnswer() {
-        this.bg.visible = false;
         this.interactive = false;
         this.text.style.fontSize = '18px';
         this.text.anchor.set(0);

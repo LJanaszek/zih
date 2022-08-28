@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from "react"
+import { useEffect, useRef } from "react"
 import styled from "styled-components";
 import App from "./pixi-app/app";
 import WebFonts from 'webfontloader';
@@ -13,23 +13,30 @@ const Container = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-`;
+    overflow: hidden;
 
-const widgetRatio = 1.52;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    canvas {
+        object-fit: contain;
+
+        @media (orientation: landscape) {
+            height: 100%;
+        }
+
+        @media (orientation: portrait) {
+            width: 100%;
+        }
+
+
+    }
+`;
 
 const TreeTask: React.FC<Props> = ({ onComplete }) => {
     const widgetContainerRef = useRef<HTMLDivElement>(null);
-    const containerRef = useRef<HTMLDivElement>(null);
     const appRef = useRef<App>();
-
-    const onResize = useCallback(() => {
-        if (widgetContainerRef.current && containerRef.current && appRef.current && appRef.current?.view) {
-            const boundries = containerRef.current.getBoundingClientRect();
-
-            appRef.current.view.style.height = `${boundries.height}px`;
-            appRef.current.view.style.width = `${boundries.height / widgetRatio}px`;
-        }
-    }, []);
 
     useEffect(() => {
 
@@ -50,8 +57,6 @@ const TreeTask: React.FC<Props> = ({ onComplete }) => {
                 if (widgetContainerRef.current) {
                     widgetContainerRef.current.appendChild(app.view);
                 }
-
-                onResize();
             }
         });
 
@@ -60,28 +65,9 @@ const TreeTask: React.FC<Props> = ({ onComplete }) => {
             appRef.current?.destroy(true);
             appRef.current = undefined;
         }
-    }, [onComplete, onResize]);
+    }, [onComplete]);
 
-    useEffect(() => {
-        window.addEventListener('resize', onResize);
-
-        onResize();
-
-        return () => {
-            window.removeEventListener('resize', onResize);
-        }
-    }, [onResize]);
-
-    return <Container ref={containerRef}>
-        <div ref={widgetContainerRef} style={{
-            width: '100%',
-            margin: '0 auto',
-            display: 'flex',
-            justifyContent: 'center',
-            flexDirection: 'row'
-        }}></div>
-
-    </Container>
+    return <Container ref={widgetContainerRef}></Container>
 }
 
 export default TreeTask;
