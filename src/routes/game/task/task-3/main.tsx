@@ -4,6 +4,7 @@ import TaskPopup from "../../../../components/elements/task-popup";
 import TreeTask from "../../../../components/task-widgets/tree";
 import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header"
 import ScrollToMe from "../../../../utils/widgets/scroll-to-me";
+import ScrollToTop from "../../../../utils/widgets/scroll-to-top";
 
 type Props = {
     onComplete(): void
@@ -37,6 +38,7 @@ export default function TaskMain({ onComplete }: Props) {
     }, [setShowNextButton])
 
     return <>
+        <ScrollToTop />
         <Container>
             <TreeTask onComplete={onTaskComplete} />
         </Container>
