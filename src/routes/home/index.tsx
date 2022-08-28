@@ -9,22 +9,26 @@ import logo from './instrukcja.jpg';
 import Popup from "../../components/elements/popup";
 import WikiPopup from "../../components/wiki-popup";
 import { useRef } from "react";
-/* <meta name="viewport" content="width=device-width, initial-scale=1"></meta> */
-// import meta
 
 const Container = styled.div`
+
 .inner{
     background-color:var(--color2);
 }
 .fill{
-    display: block;
+    font-family: Gothic;
+    grid-column: 2;
+    display: grid;
     background-color: white;
     border-radius: 4rem;
     flex: 0 0 54%;
     padding-bottom: 2em;
     padding-top:0.5em;
+    width:110%;
 }
-
+h2{
+    font-family: Gothic;
+}
 ul{
     padding: 0em 1em;
     width: 80%;
@@ -36,12 +40,14 @@ li::marker{
 }
 
 .img-shulz {
+    display: grid;
+    grid-column:1;
     flex: 0 0 39%;
 
     img {
         margin-top:0;
         height: auto;
-        width: 100%;
+        width: 90%;
         border-radius: 4rem;
         border: 1px solid var(--color1);
     }
@@ -49,14 +55,14 @@ li::marker{
 
 
 .content{
-
+    grid-gap:1em;
     width: 84%;
     margin: 0 auto;
     border-radius: 50px;
-    margin-top:1em;
+    margin-top:2em;
     margin-bottom: 1em;
     height: fit-content;
-    display:flex;
+    display:grid;
     justify-content: space-between;
 }
 
@@ -66,17 +72,27 @@ p{
 }
 
 nav{
+
+    grid-column:1;
     width:70%;
     margin: auto;
+    margin-top: -18em;
     background-color:var(--color2);
-    margin-bottom: 2em;
-    display:flex;
+    margin-bottom: 10em;
+    display:grid;
     text-align: center;
     justify-content: space-around;
+    grid-template-rows: 3em 3em 3em;
+
+}
+.button{
+    height:2em;
 }
 
-@media (max-width: 1560px) {
+@media (max-width: 1439px) {
+
     .fill {
+        display: block;
         width: auto;
         margin: auto;
         font-size: 18px;
@@ -85,11 +101,10 @@ nav{
         display:block;
         align-items: center;
     }
-    .shultz{
-        width: 80%;
-        position: relative;
-        left:10%;
-        height: fit-content;
+    .img-shulz img{
+        display:block;
+        margin: 0 auto;
+        margin-bottom: 2em;
     }
     #root{
         width: 100%;
@@ -97,9 +112,23 @@ nav{
     }
     nav{
         display: block;
+        grid-column: null;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        width: 12em;
+    }
+    .button{
+        font-size: 16px;
+        line-height: 2.2em;
+        display: block;
+        margin:auto;
+        width:inherit;
+        margin-bottom: 1em;
+        height:3em;
     }
     .icon{
         margin: 0 auto;
+        vertical-align: middle;
     }
     p{
         padding:0.6em;
@@ -156,7 +185,7 @@ export default function HomePage() {
                     </ul>
 
                 </div>
-            </div>
+
             <nav>
 
                 {!gameStarted &&
@@ -172,6 +201,7 @@ export default function HomePage() {
 
                 <button className="button with-icon" ref={wikiRef} onClick={() => { setShowWikiPopup(true) }} >Baza wiedzy <i className="icon knowledge" /></button>
             </nav>
+            </div>
             {
                 showWikiPopup && <WikiPopup onClick={closeWikiPopup}>
 
@@ -184,5 +214,6 @@ export default function HomePage() {
                 Dostęp do lokalizacji urządzenia jest niezbędny do przeprowadzenia gry. Udziel dostępu, jeśli zostaniesz o to poproszony.
             </p>
         </Popup>}
+
     </Container>
 }
