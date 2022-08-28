@@ -56,7 +56,9 @@ export default function TaskPopup({ children, onClick }: Props) {
             </header>
             <div className="content">
                 {children}
-                <input type="image" alt="ok" src={agree} onClick={onClick} />
+                <div>
+                    <input type="image" alt="ok" src={agree} onClick={onClick} />
+                </div>
             </div>
         </div>
     </Container>

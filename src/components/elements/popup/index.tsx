@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 type Props = React.PropsWithChildren<{
-    onClick(): void
+    onClick(): void,
+    padding?: 'small'
 }>;
 
-const Container = styled.div`
+const Container = styled.div<{padding?: 'small'}>`
     background: rgba(0,0,0,.8);
 
     margin: 0 auto;
@@ -22,6 +23,7 @@ const Container = styled.div`
 
     .inner {
         max-width: 1200px;
+        padding: 1rem ${({padding}) => padding === 'small' ? '1rem' : '4rem'};
         background: white;
         border: 1px solid var(--color3);
 
@@ -34,8 +36,8 @@ const Container = styled.div`
         margin-top: 1em;
     }
 `;
-export default function Popup({ children, onClick }: Props) {
-    return <Container aria-modal="true">
+export default function Popup({ children, onClick, padding }: Props) {
+    return <Container aria-modal="true" padding={padding}>
 
         <div className="inner">
             {children}

@@ -7,6 +7,7 @@ import KnowledgeIconSrc from './assets/icons/bazaWiedzy.svg';
 import HelpIconSrc from './assets/icons/help.svg';
 import StartTaskIconSrc from './assets/icons/startTask.svg';
 import OkIconSrc from './assets/icons/ok.svg';
+import EyeIconSrc from './assets/icons/eye.svg';
 
 // eslint-disable-next-line
 import MapIconSrc from '!file-loader!./assets/icons/mapa.svg';
@@ -35,7 +36,8 @@ const ButtonStyle = createGlobalStyle`
 
         display: flex;
         flex-direction: row;
-        align-items: center;
+        align-items: space-between;
+        justify-content: space-between;
 
         &:hover {
             background: var(--color5);
@@ -53,7 +55,7 @@ const ButtonStyle = createGlobalStyle`
             height: 1.4em;
             background-position: 50% 50%;
             background-repeat: no-repeat;
-            background-size: auto 100%;
+            background-size: contain;
 
             margin-left: .4em;
 
@@ -88,6 +90,10 @@ const ButtonStyle = createGlobalStyle`
 
             &.ok {
                 background-image: url(${OkIconSrc})
+            }
+
+            &.eye {
+                background-image: url(${EyeIconSrc})
             }
         }
 
