@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components"
+import { getAccessibilityRoute, getPolicyRoute } from "../../../routes/routes";
 import logoFirst from './img/krokodylKomp.svg';
 import logoSec from './img/ministerstwoKomp.png';
 
@@ -23,7 +25,7 @@ const Container = styled.footer`
     }
     @media(max-width: 950px){
         padding:0;
-        // width:80%;
+        width:80%;
     }}
 
     .logo1,.logo2{
@@ -42,6 +44,10 @@ const Container = styled.footer`
             padding:0;
             margin:0 auto;
             margin-bottom: 0.5em;
+            width: 50%;
+        }
+        @media(max-width: 500px){
+            width: 60%;
         }
 
     }
@@ -96,33 +102,50 @@ const Container = styled.footer`
         margin:auto;
         display: grid;
         text-align: center;
-        // margin: 0 auto;
-        // position: absolute;
+
         bottom:0;
-        width:50%;
-        height:4em;
+        width:65%;
+        height:3em;
         background: var(--color1);
         border-radius: 80px 80px 0 0;
+
         @media(max-width: 1439px){
             width:70%;
             padding:0 2em;
             height: 2.5em;
         }
-    }
-    .privacy > a{
-        display: grid;
-        margin: auto;
-        text-decoration: none;
-        color: white;
-        @media(max-width: 1439px){
-            font-size: 16px;
+
+        a {
+            display: grid;
+            margin: auto;
+            text-decoration: none;
+            color: white;
+
+            &:first-child{
+                grid-column:1;
+            }
+
+            &:last-child{
+                grid-column:2;
+            }
         }
-    }
-    a:first-child{
-        grid-column:1;
-    }
-    a:last-child{
-        grid-column:2;
+
+        @media(max-width: 1439px){
+
+            width:70%;
+            padding:0 2em;
+            height: 2.5em;
+
+            a {
+                font-size: 16px;
+            }
+        }
+
+        @media(max-width: 500px) {
+            width: 100%;
+            padding: 0;
+        border-radius: 00;
+        }
     }
 
 `;
@@ -130,15 +153,15 @@ const Container = styled.footer`
 export default function PageFooter() {
     return <Container>
         <div className="footer">
-        <img className="logo1" src={logoFirst} alt="Brunon Schultz, artysta genialny"/>
-        <div className="mkid">
-        <img className="logo2" src={logoSec} alt="Ministerstwo Kultury i Dziedzictwa Narodowego."/>
-        <p>Dofinansowano ze środków Ministra Kultury i Dziedzictwa Narodowego pochodzących z Funduszu Promocji Kultury – państwowego funduszu celowego</p>
-        </div>
+            <img className="logo1" src={logoFirst} alt="Brunon Schultz, artysta genialny" />
+            <div className="mkid">
+                <img className="logo2" src={logoSec} alt="Ministerstwo Kultury i Dziedzictwa Narodowego." />
+                <p>Dofinansowano ze środków Ministra Kultury i Dziedzictwa Narodowego pochodzących z Funduszu Promocji Kultury – państwowego funduszu celowego</p>
+            </div>
         </div>
         <div className="privacy">
-                    <a href="#">polityka prywatności</a>
-                    <a href="#">deklaracja dostępności</a>
+            <Link to={getPolicyRoute()}>polityka prywatności</Link>
+            <Link to={getAccessibilityRoute()}>deklaracja dostępności</Link>
         </div>
     </Container>
 }

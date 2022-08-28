@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 
-import { getHomeRoute, getGamePageRoute, getPolicyRoute } from './routes/routes';
+import { getHomeRoute, getGamePageRoute, getPolicyRoute, getAccessibilityRoute } from './routes/routes';
 import React, { Suspense } from 'react';
 import Loader from './components/elements/loader';
 import PageHeader from './components/layout/header';
@@ -13,6 +13,7 @@ import StreetPhotoTestPage from './components/task-widgets/street-photo';
 import TravelersTestPage from './components/task-widgets/travelers';
 import PuzzleTestPage from './components/task-widgets/puzzle';
 import ButtonStyle from './button-style';
+import AccessibilityPage from './routes/accessibility';
 
 const HomePage = React.lazy(() => import('./routes/home'));
 const GamePage = React.lazy(() => import('./routes/game'));
@@ -34,6 +35,8 @@ export default function App() {
                             <Route path={getGamePageRoute()} element={<GamePage />} />
 
                             <Route path={getPolicyRoute()} element={<PolicyPage />} />
+
+                            <Route path={getAccessibilityRoute()} element={<AccessibilityPage />} />
 
                             <Route path={'/test/street-photo'} element={<StreetPhotoTestPage />} />
                             <Route path={'/test/travelers'} element={<TravelersTestPage />} />

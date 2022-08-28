@@ -172,8 +172,6 @@ export default function HomePage() {
     }, [setShowWikiPopup]);
 
     return <Container>
-        <Box>
-
             <div className='content'>
                 <div className="img-shulz">
                     <img src={logo} alt="" />
@@ -216,7 +214,6 @@ export default function HomePage() {
 
                 </WikiPopup>
             }
-        </Box>
 
         {showGPSInfo && <HomePagePopup onClick={goToGame}>
             <div className="popupdiv"></div>
