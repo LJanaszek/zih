@@ -87,6 +87,10 @@ p {
     align-items: center;
     flex-wrap: wrap;
     margin: .5em auto;
+
+    .button {
+        margin: .3em 0;
+    }
 }
 
 button {
