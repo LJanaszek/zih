@@ -99,12 +99,12 @@ button {
 
 .hide-in-portrait {
     @media(orientation: portrait) {
-        display: none;
+        display: none !important;
     }
 }
 
 .hide-in-landscape {
     @media(orientation: landscape) {
-        display: none;
+        display: none !important;
     }
 }

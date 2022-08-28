@@ -51,6 +51,12 @@ const ButtonStyle = createGlobalStyle`
         i.icon {
             margin-left: .4em;
         }
+
+        &.only-icon {
+            i.icon {
+                margin-left: 0;
+            }
+        }
     }
 
     i.icon {

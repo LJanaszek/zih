@@ -1,8 +1,7 @@
-import Box from "../../../../components/layout/box";
 import styled from "styled-components";
-import pointer from "../img/pointer.svg"
 import Taskimg from "../img/taskImages/task2.jpg"
 import useRemoveFooter from "../../../../modules/main/hooks/use-remove-footer";
+import TaskIntroTemplate from "../../../../components/layout/task-intro";
 const Container = styled.div`
 .content{
     width:100%;
@@ -36,20 +35,18 @@ type Props = {
     onComplete(): void
 }
 
-export default function TaskIntro({onComplete}: Props) {
-    useRemoveFooter()
-    return <Container>
-    <Box>
-        <div className="content">
-            <img className="pointer" src={pointer} alt="" />
-        <p className="title">Portal do willi Feiner</p>
-        <img className="taskImg" src={Taskimg} alt="" />
-        <div className="tekst">
+export default function TaskIntro({ onComplete }: Props) {
+    useRemoveFooter();
+
+    return <>
+        <TaskIntroTemplate
+            onComplete={onComplete}
+            image={Taskimg}
+            title="Portal do willi Feiner"
+        >
             <h2>Szukaj ukrytego</h2>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus alias quia asperiores natus iusto, pariatur ab provident officiis veniam culpa, distinctio consequatur accusamus, porro autem itaque omnis et? Repellendus, velit?</p>
-        </div>
-        <button className="button" onClick={onComplete}>Uruchom zadanie <i className="icon start-task"/></button>
-        </div>
-    </Box>
-    </Container>
+
+        </TaskIntroTemplate>
+    </>
 }

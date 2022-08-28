@@ -6,20 +6,21 @@ import pointer from "./pointer.svg";
 type Props = {
     image: string,
     addButtons?: ReactElement[],
+    title: string,
     onComplete(): void
 }
 
 const Container = styled.div`
     .content{
-        width:100%;
         text-align:center;
+        padding: 1rem;
     }
     .pointer{
         width:10%;
         margin-top:2em;
     }
     .taskImg{
-        width:85%;
+        width:100%;
         margin: auto;
         border-radius:50px;
         margin-bottom: 1em;
@@ -30,12 +31,12 @@ const Container = styled.div`
     }
 `
 
-export default function TaskIntroTemplate({ image, onComplete, children, addButtons }: React.PropsWithChildren<Props>) {
+export default function TaskIntroTemplate({ image, onComplete, children, addButtons, title }: React.PropsWithChildren<Props>) {
     console.log(addButtons);
     return <Container>
         <div className="content">
             <img className="pointer" src={pointer} alt="" />
-            <p className="title">"ul.Krokodyli" - Walcownicza daw. Handlowa</p>
+            <p className="title">{title}</p>
             <img className="taskImg" src={image} alt="" />
             <Box>{children}</Box>
             <div className="button-list">

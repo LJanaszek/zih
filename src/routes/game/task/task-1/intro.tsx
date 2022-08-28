@@ -21,6 +21,7 @@ export default function TaskIntro({ onComplete }: Props) {
         <TaskIntroTemplate
             onComplete={onComplete}
             image={Taskimg}
+            title={`"ul.Krokodyli" - Walcownicza daw. Handlowa`}
             addButtons={addButtons}
         >
             <h2>Spójrz na dawną ulicę Handlową</h2>
