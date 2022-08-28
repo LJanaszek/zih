@@ -19,6 +19,7 @@ const Container = styled.div<{ isOpen: boolean }>`
     bottom: 0;
 
     height: ${({ isOpen }) => { return isOpen ? 'auto' : '1em' }};
+    overflow: ${({ isOpen }) => { return isOpen ? 'auto' : 'hidden' }};
 
     padding: .5em 0;
 
