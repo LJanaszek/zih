@@ -4,9 +4,8 @@ import styled from "styled-components";
 // import  from "./img/OKfiolet.svg";
 import headimg from '../../routes/game/img/ikonsButton/bazaWiedzy.svg';
 import OKfiolet from "./img/OKfiolet.svg"
-// import skrzyniaImg from '../../assets/skrzynia.png';
+import close from './img/xmark.svg';
 import CONFIG from "../../config";
-
 type Props = React.PropsWithChildren<{
     onClick(): void
 }>;
@@ -67,6 +66,9 @@ const Container = styled.div`
                 margin:0 auto;
                 color: var(--color3);
                 text-transform: uppercase;
+                @media(max-width: 485px){
+                    width:70%;
+                }
             }
         }
         // border: 1px solid var(--color3);
@@ -82,18 +84,7 @@ const Container = styled.div`
         margin: 0 auto;
         // margin-top: 2em;
    }
-    .popbutton {
-        margin: 0 auto;
-        width:30%;
-        background: white;
-        border-radius: 50px;
-        padding:.5em;
-        border-color: var(--color3);
-        color: var(--color3);
-        margin-bottom: 2em;
-        margin-top:1em;
-        font-family: Gothic;
-    }
+    
     .head{
         background: var(--color3);
         width: 100%;
@@ -115,6 +106,16 @@ const Container = styled.div`
     .error{
         text-align:center;
         margin-top: 1em;
+    }
+    .popbutton {
+        background:none;
+        border:none;
+        float:right;
+        margin-top:0.5em;
+    }
+    .closepopup {
+        background: url(${close}) 100% 100% no-repeat;
+        padding:1.5em;
     }
 `;
 export default function WikiPopup({ children, onClick }: Props) {
@@ -172,7 +173,10 @@ export default function WikiPopup({ children, onClick }: Props) {
     return <Container aria-modal="true">
         
         <div className="innerpop">
-            <div className="head"><img className="headimg" src={headimg} alt="" /></div>
+        
+            <div className="head"><img className="headimg" src={headimg} alt="" />
+            <button className="popbutton" onClick={onClick} ref={lastItemRef}><i className="closepopup"></i></button>
+            </div>
             <h2 id="wiki-modal-header">Wpisz hasło:</h2>
             <div className="inner-2">
                 <div className="form">
@@ -181,9 +185,9 @@ export default function WikiPopup({ children, onClick }: Props) {
                     <button className="accept" onClick={onOpenClick}><img src={OKfiolet} alt="" /></button>
                 </div>
                 {showError && <div className="error" aria-live="polite">Hasło nieprawidłowe</div>}
-            <button className="popbutton" onClick={onClick} ref={lastItemRef}>Anuluj</button>
-            </div>
             
+            </div>
+        
         </div>
     </Container>
 }

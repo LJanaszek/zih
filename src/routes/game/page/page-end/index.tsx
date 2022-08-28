@@ -2,13 +2,13 @@ import styled from "styled-components";
 import Box from "../../../../components/layout/box";
 import ScrollToMe from "../../../../utils/widgets/scroll-to-me";
 import end from "./end.jpg";
-
+import PageFooter from '../../../../components/layout/footer';
 const Container = styled.div`
 
 .inner{
     background-color:var(--color2);
 }
-img{
+.photo{
     width:90%;
     display: block;
     margin: 0 auto;
@@ -49,7 +49,7 @@ export default function PageEnd({onNext}: Props) {
         <ScrollToMe behavior="smooth" />
         <Box>
             <h2>Zakończenie</h2>
-            <img src={end} alt="" />
+            <img className="photo" src={end} alt="" />
             <div className="content">
             <h2 className="header-content">Zakończenie</h2>
             <p>
@@ -58,6 +58,6 @@ export default function PageEnd({onNext}: Props) {
         <nav className="button-list actions">
             <button onClick={onNext} className="button">Koniec</button>
         </nav>
-
+    {PageFooter()}
     </Container>
 }
