@@ -21,6 +21,10 @@ const Container = styled.div`
         color: var(--color1)
     }
 
+    img {
+        width: 100%;
+    }
+
     @media (max-width: 1560px) {
         width:100%;
     }
@@ -39,7 +43,7 @@ export default function EndGamePage() {
         </div>
         <img src={PerazjaSrc} alt="" />
         <div className="button-list">
-            <Link className="button inverted" to={getHomeRoute()}>Koniec<i className="icon map" /></Link>
+            <Link className="button inverted" to={getHomeRoute()}>Strona domowa<i className="icon home" /></Link>
         </div>
 
     </Container>

@@ -180,6 +180,8 @@ const Container = styled.div`
         .timer-container {
             grid-column: 2;
             grid-row: 2;
+
+            flex-direction: row;
         }
     }
 

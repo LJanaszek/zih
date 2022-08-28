@@ -11,6 +11,8 @@ const Container = styled.div`
 
     transition: .3s;
 
+    overflow-y: auto;
+
     .header {
         display: flex;
         justify-content: center;

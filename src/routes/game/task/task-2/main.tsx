@@ -5,6 +5,7 @@ import TaskPopup from "../../../../components/elements/task-popup";
 import SmallPageHeader from "../../../../components/layout/header/small-header";
 import BirdsTask, { BirdTaskState } from "../../../../components/task-widgets/birds";
 import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header";
+import ScrollToTop from "../../../../utils/widgets/scroll-to-top";
 import HelpGrid from "./help-grid";
 
 type Props = {
@@ -61,6 +62,10 @@ const Container = styled.div`
                 min-width: 2.5em;
             }
         }
+
+        .button {
+            font-size: 1rem;
+        }
     }
 
     @media(orientation: portrait) {
@@ -77,11 +82,8 @@ const Container = styled.div`
 
             display: flex;
             flex-direction: column;
-
-            .button {
-                margin: 5px auto;
-                width: 90%;
-            }
+            align-items: center;
+            justify-content: center;
         }
 
         .state {
@@ -114,13 +116,19 @@ export default function TaskMain({ onComplete }: Props) {
     const [showPreviewPopup, setShowPreviewPopup] = useState(false);
 
     return <>
+        <ScrollToTop />
         <Container>
             <div className="header">
                 <SmallPageHeader />
             </div>
-            <div className="controlls">
+            <div className="controlls button-list hide-in-portrait">
+                <button className="button only-icon" onClick={() => { setShowPreviewPopup(true) }}><i className="icon eye" /></button>
+                {!gameState.isComplete && <button className="button only-icon" onClick={() => { setShowInfoPopup(true) }}><i className="icon help" /></button>}
+                {gameState.isComplete && <button className="button only-icon" onClick={onComplete}><i className="icon ok" /></button>}
+            </div>
+            <div className="controlls button-list hide-in-landscape">
                 <button className="button" onClick={() => { setShowPreviewPopup(true) }}>Podgląd<i className="icon eye" /></button>
-                <button className="button" onClick={() => { setShowInfoPopup(true) }}>Pomoc<i className="icon help" /></button>
+                {!gameState.isComplete && <button className="button" onClick={() => { setShowInfoPopup(true) }}>Pomoc<i className="icon help" /></button>}
                 {gameState.isComplete && <button className="button" onClick={onComplete}>Zakończ<i className="icon ok" /></button>}
             </div>
             <div className="widget">

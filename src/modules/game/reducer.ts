@@ -3,14 +3,11 @@ import { getPoint } from "../geo/utils/get-point";
 import { GameStep, GAME_STEP_TYPE } from "./types";
 
 export default function UserReducer(state: GameModuleState, action: GameModuleAction): GameModuleState {
-    console.log(action);
     const { type, payload } = action;
     switch (type) {
         case GAME_MODULE_ACTION.SET_POINT_POSITION:
 
             const { ids, position } = payload;
-
-            console.log({ ids, position })
 
             return {
                 ...state,

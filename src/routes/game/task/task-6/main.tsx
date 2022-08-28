@@ -4,6 +4,7 @@ import TaskPopup from "../../../../components/elements/task-popup";
 import SmallPageHeader from "../../../../components/layout/header/small-header";
 import Puzzle from "../../../../components/task-widgets/puzzle/puzzle";
 import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header";
+import ScrollToTop from "../../../../utils/widgets/scroll-to-top";
 import previewSrc from './img/preview.png';
 
 type Props = {
@@ -74,6 +75,7 @@ export default function TaskMain({ onComplete }: Props) {
     const [showComplete, setShowComplete] = useState(false);
 
     return <Container>
+        <ScrollToTop />
         <div className="left-column">
             <div className="header-container">
                 <SmallPageHeader />

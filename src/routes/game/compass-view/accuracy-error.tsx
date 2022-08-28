@@ -18,6 +18,7 @@ const Container = styled.div`
     justify-content: center;
 
     border: none;
+    padding: 1rem 0;
 
     .inner {
 

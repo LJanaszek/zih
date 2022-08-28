@@ -4,6 +4,22 @@ type Props = React.PropsWithChildren<{}>;
 
 const Container = styled.div`
     background: white;
+
+    border-radius: 3em;
+    padding: 1em 2em;
+
+
+
+    @media(max-width: 500px) {
+
+        border-radius: 3em;
+    }
+
+    h2, h3 {
+        text-align: center;
+        font-weight: normal;
+        color: var(--color1);
+    }
 `;
 
 export default function Box({ children }: Props) {

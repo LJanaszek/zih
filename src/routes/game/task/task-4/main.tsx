@@ -3,6 +3,7 @@ import styled from "styled-components"
 import TaskPopup from "../../../../components/elements/task-popup"
 import ArtefactsWidget from "../../../../components/task-widgets/artefacts"
 import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header"
+import ScrollToTop from "../../../../utils/widgets/scroll-to-top"
 
 type Props = {
     onComplete(): void
@@ -63,6 +64,7 @@ export default function TaskMain({ onComplete }: Props) {
     const [showButtons, onShowButtons] = useState(true);
 
     return <Cointainer>
+        <ScrollToTop />
         <div className="widget">
             <ArtefactsWidget onComplete={onTaskComplete} onShowButtons={onShowButtons} />
         </div>

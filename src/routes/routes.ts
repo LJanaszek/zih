@@ -7,5 +7,9 @@ export function getGamePageRoute() {
 }
 
 export function getPolicyRoute() {
-    return '/polityka';
+    return '/polityka-prywatnosci';
+}
+
+export function getAccessibilityRoute() {
+    return '/dostepnosc';
 }

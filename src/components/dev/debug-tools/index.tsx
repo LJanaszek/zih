@@ -13,6 +13,10 @@ const Container = styled.div`
     padding: .5em;
     border: 1px solid black;
     background: #d9d9d9;
+
+    select {
+        max-width: 80%;
+    }
 `;
 
 export default function DebugTools() {

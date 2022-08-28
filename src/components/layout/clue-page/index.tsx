@@ -19,6 +19,7 @@ const Container = styled.div`
     text-align: center;
 
     background:var(--color3);
+    padding-bottom: 1em;
 
     .congrat{
         color:white;
@@ -54,6 +55,10 @@ const Container = styled.div`
         width:100%;
     }
 
+    .adress-line {
+        display: block;
+    }
+
 `
 
 export default function CluePage({ step, clueImg, onComplete }: Props) {
@@ -62,7 +67,9 @@ export default function CluePage({ step, clueImg, onComplete }: Props) {
         <PageHeader theme={'violet'} />
         <div className="content">
             <img className="pointer" src={pointer} alt="" />
-            <p className="adres">{step.name.join(`<br />`)}</p>
+            <p className="adres">{step.name.map(line => {
+                return <span className="adress-line">{line}</span>
+            })}</p>
 
             <p className="congrat">Zadanie wykonane! <br /> znaleźliście karteczkę z literą:</p>
             <img className="perazja" src={clueImg} alt="P" />

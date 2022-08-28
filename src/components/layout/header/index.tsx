@@ -11,6 +11,8 @@ const Container = styled.header<{theme: 'normal' | 'violet'}>`
     position: relative;
     margin: 0 auto;
 
+    padding-top: 1rem;
+
     @media(max-width: 800px) {
         width: 96%;
     }

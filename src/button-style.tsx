@@ -9,6 +9,7 @@ import StartTaskIconSrc from './assets/icons/startTask.svg';
 import OkIconSrc from './assets/icons/ok.svg';
 import EyeIconSrc from './assets/icons/eye.svg';
 import TimerSrc from './assets/icons/timer.svg';
+import HomeSrc from './assets/icons/home.svg';
 
 // eslint-disable-next-line
 import MapIconSrc from '!file-loader!./assets/icons/mapa.svg';
@@ -50,6 +51,12 @@ const ButtonStyle = createGlobalStyle`
 
         i.icon {
             margin-left: .4em;
+        }
+
+        &.only-icon {
+            i.icon {
+                margin-left: 0;
+            }
         }
     }
 
@@ -105,11 +112,20 @@ const ButtonStyle = createGlobalStyle`
         &.timer {
             background-image: url(${TimerSrc})
         }
+
+        &.home {
+            background-image: url(${HomeSrc})
+        }
     }
 
     &.inverted {
         background: var(--color2);
         color: var(--color5);
+
+        &:hover {
+            background: white;
+            color: var(--color5);
+        }
 
         i.icon {
             /**

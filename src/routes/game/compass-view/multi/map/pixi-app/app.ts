@@ -7,7 +7,7 @@ type AppConfig = {
     onPointerClicked(id: string): void;
 }
 
-export const MAP_WIDTH = 687;
+export const MAP_WIDTH = 529;
 export const MAP_HEIGHT = 938;
 
 export default class App extends PIXI.Application {
@@ -20,8 +20,6 @@ export default class App extends PIXI.Application {
             height: MAP_HEIGHT,
             antialias: true
         });
-
-        console.log('APP INIT', config);
 
         this.renderer.plugins.interaction.autoPreventDefault = false;
         this.renderer.view.style.touchAction = 'auto';
@@ -55,8 +53,6 @@ export default class App extends PIXI.Application {
     }
 
     private onResize() {
-        console.log('onResize', this.renderer.width, this.renderer.height);
-
         if (this.gameScreen) {
             const appWidth = this.renderer.width;
             const appHeight = this.renderer.height;

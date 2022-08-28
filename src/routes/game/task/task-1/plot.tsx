@@ -1,4 +1,3 @@
-import Box from "../../../../components/layout/box";
 import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header";
 import Aimg from "../img/P.svg";
 import CluePage from "../../../../components/layout/clue-page";
@@ -15,12 +14,12 @@ export default function TaskPlot({ onComplete }: Props) {
 
     return <>
 
-        {step && <Box>
+        {step && <>
             <CluePage
                 step={step}
                 onComplete={onComplete}
                 clueImg={Aimg}
             />
-        </Box>}
+        </>}
     </>
 }
