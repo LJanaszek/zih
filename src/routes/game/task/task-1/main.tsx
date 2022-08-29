@@ -12,16 +12,10 @@ type Props = {
 export default function TaskMain({ onComplete }: Props) {
     useRemoveHeader();
 
-    const [showComplete, setShowComplete] = useState(false);
-
     return <>
         <FillScreenWithHeader hideHeader={true}>
             <ScrollToTop />
-            <Zad1Photo onComplete={() => setShowComplete(true)} />
+            <Zad1Photo onComplete={onComplete} />
         </FillScreenWithHeader>
-        {showComplete && <ScrollToMe />}
-        <div className="button-list">
-            <button className="button" onClick={onComplete}>Zrobione!<i className="icon ok" /></button>
-        </div>
     </>
 }
