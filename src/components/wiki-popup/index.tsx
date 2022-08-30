@@ -25,80 +25,102 @@ const Container = styled.div`
     left: 0;
     width: 100vw;
     height: 100vh;
-    p{
+
+    .inner {
         text-align: center;
-        margin:0
-    }
-    .innerpop {
-
-        background-color:  white;
-        border:3px solid var(--color3);
-        width: 100%;
-        max-width: 700px;
-
-        .inner-2 {
-            background-size: contain;
-            width: 100%;
-            max-width: 700px;
-            padding: 0 10%;
-
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            .form {
-
-                width: 80%;
-                margin: 0 auto;
-
-                display: flex;
-                flex-direction: column;
-            }
-
-            input {
-                font-size: 1.5rem;
-                padding: .5em;
-                border-radius: 2em;
-                border: 6px solid var(--color3);
-                font-family: Gothic;
-                text-align: center;
-                margin:0 auto;
-                color: var(--color3);
-                text-transform: uppercase;
-                @media(max-width: 485px){
-                    width:70%;
-                }
-            }
-        }
-        // border: 1px solid var(--color3);
+        max-width: 1200px;
+        background: white;
+        border: 1px solid var(--color3);
 
         display: flex;
         flex-direction: column;
         align-items: center;
+
+    width: 95vw;
+
+    max-height: 90vh;
+    overflow-y: scroll;
     }
-   .accept{
+
+    p{
+        text-align: center;
+        margin:0
+    }
+
+    .inner-2 {
+        background-size: contain;
+        width: 100%;
+        max-width: 700px;
+
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .form {
+
+            width: 80%;
+            margin: 0 auto;
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            font-size: 1.5rem;
+            padding: .5em;
+            border-radius: 2em;
+            border: 6px solid var(--color3);
+            font-family: Gothic;
+            text-align: center;
+            margin:0 auto;
+            color: var(--color3);
+            text-transform: uppercase;
+            @media(max-width: 485px){
+                width:70%;
+            }
+        }
+    }
+    // border: 1px solid var(--color3);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .accept{
         width:20%;
         background-color:white;
         border: none;
         margin: 0 auto;
         // margin-top: 2em;
-   }
-    
-    .head{
-        background: var(--color3);
-        width: 100%;
-        height:5em;
-        text-align: center;
-        
     }
-    .headimg{
+
+   header{
+        width:100%;
+        height:4em;
+        max-height: 20vh;
+        min-height: 10vh;
+        background: url(${headimg}) 50% 50% no-repeat var(--color3);
+        background-size: auto 80%;
+        text-align:center;
+        display:flex;
+
+        flex-shrink: 0;
+
         position: relative;
-        top:20%;
-        height: 60%;
-        margin: 0 auto;
-        vertical-align: middle;
+
+
+        .popbutton {
+            height: 3em;
+            max-height: 15vh;
+            min-height: 7.5vh;
+
+            position: absolute;
+            top: .5em;
+            right: .5em;
+        }
     }
+
     h2{
         font-family: Gothic;
         color: var(--color3);
@@ -106,12 +128,6 @@ const Container = styled.div`
     .error{
         text-align:center;
         margin-top: 1em;
-    }
-    .popbutton {
-        background:none;
-        border:none;
-        float:right;
-        margin-top:0.5em;
     }
     .closepopup {
         background: url(${close}) 100% 100% no-repeat;
@@ -171,23 +187,20 @@ export default function WikiPopup({ children, onClick }: Props) {
     }, [firstFocusListHandler, lastFocusListHandler])
 
     return <Container aria-modal="true">
-        
-        <div className="innerpop">
-        
-            <div className="head"><img className="headimg" src={headimg} alt="" />
-            <button className="popbutton" onClick={onClick} ref={lastItemRef}><i className="closepopup"></i></button>
-            </div>
+        <div className="inner">
+            <header>
+                <input className="popbutton" type="image" src={close} alt="zamknij" onClick={onClick} />
+            </header>
             <h2 id="wiki-modal-header">Wpisz hasło:</h2>
             <div className="inner-2">
                 <div className="form">
                     <input type="text" ref={inputRef} aria-labelledby="wiki-modal-header" />
-                    <p>Aby pobrać materiały edukacyjne <br/>wpisz hasło odkryte w trakcie gry.</p>
+                    <p>Aby pobrać materiały edukacyjne <br />wpisz hasło odkryte w trakcie gry.</p>
                     <button className="accept" onClick={onOpenClick}><img src={OKfiolet} alt="" /></button>
                 </div>
                 {showError && <div className="error" aria-live="polite">Hasło nieprawidłowe</div>}
-            
+
             </div>
-        
         </div>
-    </Container>
+    </Container >
 }
