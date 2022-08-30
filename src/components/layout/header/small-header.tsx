@@ -7,7 +7,8 @@ const Container = styled.header`
     position: relative;
     margin: 0 auto;
     font-size: 10px;
-    width: 100%;
+    width: 90%;
+    margin: 1em;
 
     h1{
         display: inline-block;
