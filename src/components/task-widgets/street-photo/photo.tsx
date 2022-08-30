@@ -10,6 +10,7 @@ import CameraOff from '../../../assets/icons/camera/off.svg';
 import makePhotoIcon from '../../../assets/icons/camera/make-photo.svg';
 import alphaIcon from '../../../assets/icons/camera/alpha.svg';
 
+import { useMemo } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import ScrollToTop from "../../../utils/widgets/scroll-to-top";
@@ -212,7 +213,10 @@ const Container = styled.div`
 `;
 
 export default function Zad1Photo({ onComplete }: Props) {
-    const { videoInputDevices, error, srcObject, nextDevice } = useCamera();
+    const cameraConfig = useMemo(() => {
+        return { facingMode: 'environment' }
+    }, []);
+    const { videoInputDevices, error, srcObject, nextDevice } = useCamera(cameraConfig);
     const [permitionDenied, setPermitionDenied] = useState(false);
     const [showPermitionError, setShowPermitionDenied] = useState(false);
 
