@@ -16,6 +16,7 @@ import ScrollToTop from "../../../utils/widgets/scroll-to-top";
 import useCamera from "../../../modules/camera/use-camera";
 import Popup from "../../elements/popup";
 import SmallPageHeader from "../../layout/header/small-header";
+import okButtonSrc from '../../../assets/ok-button.svg';
 
 type Props = {
     onComplete(): void
@@ -81,6 +82,17 @@ const Container = styled.div`
         }
     }
 
+    .complete {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        input {
+            width: 50%;
+        }
+    }
+
     @media (orientation: landscape) {
 
         grid-template-columns: 1fr 4fr 1fr;
@@ -124,6 +136,15 @@ const Container = styled.div`
             padding-top: .3em;
             justify-content: flex-start;
         }
+
+        .complete {
+            grid-column: 3;
+            grid-row: 6;
+
+            input {
+                width: 40%;
+            }
+        }
     }
 
     @media (orientation: portrait) {
@@ -158,6 +179,11 @@ const Container = styled.div`
 
         .alpha {
             grid-column: 1;
+            grid-row: 4;
+        }
+
+        .complete {
+            grid-column: 3;
             grid-row: 4;
         }
     }
@@ -312,6 +338,10 @@ export default function Zad1Photo({ onComplete }: Props) {
                 <span>
                     {alpha}%
                 </span>
+            </div>
+
+            <div className="complete">
+                <input type="image" src={okButtonSrc} onClick={onComplete} alt="" />
             </div>
 
 
