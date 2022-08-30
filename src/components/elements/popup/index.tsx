@@ -22,7 +22,7 @@ const Container = styled.div<{padding?: 'small'}>`
     height: 100vh;
 
     .inner {
-        max-width: 1200px;
+        width: 1200px;
         padding: 1rem ${({padding}) => padding === 'small' ? '1rem' : '4rem'};
         background: white;
         border: 1px solid var(--color3);
@@ -30,6 +30,10 @@ const Container = styled.div<{padding?: 'small'}>`
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        max-width: 95vw;
+        max-height: 90vh;
+        overflow: scroll;
     }
 
     button {

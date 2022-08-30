@@ -12,8 +12,14 @@ import help9Src from './help/bird9.png';
 import help10Src from './help/bird10.png';
 
 const Container = styled.div`
+    width: 100%;
     display: grid;
     gap: 10px;
+
+    img {
+        width: 100%;
+        object-fit: contain;
+    }
 
     @media(orientation: portrait) {
         grid-template-columns: 1fr 1fr;
@@ -26,15 +32,26 @@ const Container = styled.div`
 
 export default function HelpGrid() {
     return <Container>
-        <img src={help1Src} alt="" />
-        <img src={help2Src} alt="" />
-        <img src={help3Src} alt="" />
-        <img src={help4Src} alt="" />
-        <img src={help5Src} alt="" />
-        <img src={help6Src} alt="" />
-        <img src={help7Src} alt="" />
-        <img src={help8Src} alt="" />
-        <img src={help9Src} alt="" />
-        <img src={help10Src} alt="" />
+        <div>
+            <img src={help1Src} alt="" />
+        </div><div>
+            <img src={help2Src} alt="" />
+        </div><div>
+            <img src={help3Src} alt="" />
+        </div><div>
+            <img src={help4Src} alt="" />
+        </div><div>
+            <img src={help5Src} alt="" />
+        </div><div>
+            <img src={help6Src} alt="" />
+        </div><div>
+            <img src={help7Src} alt="" />
+        </div><div>
+            <img src={help8Src} alt="" />
+        </div><div>
+            <img src={help9Src} alt="" />
+        </div><div>
+            <img src={help10Src} alt="" />
+        </div>
     </Container>
 }
