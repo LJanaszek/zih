@@ -36,13 +36,41 @@ const Container = styled.div`
         flex-direction: column;
         align-items: center;
 
-    width: 95vw;
+        width: 95vw;
 
-    max-height: 90vh;
-    overflow-y: scroll;
+        max-height: 90vh;
+        overflow-y: scroll;
     }
 
-    p{
+
+
+    header{
+        width:100%;
+        height:4em;
+        max-height: 20vh;
+        min-height: 10vh;
+        background: url(${headimg}) 50% 50% no-repeat var(--color3);
+        background-size: auto 80%;
+        text-align:center;
+        display:flex;
+
+        flex-shrink: 0;
+
+        position: relative;
+
+
+        .close-button {
+            height: 3em;
+            max-height: 15vh;
+            min-height: 7.5vh;
+
+            position: absolute;
+            top: .5em;
+            right: .5em;
+        }
+    }
+
+    p {
         text-align: center;
         margin:0
     }
@@ -66,7 +94,7 @@ const Container = styled.div`
             flex-direction: column;
         }
 
-        input {
+        input[type=text] {
             font-size: 1.5rem;
             padding: .5em;
             border-radius: 2em;
@@ -81,57 +109,22 @@ const Container = styled.div`
             }
         }
     }
-    // border: 1px solid var(--color3);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
     .accept{
-        width:20%;
+        height: 5em;
         background-color:white;
         border: none;
-        margin: 0 auto;
-        // margin-top: 2em;
-    }
-
-   header{
-        width:100%;
-        height:4em;
-        max-height: 20vh;
-        min-height: 10vh;
-        background: url(${headimg}) 50% 50% no-repeat var(--color3);
-        background-size: auto 80%;
-        text-align:center;
-        display:flex;
-
-        flex-shrink: 0;
-
-        position: relative;
-
-
-        .popbutton {
-            height: 3em;
-            max-height: 15vh;
-            min-height: 7.5vh;
-
-            position: absolute;
-            top: .5em;
-            right: .5em;
-        }
+        margin: 1em auto;
     }
 
     h2{
         font-family: Gothic;
         color: var(--color3);
     }
+
     .error{
         text-align:center;
         margin-top: 1em;
-    }
-    .closepopup {
-        background: url(${close}) 100% 100% no-repeat;
-        padding:1.5em;
     }
 `;
 export default function WikiPopup({ children, onClick }: Props) {
@@ -189,14 +182,14 @@ export default function WikiPopup({ children, onClick }: Props) {
     return <Container aria-modal="true">
         <div className="inner">
             <header>
-                <input className="popbutton" type="image" src={close} alt="zamknij" onClick={onClick} />
+                <input className="close-button" type="image" src={close} alt="zamknij" onClick={onClick} />
             </header>
             <h2 id="wiki-modal-header">Wpisz hasło:</h2>
             <div className="inner-2">
                 <div className="form">
                     <input type="text" ref={inputRef} aria-labelledby="wiki-modal-header" />
                     <p>Aby pobrać materiały edukacyjne <br />wpisz hasło odkryte w trakcie gry.</p>
-                    <button className="accept" onClick={onOpenClick}><img src={OKfiolet} alt="" /></button>
+                    <input className="accept" type="image" alt="ok" src={OKfiolet} onClick={onOpenClick} />
                 </div>
                 {showError && <div className="error" aria-live="polite">Hasło nieprawidłowe</div>}
 
