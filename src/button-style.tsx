@@ -125,6 +125,15 @@ const ButtonStyle = createGlobalStyle`
         &:hover {
             background: white;
             color: var(--color5);
+
+            i.icon {
+                /**
+                    * to jest sposób na pzrekolorowanie SVG który jest w tle bez jego edycji
+                    * piewsze dwa filtry sprowadzają grafikę do czerni: brightness(0) saturate(100%)
+                    * kolejne wyczarowałem używając tego kalkulatora: https://codepen.io/sosuke/pen/Pjoqqp
+                */
+                filter: brightness(0) saturate(100%) invert(23%) sepia(29%) saturate(413%) hue-rotate(202deg) brightness(95%) contrast(88%);
+            }
         }
 
         i.icon {
