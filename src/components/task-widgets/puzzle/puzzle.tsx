@@ -52,7 +52,7 @@ type Props = {
     onComplete(): void
 }
 
-const GAP = 5;
+const GAP = 0;
 
 export default function Puzzle({ onComplete }: Props) {
 

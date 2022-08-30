@@ -186,11 +186,11 @@ export default function WikiPopup({ children, onClick }: Props) {
             </header>
             <h2 id="wiki-modal-header">Wpisz hasło:</h2>
             <div className="inner-2">
-                <div className="form">
+                <form className="form">
                     <input type="text" ref={inputRef} aria-labelledby="wiki-modal-header" />
                     <p>Aby pobrać materiały edukacyjne <br />wpisz hasło odkryte w trakcie gry.</p>
                     <input className="accept" type="image" alt="ok" src={OKfiolet} onClick={onOpenClick} />
-                </div>
+                </form>
                 {showError && <div className="error" aria-live="polite">Hasło nieprawidłowe</div>}
 
             </div>
