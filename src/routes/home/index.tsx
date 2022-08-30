@@ -200,11 +200,6 @@ export default function HomePage() {
                     <button className="button with-icon" ref={wikiRef} onClick={() => { setShowWikiPopup(true) }} >Baza wiedzy <i className="icon knowledge" /></button>
                 </nav>
             </div>
-            {
-                showWikiPopup && <WikiPopup onClick={closeWikiPopup}>
-
-                </WikiPopup>
-            }
 
             {PageFooter()}
         </Container>
@@ -214,6 +209,11 @@ export default function HomePage() {
                     Dostęp do lokalizacji urządzenia jest niezbędny do przeprowadzenia gry.<br /><br /> Udziel dostępu, jeśli zostaniesz o to poproszony.
                 </p>
             </HomePagePopup>
+        }
+        {
+            showWikiPopup && <WikiPopup onClick={closeWikiPopup}>
+
+            </WikiPopup>
         }
     </>
 }
