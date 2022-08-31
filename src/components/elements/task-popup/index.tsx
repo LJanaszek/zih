@@ -24,24 +24,35 @@ const Container = styled.div`
     .inner {
         text-align: center;
         max-width: 1200px;
+        width: 95vw;
         background: white;
         border: 1px solid var(--color3);
 
         display: flex;
         flex-direction: column;
         align-items: center;
+        max-height: 90vh;
+        overflow: scroll;
     }
 
     .content {
-        padding: 1rem 4rem;
+        padding: 1rem 2rem;
+
+        img {
+            width: 90%;
+        }
     }
 
     input[type=image] {
-        height: 6em;
+        min-height: 10vh;
+        max-height: 20vh;
+        height:4em;
     }
 
     header{
         width:100%;
+        min-height: 10vh;
+        max-height: 20vh;
         height:4em;
         background: url(${help}) 50% 50% no-repeat var(--color3);
         background-size: auto 80%;
@@ -56,9 +67,9 @@ export default function TaskPopup({ children, onClick }: Props) {
             </header>
             <div className="content">
                 {children}
-                <div>
-                    <input type="image" alt="ok" src={agree} onClick={onClick} />
-                </div>
+            </div>
+            <div>
+                <input type="image" alt="ok" src={agree} onClick={onClick} />
             </div>
         </div>
     </Container>

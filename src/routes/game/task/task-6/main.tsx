@@ -13,6 +13,7 @@ type Props = {
 
 const Container = styled.div`
     display: grid;
+    height: 100vh;
 
     @media (orientation: landscape) {
         grid-template-columns: 1fr 4fr 1fr;
@@ -67,7 +68,7 @@ const Container = styled.div`
     }
 }
 .helpimg{
-    max-width:90vh;
+    width:90vh;
     max-height:40vh;
 }
 `;

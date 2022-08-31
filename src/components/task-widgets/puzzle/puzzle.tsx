@@ -103,28 +103,31 @@ export default function Puzzle({ onComplete }: Props) {
         }
     }, [state, onComplete]);
 
-    return <Container ref={containerRef} style={{ width: gameSize, height: gameSize }}>
-        {
-            PIECES.map(p => {
-                const posIndex = state.indexOf(p.id) || 0;
-                const tileSize = (gameSize - 3 * GAP) / 4
+    return <Container ref={containerRef} >
+        <div className="inner" style={{ width: gameSize, height: gameSize }}>
+            {
+                PIECES.map(p => {
+                    const posIndex = state.indexOf(p.id) || 0;
+                    const tileSize = (gameSize - 3 * GAP) / 4
 
-                return <img alt='tile'
-                    className="tile"
-                    key={p.id}
-                    src={p.image}
-                    onClick={() => action(posIndex)}
-                    data-xxx={posIndex}
-                    style={{
-                        width: tileSize,
-                        height: tileSize,
-                        position: "absolute",
-                        display: "block",
-                        top: (tileSize + GAP) * ((posIndex / 4) | 0),
-                        left: (tileSize + GAP) * (posIndex % 4)
-                    }} />
-            })
-        }
+                    return <img alt='tile'
+                        className="tile"
+                        key={p.id}
+                        src={p.image}
+                        onClick={() => action(posIndex)}
+                        data-xxx={posIndex}
+                        style={{
+                            width: tileSize,
+                            height: tileSize,
+                            position: "absolute",
+                            display: "block",
+                            top: (tileSize + GAP) * ((posIndex / 4) | 0),
+                            left: (tileSize + GAP) * (posIndex % 4)
+                        }} />
+                })
+            }
+
+        </div>
     </Container>
 }
 
