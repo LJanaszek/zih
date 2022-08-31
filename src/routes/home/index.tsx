@@ -47,7 +47,7 @@ li::marker{
     img {
         margin-top:0;
         height: auto;
-        width: 90%;
+        width: 100%;
         border-radius: 4rem;
         border: 1px solid var(--color1);
     }
@@ -55,7 +55,7 @@ li::marker{
 
 
 .content{
-    grid-gap:1em;
+    grid-gap:2em;
     width: 84%;
     margin: 0 auto;
     border-radius: 50px;
