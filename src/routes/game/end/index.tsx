@@ -9,42 +9,57 @@ import ScrollToTop from "../../../utils/widgets/scroll-to-top";
 const Container = styled.div`
     top:0;
     width:100%;
-    min-height:100vh;
+    height:100vh;
     text-align: center;
 
+    display: grid;
+
+    grid-template-rows: 1fr 1fr 2fr 1fr;
+
+
     background:var(--color3);
+    overflow: scroll;
 
     .content{
         display: block;
         margin: 0 auto;
         text-align: center;
-        color: var(--color1)
+        color: var(--color1);
+
     }
 
     img {
-        width: 100%;
+        width: 95%;
+        display: block;
+        margin: 0 auto;
     }
 
     @media (max-width: 1560px) {
         width:100%;
+        img{
+            width:90%;
+        }
     }
+
 
 `
 
 export default function EndGamePage() {
     useRemoveHeader();
 
-    return <Container>
+    return <>
         <ScrollToTop behavior="smooth" />
-        <PageHeader theme={'violet'} />
-        <div className="content">
-            <h2>Gratulacje!</h2>
-            <p>pełne hasło:</p>
-        </div>
-        <img src={PerazjaSrc} alt="" />
-        <div className="button-list">
-            <Link className="button inverted" to={getHomeRoute()}>Strona domowa<i className="icon home" /></Link>
-        </div>
+        <Container>
+            <PageHeader theme={'violet'} />
+            <div className="content">
+                <h2>Gratulacje!</h2>
+                <p>pełne hasło:</p>
+            </div>
+            <img src={PerazjaSrc} alt="" />
+            <div className="button-list">
+                <Link className="button inverted" to={getHomeRoute()}>Strona domowa<i className="icon home" /></Link>
+            </div>
 
-    </Container>
+        </Container>
+    </>
 }
