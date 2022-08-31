@@ -36,7 +36,7 @@ export default class App extends PIXI.Application {
             this.initApp();
         });
 
-        window.addEventListener('resize', () => this.onResize());
+        window.addEventListener('resize', this.onResize);
     }
 
     private gameScreen?: GameScreen;
@@ -58,7 +58,7 @@ export default class App extends PIXI.Application {
         this.gameScreen?.reset();
     }
 
-    onResize() {
+    onResize = () => {
         const wW = window.innerWidth;
         const wH = window.innerHeight;
 
@@ -80,6 +80,8 @@ export default class App extends PIXI.Application {
 
     public destroy(x: boolean) {
         super.destroy(x);
+
+        window.removeEventListener('resize', this.onResize);
     }
 }
 
