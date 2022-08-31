@@ -27,7 +27,11 @@ const Container = styled.div`
 
     @media (max-width: 1560px) {
         width:100%;
+        img{
+            width:90%;
+        }
     }
+
 
 `
 
