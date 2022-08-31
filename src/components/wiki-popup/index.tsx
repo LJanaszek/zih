@@ -141,10 +141,11 @@ export default function WikiPopup({ children, onClick }: Props) {
             a.setAttribute('download', '/Raszyn Gra - bitwa pod Raszynem 1809.pdf');
             document.body.appendChild(a);
             a.click();
+            onClick();
         } else {
             setShowError(true);
         }
-    }, [setShowError]);
+    }, [setShowError, onClick]);
 
     const lastItemRef = useRef<HTMLButtonElement>(null);
 
@@ -186,7 +187,7 @@ export default function WikiPopup({ children, onClick }: Props) {
             </header>
             <h2 id="wiki-modal-header">Wpisz hasło:</h2>
             <div className="inner-2">
-                <form className="form">
+                <form className="form" onSubmit={(e) => {e.preventDefault()}}>
                     <input type="text" ref={inputRef} aria-labelledby="wiki-modal-header" />
                     <p>Aby pobrać materiały edukacyjne <br />wpisz hasło odkryte w trakcie gry.</p>
                     <input className="accept" type="image" alt="ok" src={OKfiolet} onClick={onOpenClick} />
