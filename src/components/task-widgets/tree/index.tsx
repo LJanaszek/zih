@@ -24,10 +24,12 @@ const Container = styled.div`
 
         @media (orientation: landscape) {
             height: 100%;
+            max-width: 100%;
         }
 
         @media (orientation: portrait) {
             width: 100%;
+            max-height: 100%;
         }
 
 

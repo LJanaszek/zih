@@ -83,7 +83,7 @@ const ITEMS = [
         id: 'item44',
         text: 'kurnik'
     }
-];
+].sort(() => Math.random() - .5);
 
 
 export const SCREEN: {
