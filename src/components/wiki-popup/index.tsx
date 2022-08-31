@@ -124,7 +124,8 @@ const Container = styled.div`
 
     .error{
         text-align:center;
-        margin-top: 1em;
+        margin: 1em 0;
+        color: var(--color1);
     }
 `;
 export default function WikiPopup({ children, onClick }: Props) {
