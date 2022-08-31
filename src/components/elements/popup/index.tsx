@@ -33,7 +33,7 @@ const Container = styled.div<{padding?: 'small'}>`
 
         max-width: 95vw;
         max-height: 90vh;
-        overflow: scroll;
+        overflow: auto;
     }
 
     button {

@@ -18,7 +18,7 @@ const Container = styled.div`
 
 
     background:var(--color3);
-    overflow: scroll;
+    overflow: auto;
 
     .content{
         display: block;

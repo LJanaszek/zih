@@ -43,7 +43,7 @@ const Container = styled.div`
         pointer-events: all;
 
         text-align: center;
-        overflow: scroll;
+        overflow: auto;
     }
 
     .buttons {

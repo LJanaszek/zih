@@ -32,7 +32,7 @@ const Container = styled.div`
         flex-direction: column;
         align-items: center;
         max-height: 90vh;
-        overflow: scroll;
+        overflow: auto;
     }
 
     .content {

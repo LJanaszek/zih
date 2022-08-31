@@ -39,7 +39,7 @@ const Container = styled.div`
         width: 95vw;
 
         max-height: 90vh;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
 
 
