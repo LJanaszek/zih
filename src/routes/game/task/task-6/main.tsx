@@ -13,6 +13,7 @@ type Props = {
 
 const Container = styled.div`
     display: grid;
+    height: 100vh;
 
     @media (orientation: landscape) {
         grid-template-columns: 1fr 4fr 1fr;
@@ -66,6 +67,10 @@ const Container = styled.div`
         }
     }
 }
+.helpimg{
+    width:90vh;
+    max-height:40vh;
+}
 `;
 
 export default function TaskMain({ onComplete }: Props) {
@@ -91,7 +96,7 @@ export default function TaskMain({ onComplete }: Props) {
         </div>
         {
             showPreview && <TaskPopup onClick={() => { setShowPreview(false) }}>
-                <img src={previewSrc} alt="" />
+                <img className="helpimg" src={previewSrc} alt="" />
             </TaskPopup>
         }
 
