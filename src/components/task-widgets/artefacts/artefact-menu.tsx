@@ -141,6 +141,10 @@ export default function ArtefactMenu({ onClose, onShowInfo, onSelectAnswer, sele
         }
     }, [isValid, onValidate]);
 
+    const answers = useMemo(() => {
+        return [...WIDGET_DATA.ITEMS].sort(() => Math.random() - .5);
+    }, []);
+
     return <Container>
         <input type='image' alt="zamknij" src={closeSrc} className="close" onClick={onClose} />
         {
@@ -150,7 +154,7 @@ export default function ArtefactMenu({ onClose, onShowInfo, onSelectAnswer, sele
                 </div>
                 <div className={classes}>
                     {
-                        WIDGET_DATA.ITEMS.map((a) => {
+                        answers.map((a) => {
                             return <div className="answer" key={a.id}>
                                 <button
                                     className={`answer-button ${a.id === selectedAnswer ? 'selected' : ''}`}
