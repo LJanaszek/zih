@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import Taskimg from "../img/taskImages/task1.jpg";
 import TaskPopup from "../../../../components/elements/task-popup";
 import TaskIntroTemplate from "../../../../components/layout/task-intro";
+import useGeoStep from "../../../../modules/game/hooks/use-geo-step";
 
 type Props = {
     onComplete(): void
@@ -17,11 +18,13 @@ export default function TaskIntro({ onComplete }: Props) {
         ]
     }, [setShowGPSInfo])
 
+    const geoPoint = useGeoStep('1.1');
+
     return <>
         <TaskIntroTemplate
             onComplete={onComplete}
             image={Taskimg}
-            title={`"ul.Krokodyli" - Walcownicza daw. Handlowa`}
+            title={geoPoint?.name}
             addButtons={addButtons}
         >
             <h2>Spójrz na dawną ulicę Handlową</h2>

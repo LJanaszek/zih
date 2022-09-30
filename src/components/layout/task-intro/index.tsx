@@ -6,7 +6,7 @@ import pointer from "./pointer.svg";
 type Props = {
     image: string,
     addButtons?: ReactElement[],
-    title: string,
+    title?: string[],
     onComplete(): void
 }
 
@@ -35,15 +35,23 @@ export default function TaskIntroTemplate({ image, onComplete, children, addButt
     return <Container>
         <div className="content">
             <img className="pointer" src={pointer} alt="" />
-            <p className="title">{title}</p>
-            <img className="taskImg" src={image} alt="" />
-            <Box>{children}</Box>
-            <div className="button-list">
-                <>
-                    <button className="button" onClick={onComplete}>Uruchom zadanie <i className="icon task-start" /></button>
-                    {addButtons}
-                </>
-            </div>
+            {title && <p className="title">
+                {
+                    title.reduce(
+                        (prev, next) => {
+                            return [...prev, <>{next}</>, <br />];
+                        }, [<></>])
+                }
+        </p>
+            }
+        <img className="taskImg" src={image} alt="" />
+        <Box>{children}</Box>
+        <div className="button-list">
+            <>
+                <button className="button" onClick={onComplete}>Uruchom zadanie <i className="icon task-start" /></button>
+                {addButtons}
+            </>
         </div>
-    </Container>
+    </div>
+    </Container >
 }
