@@ -40,7 +40,7 @@ export default function TaskIntroTemplate({ image, onComplete, children, addButt
             <Box>{children}</Box>
             <div className="button-list">
                 <>
-                    <button className="button" onClick={onComplete}>Uruchom zadanie <i className="icon help" /></button>
+                    <button className="button" onClick={onComplete}>Uruchom zadanie <i className="icon task-start" /></button>
                     {addButtons}
                 </>
             </div>
