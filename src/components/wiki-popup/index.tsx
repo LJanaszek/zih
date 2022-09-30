@@ -67,6 +67,8 @@ const Container = styled.div`
             position: absolute;
             top: .5em;
             right: .5em;
+
+            filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7497%) hue-rotate(171deg) brightness(103%) contrast(102%);
         }
     }
 
