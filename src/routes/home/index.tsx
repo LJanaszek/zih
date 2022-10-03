@@ -237,7 +237,7 @@ export default function HomePage() {
         {
             showGPSInfo && <HomePagePopup onClick={goToGame}>
                 <p className="divp">
-                    Dostęp do lokalizacji urządzenia jest niezbędny do przeprowadzenia gry.<br /><br /> Udziel dostępu, jeśli zostaniesz o to poproszony.
+                    Dostęp do lokalizacji urządzenia jest niezbędny do przeprowadzenia gry.<br /> Udziel dostępu, jeśli zostaniesz o to poproszony.
                 </p>
             </HomePagePopup>
         }
