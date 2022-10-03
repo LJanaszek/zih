@@ -18,8 +18,15 @@ export default function TaskIntro({ onComplete }: Props) {
             image={Taskimg}
             title={geoPoint?.name}
         >
-            <h2>Przygotowanie do podróży</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus alias quia asperiores natus iusto, pariatur ab provident officiis veniam culpa, distinctio consequatur accusamus, porro autem itaque omnis et? Repellendus, velit?</p>
+            <h2>Ciuchcia</h2>
+            <p>
+                To tutaj zatrzymywała się kiedyś legendarna „ciuchcia”, czyli małoformatowa lokomotywa opalana węglem. „Pędziła” ona na trasie prowadzącej wzdłuż Wisły. Rozbudowa linii kolejowych z Warszawy w tym kierunku znacznie przyczyniła się do rozwoju okolicy. Ułatwiła transport materiałów budowlanych do rosnących jak grzyby po deszczu willi. Z czasem zarówno mieszkańcy, jak i letnicy przyzwyczaili się do tego środka lokomocji. Ruch pasażerski zwiększył się w dwudziestoleciu międzywojennym, co ograniczyło plany likwidacji linii. W efekcie kolejka przetrwała aż do lat 50.<br />
+                Do dziś pozostały pojedyncze budynki, nasyp na terenie Skaryszewa, most na Świdrze i układ wawerskich ulic powiązany z przebiegiem torów. Dzięki „ciuchci” Wawer, Falenica i Otwock szybko stały się ważnymi miejscami wypraw weekendowych i letniskowych, a tworząca się tu infrastruktura mogła czerpać zasoby z oddalonych magazynów.<br />
+                Niegdyś sama podróż kolejką była nie lada atrakcją. Z czasem jednak, ze względu na jej powszechność, stała się jedynie etapem na drodze do celu.
+            </p>
+            <p>
+                Przejdźcie do zadania i rozglądając się wokół, spróbujcie znaleźć wszystkich podróżnych czekających na pociąg.
+            </p>
         </TaskIntroTemplate>
     </>
 }
