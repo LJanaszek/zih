@@ -19,8 +19,27 @@ const Container = styled.div`
     bottom: 0;
 
     display: flex;
-    justify-content: stretch;
-    align-items: stretch;
+    justify-content: center;
+    align-items: center;
+
+    canvas {
+        outline: 1px red solid;
+        object-fit: contain;
+
+        @media (orientation: landscape) {
+            max-width: 100%;
+            height: auto;
+            max-height: 100%;
+        }
+
+        @media (orientation: portrait) {
+            max-width: 100%;
+            height: auto;
+            max-height: 100%;
+        }
+
+
+    }
 `;
 
 export default function MapComponent({ onPointerClicked, points, activePoint }: PropsWithChildren<Props>) {
@@ -43,9 +62,6 @@ export default function MapComponent({ onPointerClicked, points, activePoint }: 
         app.stage.on('ready', () => {
             setAppReady(true);
         });
-
-        app.renderer.view.style.objectFit = 'contain';
-        app.renderer.view.style.maxWidth = '100%';
 
         if (widgetContainerRef.current) {
             widgetContainerRef.current.appendChild(app.view);

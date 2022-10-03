@@ -52,26 +52,7 @@ export default class App extends PIXI.Application {
         this.onResize();
     }
 
-    private onResize() {
-        if (this.gameScreen) {
-            const appWidth = this.renderer.width;
-            const appHeight = this.renderer.height;
-
-            const appRatio = appWidth / appHeight;
-            const mapRatio = MAP_WIDTH / MAP_HEIGHT;
-
-            if (appRatio < mapRatio) {
-                this.gameScreen?.scale.set(appWidth / MAP_WIDTH);
-            } else {
-                this.gameScreen?.scale.set(appHeight / MAP_HEIGHT);
-            }
-
-            this.gameScreen?.position.set(
-                (appWidth - this.gameScreen.width) / 2,
-                (appHeight - this.gameScreen.height) / 2,
-            );
-        }
-    }
+    private onResize() {}
 
     isValid() {
         return this.gameScreen?.isValid() || false;

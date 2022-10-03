@@ -67,7 +67,6 @@ export default class App extends PIXI.Application {
 
         if (this.gameScreen) {
             if (this.screenOrientation !== 'portrait' && wW < wH) {
-                console.log('portraitportraitportraitportrait!!!!!!!!!!', this.renderer.view)
                 this.screenOrientation = 'portrait';
                 this.renderer.resize(APP_WIDTH, APP_HEIGHT);
                 this.renderer.view.width = APP_WIDTH;
@@ -76,7 +75,6 @@ export default class App extends PIXI.Application {
             }
 
             if (this.screenOrientation !== 'landscape' && wW > wH) {
-                console.log('landscapelandscapelandscapelandscape!!!!!!!!!!', this.screen)
                 this.screenOrientation = 'landscape';
                 this.renderer.resize(APP_WIDTH_2, APP_HEIGHT_2);
                 this.renderer.view.width = APP_WIDTH_2;
