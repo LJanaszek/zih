@@ -42,6 +42,10 @@ const TextPage = styled.div`
             text-align: right;
         }
     }
+
+    li::marker{
+        color:var(--color1);
+    }
 `
 
 export default TextPage;

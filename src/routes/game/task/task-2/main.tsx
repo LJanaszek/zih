@@ -7,6 +7,7 @@ import BirdsTask, { BirdTaskState } from "../../../../components/task-widgets/bi
 import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header";
 import ScrollToTop from "../../../../utils/widgets/scroll-to-top";
 import HelpGrid from "./help-grid";
+import EyeIconSrc from '../../../../assets/icons/eye.svg';
 
 type Props = {
     onComplete(): void
@@ -142,7 +143,7 @@ export default function TaskMain({ onComplete }: Props) {
             <HelpGrid />
         </Popup>}
         {showInfoPopup && <TaskPopup onClick={() => { setShowInfoPopup(false) }}>
-            Znajdź ukryte ptaki i kliknij w nie by je złapać. Kliknij w ikonę [oko] by zobaczyć podpowiedź.
+            Znajdź ukryte ptaki i kliknij w nie by je złapać. Kliknij w ikonę <img src={EyeIconSrc} alt="oko" style={{height: '1em', width: 'auto'}} /> by zobaczyć podpowiedź.
         </TaskPopup>}
     </>
 }
