@@ -29,6 +29,21 @@ const Container = styled.div`
     .title{
         color:var(--color1);
     }
+
+    figure {
+        margin: 0;
+
+        blockquote {
+            margin: 0;
+            font-style: italic;
+            text-align: center;
+        }
+
+        figcaption {
+            font-size: .8em;
+            text-align: right;
+        }
+    }
 `
 
 export default function TaskIntroTemplate({ image, onComplete, children, addButtons, title }: React.PropsWithChildren<Props>) {
