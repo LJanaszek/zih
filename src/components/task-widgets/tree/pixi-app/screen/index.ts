@@ -23,7 +23,7 @@ export default class GameScreen extends PIXI.Container implements IScreen {
     prevPageButton = PIXI.Sprite.from('arrow');
 
     helpButton = PIXI.Sprite.from('help');
-    completeButton: PIXI.Text = new PIXI.Text('Zrobione')
+    completeButton = PIXI.Sprite.from('end');
     bg: PIXI.Sprite = PIXI.Sprite.from('drzewo');
 
     orientation: 'portrait' | 'landscape' = 'landscape';
@@ -189,6 +189,7 @@ export default class GameScreen extends PIXI.Container implements IScreen {
         this.completeButton.interactive = true;
         this.completeButton.buttonMode = true;
 
+        this.completeButton.anchor.set(.5);
         this.completeButton.visible = false;
 
         this.addChild(this.completeButton);
@@ -245,7 +246,7 @@ export default class GameScreen extends PIXI.Container implements IScreen {
         if (isComplete) {
             this.nextPageButton.visible = false;
             this.prevPageButton.visible = false;
-            this.onComplete();
+            this.completeButton.visible = true;
         }
 
         return isComplete;
@@ -305,7 +306,7 @@ export default class GameScreen extends PIXI.Container implements IScreen {
 
         this.pages.forEach(p => {
             p.items.forEach((item, index) => {
-                item.setPosition(sliderCenterX, (sliderCenterY - SLIDER_HEIGHT/2) + 45 + (70 + 3) * index);
+                item.setPosition(sliderCenterX, (sliderCenterY - SLIDER_HEIGHT / 2) + 45 + (70 + 3) * index);
             });
         });
     }

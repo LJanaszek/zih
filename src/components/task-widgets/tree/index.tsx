@@ -21,15 +21,17 @@ const Container = styled.div`
     align-items: center;
 
     canvas {
+        /* outline: 1px red solid; */
         object-fit: contain;
 
         @media (orientation: landscape) {
-            height: 100%;
             max-width: 100%;
+            height: auto;
+            max-height: 100%;
         }
 
         @media (orientation: portrait) {
-            width: 100%;
+            max-width: 100%;
             max-height: 100%;
         }
 

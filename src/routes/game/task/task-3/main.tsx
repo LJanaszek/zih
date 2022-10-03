@@ -31,12 +31,11 @@ const Container = styled.div`
 export default function TaskMain({ onComplete }: Props) {
     useRemoveHeader();
 
-    const [showNextButton, setShowNextButton] = useState(false);
     const [showHelpPopup, setShowHelpPopup] = useState(false);
 
     const onTaskComplete = useCallback(() => {
-        setShowNextButton(true);
-    }, [setShowNextButton])
+        onComplete();
+    }, [onComplete])
 
     return <>
         <ScrollToTop />
@@ -46,9 +45,5 @@ export default function TaskMain({ onComplete }: Props) {
         {showHelpPopup && <TaskPopup onClick={() => { setShowHelpPopup(false) }}>
             <p>Dopasuj nazwy dyżurów do odpowiednich gałęzi.</p>
         </TaskPopup>}
-        <ScrollToMe trigger={showNextButton} behavior={'smooth'} />
-        <div className="button-list">
-            {showNextButton && <button className="button" onClick={onComplete}>Zakończ<i className="icon ok" /></button>}
-        </div>
     </>
 }

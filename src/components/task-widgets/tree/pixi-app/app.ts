@@ -33,7 +33,8 @@ export default class App extends PIXI.Application {
             ['drzewo', `${this.config.assetsPath}drzewo.jpg`],
             ['arrow', `${this.config.assetsPath}arrow.png`],
             ['x', `${this.config.assetsPath}x.png`],
-            ['help', `${this.config.assetsPath}pomoc.png`]
+            ['help', `${this.config.assetsPath}pomoc.png`],
+            ['end', `${this.config.assetsPath}end.png`]
         ]).then(() => {
             this.initApp();
         });
@@ -66,14 +67,20 @@ export default class App extends PIXI.Application {
 
         if (this.gameScreen) {
             if (this.screenOrientation !== 'portrait' && wW < wH) {
+                console.log('portraitportraitportraitportrait!!!!!!!!!!', this.renderer.view)
                 this.screenOrientation = 'portrait';
                 this.renderer.resize(APP_WIDTH, APP_HEIGHT);
+                this.renderer.view.width = APP_WIDTH;
+                this.renderer.view.height = APP_HEIGHT;
                 this.gameScreen.changeOrientation(this.screenOrientation);
             }
 
             if (this.screenOrientation !== 'landscape' && wW > wH) {
+                console.log('landscapelandscapelandscapelandscape!!!!!!!!!!', this.screen)
                 this.screenOrientation = 'landscape';
                 this.renderer.resize(APP_WIDTH_2, APP_HEIGHT_2);
+                this.renderer.view.width = APP_WIDTH_2;
+                this.renderer.view.height = APP_HEIGHT_2;
                 this.gameScreen.changeOrientation(this.screenOrientation);
             }
         }
