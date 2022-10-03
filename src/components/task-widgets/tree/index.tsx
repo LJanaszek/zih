@@ -71,7 +71,7 @@ const TreeTask: React.FC<Props> = ({ onComplete, onHelp }: Props) => {
             appRef.current?.destroy(true);
             appRef.current = undefined;
         }
-    }, [onComplete]);
+    }, [onComplete, onHelp]);
 
     return <Container ref={widgetContainerRef}></Container>
 }

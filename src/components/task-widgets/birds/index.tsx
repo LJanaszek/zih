@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from "react"
+import { useEffect, useRef } from "react"
 import styled from "styled-components";
 import App from "./pixi-app/app";
 import WebFonts from 'webfontloader';
@@ -45,11 +45,8 @@ const Container = styled.div`
     }
 `;
 
-const widgetRatio = 1.35;
-
 const BirdsTask: React.FC<Props> = ({ onComplete, onGameStateChanged }) => {
     const widgetContainerRef = useRef<HTMLDivElement>(null);
-    const containerRef = useRef<HTMLDivElement>(null);
     const appRef = useRef<App>();
 
     useEffect(() => {

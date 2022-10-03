@@ -39,7 +39,7 @@ export default function usePopupFocusTrap<FType extends HTMLElement, LType exten
             cancelButton?.removeEventListener('keydown', lastFocusListHandler)
             input?.removeEventListener('keydown', firstFocusListHandler)
         }
-    }, [firstFocusListHandler, lastFocusListHandler]);
+    }, [firstFocusListHandler, lastFocusListHandler, firstItemRef, lastItemRef]);
 
     return {
         firstItemRef,

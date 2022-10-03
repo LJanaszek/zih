@@ -44,7 +44,6 @@ const Container = styled.div`
 
 export default function MapComponent({ onPointerClicked, points, activePoint }: PropsWithChildren<Props>) {
     const widgetContainerRef = useRef<HTMLDivElement>(null);
-    const containerRef = useRef<HTMLDivElement>(null);
     const appRef = useRef<App>();
 
     const [appReady, setAppReady] = useState(false);
