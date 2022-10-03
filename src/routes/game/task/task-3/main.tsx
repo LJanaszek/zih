@@ -3,7 +3,6 @@ import styled from "styled-components";
 import TaskPopup from "../../../../components/elements/task-popup";
 import TreeTask from "../../../../components/task-widgets/tree";
 import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header"
-import ScrollToMe from "../../../../utils/widgets/scroll-to-me";
 import ScrollToTop from "../../../../utils/widgets/scroll-to-top";
 
 type Props = {
@@ -31,25 +30,19 @@ const Container = styled.div`
 export default function TaskMain({ onComplete }: Props) {
     useRemoveHeader();
 
-    const [showNextButton, setShowNextButton] = useState(false);
     const [showHelpPopup, setShowHelpPopup] = useState(false);
 
     const onTaskComplete = useCallback(() => {
-        setShowNextButton(true);
-    }, [setShowNextButton])
+        onComplete();
+    }, [onComplete])
 
     return <>
         <ScrollToTop />
         <Container>
-            <TreeTask onComplete={onTaskComplete} />
+            <TreeTask onComplete={onTaskComplete} onHelp={() => { setShowHelpPopup(true) }} />
         </Container>
         {showHelpPopup && <TaskPopup onClick={() => { setShowHelpPopup(false) }}>
             <p>Dopasuj nazwy dyżurów do odpowiednich gałęzi.</p>
         </TaskPopup>}
-        <ScrollToMe trigger={showNextButton} behavior={'smooth'} />
-        <div className="button-list">
-            <button className="button" onClick={() => { setShowHelpPopup(true) }}>Pomoc<i className="icon help" /></button>
-            {showNextButton && <button className="button" onClick={onComplete}>Zakończ<i className="icon ok" /></button>}
-        </div>
     </>
 }

@@ -6,6 +6,7 @@ import headimg from '../../routes/game/img/ikonsButton/bazaWiedzy.svg';
 import OKfiolet from "./img/OKfiolet.svg"
 import close from './img/xmark.svg';
 import CONFIG from "../../config";
+import usePopupFocusTrap from "../../utils/popup-focus-trap/use-popup-focus-trap";
 type Props = React.PropsWithChildren<{
     onClick(): void
 }>;
@@ -109,6 +110,11 @@ const Container = styled.div`
             @media(max-width: 485px){
                 width:70%;
             }
+
+            &:focus-visible {
+                border-color: black;
+                outline: none;
+            }
         }
     }
 
@@ -134,14 +140,17 @@ export default function WikiPopup({ children, onClick }: Props) {
 
     const [showError, setShowError] = useState(false);
 
-    const inputRef = useRef<HTMLInputElement>(null);
+    const textInputRef = useRef<HTMLInputElement>(null);
+
+    const { firstItemRef, lastItemRef } = usePopupFocusTrap<HTMLInputElement, HTMLInputElement>();
+
     const onOpenClick = useCallback(() => {
-        const value = (inputRef.current?.value || '').toLocaleLowerCase().trim();
+        const value = (textInputRef.current?.value || '').toLocaleLowerCase().trim();
         if (value === CONFIG.PASSWORD) {
             var a = document.createElement('a');
-            a.href = '/Raszyn_Gra-bitwa_pod_Raszynem_1809.pdf';
+            a.href = '/bruno_shultz_baza_wiedzy.pdf';
             a.style.display = 'none';
-            a.setAttribute('download', '/Raszyn Gra - bitwa pod Raszynem 1809.pdf');
+            a.setAttribute('download', 'Bruno Shultz - Baza Wiedzy.pdf');
             document.body.appendChild(a);
             a.click();
             onClick();
@@ -150,50 +159,23 @@ export default function WikiPopup({ children, onClick }: Props) {
         }
     }, [setShowError, onClick]);
 
-    const lastItemRef = useRef<HTMLButtonElement>(null);
-
-    const firstFocusListHandler = useCallback((e: KeyboardEvent) => {
-        if (lastItemRef.current && e.key === 'Tab' && e.shiftKey === true) {
-            e.preventDefault();
-            lastItemRef.current.focus();
-        }
-    }, []);
-
-    const lastFocusListHandler = useCallback((e: KeyboardEvent) => {
-        if (inputRef.current && e.key === 'Tab' && e.shiftKey === false) {
-            e.preventDefault();
-            inputRef.current.focus();
-        }
-    }, []);
-
     useEffect(() => {
-
-        const cancelButton = lastItemRef.current
-        const input = inputRef.current
-
-        if (cancelButton && input) {
-            input.focus();
-            cancelButton.addEventListener('keydown', lastFocusListHandler)
-            input.addEventListener('keydown', firstFocusListHandler)
+        if (textInputRef.current) {
+            textInputRef.current.focus();
         }
-
-        return () => {
-            cancelButton?.removeEventListener('keydown', lastFocusListHandler)
-            input?.removeEventListener('keydown', firstFocusListHandler)
-        }
-    }, [firstFocusListHandler, lastFocusListHandler])
+    }, [])
 
     return <Container aria-modal="true">
         <div className="inner">
             <header>
-                <input className="close-button" type="image" src={close} alt="zamknij" onClick={onClick} />
+                <input className="close-button" type="image" src={close} alt="zamknij" onClick={onClick} ref={firstItemRef} />
             </header>
             <h2 id="wiki-modal-header">Wpisz hasło:</h2>
             <div className="inner-2">
-                <form className="form" onSubmit={(e) => {e.preventDefault()}}>
-                    <input type="text" ref={inputRef} aria-labelledby="wiki-modal-header" />
+                <form className="form" onSubmit={(e) => { e.preventDefault() }}>
+                    <input type="text" ref={textInputRef} aria-labelledby="wiki-modal-header" />
                     <p>Aby pobrać materiały edukacyjne <br />wpisz hasło odkryte w trakcie gry.</p>
-                    <input className="accept" type="image" alt="ok" src={OKfiolet} onClick={onOpenClick} />
+                    <input className="accept" type="image" alt="ok" src={OKfiolet} onClick={onOpenClick} ref={lastItemRef} />
                 </form>
                 {showError && <div className="error" aria-live="polite">Hasło nieprawidłowe</div>}
 

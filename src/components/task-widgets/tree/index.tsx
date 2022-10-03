@@ -5,6 +5,7 @@ import WebFonts from 'webfontloader';
 
 type Props = {
     onComplete(): void
+    onHelp(): void
 }
 
 const Container = styled.div`
@@ -20,15 +21,17 @@ const Container = styled.div`
     align-items: center;
 
     canvas {
+        /* outline: 1px red solid; */
         object-fit: contain;
 
         @media (orientation: landscape) {
-            height: 100%;
             max-width: 100%;
+            height: auto;
+            max-height: 100%;
         }
 
         @media (orientation: portrait) {
-            width: 100%;
+            max-width: 100%;
             max-height: 100%;
         }
 
@@ -36,7 +39,7 @@ const Container = styled.div`
     }
 `;
 
-const TreeTask: React.FC<Props> = ({ onComplete }) => {
+const TreeTask: React.FC<Props> = ({ onComplete, onHelp }: Props) => {
     const widgetContainerRef = useRef<HTMLDivElement>(null);
     const appRef = useRef<App>();
 
@@ -51,7 +54,8 @@ const TreeTask: React.FC<Props> = ({ onComplete }) => {
 
                 const app = new App({
                     assetsPath: '/task-3/',
-                    onComplete
+                    onComplete,
+                    onHelp
                 });
                 appRef.current = app;
 
@@ -67,7 +71,7 @@ const TreeTask: React.FC<Props> = ({ onComplete }) => {
             appRef.current?.destroy(true);
             appRef.current = undefined;
         }
-    }, [onComplete]);
+    }, [onComplete, onHelp]);
 
     return <Container ref={widgetContainerRef}></Container>
 }
