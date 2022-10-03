@@ -5,6 +5,7 @@ import WebFonts from 'webfontloader';
 
 type Props = {
     onComplete(): void
+    onHelp(): void
 }
 
 const Container = styled.div`
@@ -36,7 +37,7 @@ const Container = styled.div`
     }
 `;
 
-const TreeTask: React.FC<Props> = ({ onComplete }) => {
+const TreeTask: React.FC<Props> = ({ onComplete, onHelp }: Props) => {
     const widgetContainerRef = useRef<HTMLDivElement>(null);
     const appRef = useRef<App>();
 
@@ -51,7 +52,8 @@ const TreeTask: React.FC<Props> = ({ onComplete }) => {
 
                 const app = new App({
                     assetsPath: '/task-3/',
-                    onComplete
+                    onComplete,
+                    onHelp
                 });
                 appRef.current = app;
 

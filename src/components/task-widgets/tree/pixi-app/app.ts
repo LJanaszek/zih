@@ -4,11 +4,12 @@ import loadSprites from './utils/load-sprites';
 
 type AppConfig = {
     assetsPath: string,
-    onComplete(): void
+    onComplete(): void,
+    onHelp(): void
 }
 
 export const APP_WIDTH = 590;
-export const APP_HEIGHT = 900;
+export const APP_HEIGHT = 1000;
 
 export const APP_WIDTH_2 = 1180;
 export const APP_HEIGHT_2 = 682;
@@ -31,7 +32,8 @@ export default class App extends PIXI.Application {
         loadSprites(this, [
             ['drzewo', `${this.config.assetsPath}drzewo.jpg`],
             ['arrow', `${this.config.assetsPath}arrow.png`],
-            ['x', `${this.config.assetsPath}x.png`]
+            ['x', `${this.config.assetsPath}x.png`],
+            ['help', `${this.config.assetsPath}pomoc.png`]
         ]).then(() => {
             this.initApp();
         });
@@ -42,7 +44,7 @@ export default class App extends PIXI.Application {
     private gameScreen?: GameScreen;
 
     private initApp() {
-        this.gameScreen = new GameScreen(this, this.config.onComplete);
+        this.gameScreen = new GameScreen(this, this.config.onComplete, this.config.onHelp);
         this.stage.addChild(this.gameScreen);
         this.onResize();
     }

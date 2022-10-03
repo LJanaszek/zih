@@ -41,14 +41,13 @@ export default function TaskMain({ onComplete }: Props) {
     return <>
         <ScrollToTop />
         <Container>
-            <TreeTask onComplete={onTaskComplete} />
+            <TreeTask onComplete={onTaskComplete} onHelp={() => { setShowHelpPopup(true) }} />
         </Container>
         {showHelpPopup && <TaskPopup onClick={() => { setShowHelpPopup(false) }}>
             <p>Dopasuj nazwy dyżurów do odpowiednich gałęzi.</p>
         </TaskPopup>}
         <ScrollToMe trigger={showNextButton} behavior={'smooth'} />
         <div className="button-list">
-            <button className="button" onClick={() => { setShowHelpPopup(true) }}>Pomoc<i className="icon help" /></button>
             {showNextButton && <button className="button" onClick={onComplete}>Zakończ<i className="icon ok" /></button>}
         </div>
     </>

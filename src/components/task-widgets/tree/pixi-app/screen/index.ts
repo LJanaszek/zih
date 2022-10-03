@@ -21,6 +21,8 @@ export default class GameScreen extends PIXI.Container implements IScreen {
     activePage = 0;
     nextPageButton = PIXI.Sprite.from('arrow');
     prevPageButton = PIXI.Sprite.from('arrow');
+
+    helpButton = PIXI.Sprite.from('help');
     completeButton: PIXI.Text = new PIXI.Text('Zrobione')
     bg: PIXI.Sprite = PIXI.Sprite.from('drzewo');
 
@@ -28,7 +30,7 @@ export default class GameScreen extends PIXI.Container implements IScreen {
 
     errorLayer = new PIXI.Container();
 
-    constructor(private app: PIXI.Application, private onComplete: () => void) {
+    constructor(private app: PIXI.Application, private onComplete: () => void, private onHelp: () => void) {
         super();
 
         this.sortableChildren = true;
@@ -42,6 +44,7 @@ export default class GameScreen extends PIXI.Container implements IScreen {
             const item = new LabelItem(i, app);
 
             this.items.push(item);
+            this.addChild(item);
 
             item.on('new-position', ({ position, grabPosition }) => {
                 const binData = this.bins.find(l => l.bin.containsPoint(grabPosition));
@@ -105,7 +108,7 @@ export default class GameScreen extends PIXI.Container implements IScreen {
     }
 
     private resizeBackground() {
-        this.bg.scale.set((APP_HEIGHT - SLIDER_HEIGHT) / this.bg.height);
+        this.bg.scale.set((APP_HEIGHT - SLIDER_HEIGHT - 100) / this.bg.height);
 
         if (this.bg.width > APP_WIDTH) {
             this.bg.scale.set(APP_WIDTH / this.bg.width);
@@ -193,6 +196,19 @@ export default class GameScreen extends PIXI.Container implements IScreen {
         this.completeButton.on('pointerdown', () => {
             this.onComplete();
         });
+
+        this.helpButton.anchor.set(.5);
+
+        this.helpButton.interactive = true;
+        this.helpButton.buttonMode = true;
+
+        console.log(this.helpButton.hitArea);
+
+
+        this.addChild(this.helpButton);
+        this.helpButton.on('pointerdown', () => {
+            this.onHelp();
+        });
     }
 
     showNextPage() {
@@ -249,6 +265,8 @@ export default class GameScreen extends PIXI.Container implements IScreen {
         let sliderBaseY = 0;
         let layoutColumnCount = 0;
         let columnWidth = 0;
+        let helpX = 0;
+        let helpY = 0;
 
         if (orientation === 'portrait') {
             layoutColumnCount = 1;
@@ -256,10 +274,13 @@ export default class GameScreen extends PIXI.Container implements IScreen {
             columnWidth = APP_WIDTH / layoutColumnCount;
 
             sliderBaseX = 0;
-            sliderBaseY = APP_HEIGHT - SLIDER_HEIGHT;
+            sliderBaseY = APP_HEIGHT - SLIDER_HEIGHT - 100;
             sliderCenterX = APP_WIDTH / 2;
             sliderCenterY = sliderBaseY + SLIDER_HEIGHT / 2;
             sliderCenterX = APP_WIDTH / 2;
+
+            helpX = APP_WIDTH / 2;
+            helpY = APP_HEIGHT - 50;
         }
 
         if (orientation === 'landscape') {
@@ -270,11 +291,17 @@ export default class GameScreen extends PIXI.Container implements IScreen {
             sliderBaseX = APP_WIDTH_2 / 2;
             sliderCenterX = APP_WIDTH_2 * .75;
             sliderCenterY = APP_HEIGHT_2 / 2;
+
+            helpX = APP_WIDTH_2 * .75;
+            helpY = APP_HEIGHT_2 * .8;
+
         }
 
         this.prevPageButton.position.set(sliderBaseX + 40, sliderCenterY);
         this.completeButton.position.set(sliderBaseX + columnWidth / 2, sliderCenterY);
         this.nextPageButton.position.set(sliderBaseX + columnWidth - 40, sliderCenterY);
+
+        this.helpButton.position.set(helpX, helpY);
 
         this.pages.forEach(p => {
             p.items.forEach((item, index) => {

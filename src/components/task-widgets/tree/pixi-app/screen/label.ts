@@ -16,7 +16,7 @@ export default class LabelItem extends PIXI.Container {
 
         this.id = config.id;
 
-        const containerRect = new PIXI.Rectangle(-LABEL_WIDTH / 2, -LABEL_HEIGHT / 2, 445, 70);
+        const containerRect = new PIXI.Rectangle(-LABEL_WIDTH / 2, -LABEL_HEIGHT / 2, LABEL_WIDTH, LABEL_HEIGHT);
 
         this.hitArea = containerRect;
 
@@ -71,6 +71,8 @@ export default class LabelItem extends PIXI.Container {
 
         if (this.dragging && this.grabData && this.grabPoint) {
             const newPosition = this.grabData.getLocalPosition(this.parent);
+
+            console.log(newPosition, this.grabData.global, this.app.renderer.plugins.interaction.mouse.global);
 
             const freePos = [
                 newPosition.x - this.grabPoint.x,
