@@ -64,7 +64,14 @@ export default function AccessibilityPage() {
                     Obsługa wniosków i skarg związanych z dostępnością
                 </h3>
                 <p>
-                    Każdy ma prawo do wystąpienia z żądaniem zapewnienia dostępności cyfrowej strony internetowej. Można także zażądać udostępnienia informacji za pomocą alternatywnego sposobu dostępu, na przykład przez odczytanie niedostępnego cyfrowo dokumentu, opisanie zawartości filmu bez audiodeskrypcji itp. Żądanie powinno zawierać dane osoby
+                    Każdy ma prawo do wystąpienia z żądaniem zapewnienia dostępności cyfrowej strony internetowej. Można także zażądać udostępnienia informacji za pomocą alternatywnego sposobu dostępu, na przykład przez odczytanie niedostępnego cyfrowo dokumentu, opisanie zawartości filmu bez audiodeskrypcji itp. Żądanie powinno zawierać dane osoby zgłaszającej żądanie, wskazanie, o którą stronę internetową chodzi oraz sposób kontaktu. Jeżeli osoba żądająca zgłasza potrzebę otrzymania informacji za pomocą alternatywnego sposobu dostępu, powinna także określić dogodny dla niej sposób przedstawienia tej informacji. Podmiot publiczny powinien zrealizować żądanie niezwłocznie, nie później niż w ciągu 7 dni od dnia wystąpienia z żądaniem. Jeżeli dotrzymanie tego terminu nie jest możliwe, podmiot publiczny niezwłocznie informuje o tym wnoszącego żądanie, kiedy realizacja żądania będzie możliwa, przy czym termin ten nie może być dłuższy niż 2 miesiące od dnia wystąpienia z żądaniem. Jeżeli zapewnienie dostępności cyfrowej nie jest możliwe, podmiot publiczny może zaproponować alternatywny sposób dostępu do informacji. W przypadku, gdy podmiot publiczny odmówi realizacji żądania zapewnienia dostępności lub alternatywnego sposobu dostępu do informacji, wnoszący żądanie może złożyć skargę w sprawie zapewniana dostępności cyfrowej strony internetowej lub elementu strony internetowej.<br />
+                    Po wyczerpaniu wskazanej wyżej procedury można także złożyć wniosek do <a href="https://bip.brpo.gov.pl/pl/content/jak-zglosic-sie-do-rzecznika-praw-obywatelskich">Rzecznika Praw Obywatelskich</a>.
+                </p>
+                <h3>Dostępność architektoniczna</h3>
+                <p>
+                    Przestrzeń realizacji gry zlokalizowana jest w Falenicy, w plenerze.Grą rozpoczyna się po uruchomieniu strony z aplikacją w obszarze osiedla Falenica. W niektórych lokalizacjach znajdują się utrudnienia dla osób poruszającym się na wózkach, w postaci braku utwardzonej drogi.<br />
+                    Jedna lokalizacja znajduje się na obrzeżach obszaru leśnego na poboczu ulicy, lecz można do niej dotrzeć chodnikiem znajdującym się po przeciwległej stronie drogi. W pobliżu lokalizacji znajdują się dwie rampy krawężnikowe.
+
                 </p>
             </Box>
             <div className="button-list">
