@@ -9,6 +9,7 @@ import HomePagePopup from "../../components/elements/hppopup";
 import WikiPopup from "../../components/wiki-popup";
 import { useRef } from "react";
 import PageFooter from './../../components/layout/footer';
+import HelpIconSrc from '../../assets/icons/help.svg';
 
 const Container = styled.div`
 
@@ -18,9 +19,11 @@ const Container = styled.div`
 .fill{
     font-family: Gothic;
     grid-column: 2;
+    grid-row: span 2;
+
     display: grid;
     background-color: white;
-    border-radius: 4rem;
+    border-radius: 2em;
     flex: 0 0 54%;
     padding-bottom: 2em;
     padding-top:0.5em;
@@ -64,6 +67,22 @@ li::marker{
     height: fit-content;
     display:grid;
     justify-content: space-between;
+
+    figure {
+        margin: 0;
+    }
+
+    blockquote {
+        margin: 0;
+        font-style: italic;
+        text-align: center;
+    }
+
+    figcaption {
+        font-size: .8em;
+        text-align: right;
+        padding: 0 0.6em;
+    }
 }
 
 p{
@@ -74,9 +93,9 @@ p{
 nav{
 
     grid-column:1;
+    grid-row: 2;
     width:70%;
     margin: auto;
-    margin-top: -18em;
     background-color:var(--color2);
     margin-bottom: 10em;
     display:grid;
@@ -171,17 +190,29 @@ export default function HomePage() {
 
                 <div className="fill">
                     <h2>Instrukcja</h2>
-                    <p>Zabierzemy Was na wycieczkę, ale kiedy, to trudno powiedzieć. Cały trik polega na tym, że cofnęliśmy czas. Spóźniamy się tu z czasem o pewien interwał, którego wielkość niepodobna określić. Będziemy przemieszczać się po określonych punktach i poznawać je z czasu, który z waszej codziennej perspektywy już minął, zbierać kawałki historii, wspomnienia, resztki pamięci. Nie dojdziemy czy wszystkie te rzeczy stały się całkiem, czy tylko próbowały się zdarzyć. Czy były to wielkie czy małe zdarzenia, również nie stwierdzimy tego ostatecznie. Jakieś zdarzenie może być co do swe prowenienci i swoich własnych środków małe i ubogie, a jednak, zbliżone do oka, może otwierać w swoim wnętrzu nieskończoną i promienną perspektywę .Dzięki temu, że wyższy byt usiłuje w nim się wyrazić i gwałtownie w nim błyszczy.
-                        Tak tedy będziemy zbierali te aluzje, te ziemskie przybliżenia, te stacje i etapy po drogach naszego życia, jak ułamki potłuczonego zwierciadła.
+                    <p>Zapraszamy do udziału w inspirowanej twórczością Brunona Schulza grze terenowej zlokalizowanej w Falenicy. Poprowadzimy was przez miejsca, o których pamięć powoli zanika. Poznacie ich historię i spojrzycie na nie z perspektywy życia i twórczości artysty.<br />
+                        Zanim rozpoczniecie grę, koniecznie zapoznajcie się z poniższą instrukcją.
                     </p>
                     <ul>
-                        <li>Do wzięcia udziału w grze niezbędne jest urządzenie mobilne z dostępem do Internetu</li>
-                        <li>Gra wykorzystuje aparat i lokalizację urządzenia. Udziel zgody, gdy zostaniesz zapytany/zapytana o udzielenie dostępu.</li>
-                        <li>By móc rozpocząć grę musisz ja uruchomić na terenie Falenicy.</li>
+                        <li>Do wzięcia udziału w grze niezbędne jest urządzenie mobilne z dostępem do Internetu.</li>
+                        <li>Gra wykorzystuje aparat i lokalizację urządzenia. Zostaniecie poproszeni o udzielenie dostępu.</li>
+                        <li>By móc rozpocząć grę, musicie ją uruchomić na terenie Falenicy.</li>
                         <li>Gra jest przeznaczona dla zespołów, ale można wziąć w niej udział pojedynczo.</li>
-                        <li>Informacja o lokalizacji kolejnych punktów będzie podawana na podstawie danych</li>
+                        <li>Informacja o lokalizacji kolejnych punktów będzie podawana na podstawie danych GPS.</li>
+                        <li>Przemieszczając się pomiędzy kolejnymi punktami – zachowajcie ostrożność.</li>
+                        <li>Gdy w zadaniach zobaczycie ikonę <img src={HelpIconSrc} alt="ikona pomocy" style={{ width: '1em' }} />, możecie na nią kliknąć, aby zapoznać się ze wskazówkami.</li>
                     </ul>
-
+                    <p>Po ukończeniu gry poznacie hasło do bazy wiedzy, w której zamieściliśmy materiały rozszerzające tematy poruszone w grze.</p>
+                    <figure>
+                        <blockquote>
+                            <p>
+                                Tak tedy będziemy zbierali te aluzje, te ziemskie przybliżenia,<br />
+                                te stacje i etapy po drogach naszego życia,<br />
+                                jak ułamki potłuczonego zwierciadła.
+                            </p>
+                        </blockquote>
+                        <figcaption>Księga, Bruno Schulz</figcaption>
+                    </figure>
                 </div>
 
                 <nav>
