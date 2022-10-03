@@ -53,7 +53,7 @@ export default function EndGamePage() {
             <PageHeader theme={'violet'} />
             <div className="content">
                 <h2>Gratulacje!</h2>
-                <p>pełne hasło:</p>
+                <p>Zebraliście wszystkie części hasła dającego dostęp do bazy wiedzy.</p>
             </div>
             <img src={PerazjaSrc} alt="" />
             <div className="button-list">
