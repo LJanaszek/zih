@@ -23,7 +23,7 @@ const Container = styled.div`
     align-items: center;
 
     canvas {
-        outline: 1px red solid;
+        /* outline: 1px red solid; */
         object-fit: contain;
 
         @media (orientation: landscape) {
@@ -85,14 +85,5 @@ export default function MapComponent({ onPointerClicked, points, activePoint }: 
         }
     }, [activePoint, appReady]);
 
-    return <Container ref={containerRef}>
-        <div ref={widgetContainerRef} style={{
-            width: '100%',
-            margin: '0 auto',
-            display: 'flex',
-            justifyContent: 'center',
-            flexDirection: 'row'
-        }}></div>
-
-    </Container>
+    return <Container ref={widgetContainerRef}></Container>
 }
