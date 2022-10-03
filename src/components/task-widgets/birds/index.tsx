@@ -24,6 +24,25 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    canvas {
+        /* outline: 1px red solid; */
+        object-fit: contain;
+
+        @media (orientation: landscape) {
+            max-width: 100%;
+            height: auto;
+            max-height: 100%;
+        }
+
+        @media (orientation: portrait) {
+            max-width: 100%;
+            height: auto;
+            max-height: 100%;
+        }
+
+
+    }
 `;
 
 const widgetRatio = 1.35;
@@ -32,27 +51,6 @@ const BirdsTask: React.FC<Props> = ({ onComplete, onGameStateChanged }) => {
     const widgetContainerRef = useRef<HTMLDivElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const appRef = useRef<App>();
-
-    const onResize = useCallback(() => {
-        if (widgetContainerRef.current && containerRef.current && appRef.current && appRef.current?.view) {
-            const boundries = containerRef.current.getBoundingClientRect();
-
-            const ratio = boundries.width / boundries.height;
-
-            if (ratio >= widgetRatio) {
-                appRef.current.view.style.height = `${boundries.height}px`;
-                appRef.current.view.style.width = `${boundries.height * widgetRatio}px`;
-            } else {
-                appRef.current.view.style.height = `${boundries.width / widgetRatio}px`;
-                appRef.current.view.style.width = `${boundries.width}px`;
-            }
-
-
-            appRef.current.view.addEventListener('mousedown', (e) => {
-                e.preventDefault();
-            });
-        }
-    }, []);
 
     useEffect(() => {
 
@@ -74,8 +72,6 @@ const BirdsTask: React.FC<Props> = ({ onComplete, onGameStateChanged }) => {
                 if (widgetContainerRef.current) {
                     widgetContainerRef.current.appendChild(app.view);
                 }
-
-                onResize();
             }
         });
 
@@ -84,28 +80,9 @@ const BirdsTask: React.FC<Props> = ({ onComplete, onGameStateChanged }) => {
             appRef.current?.destroy(true);
             appRef.current = undefined;
         }
-    }, [onComplete, onResize, onGameStateChanged]);
+    }, [onComplete, onGameStateChanged]);
 
-    useEffect(() => {
-        window.addEventListener('resize', onResize);
-
-        onResize();
-
-        return () => {
-            window.removeEventListener('resize', onResize);
-        }
-    }, [onResize]);
-
-    return <Container ref={containerRef}>
-        <div ref={widgetContainerRef} style={{
-            // width: '100%',
-            margin: '0 auto',
-            display: 'flex',
-            justifyContent: 'center',
-            flexDirection: 'row'
-        }}></div>
-
-    </Container>
+    return <Container ref={widgetContainerRef}></Container>
 }
 
 export default BirdsTask;
