@@ -73,7 +73,7 @@ const ITEMS = [
     },
     {
         id: 'item42',
-        text: 'stacja meteo.'
+        text: 'stacja meteo'
     },
     {
         id: 'item43',
