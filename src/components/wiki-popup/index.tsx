@@ -110,6 +110,11 @@ const Container = styled.div`
             @media(max-width: 485px){
                 width:70%;
             }
+
+            &:focus-visible {
+                border-color: black;
+                outline: none;
+            }
         }
     }
 
@@ -143,9 +148,9 @@ export default function WikiPopup({ children, onClick }: Props) {
         const value = (textInputRef.current?.value || '').toLocaleLowerCase().trim();
         if (value === CONFIG.PASSWORD) {
             var a = document.createElement('a');
-            a.href = '/Raszyn_Gra-bitwa_pod_Raszynem_1809.pdf';
+            a.href = '/bruno_shultz_baza_wiedzy.pdf';
             a.style.display = 'none';
-            a.setAttribute('download', '/Raszyn Gra - bitwa pod Raszynem 1809.pdf');
+            a.setAttribute('download', 'Bruno Shultz - Baza Wiedzy.pdf');
             document.body.appendChild(a);
             a.click();
             onClick();
@@ -153,6 +158,12 @@ export default function WikiPopup({ children, onClick }: Props) {
             setShowError(true);
         }
     }, [setShowError, onClick]);
+
+    useEffect(() => {
+        if (textInputRef.current) {
+            textInputRef.current.focus();
+        }
+    }, [])
 
     return <Container aria-modal="true">
         <div className="inner">
