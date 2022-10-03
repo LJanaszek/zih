@@ -4,6 +4,7 @@ import TaskPopup from "../../../../components/elements/task-popup"
 import ArtefactsWidget from "../../../../components/task-widgets/artefacts"
 import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header"
 import ScrollToTop from "../../../../utils/widgets/scroll-to-top"
+import infoSrc from '../../../../assets/icons/info.svg';
 
 type Props = {
     onComplete(): void
@@ -70,7 +71,9 @@ export default function TaskMain({ onComplete }: Props) {
         </div>
         <div className="buttons">
             {showHelpPopup && <TaskPopup onClick={() => { setShowHelpPopup(false) }}>
-                <p>Kliknij w strzałkę aby wybrać odpowiedni obrazek i potwierdź swój wybór.</p>
+                <p>
+                    Kliknij w obrazek, a następnie wybierz nazwę tego przedmiotu i potwierdź swój wybór. Klikając w symbol <img src={infoSrc} alt="okona info" style={{height: '1em', width: 'auto'}} /> uzyskasz dodatkowe informacje.
+                </p>
             </TaskPopup>}
             {showButtons && <>
                 <div className="buttons">
