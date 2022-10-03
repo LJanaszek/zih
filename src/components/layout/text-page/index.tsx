@@ -27,6 +27,25 @@ const TextPage = styled.div`
         border-radius: 3rem;
         margin: 1rem 0;
     }
+
+    figure {
+        margin: 0;
+
+        blockquote {
+            margin: 0;
+            font-style: italic;
+            text-align: center;
+        }
+
+        figcaption {
+            font-size: .8em;
+            text-align: right;
+        }
+    }
+
+    li::marker{
+        color:var(--color1);
+    }
 `
 
 export default TextPage;

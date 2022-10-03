@@ -34,11 +34,14 @@ const Container = styled.div<{ isOpen: boolean }>`
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 50%;
     }
 
     .toggle-button {
         transition: .3s;
-        height: 80%;
+        height: 100%;
+        width: 100%;
+        padding: 5% 0;
 
         transform: rotate(${({ isOpen }) => { return !isOpen ? 0 : '180deg' }});
     }
