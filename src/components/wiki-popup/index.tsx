@@ -112,7 +112,7 @@ const Container = styled.div`
             }
 
             &:focus-visible {
-                border-color: black;
+                border-color: var(--color1);
                 outline: none;
             }
         }
