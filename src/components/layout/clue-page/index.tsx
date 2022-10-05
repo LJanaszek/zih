@@ -71,7 +71,7 @@ export default function CluePage({ step, clueImg, onComplete }: Props) {
                 return <span className="adress-line">{line}</span>
             })}</p>
 
-            <p className="congrat">Zadanie wykonane! <br /> znaleźliście karteczkę z literą:</p>
+            <p className="congrat">Zadanie wykonane! <br /> Znaleźliście karteczkę z literą:</p>
             <img className="perazja" src={clueImg} alt="P" />
         </div>
         <div className="button-list">
