@@ -90,7 +90,6 @@ export default function TaskMain({ onComplete }: Props) {
         </div>
         <div className="right-column">
             <button className="button" onClick={() => { setShowPreview(true) }}>Pomoc<i className="icon help" /></button>
-            {/* <button className="button" onClick={onComplete}>Restart<i className="icon restart" /></button> */}
             {showComplete && <button className="button" onClick={onComplete}>Zakończ<i className="icon ok" /></button>}
         </div>
         {
