@@ -21,7 +21,7 @@ export default function Zad5Widget({ onComplete }: Props) {
     return <>
         {phase === PHASE.INTRO && <TaskIntro onComplete={() => { setPhase(PHASE.TASK) }} />}
         {phase === PHASE.TASK && <TaskMain onComplete={() => { setPhase(PHASE.OUTRO) }} />}
-        {phase === PHASE.OUTRO && <TaskOutro onComplete={() => {setPhase(PHASE.PLOT)}} />}
+        {phase === PHASE.OUTRO && <TaskOutro onComplete={() => {setPhase(PHASE.PLOT)}} onRestart={() => { setPhase(PHASE.TASK) }} />}
         {phase === PHASE.PLOT && <TaskPlot onComplete={onComplete} />}
     </>
 }

@@ -4,9 +4,10 @@ import ScrollToTop from "../../../../utils/widgets/scroll-to-top"
 
 type Props = {
     onComplete(): void
+    onRestart(): void
 }
 
-export default function TaskOutro({ onComplete }: Props) {
+export default function TaskOutro({ onComplete, onRestart }: Props) {
     return <TextPage>
         <ScrollToTop />
         <Box>
@@ -39,6 +40,7 @@ export default function TaskOutro({ onComplete }: Props) {
         </Box>
         <div className="button-list">
             <button className="button" onClick={onComplete}>Kontynuuj grę<i className="icon next" /></button>
+            <button className="button" onClick={onRestart}>Uruchom ponownie<i className="icon task-start" /></button>
         </div>
     </TextPage>
 }
