@@ -42,7 +42,7 @@ export default function TaskMain({ onComplete }: Props) {
             <TreeTask onComplete={onTaskComplete} onHelp={() => { setShowHelpPopup(true) }} />
         </Container>
         {showHelpPopup && <TaskPopup onClick={() => { setShowHelpPopup(false) }}>
-            <p>Dopasuj nazwy dyżurów do odpowiednich gałęzi.</p>
+            <p>Dopasujcie zadania komisji z listy, przeciągając je do jednej z czterech kategorii widocznych w koronie drzewa.</p>
         </TaskPopup>}
     </>
 }

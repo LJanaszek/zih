@@ -39,7 +39,7 @@ const Container = styled.div`
         padding: 1rem 2rem;
 
         img {
-            width: 90%;
+            max-width: 90%;
         }
     }
 

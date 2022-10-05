@@ -68,7 +68,6 @@ const Container = styled.div`
     }
 }
 .helpimg{
-    width:90vh;
     max-height:40vh;
 }
 `;
@@ -96,6 +95,7 @@ export default function TaskMain({ onComplete }: Props) {
         </div>
         {
             showPreview && <TaskPopup onClick={() => { setShowPreview(false) }}>
+                <p>Kliknijcie w element układanki aby przełożyć go w puste miejsce.</p>
                 <img className="helpimg" src={previewSrc} alt="" />
             </TaskPopup>
         }
