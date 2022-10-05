@@ -69,7 +69,7 @@ export default function CookiesInfo() {
             <div className="window">
                 <div className="inner">
                     <p id="cookie-info">
-                        Używamy plików cookies, aby ułatwić Ci korzystanie z naszego serwisu oraz do celów statystycznych. Jeśli nie blokujesz tych plików, to zgadzasz się na ich użycie oraz zapisanie w pamięci urządzenia. Pamiętaj, że możesz samodzielnie zarządzać cookies, zmieniając ustawienia przeglądarki. Więcej informacji w naszej <Link to={getPolicyRoute()}>polityce prywatności</Link>.
+                        Używamy plików cookies, aby ułatwić Ci korzystanie z naszego serwisu oraz do celów statystycznych. Jeśli nie blokujesz tych plików, to zgadzasz się na ich użycie oraz zapisanie w pamięci urządzenia. Pamiętaj, że możesz samodzielnie zarządzać cookies, zmieniając ustawienia przeglądarki. Więcej informacji w naszej <Link to={getPolicyRoute()}>Polityce Prywatności</Link>.
                     </p>
                     <div className="buttons">
                         <button ref={okRef} className="button" tabIndex={1} onClick={closeCookies}>Dalej</button>

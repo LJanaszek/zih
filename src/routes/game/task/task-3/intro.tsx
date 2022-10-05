@@ -27,7 +27,7 @@ export default function TaskIntro({ onComplete }: Props) {
                 Kluczowym elementem wychowawczym był jednak element samorządności. Co tydzień odbywały się spotkania zgromadzenia ogólnego, które co 10 tygodni wybierało radę dzieci. Rada przeprowadzała głosowania, wydawała uchwały, wybierała komisje do wszelkich zadań, takich jak podawanie do stołu, picie mleka, czyszczenie obuwia, obsługa biblioteki, redakcja „Naszego Radia”, dbanie o kurnik czy przyjmowanie gości.
             </p>
             <p>
-                Przed Wami zadanie. Spróbujcie przydzielić zadania komisji do poszczególnych kategorii: gospodarstwo, higiena, koło pracy kulturalnej i koło przyrodnicze.
+                Przed Wami zadanie. Zapoznajcie się z różnymi zadaniami komisji i spróbujcie przydzielić je do odpowiednich kategorii: gospodarstwo, higiena, koło pracy kulturalnej i koło przyrodnicze.
             </p>
 
         </TaskIntroTemplate>

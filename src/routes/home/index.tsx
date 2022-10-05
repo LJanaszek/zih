@@ -73,6 +73,7 @@ li::marker{
     }
 
     blockquote {
+        font-size: 1.2em;
         margin: 0;
         font-style: italic;
         text-align: center;
@@ -82,6 +83,8 @@ li::marker{
         font-size: .8em;
         text-align: right;
         padding: 0 0.6em;
+        font-style: italic;
+        padding-right: 1em;
     }
 }
 
@@ -189,7 +192,7 @@ export default function HomePage() {
 
 
                 <div className="fill">
-                    <h2>Instrukcja</h2>
+                    <h2>Witajcie</h2>
                     <p>Zapraszamy do udziału w inspirowanej twórczością Brunona Schulza grze terenowej zlokalizowanej w Falenicy. Poprowadzimy was przez miejsca, o których pamięć powoli zanika. Poznacie ich historię i spojrzycie na nie z perspektywy życia i twórczości artysty.<br />
                         Zanim rozpoczniecie grę, koniecznie zapoznajcie się z poniższą instrukcją.
                     </p>

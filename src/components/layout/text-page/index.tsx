@@ -32,6 +32,7 @@ const TextPage = styled.div`
         margin: 0;
 
         blockquote {
+            font-size: 1.2em;
             margin: 0;
             font-style: italic;
             text-align: center;
@@ -40,6 +41,8 @@ const TextPage = styled.div`
         figcaption {
             font-size: .8em;
             text-align: right;
+            font-style: italic;
+            padding-right: 1em;
         }
     }
 
