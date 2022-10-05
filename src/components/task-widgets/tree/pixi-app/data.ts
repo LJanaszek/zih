@@ -139,10 +139,10 @@ export const SCREEN: {
             { id: 'item34', position: { x: .51, y: .68 } }
         ]],
         ['bin4', [
-            { id: 'item41', position: { x: .60, y: .475 } },
-            { id: 'item42', position: { x: .41, y: .68 } },
-            { id: 'item43', position: { x: .09, y: .475 } },
-            { id: 'item44', position: { x: .09, y: .68 } }
+            { id: 'item41', position: { x: .60, y: .4 } },
+            { id: 'item42', position: { x: .41, y: .6 } },
+            { id: 'item43', position: { x: .09, y: .4 } },
+            { id: 'item44', position: { x: .09, y: .6 } }
         ]]
     ],
     ITEMS,
