@@ -16,8 +16,8 @@ export default function AccessibilityPage() {
                     Wawerskie Centrum Kultury  zobowiązuje się zapewnić dostępność swojej strony internetowej zgodnie z ustawą z dnia 4 kwietnia 2019 r. o dostępności stron internetowych i aplikacji mobilnych podmiotów publicznych. Oświadczenie w sprawie dostępności ma zastosowanie do strony internetowej <a href='https://gra-z-schulzem.wck-wawer.pl/'>https://gra-z-schulzem.wck-wawer.pl/</a>.
                 </p>
                 <p>
-                    Data publikacji strony internetowej: 2022.09.30<br />
-                    Data ostatniej aktualizacji strony internetowej: 2022.09.30
+                    Data publikacji strony internetowej: 2022.10.06<br />
+                    Data ostatniej aktualizacji strony internetowej: 2022.10.06
                 </p>
                 <p className="before-list">
                     Strona internetowa jest częściowo zgodna z wytycznymi dostępności stron internetowych i aplikacji mobilnych z powodu niezgodności wymienionych poniżej:
@@ -26,7 +26,7 @@ export default function AccessibilityPage() {
                     <li>kolory i tła nie mają wystarczającego współczynnika kontrastu</li>
                     <li>zdjęcia i grafiki nie zawierają opisów alternatywnych</li>
                     <li>niektóre odnośniki na stronie nie są wyróżnione podkreśleniem</li>
-                    <li>pliki nie jest dostępne cyfrowo</li>
+                    <li>pliki nie są dostępne cyfrowo</li>
                 </ul>
                 <p className="before-list">
                     Gra mobilna na stronie, nie jest zgodna z wytycznymi dostępności stron internetowych i aplikacji mobilnych. Brak dostępności wynika z:
