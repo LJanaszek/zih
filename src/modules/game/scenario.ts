@@ -22,7 +22,7 @@ export const SCENARIO: GameScenario = {
             id: '1.1',
             type: GAME_STEP_TYPE.GEO_STEP,//dojście w terenie
             position: {
-                lat: 52.16383572337064,
+                lat: 52.163835723370600,
                 lng: 21.21937101781457
             },
             name: ['ul. Walcownicza 37', 'Widok na ul. Handlową'],
