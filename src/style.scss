@@ -108,3 +108,10 @@ button {
         display: none !important;
     }
 }
+.memoryImages{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    img{
+        width: 6em;
+    }
+}

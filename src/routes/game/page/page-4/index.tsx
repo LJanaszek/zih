@@ -1,29 +1,148 @@
-import Box from "../../../../components/layout/box"
-import TextPage from "../../../../components/layout/text-page"
+import { useState } from "react";
+import styled from "styled-components";
+import Popup from "../../../../components/elements/popup";
+import TaskPopup from "../../../../components/elements/task-popup";
+import SmallPageHeader from "../../../../components/layout/header/small-header";
+import BirdsTask, { BirdTaskState } from "../../../../components/task-widgets/birds";
+import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header";
+import ScrollToTop from "../../../../utils/widgets/scroll-to-top";
+import EyeIconSrc from '../../../../assets/icons/eye.svg';
 
 type Props = {
-    onNext(): void
+    onComplete(): void
 }
 
-export default function Page1({ onNext }: Props) {
-    return <TextPage>
-        <Box>
-            <h2>Zaraz ruszamy</h2>
+const Container = styled.div`
+    width: 100%;
+    display: grid;
 
-            <p>Będziemy przemieszczać się po określonych punktach i poznawać ich przeszłość, zbierać kawałki historii, wspomnienia, resztki pamięci. Nie dowiemy się, czy wszystkie te rzeczy miały miejsce naprawdę, czy tylko próbowały się zdarzyć. Czy były to wielkie, czy małe zdarzenia – tego również nie stwierdzimy ostatecznie. Celem naszym jest pokazanie tego, co już prawie zapomniane, zmienienie perspektywy i spojrzenie na te kawałki historii z inspiracją zaczerpniętą od niezwykłego artysty, jakim był Bruno Schulz.
-                To od was zależy, w jakiej kolejności odwiedzicie poszczególne lokalizacje i jak opowiecie tę historię.
-            </p>
+    .state {
+        text-align: center;
+    }
 
-            <figure>
-                <blockquote>
-                    <p>Cały trick polega na tym, że cofnęliśmy czas. Spóźniamy się tu z czasem o pewien interwał, którego wielkości niepodobna określić.</p>
-                </blockquote>
-                <figcaption>Sanatorium pod klepsydrą, Bruno Schulz</figcaption>
-            </figure>
+    @media(orientation: landscape) {
+        height: 100vh;
+        grid-template-columns: min-content auto min-content;
+        /* grid-template-columns: 26fr 60fr 14fr; */
+        grid-template-rows: 1fr 1fr 1fr;
+        /* gap: 10px; */
 
-        </Box>
-        <div className="button-list">
-            <button className="button" onClick={onNext}>Przejdź do mapy<i className="icon map" /></button>
-        </div>
-    </TextPage>
+        .header {
+            grid-column: 1;
+        }
+
+        .controlls {
+            grid-column: 1;
+            grid-row: 2;
+
+            display: flex;
+            flex-direction: column;
+
+            .button {
+                margin: 5px 1em;
+                width: calc(100% - 2em);
+            }
+        }
+
+        .widget {
+            position: relative;
+
+            grid-column: 2;
+            grid-row: 1/4;
+
+            align-self: stretch;
+            justify-self: stretch;
+        }
+
+        .state {
+            font-size: 2rem;
+            padding-top: .1em;
+            span {
+                display: inline-block;
+                min-width: 2.5em;
+            }
+        }
+
+        .button {
+            font-size: 1rem;
+        }
+    }
+
+    @media(orientation: portrait) {
+        height: 100vh;
+        grid-template-columns: 1fr;
+        gap: 10px;
+
+        .header {
+            grid-row: 1;
+        }
+
+        .controlls {
+            grid-row: 4;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .state {
+            grid-row: 3;
+            font-size: 2rem;
+        }
+
+
+        .widget {
+            position: relative;
+
+            grid-row: 2;
+
+            padding-top: 74%;
+        }
+    }
+`;
+
+export default function TaskMain({ onComplete }: Props) {
+
+    useRemoveHeader();
+
+    const [gameState, setGameState] = useState<BirdTaskState>({
+        birdCount: 0,
+        findedBirdCount: 9,
+        isComplete: false
+    });
+
+    const [showInfoPopup, setShowInfoPopup] = useState(false);
+    const [showPreviewPopup, setShowPreviewPopup] = useState(false);
+
+    return <>
+        <ScrollToTop />
+        <Container>
+            <div className="header">
+                <SmallPageHeader />
+            </div>
+             {/* <div className="controlls button-list hide-in-portrait">
+                <button className="button only-icon" onClick={() => { setShowPreviewPopup(true) }}><i className="icon eye" /></button>
+                {!gameState.isComplete && <button className="button only-icon" onClick={() => { setShowInfoPopup(true) }}><i className="icon help" /></button>}
+                {gameState.isComplete && <button className="button only-icon" onClick={onComplete}><i className="icon ok" /></button>}
+            </div> */}
+            {/* <div className="controlls button-list hide-in-landscape">
+                <button className="button" onClick={() => { setShowPreviewPopup(true) }}>Podgląd<i className="icon eye" /></button>
+                {!gameState.isComplete && <button className="button" onClick={() => { setShowInfoPopup(true) }}>Pomoc<i className="icon help" /></button>}
+                {gameState.isComplete && <button className="button" onClick={onComplete}>Zakończ<i className="icon ok" /></button>}
+            </div> */}
+            <div className="widget">
+                <BirdsTask onComplete={onComplete} onGameStateChanged={setGameState} />
+            </div>
+            <div className="state">
+                <span>{gameState.findedBirdCount}/{gameState.birdCount}</span>
+            </div>
+        </Container>
+        {showPreviewPopup && <Popup padding="small" onClick={() => { setShowPreviewPopup(false) }}>
+            {/* <HelpGrid /> */}
+        </Popup>}
+        {showInfoPopup && <TaskPopup onClick={() => { setShowInfoPopup(false) }}>
+            Znajdź ukryte ptaki i kliknij w nie by je złapać. Kliknij w ikonę <img src={EyeIconSrc} alt="oko" style={{height: '1em', width: 'auto'}} /> by zobaczyć podpowiedź.
+        </TaskPopup>}
+    </>
 }

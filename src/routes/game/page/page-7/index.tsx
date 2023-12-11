@@ -1,40 +1,46 @@
 import { useState } from "react";
 import Box from "../../../../components/layout/box"
 import TextPage from "../../../../components/layout/text-page"
+import Popup from "../../../../components/elements/popup";
 
 type Props = {
     onNext(): void;
 };
-
+var n = 0;
 export default function Page1({ onNext }: Props) {
-    const [setNext, next] = useState(false)
-    const [n, setN] = useState(0)
+    const [next, setNext] = useState(false)
+
     function crypUp() {
-        setN(n + 1)
-        if (n > 5 || n < 0) {
-            setN(0)
-        };
         let list = ["A", "B", "C", "D", "E", "F"];
+        n++
+        if (n > 5) {
+            n = 0
+        };
+
         document.getElementById('crypText')!.innerHTML = list[n];
-        if (n === 3) {
-                next(true);
-            }else next(false);
-        console.log(n)
     }
+
 
     function crypDown() {
-        setN(n - 1)
-        if (n < 0 || n>5) {
-            setN(5)
-        };
         let list = ["A", "B", "C", "D", "E", "F"];
+        n--
+        if (n < 0) {
+            n = 5
+        };
         document.getElementById('crypText')!.innerHTML = list[n];
+    };
+
+
+    function ifGood() {
         if (n === 3) {
-            next(true);
-        }else next(false);
-        console.log(n)
+            setNext(true);
+        }
+        else {
+            setNext(false)
+        }
     }
-    
+
+
     return <TextPage>
         <Box>
             <h2>Cryptext</h2>
@@ -45,13 +51,13 @@ export default function Page1({ onNext }: Props) {
                 <button onClick={() => { crypDown() }}>arrow down</button>
             </div>
         </Box>
-        {setNext &&
-            <div className="button-list">
-                <button className="button" onClick={onNext}>Przejdź do mapy<i className="icon map" /></button>
-            </div>}
-        {(!setNext) &&<div className="button-list">
-            <button className="button">Przejdź<i className="icon map" /></button>
-        </div>}
+        <div className="button-list">
+            <button className="button" onClick={ifGood}>Przejdź do mapy<i className="icon map" /></button>
+        </div>
+        {next && <Popup onClick={onNext}>
+            <button className="button" onClick={() => { setNext(false) }}>Zamknij Popup<i className="icon map" /></button>
+        </Popup>}
+        {/* popup */}
     </TextPage>
 
 }

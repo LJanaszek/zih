@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback } from "react";
+import {Suspense, useCallback } from "react";
 import { useMemo } from "react";
 import Loader from "../../../components/elements/loader";
 import Box from "../../../components/layout/box";
