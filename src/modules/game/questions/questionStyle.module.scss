@@ -1,0 +1,93 @@
+.answer {
+  padding-bottom: 4em;
+  .checkbox {
+    display: none;
+  }
+  form{
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap:7%;
+  }
+  .questionText{
+    padding: 1em 2em;
+    border-bottom: 4px solid var(--baseColor);
+  }
+  .questionAnswer{
+    height: 100%;
+    display: grid;
+    gap:1em;
+    grid-template-columns: 1fr 1fr;
+    padding: 2em 2.2em ;
+
+  }
+  .ans,
+  .ansCor {
+    
+    background-color: var(--quizButtonBackground);
+    height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    border-radius: var(--buttonBorderRadius);
+    align-items: center;
+  }
+  .ans>p, .ansCor>p{
+    font-size: .8em;
+    line-height: normal;
+    margin: 0 auto;
+    text-align: center;
+    font-family: UbuntuReg;
+  }
+  .ans > span,
+  .ansCor > span {
+    border-radius: var(--buttonBorderRadius);
+    text-align: center;
+    background-color: var(--spanBackground);
+    padding: .7em;
+    height: max-content;
+  }
+  input {
+    transform: translatey(20%);
+    margin-right: 1em;
+
+  }
+  input[type=radio]{
+    appearance: none;
+    background: var(--quizButtonBackground);
+    width: 2em;
+    height: 2em;
+    
+  }
+  input:checked{
+    background: var(--textColor);
+    transition: .5s;
+    // background-size: 9px 9px;
+  
+}
+  // input:checked  {
+  //   background: grey;
+  //   transition: 0.5s;
+  // }
+  img{
+    border-radius: var(--buttonBorderRadius);
+    height: 15em;
+  }
+  section{
+    // padding: 2em;
+    position: absolute;
+    right: 3em;
+    margin-bottom: 2em;
+  }
+  
+}
+#buttonOnPopup{
+    margin: 2px ;
+}
+.answerPopup{
+  img{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+}

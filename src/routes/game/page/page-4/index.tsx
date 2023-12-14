@@ -9,7 +9,7 @@ import ScrollToTop from "../../../../utils/widgets/scroll-to-top";
 import EyeIconSrc from '../../../../assets/icons/eye.svg';
 
 type Props = {
-    onComplete(): void
+    onNext(): void
 }
 
 const Container = styled.div`
@@ -102,13 +102,13 @@ const Container = styled.div`
     }
 `;
 
-export default function TaskMain({ onComplete }: Props) {
+export default function TaskMain({ onNext }: Props) {
 
     useRemoveHeader();
 
     const [gameState, setGameState] = useState<BirdTaskState>({
         birdCount: 0,
-        findedBirdCount: 9,
+        findedBirdCount: 0,
         isComplete: false
     });
 
@@ -121,18 +121,18 @@ export default function TaskMain({ onComplete }: Props) {
             <div className="header">
                 <SmallPageHeader />
             </div>
-             {/* <div className="controlls button-list hide-in-portrait">
-                <button className="button only-icon" onClick={() => { setShowPreviewPopup(true) }}><i className="icon eye" /></button>
+            <div className="controlls button-list hide-in-portrait">
+                {/* <button className="button only-icon" onClick={() => { setShowPreviewPopup(true) }}><i className="icon eye" /></button> */}
                 {!gameState.isComplete && <button className="button only-icon" onClick={() => { setShowInfoPopup(true) }}><i className="icon help" /></button>}
-                {gameState.isComplete && <button className="button only-icon" onClick={onComplete}><i className="icon ok" /></button>}
-            </div> */}
-            {/* <div className="controlls button-list hide-in-landscape">
+                {gameState.isComplete && <button className="button only-icon" onClick={onNext}><i className="icon ok" /></button>}
+            </div>
+            <div className="controlls button-list hide-in-landscape">
                 <button className="button" onClick={() => { setShowPreviewPopup(true) }}>Podgląd<i className="icon eye" /></button>
                 {!gameState.isComplete && <button className="button" onClick={() => { setShowInfoPopup(true) }}>Pomoc<i className="icon help" /></button>}
-                {gameState.isComplete && <button className="button" onClick={onComplete}>Zakończ<i className="icon ok" /></button>}
-            </div> */}
+                {gameState.isComplete && <button className="button" onClick={onNext}>Zakończ<i className="icon ok" /></button>}
+            </div>
             <div className="widget">
-                <BirdsTask onComplete={onComplete} onGameStateChanged={setGameState} />
+                <BirdsTask onComplete={onNext} onGameStateChanged={setGameState} />
             </div>
             <div className="state">
                 <span>{gameState.findedBirdCount}/{gameState.birdCount}</span>
@@ -142,7 +142,7 @@ export default function TaskMain({ onComplete }: Props) {
             {/* <HelpGrid /> */}
         </Popup>}
         {showInfoPopup && <TaskPopup onClick={() => { setShowInfoPopup(false) }}>
-            Znajdź ukryte ptaki i kliknij w nie by je złapać. Kliknij w ikonę <img src={EyeIconSrc} alt="oko" style={{height: '1em', width: 'auto'}} /> by zobaczyć podpowiedź.
+            Pamiętając wskazówki z poprzedniej zagadki, znajdź w kawiarni tajemniczego posłańca
         </TaskPopup>}
     </>
 }

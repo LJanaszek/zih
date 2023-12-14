@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import agree from "./img/agree.svg";
-import help from "../../../routes/game/task/img/pomoc.svg";
+import help from "../../../routes/game/page/img/pomoc.svg";
 type Props = React.PropsWithChildren<{
     onClick(): void
 }>;

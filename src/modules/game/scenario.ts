@@ -5,7 +5,7 @@ export const SCENARIO: GameScenario = {
     steps: [
         {
             id: '1.0',
-            type: GAME_STEP_TYPE.GEO_STEP,//
+            type: GAME_STEP_TYPE.GEO_STEP,
             position: {
                 lat: 52.163835723370600,
                 lng: 21.21937101781457
@@ -44,19 +44,19 @@ export const SCENARIO: GameScenario = {
             nextStep: '1.6'
         },
         {
-            id: '1.6', //zad2
+            id: '1.6', //quiz 1
             type: GAME_STEP_TYPE.PAGE,
             pageId: 'page-3',
             nextStep: '1.7'
         },
         {
-            id: '1.7', //cryptext 1
+            id: '1.7', //quiz 2
             type: GAME_STEP_TYPE.PAGE,
             pageId: 'page-7',
             nextStep: '9.1'
         },
         {
-            id: '9.1',
+            id: '9.1', //quiz 3
             type: GAME_STEP_TYPE.PAGE,
             pageId: 'end',
             nextStep: null

@@ -29,7 +29,7 @@ type Props = {
 
 const shuffleCards = () => {
   let updatedCards = [];
-  for (var i = 0; i < 6; i++) {
+  for (var i = 0; i < 8; i++) {
     updatedCards.push({
       imgUrl: Images[Math.floor(i / 2)],
       id: i,
