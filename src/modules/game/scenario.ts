@@ -52,14 +52,20 @@ export const SCENARIO: GameScenario = {
         {
             id: '1.7', //quiz 2
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'page-7',
-            nextStep: '9.1'
+            pageId: 'page-8', // quiz 2
+            nextStep: '1.8'
         },
         {
-            id: '9.1', //quiz 3
+            id: '1.8', //quiz 3
             type: GAME_STEP_TYPE.PAGE,
-            pageId: 'end',
-            nextStep: null
+            pageId: 'page-9',
+            nextStep: '1.9'
+        },
+        {
+            id: '1.9', //cryptex
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'page-7',
+            nextStep: 'end-page'
         }
     ]
 }

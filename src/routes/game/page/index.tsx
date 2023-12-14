@@ -12,6 +12,8 @@ const Page4 = lazy(() => import('./page-4'));
 const Page5 = lazy(() => import('./page-5'));
 const Page6 = lazy(() => import('./page-6'));
 const Page7 = lazy(() => import('./page-7'));
+const Page8 = lazy(() => import('./page-8'));
+const Page9 = lazy(() => import('./page-9'));
 const PageEnd = lazy(() => import('./page-end'));
 
 type Props = {
@@ -45,6 +47,10 @@ export default function PageView({ id }: Props) {
                 return <Page6 onNext={onNext} />
             case 'page-7':
                 return <Page7 onNext={onNext} />
+            case 'page-8':
+                return <Page8 onNext={onNext} />
+            case 'page-9':
+                return <Page9 onNext={onNext} />
             case 'end':
                 return <PageEnd onNext={onNext} />
             default:
