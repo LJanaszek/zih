@@ -20,20 +20,20 @@ export const QUESTIONS: IQuizQuestion[] = [
         // imgSrc: img1,
         answers: [
             {
-                id: '1',
+                id: 'A',
                 text: 'Ryb',
                 desc: "Co Ty opowiadasz…. Do tej rodziny należą rybak, rybitwa oraz miasto Rybnik na Śląsku."
             }, {
-                id: '2',
+                id: 'B',
                 text: 'Śledziowatych',
                 desc: " Nieźle, naprawdę nieźle. Główka pracuje, ale chyba musi zrobić nadgodziny, żeby się z tym uporać."
 
             }, {
-                id: '3',
+                id: 'C',
                 text: 'Morskich',
                 desc: "Och, razem z Marią Morską, wspaniałą aktorką i niespełnioną miłością Antoniego. Źle."
             }, {
-                id: '4',
+                id: 'D',
                 text: 'Zakąsek',
                 desc: "Wybornie! Masz apetyt na śledzika i na sukces.",
                 isCorrect: true
@@ -47,21 +47,21 @@ export const QUESTIONS: IQuizQuestion[] = [
         // imgSrc: img1,
         answers: [
             {
-                id: '1',
+                id: 'A',
                 text: 'Bojami z Babilonem',
                 desc: "Ach, nie szukajcie wód babilońskich, Jedna niewielka została tu rzeka,Wierzby szeregiem nad nią stoją,I widać ślady kopyt końskich U wodopoju, Rzeka kręta jak glista,Rzeka pośpieszna jak mrówka,Eufrat i Tygrys w pastewnej równinie:Nasza mulista Młynówka Tędy płynie"
             }, {
-                id: '2',
+                id: 'B',
                 text: 'Bojami nad Bzdurą',
                 desc: " Brawo. Jak sam napisał: “Autorem był gen. Antoni Słonimski. Terenem walk była rzeka Bzdura [...] Starałem się nieraz podać rękę ludziom tonącym w szarych falach rzeki Bzdury i to ratownictwo usprawiedliwia wiele moich okrucieństw wojennych. [...] przed nazwiskiem autora dodano «gen.». Nie jest to skrótem słowa generał, ale oczywiście słowa geniusz”",
                 isCorrect: true
 
             }, {
-                id: '3',
+                id: 'C',
                 text: 'Chocholim tańcem',
                 desc: "To Stachu Wyspiański, chochole."
             }, {
-                id: '4',
+                id: 'D',
                 text: 'Michalim tańcem',
                 desc: "Tańcowały dwa Michały i miały zakute pały. Julian Tuwim (prawie)",
                 
@@ -75,20 +75,20 @@ export const QUESTIONS: IQuizQuestion[] = [
         // imgSrc: img1,
         answers: [
             {
-                id: '1',
+                id: 'A',
                 text: 'Modelką malarza Józefa Rapackiego',
                 desc: "Nie kombinuj, odpowiedź jest prostsza."
             }, {
-                id: '2',
+                id: 'B',
                 text: 'Marią Morską',
                 desc: " A Ty znowu swoje…W Gdyni stocznię postawili, koniecznie pojedź obejrzeć. ."
 
             }, {
-                id: '3',
+                id: 'C',
                 text: 'Janem Lechoniem.',
                 desc: "..."
             }, {
-                id: '4',
+                id: 'D',
                 text: 'Tajemniczym posłańcem.',
                 desc: " No, nareszcie. Oto twoja tajemnicza przesyłka.",
                 isCorrect: true

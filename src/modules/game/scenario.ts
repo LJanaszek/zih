@@ -1,5 +1,7 @@
 import { GameScenario, GAME_STEP_TYPE } from "./types";
 
+
+//page 1-9 -> geo 1
 export const SCENARIO: GameScenario = {
     startStep: '1.0',
     steps: [
@@ -65,7 +67,43 @@ export const SCENARIO: GameScenario = {
             id: '1.9', //cryptex
             type: GAME_STEP_TYPE.PAGE,
             pageId: 'page-7',
-            nextStep: 'end-page'
+            nextStep: '2.1'
+        },
+        {
+            id: '2.1', //ekran A
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'page-10',
+            nextStep: '2.2'
+        },
+        {
+            id: '2.2', //zadanie 1
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'page-11',
+            nextStep: '2.3'
+        },
+        {
+            id: '2.3', //ekran C
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'page-12',
+            nextStep: '2.4'
+        },
+        {
+            id: '2.4', //znajdź na obrazie
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'page-13',
+            nextStep: '2.5'
+        },
+        {
+            id: '2.5', //ekran E
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'page-14',
+            nextStep: '2.6'
+        },
+        {
+            id: '2.6', //ekran F zagadka wpisz hasło
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'page-15',
+            nextStep: '2.3'
         }
     ]
 }

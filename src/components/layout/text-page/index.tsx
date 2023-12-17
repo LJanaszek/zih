@@ -24,7 +24,7 @@ const TextPage = styled.div`
 
     img {
         width: 100%;
-        border-radius: 3rem;
+
         margin: 1rem 0;
     }
 

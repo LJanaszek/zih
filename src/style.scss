@@ -6,6 +6,7 @@
     --color3: #666699;
     --color4: #84CE55;
     --color5: #434357;
+    --color6: #ffffff;
 }
 
 @font-face {
@@ -34,7 +35,7 @@ html, body, div, h1 {
 html {
     font-size: 16pt;
     font-family: Gothic;
-    color: var(--color3);
+    color: var(--color1);
     line-height: 1.5em;
 }
 
@@ -113,5 +114,19 @@ button {
     grid-template-columns: 1fr 1fr 1fr;
     img{
         width: 6em;
+    }
+}
+.button-check-list{
+    display: flex;
+    button{
+        min-width: 2em;
+        // min-height: 5em;
+        font-size: 3em;
+        background-color: var(--color1);
+        color: var(--color6);
+        border-radius: 5px;
+    }
+    button:hover{
+        background-color: #434357;
     }
 }

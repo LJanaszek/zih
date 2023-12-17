@@ -48,6 +48,6 @@ const Container = styled.header<{theme: 'normal' | 'violet'}>`
 
 export default function PageHeader({theme}: Props) {
     return <Container theme={theme || 'normal'}>
-        <h1>Z <span className="shultz">Schulzem</span> przez Falenicę</h1>
+        <h1>Projekt ŻIH</h1>
     </Container>
 }

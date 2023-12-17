@@ -32,6 +32,6 @@ const Container = styled.header`
 
 export default function SmallPageHeader() {
     return <Container>
-        <h1>Z <span className="shultz">Schulzem</span> przez Falenicę</h1>
+        <h1>Projekt ŻIH</h1>
     </Container>
 }

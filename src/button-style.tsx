@@ -24,7 +24,6 @@ const ButtonStyle = createGlobalStyle`
         background: var(--color3);
         color: white;
         padding: .3em 1.1em .3em 1.1em;
-        border-radius: 10em;
 
         text-decoration: none;
 

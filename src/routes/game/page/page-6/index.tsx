@@ -3,6 +3,7 @@
 // import TextPage from "../../../../components/layout/text-page"
 // import img1 from "../../img/memoryTest.jpg";
 // import React from 'react';
+import Box from '../../../../components/layout/box';
 import Uirender from '../../../../components/memory/uiComponent';
 type Props = {
     onNext(): void
@@ -12,12 +13,12 @@ type Props = {
 
 export default function MemoryGame({onNext}:Props) {
   return (
-    <>
+    <Box>
     <Uirender onNext={onNext}/>
     <div className="button-list">
     
     </div>
-    </>
+    </Box>
   )
 }
 
