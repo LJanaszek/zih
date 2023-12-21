@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 
-import { getHomeRoute, getGamePageRoute, getPolicyRoute, getAccessibilityRoute } from './routes/routes';
+import { getHomeRoute, getGamePageRoute, getPolicyRoute, getAccessibilityRoute, getRulesRoute } from './routes/routes';
 import React, { Suspense } from 'react';
 import Loader from './components/elements/loader';
 import PageHeader from './components/layout/header';
@@ -17,6 +17,7 @@ import AccessibilityPage from './routes/accessibility';
 
 const HomePage = React.lazy(() => import('./routes/home'));
 const GamePage = React.lazy(() => import('./routes/game'));
+const RulesPage = React.lazy(() => import('./routes/rules'));
 
 export default function App() {
 
@@ -26,14 +27,14 @@ export default function App() {
         <>
             <ButtonStyle />
             <BrowserRouter>
-                <CookiesInfo />
-                {showHeader && <PageHeader />}
+                {/* <CookiesInfo /> */}
+                {/* {showHeader && <PageHeader />} */}
                 <main aria-live="polite">
                     <Suspense fallback={<Loader />}>
                         <Routes>
                             <Route path={getHomeRoute()} element={<HomePage />} />
                             <Route path={getGamePageRoute()} element={<GamePage />} />
-
+                            <Route path={getRulesRoute()} element={<RulesPage />} />
                             <Route path={getPolicyRoute()} element={<PolicyPage />} />
 
                             <Route path={getAccessibilityRoute()} element={<AccessibilityPage />} />
@@ -48,7 +49,7 @@ export default function App() {
                         </Routes>
                     </Suspense>
                 </main>
-                {showHeader}
+                {/* {showHeader} */}
             </BrowserRouter>
         </>
     )

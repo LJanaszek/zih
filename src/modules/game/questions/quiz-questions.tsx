@@ -5,6 +5,8 @@ import styles from "./questionStyle.module.scss";
 import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useAnswer } from "../../main/hooks/use-answer";
+import fisher from "./fiszer.png"
+
 export interface Props2 {
   id: string;
   onComplete?(): void;
@@ -36,7 +38,7 @@ export function QuizQuestion({ id, onComplete, onNext }: Props2) {
 
       <QuizQuestionDummy question={q} />
 
-      { <QuizQuestionDummy question={q}/> && <div><button id="nextButton" className={styles.buttonNext} onClick={onNext}>dalej</button></div>}
+      { <QuizQuestionDummy question={q}/> && <div><button id="nextButton" className={styles.button_hand} onClick={onNext}></button></div>}
     </>
   );
 }
@@ -106,9 +108,11 @@ export function QuizQuestionDummy({ question}: ForQuizQuest) {
             );
           })}
         </form>
-        <div id="answer" className={styles.answerBlock}>
-            
+        <div className={styles.answerDiv}>
+          <p id="answer" className={styles.answerBlock}></p>
+            <img src={fisher} alt="" />
         </div>
+        
       </div>
     </div>
   );

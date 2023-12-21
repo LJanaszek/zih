@@ -14,29 +14,12 @@ type Props = {
 export default function MemoryGame({onNext}:Props) {
   return (
     <Box>
+      <p>
+      Odkryj słowa w memo i zapamiętaj je. Przydadzą ci się w następnej zagadce. 
+      </p>
     <Uirender onNext={onNext}/>
-    <div className="button-list">
-    
-    </div>
     </Box>
   )
 }
 
-// export default MemoryGame;
-// export default function Page1({ onNext }: Props) {
-//     return <TextPage>
-//         <Box>
-//             <div className="memoryImages">
-//             <button id="1" onClick={(a)=>{reveall(a)}}><img src={img1} alt="" /></button>
-//             <div id="2"><img src={img1} alt=""/></div>
-//             <div id="3"><img src={img1} alt=""/></div>
-//             <div id="4"><img src={img1} alt=""/></div>
-//             <div id="5"><img src={img1} alt=""/></div>
-//             <div id="6"><img src={img1} alt=""/></div>
-//             </div>
-//         </Box>
-//         <div className="button-list">
-//             <button className="button" onClick={onNext}>Przejdź do mapy<i className="icon map" /></button>
-//         </div>
-//     </TextPage>
-// }
+

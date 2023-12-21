@@ -1,17 +1,18 @@
 import Box from "../../../../components/layout/box"
 import TextPage from "../../../../components/layout/text-page"
-
+import stern from "../../../../assets/stern.png"
 type Props = {
     onNext(): void
 }
 
 export default function Page1({ onNext }: Props) {
     return <TextPage>
-        <Box>
-            <h2>ekran E</h2>
+        <div className="page-view">
+            <img src={stern} alt="" />
 
-            <p>STERN: Tysiące razy obróciły się wskazówki na zegarach w Towarzystwie Przyjaciół Nauk, zanim mnie przyjęli. A i to niechętnie. Nawet rosyjski car, gdy mu pokazałem swoją maszynę do liczenia, powiedział: “Maszyna jest dobra, ale Żyd jest zły”. 
-            Prawnukiem mojej maszyny rachunkowej jest kalkulator. Ale i na kalkulatorze da się pisać literami. Ha, musisz go tylko obrócić. 
+            <p>Tysiące razy obróciły się wskazówki na zegarach w Towarzystwie Przyjaciół Nauk, zanim mnie przyjęli. A i to niechętnie. Nawet rosyjski car, gdy mu pokazałem swoją maszynę do liczenia, powiedział: “Maszyna jest dobra, ale Żyd jest zły”.
+            <br></br><br></br>
+            Prawnukiem mojej maszyny rachunkowej jest kalkulator. Ale i na kalkulatorze da się pisać literami. Ha, musisz go tylko obrócić.
             </p>
 
             {/* <figure>
@@ -21,9 +22,9 @@ export default function Page1({ onNext }: Props) {
                 <figcaption>Sanatorium pod klepsydrą, Bruno Schulz</figcaption>
             </figure> */}
 
-        </Box>
+        </div>
         <div className="button-list">
-            <button className="button" onClick={onNext}>Dalej<i className="icon map" /></button>
+            <button className="button-hand" onClick={onNext}></button>
         </div>
     </TextPage>
 }

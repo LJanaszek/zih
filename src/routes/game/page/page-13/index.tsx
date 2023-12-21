@@ -7,7 +7,7 @@ import BirdsTask, { BirdTaskState } from "../../../../components/task-widgets/bi
 import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header";
 import ScrollToTop from "../../../../utils/widgets/scroll-to-top";
 import EyeIconSrc from '../../../../assets/icons/eye.svg';
-
+import slonimski from "../../../../assets/slonimski.png"
 type Props = {
     onNext(): void
 }
@@ -19,7 +19,9 @@ const Container = styled.div`
     .state {
         text-align: center;
     }
-
+    img{
+        width:30vh
+    }
     @media(orientation: landscape) {
         height: 100vh;
         grid-template-columns: min-content auto min-content;
@@ -46,7 +48,7 @@ const Container = styled.div`
 
         .widget {
             position: relative;
-
+            max-height:30vh;
             grid-column: 2;
             grid-row: 1/4;
 
@@ -97,7 +99,7 @@ const Container = styled.div`
 
             grid-row: 2;
 
-            padding-top: 74%;
+            // padding-top: 74%;
         }
     }
 `;
@@ -117,10 +119,11 @@ export default function TaskMain({ onNext }: Props) {
 
     return <>
         <ScrollToTop />
+         <p>
+            Pamiętając wskazówki z poprzedniej zagadki, znajdź w kawiarni tajemniczego posłańca.
+            </p>
         <Container>
-            {/* <div className="header">
-                <SmallPageHeader />
-            </div> */}
+           
             <div className="controlls button-list hide-in-portrait">
                 {/* <button className="button only-icon" onClick={() => { setShowPreviewPopup(true) }}><i className="icon eye" /></button> */}
                 {!gameState.isComplete && <button className="button only-icon" onClick={() => { setShowInfoPopup(true) }}><i className="icon help" /></button>}
@@ -134,15 +137,7 @@ export default function TaskMain({ onNext }: Props) {
             <div className="widget">
                 <BirdsTask onComplete={onNext} onGameStateChanged={setGameState} />
             </div>
-            <div className="state">
-                <span>{gameState.findedBirdCount}/{gameState.birdCount}</span>
-            </div>
+            
         </Container>
-        {showPreviewPopup && <Popup padding="small" onClick={() => { setShowPreviewPopup(false) }}>
-            {/* <HelpGrid /> */}
-        </Popup>}
-        {showInfoPopup && <TaskPopup onClick={() => { setShowInfoPopup(false) }}>
-            Pamiętając wskazówki z poprzedniej zagadki, znajdź w kawiarni tajemniczego posłańca
-        </TaskPopup>}
     </>
 }

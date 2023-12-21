@@ -21,7 +21,7 @@ import MapIconSrc from '!file-loader!./assets/icons/mapa.svg';
 const ButtonStyle = createGlobalStyle`
     .button {
         /* display: inline-block; */
-        background: var(--color3);
+        background: var(--color1);
         color: white;
         padding: .3em 1.1em .3em 1.1em;
 

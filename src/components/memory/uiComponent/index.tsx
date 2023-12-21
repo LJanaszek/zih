@@ -115,8 +115,8 @@ export function Uirender ({onNext}:Props) {
 
     <div className="container">
       {state.mCards && state.mCards.map((eachCard, i) =>
-        <Flip key={eachCard.id}>
-          <div>
+        // <Flip key={eachCard.id}>
+          <div className='memory-div'>
             <figure className="figure-block">
               <img className="img-block"
                 src={eachCard.open ? eachCard.imgUrl : DefaultImg}
@@ -124,7 +124,7 @@ export function Uirender ({onNext}:Props) {
                 onClick={() => handleClick(i, eachCard.open || false)} />
             </figure>
           </div>
-        </Flip>
+        // </Flip>
       )}
 
       {state.resultStatus &&
@@ -133,9 +133,9 @@ export function Uirender ({onNext}:Props) {
         title = { 'Result' }
         onClose = { handleModalClose }
         />&&
-        <div>
-        <button onClick={onNext} className="button"> dalej </button>
-        </div>
+        
+        <button onClick={onNext} className="button_hand"></button>
+        
       }
        
     </div>

@@ -1,21 +1,22 @@
 import Box from "../../../../components/layout/box"
 import TextPage from "../../../../components/layout/text-page"
-
+import fisher from "../../../../assets/fiszer.png"
 type Props = {
     onNext(): void
 }
 
 export default function Page1({ onNext }: Props) {
     return <TextPage>
-        <Box>
-            <h2>Ekran E</h2>
+        <div className="page-view">
+            <img src={fisher} alt="" />
 
-            <p>FRANZ FISZER: Kobieta w fioletowym kapeluszu? Była i wyszła, ale przesyłkę zostawiła mnie. Słonimski nie uprzedził, że nie będzie czekać wieczność? Bo wieczność czeka jedynie poetów. . Odgadnij moje trzy zagadki, a dam ci tajemniczy liścik.
+            <p>W kawiarni “Ziemiańskiej” czeka na mnie tajemniczy posłaniec z jeszcze bardziej tajemniczą przesyłką. Kiedy go znajdziesz powiedz, że cię przysyła Antoni Słonimski i pyta kto zacz i co to za liścik.
+
             </p>
 
-        </Box>
+        </div>
         <div className="button-list">
-            <button className="button" onClick={onNext}>dalej<i className="icon map" /></button>
+            <button className="button-hand" onClick={onNext}></button>
         </div>
     </TextPage>
 }

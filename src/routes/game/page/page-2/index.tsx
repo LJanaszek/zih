@@ -1,14 +1,14 @@
 import Box from "../../../../components/layout/box"
 import TextPage from "../../../../components/layout/text-page"
-
+import slonimski from "../../../../assets/slonimski.png"
 type Props = {
     onNext(): void
 }
 
 export default function Page1({ onNext }: Props) {
     return <TextPage>
-        <Box>
-            <h2>ekran B</h2>
+        <div className="page-view">
+            <img src={slonimski} alt="" />
 
             <p>W kawiarni “Ziemiańskiej” czeka na mnie tajemniczy posłaniec z jeszcze bardziej tajemniczą przesyłką. Kiedy go znajdziesz powiedz, że cię przysyła Antoni Słonimski i pyta kto zacz i co to za liścik.
 
@@ -21,9 +21,9 @@ export default function Page1({ onNext }: Props) {
                 <figcaption>Sanatorium pod klepsydrą, Bruno Schulz</figcaption>
             </figure> */}
 
-        </Box>
+        </div>
         <div className="button-list">
-            <button className="button" onClick={onNext}>dalej<i className="icon map" /></button>
+            <button className="button-hand" onClick={onNext}></button>
         </div>
     </TextPage>
 }

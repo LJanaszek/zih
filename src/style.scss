@@ -1,132 +1,231 @@
 @import-normalize;
 
 :root {
-    --color1: #da783c;
-    --color2: #dfd7cd;
-    --color3: #666699;
-    --color4: #84CE55;
-    --color5: #434357;
-    --color6: #ffffff;
+  --color1: #da783c;
+  --color2: #dfd7cd;
+  --color3: #666699;
+  --color4: #84ce55;
+  --color5: #434357;
+  --color6: #ffffff;
 }
 
 @font-face {
-    font-family: 'Bristol';
-    src: url('Bristol.otf');
-    src:
-      local('Bristol'),
-      url('Bristol.otf')
-      format('opentype');
+  font-family: "Bristol";
+  src: url("Bristol.otf");
+  src: local("Bristol"), url("Bristol.otf") format("opentype");
 }
 
 @font-face {
-    font-family: 'Gothic';
-    src: url('DidactGothic-Regular.otf');
-    src:
-      local('Gothic'),
-      url('DidactGothic-Regular.otf')
-      format('opentype');
+  font-family: "Gothic";
+  src: url("DidactGothic-Regular.otf");
+  src: local("Gothic"), url("DidactGothic-Regular.otf") format("opentype");
 }
 
-html, body, div, h1 {
-    margin: 0;
-    padding: 0;
+html,
+body,
+div,
+h1 {
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    font-size: 16pt;
-    font-family: Gothic;
-    color: var(--color1);
-    line-height: 1.5em;
+  font-size: 16pt;
+  font-family: Gothic;
+  color: var(--color1);
+  line-height: 1.5em;
 }
 
 body {
-    background: var(--color3);
-
+  background: var(--color3);
 }
 
 #root {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    height: auto;
-    width: 90%;
-    max-width: 1400px;
-    min-width: 320px;
-    margin: 0 auto;
-    background: var(--color2);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: auto;
+  width: 90%;
+  max-width: 1400px;
+  min-width: 320px;
+  margin: 0 auto;
+  background: var(--color6);
 
-    & > main {
-        flex: 1 1 auto;
-    }
+  & > main {
+    flex: 1 1 auto;
+  }
 
-    @media (max-width: 1560px){
-        width: 100%;
-        max-width: auto;
-    }
+  @media (max-width: 1560px) {
+    width: 100%;
+    max-width: auto;
+  }
 }
 
 h1 {
-
 }
 
 h2 {
-    color: var(--color1);
-    font-size: 20pt;
-    font-weight: normal;
-    text-align: center;
+  color: var(--color1);
+  font-size: 20pt;
+  font-weight: normal;
+  text-align: center;
 }
 
 p {
-
 }
 
 .button-list {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: .5em auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0.5em auto;
 
-    .button {
-        margin: .3em 0;
-    }
+  .button-hand {
+    position: static;
+    bottom: 0;
+    right: 0;
+    height: 2em;
+    border: none;
+    width: 4em;
+    margin: 0.3em 0;
+    background-image: url("./assets/right_hand.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
 }
 
 button {
-    font-family: 'Gothic';
+  font-family: "Gothic";
 }
 
 .hide-in-portrait {
-    @media(orientation: portrait) {
-        display: none !important;
-    }
+  @media (orientation: portrait) {
+    display: none !important;
+  }
 }
 
 .hide-in-landscape {
-    @media(orientation: landscape) {
-        display: none !important;
-    }
+  @media (orientation: landscape) {
+    display: none !important;
+  }
 }
-.memoryImages{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    img{
-        width: 6em;
-    }
+.memoryImages {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  img {
+    width: 6em;
+  }
 }
-.button-check-list{
+.button-check-list {
+  display: flex;
+  button {
+    min-width: 1em;
+    // min-height: 5em;
+    font-size: 2em;
+    background-color: var(--color1);
+    color: var(--color6);
+    border-radius: 5px;
+  }
+  button:hover {
+    background-color: #434357;
+  }
+}
+
+.page-view {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  .page-img {
     display: flex;
-    button{
-        min-width: 2em;
-        // min-height: 5em;
-        font-size: 3em;
-        background-color: var(--color1);
-        color: var(--color6);
-        border-radius: 5px;
+    max-width: 100%;
+    margin: 0 auto !important;
+    margin-top: 2em !important;
+    bottom: 0;
+  }
+  p{
+    background-color: var(--color1);
+    color: var(--color6);
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    padding: 1.5em;
+    height: min-content;
+  }
+}
+.cryptex{
+  display: grid;
+  align-items:center;
+  // padding: 2em;
+  margin: 0 auto;
+  padding: 2em;
+  height: fit-content;
+  background: url("./assets/krypteks.png");
+  background-repeat: no-repeat;
+  background-size:80%;
+  background-position: center;
+  div{
+    align-items: center;
+    width: 20vh;
+  }
+  p{
+    display: flex;
+    text-align: center;
+    font-size: 1.5rem;
+    
+  }
+  .crypInside{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    width: 50%;
+    margin: 0 auto;
+    // display: grid;
+    // grid-template-rows: 1fr 1fr 1fr ;
+    grid-gap:2%
+  }
+  
+}
+.arr_up, .arr_down{
+  width: 2em;
+  padding: 0;
+}
+.arr_up{
+  // margin-left: 2em;
+    background: none;
+    border: none;
+    // width: 7%;
+  }
+  .arr_down{
+    background: none;
+    border: none;
+    // width: 7%;
+    transform: rotate(180deg);
+  }
+@media screen and (max-width:600px) {
+  .cryptex{
+    p{
+      font-size: 1.5rem;
     }
-    button:hover{
-        background-color: #434357;
-    }
+  }
+}
+.stern_div{
+  display: grid;
+  grid-template-rows: 3 1fr;
+  img{
+    width: 40%;
+    height: 40%;
+  }
+}
+.stern{
+  transform: scaleX(-1);
+}
+.p15_stern{
+  display: grid;
+  
+  img{
+    width: 70%;
+    height: 70%;
+  }
 }

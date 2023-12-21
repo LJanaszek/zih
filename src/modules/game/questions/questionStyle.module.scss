@@ -1,5 +1,5 @@
 .answer {
-  background-color: var(--color2);
+  background-color: var(--color6);
   padding-bottom: 4em;
   .checkbox {
     display: none;
@@ -13,7 +13,7 @@
   }
   .questionText {
     padding: 1em 2em;
-    border-bottom: 4px solid var(--color3);
+    border-bottom: 4px solid var(--color1);
   }
   .questionAnswer {
     height: 100%;
@@ -24,11 +24,12 @@
   }
   .ans,
   .ansCor {
-    background-color: var(--color6);
+    background-color: var(--color2);
     height: 100%;
     display: grid;
     grid-template-columns: 2fr 5fr;
     align-items: center;
+    border-radius: 2em;
   }
   .ans > p,
   .ansCor > p {
@@ -41,7 +42,7 @@
   .ans > span,
   .ansCor > span {
     border: 4px solid var(--color1);
-    border-radius: var(--buttonBorderRadius);
+    border-radius: 2em;
     text-align: center;
     background-color: var(--color6);
     padding: 0.7em;
@@ -85,7 +86,36 @@
     border-radius: 2em;
     margin: 0 auto;
   }
+  .answerDiv{
+    display: grid;
+    // grid-template-rows: 1fr 1fr;
+    img{
+      margin: 0;
+      position: fixed;
+      bottom: 0;
+      right: 10vh;
+      z-index: 1;
+      width: 40vh;
+      height: 40vh;
+    }
+    p{
+      height: fit-content;
+    }
+  }
 }
 .buttonNext {
   display: none;
+}
+.button_hand {
+  position: static;
+  bottom: 0;
+  right: 0;
+  height: 2em;
+  border: none;
+  width: 4em;
+  margin: 0.3em 0;
+  background-image: url("../../../assets/right_hand.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: white;
 }

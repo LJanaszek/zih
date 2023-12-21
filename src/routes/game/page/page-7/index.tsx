@@ -2,6 +2,8 @@ import { useState } from "react";
 import Box from "../../../../components/layout/box"
 import TextPage from "../../../../components/layout/text-page"
 import Popup from "../../../../components/elements/popup";
+import cryptex from "../../../../assets/krypteks.png"
+import arrow from "../../../../assets/arrow.png"
 
 type Props = {
     onNext(): void;
@@ -44,12 +46,25 @@ export default function Page1({ onNext }: Props) {
     return <TextPage>
         <Box>
             <h2>Cryptext</h2>
-
-            <div className="">
-                <button onClick={() => { crypUp() }}>arrow up</button>
-                <h3 id="crypText">A</h3>
-                <button onClick={() => { crypDown() }}>arrow down</button>
+            
+            <div className="cryptex">
+                
+                {/* <img src={cryptex} alt="" /> */}
+                <div className="crypInside">
+                    <div >
+                        <button className="arr_up" onClick={() => { crypUp() }}>
+                            <img src={arrow} /></button>
+                            <p id="crypText">A</p>
+                            <button className="arr_down" onClick={() => { crypDown() }}>
+                                <img src={arrow} /></button></div>
+                    <div><p>A</p></div>
+                    <div><p>A</p></div>
+                    <div><p>A</p></div>
+                    <div><p>A</p></div>
+                </div>
+                
             </div>
+            
         </Box>
         <div className="button-list">
             <button className="button" onClick={ifGood}>Przejdź do mapy<i className="icon map" /></button>

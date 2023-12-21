@@ -10,7 +10,7 @@ export default function Page1({ onNext }: Props) {
     return <TextPage>
         <Box>
         <QuizQuestion id='1' onNext={onNext} showPopup/>
-
+    
         </Box>
     </TextPage>
 }

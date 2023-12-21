@@ -1,28 +1,47 @@
-import Box from "../../../../components/layout/box"
-import TextPage from "../../../../components/layout/text-page"
-
+import { useCallback, useState } from "react";
+import lights from "../../../../assets/slonimski.png"
+import police from "../../../../assets/slonimski.png"
+import signs from "../../../../assets/slonimski.png"
+import OrderQuestionLayoutWIthImg from "../../../../components/order-question-widget-for-img";
+import Popup from "../../../../components/elements/popup";
 type Props = {
     onNext(): void
 }
 
-export default function Page1({ onNext }: Props) {
-    return <TextPage>
-        <Box>
-            <h2>zad 1</h2>
 
-            <p>SŁONIMSKI: Mój pradziad, Abraham Stern wynalazł maszynę do liczenia. Tęgi był z niego łeb, więc został zaproszony przez Stanisława Staszica do Towarzystwa Przyjaciół Nauk. Nie wszystkim się podobało, że się nosił po żydowsku: w szacie polskiego Izraelity z broda czarnorudawą.
-            </p>
-
-            {/* <figure>
-                <blockquote>
-                    <p>Cały trick polega na tym, że cofnęliśmy czas. Spóźniamy się tu z czasem o pewien interwał, którego wielkości niepodobna określić.</p>
-                </blockquote>
-                <figcaption>Sanatorium pod klepsydrą, Bruno Schulz</figcaption>
-            </figure> */}
-
-        </Box>
-        <div className="button-list">
-            <button className="button" onClick={onNext}>Dalej<i className="icon map" /></button>
+export default function Page5({ onNext }: Props) {
+    const [showPopup, setShowPopup] = useState<boolean>(false);
+    const onClosePopupClicked = useCallback(() => {
+        setShowPopup(false);
+        setShowIncor(false)
+    }, [setShowPopup]);
+    const [showNext, setShowNext] = useState(false);
+    const [showOnIncor, setShowIncor] = useState(false);
+    return <div >
+        <div className="">
+            
+            <p>Ile liczb w zakresie od jednego do stu zaczyna się na tę literę? Uszereguj pozycje od największej do najmniejszej. Jeżeli ilość liczb zaczynających się na daną literę w spisie jest równa ilości liczb zaczynającej się na inną literę, są one w jednej grupie.</p>
         </div>
-    </TextPage>
+        <OrderQuestionLayoutWIthImg
+            items={[
+                { correctPlace: 1, text: lights, description: "A, B, E, F, G, H, I, K, L, M, N, Q, R, U, V, W, X, Y, Z" },
+                { correctPlace: 2, text: signs, description: "J" },
+                { correctPlace: 0, text: police, description: "D, S" },
+                { correctPlace: 3, text: police, description: "DC, O, P, T" },
+            ]}
+            onComplete={() => { setShowNext(true) }}
+            onInComplete={() => { setShowIncor(true); setShowPopup(true) }}
+        />
+        {showNext && <Popup onClick={onNext}> <p>BRAWO</p></Popup>}
+            
+        
+        {/* {showOnIncor && showPopup && <Popup><p>Spróbuj jeszcze raz</p>
+            <ButtonLike>
+                <button onClick={onClosePopupClicked}>Wróć do zadania</button>
+            </ButtonLike>
+        </Popup>} */}
+    </div>
+
+
 }
+

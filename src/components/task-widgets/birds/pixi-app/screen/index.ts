@@ -21,10 +21,10 @@ export default class GameScreen extends PIXI.Container implements IScreen {
             const bird = new Bird(item.id, item.sprite);
 
             bird.position.set(item.position.x, item.position.y);
-
+            
             bird.on('bird-clicked', () => {
                 this.findedBirds.push(bird.id);
-                bird.hide();
+                // bird.hide();
                 this.sendInfo();
             });
 

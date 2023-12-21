@@ -1,16 +1,17 @@
 import Box from "../../../../components/layout/box"
 import TextPage from "../../../../components/layout/text-page"
-
+import slonimski from "../../../../assets/slonimski.png"
 type Props = {
     onNext(): void
 }
 
 export default function Page1({ onNext }: Props) {
     return <TextPage>
-        <Box>
-            <h2>ekran C</h2>
+        <div className="page-view">
+            <img src={slonimski} alt="" />
 
-            <p>SŁONIMSKI: Mój pradziad, Abraham Stern wynalazł maszynę do liczenia. Tęgi był z niego łeb, więc został zaproszony przez Stanisława Staszica do Towarzystwa Przyjaciół Nauk. Nie wszystkim się podobało, że się nosił po żydowsku: w szacie polskiego Izraelity z broda czarnorudawą.
+            <p>Mój pradziad, Abraham Stern wynalazł maszynę do liczenia. Tęgi był z niego łeb, więc został zaproszony przez Stanisława Staszica do Towarzystwa Przyjaciół Nauk. Nie wszystkim się podobało, że się nosił po żydowsku: w szacie polskiego Izraelity z broda czarnorudawą.
+
             </p>
 
             {/* <figure>
@@ -20,9 +21,9 @@ export default function Page1({ onNext }: Props) {
                 <figcaption>Sanatorium pod klepsydrą, Bruno Schulz</figcaption>
             </figure> */}
 
-        </Box>
+        </div>
         <div className="button-list">
-            <button className="button" onClick={onNext}>Dalej<i className="icon map" /></button>
+            <button className="button-hand" onClick={onNext}></button>
         </div>
     </TextPage>
 }

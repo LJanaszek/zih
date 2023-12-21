@@ -1,0 +1,72 @@
+.item{
+    display: block;
+    text-align: center;
+    font-size: .7em;
+    letter-spacing: -.03em;
+}
+.itemgroup{
+    /* padding: 2em 4em; */
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: .5em;
+    margin: 1em 0;
+    padding: 1em 1em;
+    /* margin: 0 auto; */
+    background-color: var(--quizButtonBackground);
+    border-radius: var(--buttonBorderRadius);
+}
+.img{
+    width: 50%;
+}
+.imgWithDesc{
+    margin-top: 1em;
+    border: 2px solid;
+    border-radius: var(--buttonBorderRadius);
+    padding:  1em 0;
+    padding-bottom: 0;
+    margin-bottom: .5em;
+    height: 15em;
+}
+.indexNumber{
+    background-color: white;
+    width: 2em;
+    margin: 0 auto;
+}
+.buttonGroup >
+span:only-child{
+    font-size: 2.5em;
+}
+.arrow{
+    color: white;
+    background-color: var(--textColor);
+    border: none;
+    height: 4em;
+}
+.section2{
+    text-align: end;
+    margin-right: 2em;
+    padding-bottom: 1em;
+}
+span>img{
+    display: block;
+    width: .7em;
+    margin: 0 auto;
+    /* vertical-align: baseline; */
+}
+.button_hand {
+    position: static;
+    bottom: 0;
+    right: 0;
+    height: 2em;
+    border: none;
+    width: 4em;
+    margin: 0.3em 0;
+    background-image: url("../../assets/right_hand.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: white;
+  }
+  .pick-up{
+    font-size: 1em;
+}
