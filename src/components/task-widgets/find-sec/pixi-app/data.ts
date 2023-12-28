@@ -15,8 +15,8 @@ export const SCREEN: {
             id: 'b01',
             sprite: 'bird1',
             position: {
-                x: 200,
-                y: 135
+                x: 80,
+                y: 165
             }
         },
     ]

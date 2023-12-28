@@ -1,29 +1,43 @@
 import Box from "../../../../components/layout/box"
 import TextPage from "../../../../components/layout/text-page"
 import slonimski from "../../../../assets/slonimski.png"
+import CheckboxAnswerForm from "../../../../components/task-widgets/checkboxAnswerForm/checkboxAnswerForm"
+import OrderQuestionLayout from "../../../../components/task-widgets/order-question-widget"
+import { useState } from "react"
 type Props = {
     onNext(): void
 }
 
 export default function Page1({ onNext }: Props) {
-    return <TextPage>
-        <div className="page-view">
-        <img className='page-img' src={slonimski} alt="" />
+    const [showNext, setShowNext] = useState(false)
+    return <>
+        <div>
+            <p className="task-paragraph">Ułóż w kolejności wersy fragmentu mojego wiersza "Popiół i wiatr"</p>
+            <OrderQuestionLayout
+                items={[
 
-            <p>ułóż w kolejności 
+                    { correctPlace: 4, text: 'Gdzieś między rautem balem, koncertem, kościołem,' },
+                    { correctPlace: 1, text: 'Oddano mnie na parę tygodni do dziadka,' },
+                    { correctPlace: 0, text: 'Kiedyś, gdy siostra miała odrę, czy też różę,' },
+                    { correctPlace: 3, text: 'Prawie rok przemieszkałem, nim się w końcu matka' },
+                    { correctPlace: 2, text: 'Miałem tam być przez miesiąc, lecz zostałem dłużej' },
+                    { correctPlace: 5, text: 'Spostrzegła przerażona, że z domu zniknąłem. ' },
 
-            </p>
 
-            {/* <figure>
-                <blockquote>
-                    <p>Cały trick polega na tym, że cofnęliśmy czas. Spóźniamy się tu z czasem o pewien interwał, którego wielkości niepodobna określić.</p>
-                </blockquote>
-                <figcaption>Sanatorium pod klepsydrą, Bruno Schulz</figcaption>
-            </figure> */}
+
+
+
+
+                ]}
+                onComplete={() => (setShowNext(true))} />
+
 
         </div>
-        <div className="button-list">
-            <button className="button-hand" onClick={onNext}></button>
-        </div>
-    </TextPage>
+        {showNext &&
+            <div className="button-list">
+                <button className="button-hand" onClick={onNext}></button>
+            </div>}
+
+
+    </>
 }

@@ -1,29 +1,70 @@
-import Box from "../../../../components/layout/box"
-import TextPage from "../../../../components/layout/text-page"
+import { useState } from "react";
+import styled from "styled-components";
+import Popup from "../../../../components/elements/popup";
+import TaskPopup from "../../../../components/elements/task-popup";
+import SmallPageHeader from "../../../../components/layout/header/small-header";
+import BirdsTask, { BirdTaskState } from "../../../../components/task-widgets/find-sec";
+import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header";
+import ScrollToTop from "../../../../utils/widgets/scroll-to-top";
+import EyeIconSrc from '../../../../assets/icons/eye.svg';
 import slonimski from "../../../../assets/slonimski.png"
 type Props = {
     onNext(): void
 }
 
-export default function Page1({ onNext }: Props) {
-    return <TextPage>
-        <div className="page-view">
-        <img className='page-img' src={slonimski} alt="" />
+const Container = styled.div`
+    width: 100%;
+    display: grid;
+    .state {
+        text-align: center;
+    }
+    .page-view{
+        justify-content: left !important; 
+        // margin-left: 30% !important; 
+    }
+    .page-view>p{
+        width:70%
+    }
+    
 
-            <p>
-                znajdź na obrazku
-            </p>
+        .widget {
+            margin-right:1em;
+            display:flex;
+            // position: relative;
+            height:100vh;
+            grid-column: 2;
 
-            {/* <figure>
-                <blockquote>
-                    <p>Cały trick polega na tym, że cofnęliśmy czas. Spóźniamy się tu z czasem o pewien interwał, którego wielkości niepodobna określić.</p>
-                </blockquote>
-                <figcaption>Sanatorium pod klepsydrą, Bruno Schulz</figcaption>
-            </figure> */}
+            align-self: stretch;
+            justify-self: stretch;
+        }
 
-        </div>
-        <div className="button-list">
-            <button className="button-hand" onClick={onNext}></button>
-        </div>
-    </TextPage>
+    
+`;
+
+export default function TaskMain({ onNext }: Props) {
+
+    // useRemoveHeader();
+
+    const [gameState, setGameState] = useState<BirdTaskState>({
+        birdCount: 0,
+        findedBirdCount: 0,
+        isComplete: false
+    });
+
+    const [showInfoPopup, setShowInfoPopup] = useState(false);
+    const [showPreviewPopup, setShowPreviewPopup] = useState(false);
+
+    return <>
+        <ScrollToTop />
+        <p className="paragraph-find">
+            Gdzie moga być schowane dokumenty?
+        </p>
+        <Container>
+            <div className="widget">
+                <BirdsTask onComplete={onNext} onGameStateChanged={setGameState} />
+            </div>
+
+        </Container>
+        {gameState.isComplete && <div className="button-list-find"> <button className="button-hand" onClick={onNext}></button></div>}
+    </>
 }

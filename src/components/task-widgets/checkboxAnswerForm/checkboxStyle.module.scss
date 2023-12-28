@@ -1,0 +1,99 @@
+.Apteczka {
+  display: grid;
+
+
+  .formHeader{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: end;
+    letter-spacing: 2px;
+    section{
+        font-size: .9em;
+        margin: 0;
+        padding: 0;
+        padding-right: 2.3em;
+        padding-top: 1em;
+    }
+  }
+  
+  
+  .questionText {
+    font-family: UbuntuReg;
+    font-size: .8em;
+    background-color: white;
+    display: grid;
+    align-content: space-evenly;
+    padding: .3em 0;
+    margin: 0;
+  }
+
+  .singleRowRadio {
+    display: flex;
+    margin: 0 auto;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--spanBackground);
+  }
+  .singleRowAll {
+    // padding: .5em 0; 
+    width: 92%;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    margin: 0 auto;
+    border-bottom: 2px solid var(--textColor);
+  }
+  .singleRowAll:nth-child(15){
+    border: none;
+  }
+  .singleRowAll:last-child {
+    border: none;
+  }
+  .singleInputLabel {
+    
+    height: 1.5em;
+    // margin: 0 2em;
+  }
+
+  label {
+    // margin: 0.3em;
+    text-align: center;
+    // padding: 0.5em 0.2em;
+    display: flex;
+    background-color: var(--spanBackground);
+    // border-radius: var(--buttonBorderRadius);
+  }
+  input {
+    transform: translatey(50%);
+    margin: 0 1em;
+  }
+  input[type="radio"] {
+    -webkit-appearance: none;
+    background:white;
+    width: 1.3em;
+    height: 1.3em;
+    border-radius: var(--buttonBorderInsideRadius);
+  }
+  input:checked {
+    background: var(--textColor);
+    transition: 0.5s;
+  }
+  section {
+    margin: 2.2em;
+    button {
+      padding: 0.3em 1em;
+    }
+    padding-bottom: 2.2em;
+
+    text-align: end;
+  }
+  nav{
+    display: inherit;
+    grid-template-columns: 1fr 1fr;
+  }
+//   .singleRadio{
+//     height: 1em;
+//     font-size: .3em;
+//   }
+}
+
+/* .singleRowRadio{} */

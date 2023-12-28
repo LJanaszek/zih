@@ -10,8 +10,8 @@ type AppConfig = {
     onGameStateChanged(data: BirdTaskState): void
 }
 
-export const APP_WIDTH = 350;
-export const APP_HEIGHT = 250;
+export const APP_WIDTH = 600;
+export const APP_HEIGHT = 257;
 
 export default class App extends PIXI.Application {
 
@@ -28,7 +28,7 @@ export default class App extends PIXI.Application {
         this.renderer.view.style.touchAction = 'auto';
 
         loadSprites(this, [
-            ['ulica', `${config.assetsPath}ulica.jpg`],
+            ['ulica', `${config.assetsPath}obraz3.png`],
             ['bird1', `${config.assetsPath}bird1.png`],
         ]).then(() => {
             this.initApp();
