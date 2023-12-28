@@ -1,7 +1,4 @@
 import { useCallback, useState } from "react";
-import lights from "../../../../assets/slonimski.png"
-import police from "../../../../assets/slonimski.png"
-import signs from "../../../../assets/slonimski.png"
 import OrderQuestionLayoutWIthImg from "../../../../components/order-question-widget-for-img";
 import Popup from "../../../../components/elements/popup";
 type Props = {
@@ -20,19 +17,19 @@ export default function Page5({ onNext }: Props) {
     return <div >
         <div className="">
             
-            <p>Ile liczb w zakresie od jednego do stu zaczyna się na tę literę? Uszereguj pozycje od największej do najmniejszej. Jeżeli ilość liczb zaczynających się na daną literę w spisie jest równa ilości liczb zaczynającej się na inną literę, są one w jednej grupie.</p>
+            <p className="paragraph-find">Ile liczb w zakresie od jednego do stu zaczyna się na tę literę? Uszereguj pozycje od największej do najmniejszej. Jeżeli ilość liczb zaczynających się na daną literę w spisie jest równa ilości liczb zaczynającej się na inną literę, są one w jednej grupie.</p>
         </div>
         <OrderQuestionLayoutWIthImg
             items={[
-                { correctPlace: 1, text: lights, description: "A, B, E, F, G, H, I, K, L, M, N, Q, R, U, V, W, X, Y, Z" },
-                { correctPlace: 2, text: signs, description: "J" },
-                { correctPlace: 0, text: police, description: "D, S" },
-                { correctPlace: 3, text: police, description: "DC, O, P, T" },
+                { correctPlace: 3,  description: "A, B, E, F, G, H, I, K, L, M, N, Q, R, U, V, W, X, Y, Z" },
+                { correctPlace: 2,  description: "J" },
+                { correctPlace: 0,  description: "D, S" },
+                { correctPlace: 1,  description: "C, O, P, T" },
             ]}
             onComplete={() => { setShowNext(true) }}
             onInComplete={() => { setShowIncor(true); setShowPopup(true) }}
         />
-        {showNext && <Popup onClick={onNext}> <p>BRAWO</p></Popup>}
+        {showNext && <div className="button-list"> <button className="button-hand" onClick={onNext}></button></div>}
             
         
         {/* {showOnIncor && showPopup && <Popup><p>Spróbuj jeszcze raz</p>

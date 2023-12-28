@@ -53,16 +53,3 @@ figure{
   transform: translate3d(7px, 7px, 0px);
   box-shadow: 7px 7px rgba(77, 77, 77, 0.5);
 }
-.button_hand {
-  position: static;
-  bottom: 0;
-  right: 0;
-  height: 2em;
-  border: none;
-  width: 4em;
-  margin: 0.3em 0;
-  background-image: url("../../../assets/right_hand.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-color: white;
-}

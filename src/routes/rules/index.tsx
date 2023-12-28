@@ -10,7 +10,7 @@ const Container = styled.div`
         margin: .5em 0;
     }
     h2{
-        font-size: 4em;
+        font-size: 3em;
         font-weight:900
     }
     p{
@@ -55,7 +55,7 @@ export default function RulesPage() {
     return <Container>
         <Box>
             <h2>Instrukcja</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem aspernatur aliquam deleniti suscipit laboriosam, accusantium voluptas voluptate esse similique nisi autem provident molestias magni amet quae accusamus ducimus maxime officia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora voluptas optio autem ipsum. Eius veniam est impedit ratione distinctio sed cupiditate alias, aspernatur repudiandae consequuntur repellendus corporis expedita facere dicta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus quis assumenda dolor sit omnis quasi aspernatur laboriosam sed architecto alias doloribus, officiis velit repellendus, delectus aliquid esse minus, ratione asperiores. Lorem ipsum dolor sit, amet consectetur adipisicing elit. A iusto ea fugit corporis doloremque excepturi reiciendis. Iusto eum esse voluptatum. Qui consequuntur mollitia reiciendis ipsum vero, inventore rerum aliquid expedita.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem aspernatur aliquam deleniti suscipit laboriosam, accusantium voluptas voluptate esse similique nisi autem provident molestias magni amet quae accusamus ducimus maxime officia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora voluptas optio autem ipsum. Eius veniam est impedit ratione distinctio sed cupiditate alias, aspernatur repudiandae consequuntur repellendus corporis expedita facere dicta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus quis assumenda dolor sit omnis quasi aspernatur laboriosam sed architecto alias doloribus, officiis velit repellendus, delectus aliquid esse minus, ratione asperiores. Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
             {/* <ul>
                 <li>Do wzięcia udziału w rozgrywce potrzebujesz smartfona lub tablet z dostępem do Internetu.</li>
                 <li>Gra wykorzystuje aparat i lokalizację urządzenia. Aby zagrać, udziel zgody, gdy zostaniesz zapytany/zapytana o udzielenie dostępu.</li>

@@ -20,6 +20,43 @@ const Page12 = lazy(() => import('./page-12'));
 const Page13 = lazy(() => import('./page-13'));
 const Page14 = lazy(() => import('./page-14'));
 const Page15 = lazy(() => import('./page-15'));
+
+const Page16 = lazy(() => import('./page-16'));
+const Page17 = lazy(() => import('./page-17'));
+const Page18 = lazy(() => import('./page-18'));
+const Page19 = lazy(() => import('./page-19'));
+const Page20 = lazy(() => import('./page-20'));
+const Page21 = lazy(() => import('./page-21'));
+const Page22 = lazy(() => import('./page-22'));
+const Page23 = lazy(() => import('./page-23'));
+const Page24 = lazy(() => import('./page-24'));
+const Page25 = lazy(() => import('./page-25'));
+const Page26 = lazy(() => import('./page-26'));
+const Page27 = lazy(() => import('./page-27'));
+const Page28 = lazy(() => import('./page-28'));
+const Page29 = lazy(() => import('./page-29'));
+const Page30 = lazy(() => import('./page-30'));
+const Page31 = lazy(() => import('./page-31'));
+const Page32 = lazy(() => import('./page-32'));
+const Page33 = lazy(() => import('./page-33'));
+const Page34 = lazy(() => import('./page-34'));
+const Page35 = lazy(() => import('./page-35'));
+const Page36 = lazy(() => import('./page-36'));
+const Page37 = lazy(() => import('./page-37'));
+const Page38 = lazy(() => import('./page-38'));
+const Page39 = lazy(() => import('./page-39'));
+const Page40 = lazy(() => import('./page-40'));
+
+const Page41 = lazy(() => import('./page-41'));
+const Page42 = lazy(() => import('./page-42'));
+const Page43 = lazy(() => import('./page-43'));
+const Page44 = lazy(() => import('./page-44'));
+const Page45 = lazy(() => import('./page-45'));
+const Page46 = lazy(() => import('./page-46'));
+const Page47 = lazy(() => import('./page-47'));
+const Page48 = lazy(() => import('./page-48'));
+const Page49 = lazy(() => import('./page-49'));
+const Page50 = lazy(() => import('./page-50'));
 const PageEnd = lazy(() => import('./page-end'));
 
 type Props = {
@@ -69,8 +106,83 @@ export default function PageView({ id }: Props) {
                 return <Page14 onNext={onNext} />
             case 'page-15':
                 return <Page15 onNext={onNext} />
+            case 'page-16':
+                return <Page16 onNext={onNext} />
+
+
+                case 'page-17':
+                return <Page17 onNext={onNext} />
+            case 'page-18':
+                return <Page18 onNext={onNext} />
+            case 'page-19':
+                return <Page19 onNext={onNext} />
+            case 'page-20':
+                return <Page20 onNext={onNext} />
+            case 'page-21':
+                return <Page21 onNext={onNext} />
+            case 'page-22':
+                return <Page22 onNext={onNext} />
+            case 'page-23':
+                return <Page23 onNext={onNext} />
+            case 'page-24':
+                return <Page24 onNext={onNext} />
+            case 'page-25':
+                return <Page25 onNext={onNext} />
+            case 'page-26':
+                return <Page26 onNext={onNext} />
+            case 'page-27':
+                return <Page27 onNext={onNext} />
+            case 'page-28':
+                return <Page28 onNext={onNext} />
+            case 'page-29':
+                return <Page29 onNext={onNext} />
+            case 'page-30':
+                return <Page30 onNext={onNext} />
+            case 'page-31':
+                return <Page31 onNext={onNext} />
+            case 'page-32':
+                return <Page32 onNext={onNext} />
+
+                case 'page-33':
+                return <Page33 onNext={onNext} />
+            case 'page-34':
+                return <Page34 onNext={onNext} />
+            case 'page-35':
+                return <Page35 onNext={onNext} />
+            case 'page-36':
+                return <Page36 onNext={onNext} />
+            case 'page-37':
+                return <Page37 onNext={onNext} />
+            case 'page-38':
+                return <Page38 onNext={onNext} />
+            case 'page-39':
+                return <Page39 onNext={onNext} />
+            case 'page-40':
+                return <Page40 onNext={onNext} />
+
+                case 'page-41':
+                return <Page41 onNext={onNext} />
+            case 'page-42':
+                return <Page42 onNext={onNext} />
+            case 'page-43':
+                return <Page43 onNext={onNext} />
+            case 'page-44':
+                return <Page44 onNext={onNext} />
+            case 'page-45':
+                return <Page45 onNext={onNext} />
+            case 'page-46':
+                return <Page46 onNext={onNext} />
+            case 'page-47':
+                return <Page47 onNext={onNext} />
+            case 'page-48':
+                return <Page48 onNext={onNext} />
+            case 'page-49':
+                return <Page49 onNext={onNext} />
+            case 'page-50':
+                return <Page50 onNext={onNext} />
             case 'end':
                 return <PageEnd onNext={onNext} />
+                
             default:
                 return <PagePlaceholder onNext={onNext} />
         }

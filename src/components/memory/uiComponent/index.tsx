@@ -133,9 +133,9 @@ export function Uirender ({onNext}:Props) {
         title = { 'Result' }
         onClose = { handleModalClose }
         />&&
-        
-        <button onClick={onNext} className="button_hand"></button>
-        
+        <div className='button-list'>
+        <button onClick={onNext} className="button-hand"></button>
+        </div>
       }
        
     </div>

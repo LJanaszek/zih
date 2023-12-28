@@ -1,29 +1,67 @@
+import { useState } from "react";
 import Box from "../../../../components/layout/box"
 import TextPage from "../../../../components/layout/text-page"
-import slonimski from "../../../../assets/slonimski.png"
+import Popup from "../../../../components/elements/popup";
+import cryptex from "../../../../assets/krypteks.png"
+import arrow from "../../../../assets/arrow.png"
+
 type Props = {
-    onNext(): void
-}
-
+    onNext(): void;
+};
+var n = 0;
 export default function Page1({ onNext }: Props) {
+    const [next, setNext] = useState(false)
+
+    function crypUp() {
+        let list = ["A", "B", "C", "D", "E", "F"];
+        n++
+        if (n > 5) {
+            n = 0
+        };
+
+        document.getElementById('crypText')!.innerHTML = list[n];
+    }
+
+
+    function crypDown() {
+        let list = ["A", "B", "C", "D", "E", "F"];
+        n--
+        if (n < 0) {
+            n = 5
+        };
+        document.getElementById('crypText')!.innerHTML = list[n];
+    };
+
+
+    function ifGood() {
+        if (n === 3) {
+            setNext(true);
+        }
+        else {
+            setNext(false)
+        }
+    }
+
+
     return <TextPage>
-        <div className="page-view">
-            <img src={slonimski} alt="" />
-
-            <p>Mój pradziad, Abraham Stern wynalazł maszynę do liczenia. Tęgi był z niego łeb, więc został zaproszony przez Stanisława Staszica do Towarzystwa Przyjaciół Nauk. Nie wszystkim się podobało, że się nosił po żydowsku: w szacie polskiego Izraelity z broda czarnorudawą.
-
-            </p>
-
-            {/* <figure>
-                <blockquote>
-                    <p>Cały trick polega na tym, że cofnęliśmy czas. Spóźniamy się tu z czasem o pewien interwał, którego wielkości niepodobna określić.</p>
-                </blockquote>
-                <figcaption>Sanatorium pod klepsydrą, Bruno Schulz</figcaption>
-            </figure> */}
-
-        </div>
+        <Box>
+            <h2>Cryptext</h2>
+            
+            <div className="cryptex2">
+                
+                
+            </div>
+            
+        </Box>
         <div className="button-list">
             <button className="button-hand" onClick={onNext}></button>
         </div>
+        {next && <Popup onClick={onNext}>
+            <button className="button" onClick={() => { setNext(false) }}>Zamknij Popup<i className="icon map" /></button>
+        </Popup>}
+        {/* popup */}
     </TextPage>
+
 }
+
+

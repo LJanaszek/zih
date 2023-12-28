@@ -22,7 +22,7 @@
 .imgWithDesc{
     margin-top: 1em;
     border: 2px solid;
-    border-radius: var(--buttonBorderRadius);
+    border-radius: 2em;
     padding:  1em 0;
     padding-bottom: 0;
     margin-bottom: .5em;
@@ -69,4 +69,24 @@ span>img{
   }
   .pick-up{
     font-size: 1em;
+}
+.arrow_up{
+    transform: rotate(-90deg);
+}
+.arrow_down{
+    transform: rotate(90deg);
+}
+.arrow_up, .arrow_down{
+    width: 1.5em;
+}
+.buttons{
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    
+}
+.description{
+    margin: 0 1em;
+    line-height: 1.5em;
+    letter-spacing: .2em;
 }

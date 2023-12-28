@@ -8,7 +8,7 @@ type Props = {
 export default function Page1({ onNext }: Props) {
     return <TextPage>
         <div className="page-view">
-            <img src={stern} alt="" />
+            <img src={stern} className='page-img' alt="" />
 
             <p>Tysiące razy obróciły się wskazówki na zegarach w Towarzystwie Przyjaciół Nauk, zanim mnie przyjęli. A i to niechętnie. Nawet rosyjski car, gdy mu pokazałem swoją maszynę do liczenia, powiedział: “Maszyna jest dobra, ale Żyd jest zły”.
             <br></br><br></br>

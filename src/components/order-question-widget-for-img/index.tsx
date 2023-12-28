@@ -5,14 +5,13 @@ import up from "../../assets/arrow.png"
 import down from "../../assets/arrow.png"
 
 type Props = {
-    items: {text: string, correctPlace: number, description: string}[],
+    items: { correctPlace: number, description: string}[],
     onComplete(): void,
     onInComplete(): void
 }
 
 type Item = {
     correctPlace: number,
-    text: string,
     description:string
 }
 
@@ -28,7 +27,6 @@ export default function OrderQuestionLayoutWIthImg({items, onComplete, onInCompl
             items: items.map((item, index) => {
                 return {
                     correctPlace: item.correctPlace,
-                    text: item.text,
                     description: item.description
                 }
             })
@@ -77,7 +75,7 @@ export default function OrderQuestionLayoutWIthImg({items, onComplete, onInCompl
         if (score===state.items.length){
             isValid = true;
         }
-        if (isValid && setConfirm) {
+        if (isValid ) {
             onComplete();
         }
         else if(!isValid && setConfirm){
@@ -86,7 +84,7 @@ export default function OrderQuestionLayoutWIthImg({items, onComplete, onInCompl
         }
 
     }, [state, onComplete, items.length, setConfirm, onInComplete])
-
+    const numbers = ["25", "12", "2", "0"]
     return <div>
             
                 <div aria-live='assertive' className={style.itemgroup}>
@@ -95,24 +93,26 @@ export default function OrderQuestionLayoutWIthImg({items, onComplete, onInCompl
 
                             if (item) {
                                 return <div className={style.item} key={index}>
-                                    
-                                    <button onClick={() => moveUp(index)} aria-label={`Pozycja ${index+1}: ${item.text} Przenieś wyżej`}className={style.arrow}>
-                                    <span className="material-icons">   
-                                        <img src={up} alt="" />
+                                    <div className={style.indexNumber}>{numbers[index]}</div>
+                                    <div className={style.buttons}>
+                                    <button onClick={() => moveUp(index)} className={style.arrow}>
+                                    <span >   
+                                        <img src={up} alt="" className={style.arrow_up}/>
                                         </span>
                                     </button>
-                                    <button onClick={() => moveDown(index)} aria-label={`Pozycja ${index+1}: ${item.text} Przenieś niżej`} className={style.arrow}>
-                                    <span className="material-icons">
-                                        <img src={down} alt="" />
+                                    <button onClick={() => moveDown(index)}  className={style.arrow}>
+                                    <span >
+                                        <img src={down} alt="" className={style.arrow_down}/>
                                         </span>
                                     </button>
+                                    </div>
                                     <div className={style.imgWithDesc}>
                                     <Card>
                                         <GameItem item={item} />
                                         
                                     </Card>
                                     </div>
-                                    <div className={style.indexNumber}>{index+1}</div>
+                                    
                                 </div>
                             }
 
@@ -123,7 +123,7 @@ export default function OrderQuestionLayoutWIthImg({items, onComplete, onInCompl
                 </div>
                 
             
-                <div className={style.section2}> <button className={style.button_hand} onClick={()=>setShowConfirm(true)}></button></div>
+                {/* <div className={style.section2}> <button className={style.button_hand} onClick={()=>setShowConfirm(true)}></button></div> */}
         </div>
 }
 
@@ -132,8 +132,7 @@ const GameItem: React.FC<{
     item: Item
 }> = ({ item }) => {
     return <div className={`pick-up`}>
-        <img src={item.text} alt="nie ma obrazka" className={style.img}/>
-        <p>{item.description}</p>
+        <p className={style.description}>{item.description}</p>
     </div>
 }
 

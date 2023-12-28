@@ -67,7 +67,7 @@ export default function Page1({ onNext }: Props) {
             
         </Box>
         <div className="button-list">
-            <button className="button" onClick={ifGood}>Przejdź do mapy<i className="icon map" /></button>
+            <button className="button-hand" onClick={ifGood}></button>
         </div>
         {next && <Popup onClick={onNext}>
             <button className="button" onClick={() => { setNext(false) }}>Zamknij Popup<i className="icon map" /></button>

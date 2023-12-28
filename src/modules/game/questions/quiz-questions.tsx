@@ -38,7 +38,7 @@ export function QuizQuestion({ id, onComplete, onNext }: Props2) {
 
       <QuizQuestionDummy question={q} />
 
-      { <QuizQuestionDummy question={q}/> && <div><button id="nextButton" className={styles.button_hand} onClick={onNext}></button></div>}
+      { <QuizQuestionDummy question={q}/> && <div className="button-list"><button id="nextButton" className="button-hand" onClick={onNext}></button></div>}
     </>
   );
 }
@@ -117,48 +117,4 @@ export function QuizQuestionDummy({ question}: ForQuizQuest) {
     </div>
   );
 }
-// function show(a:any){
-//   document.getElementById("answer")!.innerHTML = a.desc;
-//   if(a.isCorrect){
-//     setShowButton(true)
-//   }
-// }
-// export interface QuizAnswerDummyProps {
-//   question: IQuizQuestion,
-//   userAnswerId: string
-// }
-
-// export function QuizAnswerDummy({ question, userAnswerId }: QuizAnswerDummyProps) {
-//   let showDesc = false
-
-//   const correctQuizAnswer = question.answers.find(quizAnswer => quizAnswer.isCorrect)
-//   const userQuizAnswer = question.answers.find(quizAnswer => quizAnswer.id === userAnswerId)
-
-//   const userAnswerText: string = userQuizAnswer?.text || 'Błąd danych';
-//   const isUserAnswerCorrect: boolean = (correctQuizAnswer?.id === userQuizAnswer?.id); //tutaj ma być sprawdzenie czy user wybral poprawną odpwiedz
-//   const correctAnswerText: string = correctQuizAnswer?.text || 'Błąd danych';
-//   const questionDescription: string = question.description || "";
-
-//   if(questionDescription){
-//     showDesc = true
-//   }
-
-
-//   return <div className={styles.answerPopup}>
-    
-//     {/* <p>Twoja odpowiedz to: {userAnswerText}</p> */}
-
-//     {isUserAnswerCorrect && <div><p>SUPER!</p><p>Twoja odpowiedź to: {userAnswerText}</p></div>}
-
-//     {!isUserAnswerCorrect && showDesc && <div>
-      
-//       <p>Poprawną odpowiedzą było: {correctAnswerText}</p>
-//       <p>Ponieważ: {questionDescription}</p>
-//     </div>}
-//     {!isUserAnswerCorrect && !showDesc && <div>
-    
-//       <p>Poprawną odpowiedzą było: {correctAnswerText}</p>
-//     </div>}
-//   </div>
-// }
 

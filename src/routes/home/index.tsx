@@ -24,10 +24,10 @@ h2,h3{
     font-weight: 900;
 }
 h2{
-    font-size:7em
+    font-size:3em
 }
 h3{
-    font-size:3em;
+    font-size:1.5em;
 }
 
 

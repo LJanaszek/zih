@@ -8,9 +8,9 @@ type Props = {
 export default function Page1({ onNext }: Props) {
     return <TextPage>
         <div className="page-view">
-            <img src={fisher} alt="" />
+            <img className='page-img' src={fisher} alt="" />
 
-            <p>W kawiarni “Ziemiańskiej” czeka na mnie tajemniczy posłaniec z jeszcze bardziej tajemniczą przesyłką. Kiedy go znajdziesz powiedz, że cię przysyła Antoni Słonimski i pyta kto zacz i co to za liścik.
+            <p>Kobieta w fioletowym kapeluszu? Była i wyszła, ale przesyłkę zostawiła mnie. Słonimski nie uprzedził, że nie będzie czekać wieczność? Bo wieczność czeka jedynie poetów. . Odgadnij moje trzy zagadki, a dam ci tajemniczy liścik.
 
             </p>
 
