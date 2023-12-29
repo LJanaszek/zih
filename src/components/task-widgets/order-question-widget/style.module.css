@@ -13,7 +13,9 @@
     align-items: center;
 }
 .itemgroup{
-    font-family: UbuntuReg;
+    /* font-family: UbuntuReg; */
+    font-size: 16px;
+    line-height: normal;
     display: grid;
     margin: 1em 2em;
 
@@ -34,7 +36,7 @@ span{
 }
 span>img{
     display: block;
-    width: .3em;
+    width: .25em;
     /* vertical-align: baseline; */
 }
 .arrow, .arrowdown{

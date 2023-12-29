@@ -1,8 +1,8 @@
 @import-normalize;
 
 :root {
-  --color1: #da783c;
-  --color2: #dfd7cd;
+  --color1: #eb5b29;
+  --color2: rgba(235, 91, 41, 0.15);
   --color3: #666699;
   --color4: #84ce55;
   --color5: #434357;
@@ -11,20 +11,20 @@
 
 @font-face {
   font-family: "Bristol";
-  src: url("Bristol.otf");
-  src: local("Bristol"), url("Bristol.otf") format("opentype");
+  src: url("Renesans-Regular.otf");
+  src: local("Bristol"), url("Renesans-Regular.otf") format("opentype");
 }
 
 @font-face {
   font-family: "Calc";
-  src: url("ReadexPro-Regular.ttf");
-  src: local("Calc"), url("ReadexPro-Regular.ttf") format("opentype");
+  src: url("DigitalNumbers-Regular.ttf");
+  src: local("Calc"), url("DigitalNumbers-Regular.ttf") format("opentype");
 }
 
 @font-face {
   font-family: "Gothic";
-  src: url("DidactGothic-Regular.otf");
-  src: local("Gothic"), url("DidactGothic-Regular.otf") format("opentype");
+  src: url("ReadexPro-Regular.ttf");
+  src: local("Gothic"), url("ReadexPro-Regular.ttf") format("opentype");
 }
 
 html,

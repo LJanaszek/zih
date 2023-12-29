@@ -23,7 +23,7 @@ export default function Page1({ onNext }: Props) {
                 <button className="button" onClick={() => {
                     let x = document.getElementById("fname")!.value;
                     x=x.toUpperCase();
-                    if (x === "HA-CEFIRAHA" || x==="HA CEFIRAHA") {
+                    if (x === "HA-CEFIRA" || x==="HA CEFIRA") {
                         setShowButton(true)
                     }
                     else{
