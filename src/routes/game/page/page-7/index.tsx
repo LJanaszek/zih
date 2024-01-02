@@ -47,20 +47,18 @@ export default function Page1({ onNext }: Props) {
         <Box>
             <h2>Cryptext</h2>
             
-            <div className="cryptex">
-                
-                {/* <img src={cryptex} alt="" /> */}
+            <div className="cryptex3">
                 <div className="crypInside">
-                    <div >
+                    <div className="crypBlock" >
                         <button className="arr_up" onClick={() => { crypUp() }}>
                             <img src={arrow} /></button>
                             <p id="crypText">A</p>
                             <button className="arr_down" onClick={() => { crypDown() }}>
                                 <img src={arrow} /></button></div>
-                    <div><p>A</p></div>
-                    <div><p>A</p></div>
-                    <div><p>A</p></div>
-                    <div><p>A</p></div>
+                    <div className="crypBlock"><p>A</p></div>
+                    <div className="crypBlock"><p>A</p></div>
+                    <div className="crypBlock"><p>A</p></div>
+                    <div className="crypBlock"><p>A</p></div>
                 </div>
                 
             </div>

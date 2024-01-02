@@ -194,6 +194,31 @@ button {
     margin: 0 2em;
   }
 }
+.cryptex3{
+  // display: grid;
+  .crypInside{
+    margin: 0 auto;
+    max-width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  .crypBlock{
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    display: grid;
+    
+    p{
+      min-width: 29vh;
+      background-color: #434357;
+      text-align: center;
+      height: 20vh;
+      display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+  }
+}
 .cryptex2 {
   height: 60vh;
   background: url("./assets/krypteks.png");
