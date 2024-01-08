@@ -83,7 +83,7 @@ export default function OrderQuestionLayout({items, onComplete}: Props) {
 
     return <div>
             
-                <div aria-live='assertive' className={style.itemgroup}>
+                <div aria-live='assertive' className={style.itemgroup} id="order-div">
                     {
                         state.items.map((item, index) => {
 

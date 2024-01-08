@@ -9,7 +9,11 @@ type Props = {
 }
 
 export default function Page1({ onNext }: Props) {
-    const [showNext, setShowNext] = useState(false)
+    
+    const [showNext, setShowNext] = useState(false);
+//     const child = document.createElement('div');
+// child.innerText = 'Kiedyś, gdy siostra miała odrę, czy też różę,';
+// document.getElementById('order-div')!.insertBefore(child, .children[0])
     return <>
         <div>
             <p className="task-paragraph">Ułóż w kolejności wersy fragmentu mojego wiersza "Popiół i wiatr"</p>

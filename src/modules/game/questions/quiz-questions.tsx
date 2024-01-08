@@ -28,7 +28,6 @@ export function QuizQuestion({ id, onComplete, onNext }: Props2) {
       onComplete();
     }
   }, [answer, onComplete])
-
   if (!q) {
     return <p>brak pytania w bazie</p>;
   }
@@ -38,7 +37,7 @@ export function QuizQuestion({ id, onComplete, onNext }: Props2) {
 
       <QuizQuestionDummy question={q} />
 
-      { <QuizQuestionDummy question={q}/> && <div className="button-list"><button id="nextButton" className="button-hand" onClick={onNext}></button></div>}
+      { <QuizQuestionDummy question={q}/> && <div className="button-list"><button id="nextButton" className="button-hand quiz-button" onClick={onNext}></button></div>}
     </>
   );
 }
@@ -49,7 +48,6 @@ export interface ForQuizQuest {
 }
 
 export function QuizQuestionDummy({ question}: ForQuizQuest) {
-  
   const imgRef = useRef<HTMLImageElement>(null);
 
   const { register, watch } = useForm();
@@ -69,6 +67,7 @@ export function QuizQuestionDummy({ question}: ForQuizQuest) {
   // }, [onConfirm, question, value]);
 
   // const {answers} = question
+  // document.getElementById("nextButton")!.style.display='none';
   return (
     <div className={styles.answer}>
       <div className={styles.questionText}>
