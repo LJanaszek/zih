@@ -2,8 +2,9 @@ import { useState } from "react";
 import Box from "../../../../components/layout/box"
 import TextPage from "../../../../components/layout/text-page"
 import Popup from "../../../../components/elements/popup";
-import cryptex from "../../../../assets/krypteks.png"
+import cryptex from "../../../../assets/cryptex.png"
 import arrow from "../../../../assets/arrow.png"
+
 
 type Props = {
     onNext(): void;
@@ -49,6 +50,7 @@ export default function Page1({ onNext }: Props) {
             
             <div className="cryptex3">
                 <div className="crypInside">
+                    <div className="crypImgLeft"> <img src={cryptex} alt="" /></div>
                     <div className="crypBlock" >
                         <button className="arr_up" onClick={() => { crypUp() }}>
                             <img src={arrow} /></button>
@@ -59,6 +61,7 @@ export default function Page1({ onNext }: Props) {
                     <div className="crypBlock"><p>A</p></div>
                     <div className="crypBlock"><p>A</p></div>
                     <div className="crypBlock"><p>A</p></div>
+                    <div className="crypImgRight"> <img src={cryptex} alt="" /></div>
                 </div>
                 
             </div>
