@@ -1,9 +1,13 @@
 import { useReducer } from "react"
 import styled from "styled-components"
 import Select from 'react-select';
+import sculp1 from "../../../../assets/sculp.png";
+import sculp2 from "../../../../assets/sculp.png";
+import sculp3 from "../../../../assets/sculp.png";
+import sculp4 from "../../../../assets/sculp.png";
 
 type Props = {
-    relations: string[],
+    relations: number[],
     interpretations: string[]
 }
 
@@ -14,7 +18,7 @@ type Item = {
 
 type Slot = {
     id: string,
-    title: string,
+    title: number,
     item: Item | null
 }
 
@@ -40,7 +44,7 @@ const Container = styled.div`
     }
 
     .grid {
-        display: grid;
+        display:flex;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
 
@@ -55,12 +59,21 @@ const Container = styled.div`
     .unselected .pickup-container{
         margin: .5em 0;
     }
+    .intension{
+        font-size:16px;
+        width: -webkit-fill-available;
+        *{
+            padding:0;
+        }
+    }
+
 `;
 
 export default function Page92Widget2({ relations, interpretations }: Props) {
     const [state, moveItem] = useReducer((state: GameState, action: { itemId: string, slotId: string }) => {
         const item = state.items.find(i => i.id === action.itemId);
         const slot = state.slots.find(s => s.id === action.slotId);
+        // var n = 0;
 
         if (item && slot) {
             const oldItem = slot.item;
@@ -105,16 +118,18 @@ export default function Page92Widget2({ relations, interpretations }: Props) {
         }),
         unselected: ['blank', ...interpretations.map((r, index) => `i${index}`)]
     });
-
+    
     return <Container>
         <div className="grid">
             {
                 state.slots.map(slot => {
+                    var images = [sculp1, sculp2, sculp3, sculp4]
+                    
                     return <>
+                    <div>
                         <div className="reaction">
-                            <p>
-                                {slot.title}
-                            </p>
+                            <img src={images[0]} alt="dupa" />
+                            {slot.item?.id}
                         </div>
                         <div className="intension">
                             <Select
@@ -125,6 +140,7 @@ export default function Page92Widget2({ relations, interpretations }: Props) {
                                             itemId: data.value,
                                             slotId: slot.id
                                         })
+                                        
                                 }}
                                 options={state.items
                                     .filter(item => state.unselected.find(id => item.id === id))
@@ -170,6 +186,8 @@ export default function Page92Widget2({ relations, interpretations }: Props) {
                                     }
                                 }}
                             ></Select>
+                            
+                        </div>
                         </div>
                     </>
                 })
