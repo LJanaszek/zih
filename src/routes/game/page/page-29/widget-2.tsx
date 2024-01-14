@@ -1,4 +1,4 @@
-import { useReducer } from "react"
+import { useMemo, useReducer } from "react"
 import styled from "styled-components"
 import Select from 'react-select';
 import sculp1 from "../../../../assets/sculp.png";
@@ -8,7 +8,9 @@ import sculp4 from "../../../../assets/sculp.png";
 
 type Props = {
     relations: number[],
-    interpretations: string[]
+    interpretations: string[],
+    items: { correctPlace: string, description: string }[],
+    onComplete(): void,
 }
 
 type Item = {
@@ -69,12 +71,37 @@ const Container = styled.div`
 
 `;
 
-export default function Page92Widget2({ relations, interpretations }: Props) {
+export default function Page92Widget2({ relations, interpretations, items, onComplete }: Props) {
+    var userAns: string[] = [];
+    var correctAns: string[] = [];
+    const initData: GameState = useMemo(() => {
+        return {
+            items: items.map((item, index) => {
+                return {
+                    correctPlace: item.correctPlace,
+                    description: item.description
+                }
+            })
+        }
+    }, [items]);
     const [state, moveItem] = useReducer((state: GameState, action: { itemId: string, slotId: string }) => {
+        const copyArr = [...state.items];
+        // copyArr.splice(hoverIndex, 0, copyArr.splice(dragIndex, 1)[0]);
+
+
         const item = state.items.find(i => i.id === action.itemId);
         const slot = state.slots.find(s => s.id === action.slotId);
-        // var n = 0;
 
+
+
+
+
+        items.map(s => {
+            correctAns.push(s.correctPlace);
+            // console.log(correctAns)
+        })
+
+        // var n = 0;
         if (item && slot) {
             const oldItem = slot.item;
 
@@ -96,7 +123,12 @@ export default function Page92Widget2({ relations, interpretations }: Props) {
             }
         }
 
-        return state;
+        return {
+            state,
+            ...state,
+            items: [...copyArr]
+        }
+
     }, {
         items: [
             {
@@ -105,92 +137,111 @@ export default function Page92Widget2({ relations, interpretations }: Props) {
             },
             ...interpretations.map((r, index) => {
                 return {
-                    id: `i${index}`,
+                    id: `${index}`,
                     text: r
                 }
             })],
         slots: relations.map((r, index) => {
             return {
-                id: `s${index}`,
+                id: `${index}`,
                 title: r,
                 item: null
             }
         }),
-        unselected: ['blank', ...interpretations.map((r, index) => `i${index}`)]
+        unselected: ['blank', ...interpretations.map((r, index) => `${index}`)]
     });
-    
+
+    // if()
     return <Container>
         <div className="grid">
             {
                 state.slots.map(slot => {
-                    var images = [sculp1, sculp2, sculp3, sculp4]
-                    
-                    return <>
-                    <div>
-                        <div className="reaction">
-                            <img src={images[0]} alt="dupa" />
-                            {slot.item?.id}
-                        </div>
-                        <div className="intension">
-                            <Select
-                                value={{ value: slot.item?.id, label: slot.item?.text }}
-                                onChange={(data: { value: any; }) => {
-                                    if (data?.value)
-                                        moveItem({
-                                            itemId: data.value,
-                                            slotId: slot.id
-                                        })
-                                        
-                                }}
-                                options={state.items
-                                    .filter(item => state.unselected.find(id => item.id === id))
-                                    .map((item) => {
-                                        return {
-                                            value: item!.id,
-                                            label: item!.text
-                                        }
-                                    })}
-                                theme={(provided: { colors: any; }) => {
-                                    return {
-                                        ...provided,
-                                        colors: {
-                                            ...provided.colors,
-                                            primary: '#FCD779',
-                                            primary25: '#FCD779',
-                                            neutral0: '#FAF5E8'
-                                        }
-                                    }
-                                }}
-                                styles={{
-                                    container: (provided: any, state: any) => {
-                                        return {
-                                            ...provided,
-                                            width: '100%',
-                                            background: '#FAF5E8'
-                                        }
-                                    },
-                                    control: (provided: any, state: any) => {
-                                        return {
-                                            ...provided,
-                                            background: '#FAF5E8'
-                                        }
-                                    },
-                                    singleValue: (provided: any, state: any) => {
-                                        // const opacity = state.isDisabled ? 0.5 : 1;
-                                        // const transition = 'opacity 300ms';
+                    const images = [sculp1, sculp2, sculp3, sculp4]
+                    if (slot.item?.id) {
+                        userAns.push(slot.item.id)
+                    }
+                    // console.log("cos")
+                    if (userAns.toString() === correctAns.toString() && userAns.length === 4) {
+                        onComplete()
+                    }
+                    // else{
+                    //     onIncomplete()
+                    // }
+                    console.log(correctAns, userAns)
 
+                    return <>
+                        <div>
+                            <div className="reaction">
+                                <img src={images[0]} alt="dupa" />
+                            </div>
+                            <div className="intension">
+                                <Select
+                                    value={{ value: slot.item?.id, label: slot.item?.text }}
+                                    onChange={(data: { value: any; }) => {
+                                        
+                                        
+
+                                        if (data?.value)
+                                            moveItem({
+                                                itemId: data.value,
+                                                slotId: slot.id
+                                            })
+                                        if (userAns.toString() !== correctAns.toString() && userAns.length !== 4) {
+                                            onIncomplete()
+                                        }
+
+
+                                    }}
+                                    options={state.items
+                                        .filter(item => state.unselected.find(id => item.id === id))
+                                        .map((item) => {
+                                            return {
+                                                value: item!.id,
+                                                label: item!.text
+                                            }
+                                        })}
+                                    theme={(provided: { colors: any; }) => {
                                         return {
                                             ...provided,
-                                            whiteSpace: 'normal'
-                                        };
-                                    }
-                                }}
-                            ></Select>
-                            
-                        </div>
+                                            colors: {
+                                                ...provided.colors,
+                                                primary: '#FCD779',
+                                                primary25: '#FCD779',
+                                                neutral0: '#FAF5E8'
+                                            }
+                                        }
+                                    }}
+                                    styles={{
+                                        container: (provided: any, state: any) => {
+                                            return {
+                                                ...provided,
+                                                width: '100%',
+                                                background: '#FAF5E8'
+                                            }
+                                        },
+                                        control: (provided: any, state: any) => {
+                                            return {
+                                                ...provided,
+                                                background: '#FAF5E8'
+                                            }
+                                        },
+                                        singleValue: (provided: any, state: any) => {
+                                            // const opacity = state.isDisabled ? 0.5 : 1;
+                                            // const transition = 'opacity 300ms';
+
+                                            return {
+                                                ...provided,
+                                                whiteSpace: 'normal'
+                                            };
+                                        }
+                                    }}
+                                ></Select>
+
+                            </div>
                         </div>
                     </>
                 })
+
             }
         </div>
     </Container>
