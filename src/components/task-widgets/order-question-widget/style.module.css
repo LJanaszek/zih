@@ -1,4 +1,4 @@
-.item2{
+.item2, .first{
     display: flex;
     align-content: center;
     border-bottom: 1px solid;

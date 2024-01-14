@@ -172,7 +172,7 @@ export default function Page92Widget2({ relations, interpretations, items, onCom
                     return <>
                         <div>
                             <div className="reaction">
-                                <img src={images[0]} alt="dupa" />
+                                <img src={images[0]} alt="" />
                             </div>
                             <div className="intension">
                                 <Select
@@ -186,9 +186,7 @@ export default function Page92Widget2({ relations, interpretations, items, onCom
                                                 itemId: data.value,
                                                 slotId: slot.id
                                             })
-                                        if (userAns.toString() !== correctAns.toString() && userAns.length !== 4) {
-                                            onIncomplete()
-                                        }
+                                       
 
 
                                     }}

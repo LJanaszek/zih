@@ -7,7 +7,8 @@ import up from "../../../assets/arrow.png"
 
 type Props = {
     items: {text: string, correctPlace: number}[],
-    onComplete(): void
+    onComplete(): void,
+    firsLine: string
 }
 
 type Item = {
@@ -20,7 +21,7 @@ type GameState = {
 }
 
 
-export default function OrderQuestionLayout({items, onComplete}: Props) {
+export default function OrderQuestionLayout({items, onComplete, firsLine}: Props) {
 
     const initData: GameState = useMemo(() => {
         return {
@@ -84,6 +85,7 @@ export default function OrderQuestionLayout({items, onComplete}: Props) {
     return <div>
             
                 <div aria-live='assertive' className={style.itemgroup} id="order-div">
+                    <div className={style.first}>{firsLine}</div>
                     {
                         state.items.map((item, index) => {
 

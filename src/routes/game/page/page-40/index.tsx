@@ -20,12 +20,11 @@ export default function Page1({ onNext }: Props) {
             <OrderQuestionLayout
                 items={[
 
-                    { correctPlace: 4, text: 'Gdzieś między rautem balem, koncertem, kościołem,' },
-                    { correctPlace: 1, text: 'Oddano mnie na parę tygodni do dziadka,' },
-                    { correctPlace: 0, text: 'Kiedyś, gdy siostra miała odrę, czy też różę,' },
-                    { correctPlace: 3, text: 'Prawie rok przemieszkałem, nim się w końcu matka' },
-                    { correctPlace: 2, text: 'Miałem tam być przez miesiąc, lecz zostałem dłużej' },
-                    { correctPlace: 5, text: 'Spostrzegła przerażona, że z domu zniknąłem. ' },
+                    { correctPlace: 3, text: 'Gdzieś między rautem balem, koncertem, kościołem,' },
+                    { correctPlace: 0, text: 'Oddano mnie na parę tygodni do dziadka,' },
+                    { correctPlace: 2, text: 'Prawie rok przemieszkałem, nim się w końcu matka' },
+                    { correctPlace: 1, text: 'Miałem tam być przez miesiąc, lecz zostałem dłużej' },
+                    { correctPlace: 4, text: 'Spostrzegła przerażona, że z domu zniknąłem. ' },
 
 
 
@@ -33,7 +32,8 @@ export default function Page1({ onNext }: Props) {
 
 
                 ]}
-                onComplete={() => (setShowNext(true))} />
+                onComplete={() => (setShowNext(true))}
+                firsLine="Kiedyś, gdy siostra miała odrę, czy też różę," />
 
 
         </div>

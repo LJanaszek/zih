@@ -15,17 +15,20 @@ export default function Page1({ onNext }: Props) {
         <p className="task-paragraph">Ułóż w kolejności wersy fragmentu mojego wiersza "Popiół i wiatr"</p>
             <OrderQuestionLayout
                 items={[
-                    { correctPlace: 0, text: 'Ojciec mój szanowany był “Pod Filarami”' },
-                    { correctPlace: 5, text: 'Może mniej katolicki - ale bardziej rzymski' },
-                    { correctPlace: 1, text: '(każdy stary Warszawiak go ode mnie woli),' },
-                    { correctPlace: 4, text: 'Piękny profil miał młody pan doktor Słonimski,' },
-                    { correctPlace: 3, text: 'W dawnych czasach poczciwych moskiewskiej niewoli,' },
-                    { correctPlace: 2, text: 'Żyła kiedyś Warszawa jego dowcipami,' },
+                    // { correctPlace: 0, text: 'Ojciec mój szanowany był “Pod Filarami”' },
+                    { correctPlace: 4, text: 'Może mniej katolicki - ale bardziej rzymski' },
+                    { correctPlace: 0, text: '(każdy stary Warszawiak go ode mnie woli),' },
+                    { correctPlace: 3, text: 'Piękny profil miał młody pan doktor Słonimski,' },
+                    { correctPlace: 2, text: 'W dawnych czasach poczciwych moskiewskiej niewoli,' },
+                    { correctPlace: 1, text: 'Żyła kiedyś Warszawa jego dowcipami,' },
 
 
 
                 ]}
-                onComplete={() => (setShowNext(true))} />
+                onComplete={() => (setShowNext(true))}
+                firsLine="Ojciec mój szanowany był “Pod Filarami”"
+                />
+                
 
 
         </div>
