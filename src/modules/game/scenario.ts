@@ -287,7 +287,43 @@ export const SCENARIO: GameScenario = {
             id: '6.1', //tekst
             type: GAME_STEP_TYPE.PAGE,
             pageId: 'page-44',
-            nextStep: '6.1'
+            nextStep: '6.2'
+        },
+        {
+            id: '6.2', //tekst
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'page-45',
+            nextStep: '6.3'
+        },
+        {
+            id: '6.3', //tekst
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'page-46',
+            nextStep: '6.4'
+        },
+        {
+            id: '6.4', //tekst
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'page-47',
+            nextStep: '6.5'
+        },
+        {
+            id: '6.5', //tekst
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'page-48',
+            nextStep: '6.6'
+        },
+        {
+            id: '6.6', //tekst
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'page-49',
+            nextStep: '6.7'
+        },
+        {
+            id: '6.7', //tekst
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'page-50',
+            nextStep: '6.8'
         },
         
     ]

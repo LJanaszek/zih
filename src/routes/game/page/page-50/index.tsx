@@ -1,29 +1,83 @@
+import { useState } from "react";
 import Box from "../../../../components/layout/box"
 import TextPage from "../../../../components/layout/text-page"
-import slonimski from "../../../../assets/slonimski.png"
+import Popup from "../../../../components/elements/popup";
+import cryptex from "../../../../assets/cryptex.png"
+import arrow from "../../../../assets/arrow.png"
+
+
 type Props = {
-    onNext(): void
-}
-
+    onNext(): void;
+};
+var n = 0;
 export default function Page1({ onNext }: Props) {
+    const [next, setNext] = useState(false)
+
+    function crypUp() {
+        let list = ["A", "B", "C", "D", "E", "F"];
+        n++
+        if (n > 5) {
+            n = 0
+        };
+
+        document.getElementById('crypText')!.innerHTML = list[n];
+    }
+
+
+    function crypDown() {
+        let list = ["A", "B", "C", "D", "E", "F"];
+        n--
+        if (n < 0) {
+            n = 5
+        };
+        document.getElementById('crypText')!.innerHTML = list[n];
+    };
+
+
+    function ifGood() {
+        if (n === 3) {
+            setNext(true);
+        }
+        else {
+            setNext(false)
+        }
+    }
+
+
     return <TextPage>
-        <div className="page-view">
-        <img className='page-img' src={slonimski} alt="" />
-
-            <p>W kawiarni “Ziemiańskiej” czeka na mnie tajemniczy posłaniec z jeszcze bardziej tajemniczą przesyłką. Kiedy go znajdziesz powiedz, że cię przysyła Antoni Słonimski i pyta kto zacz i co to za liścik.
-
-            </p>
-
-            {/* <figure>
-                <blockquote>
-                    <p>Cały trick polega na tym, że cofnęliśmy czas. Spóźniamy się tu z czasem o pewien interwał, którego wielkości niepodobna określić.</p>
-                </blockquote>
-                <figcaption>Sanatorium pod klepsydrą, Bruno Schulz</figcaption>
-            </figure> */}
-
-        </div>
+        <Box>
+            <h2>Cryptext</h2>
+            
+            <div className="cryptex3">
+                <div className="crypInside">
+                    <div className="crypImgLeft"> <img src={cryptex} alt="" /></div>
+                    <div className="crypBlock"><p>D</p></div>
+                   
+                    
+                    <div className="crypBlock"><p>A</p></div>
+                    <div className="crypBlock"><p>A</p></div>
+                    <div className="crypBlock"><p>A</p></div>
+                     <div className="crypBlock" >
+                        <button className="arr_up" onClick={() => { crypUp() }}>
+                            <img src={arrow} /></button>
+                            <p id="crypText">A</p>
+                            <button className="arr_down" onClick={() => { crypDown() }}>
+                                <img src={arrow} /></button></div>
+                    <div className="crypImgRight"> <img src={cryptex} alt="" /></div>
+                </div>
+                
+            </div>
+            
+        </Box>
         <div className="button-list">
-            <button className="button-hand" onClick={onNext}></button>
+            <button className="button-hand" onClick={ifGood}></button>
         </div>
+        {next && <Popup onClick={onNext}>
+            <button className="button" onClick={() => { setNext(false) }}>Zamknij Popup<i className="icon map" /></button>
+        </Popup>}
+        {/* popup */}
     </TextPage>
+
 }
+
+

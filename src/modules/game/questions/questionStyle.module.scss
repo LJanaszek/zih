@@ -100,8 +100,9 @@
       margin: 0;
       position: fixed;
       bottom: 0;
-      right: 0vh;
+      left: 0vh;
       z-index: 1;
+      transform: scaleX(-1);
       width: 40vh;
       height: 40vh;
     }
