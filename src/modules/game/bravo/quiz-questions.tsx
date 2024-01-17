@@ -6,9 +6,12 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useAnswer } from "../../main/hooks/use-answer";
 import { useSaveAnswer } from "../hooks/use-save-answer";
+import { Popup } from "../../../molecules/popup/popup";
+
 import { Link } from "react-router-dom";
 
-
+import incorrect from "../../../assets/incorrect.png"
+import correct from "../../../assets/correct.png"
 
 export interface Props2 {
   id: string;
@@ -46,13 +49,15 @@ export function QuizQuestion({ id, onComplete, onNext, showPopup }: Props2) {
   if (!q) {
     return <p>brak pytania w bazie</p>;
   }
-
+if (!showQuestion){
+  console.log("dupa")
+}
   return (
     <>
 
-      <QuizAnswerDummy question={q} userAnswerId={answer}/>
-
-      {<QuizAnswerDummy question={q} userAnswerId={answer}/> && <div className="button-list"><button id="nextButton" className="button-hand quiz-button" onClick={onNext}></button></div>}
+      <QuizQuestionDummy question={q} onConfirm={onQuestionConfirm} />
+      {!showQuestion && showPopup !== false && <Popup><QuizAnswerDummy question={q} userAnswerId={answer}></QuizAnswerDummy> <button onClick={onNext} className="button-hand"></button></Popup>}
+      
     </>
   );
 }
@@ -115,11 +120,13 @@ export function QuizQuestionDummy({ question, onConfirm }: ForQuizQuest) {
       </div>
 
       {showConfirm && (
-        <section className={styles.buttonLike}>
-            <button className={styles.buttonNext} onClick={onConfirmClicked}>
-              POTWIERDŹ
-            </button>
-        </section>
+       
+
+       <div className="button-list">
+       <button className="button-hand" onClick={onConfirmClicked} ></button>
+   </div>
+
+       
       )}
       {/* {showPopup && <Popup></Popup>} */}
     </div>
@@ -149,17 +156,17 @@ export function QuizAnswerDummy({ question, userAnswerId }: QuizAnswerDummyProps
 
   return <div className={styles.answerPopup}>
     
-    {/* <p>Twoja odpowiedz to: {userAnswerText}</p> */}
+    <p>Twoja odpowiedz to: {userAnswerText}</p>
 
-    {isUserAnswerCorrect && <div><p>SUPER!</p><p>Twoja odpowiedź to: {userAnswerText}</p></div>}
+    <div><p>SUPER!</p><p>Twoja odpowiedź to: {userAnswerText}</p></div>
 
     {!isUserAnswerCorrect && showDesc && <div>
-      {/* <img src={incorrect} alt="" /> */}
+  
       <p>Poprawną odpowiedzą było: {correctAnswerText}</p>
       <p>Ponieważ: {questionDescription}</p>
     </div>}
     {!isUserAnswerCorrect && !showDesc && <div>
-      {/* <img src={incorrect} alt="" /> */}
+     
       <p>Poprawną odpowiedzą było: {correctAnswerText}</p>
     </div>}
   </div>

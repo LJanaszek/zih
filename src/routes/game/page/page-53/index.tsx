@@ -11,8 +11,9 @@ export default function Page1({ onNext }: Props) {
     const [show, setShow] = useState(false)
     return <TextPage>
         <QuizQuestion id="1" onComplete={()=>{setShow(true)}} />
+        {show &&
         <div className="button-list">
             <button className="button-hand" onClick={onNext}></button>
-        </div>
+        </div>}
     </TextPage>
 }

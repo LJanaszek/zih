@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 type Props = React.PropsWithChildren<{
-    onClick(): void,
+    onClick?(): void,
     padding?: 'small'
 }>;
 
