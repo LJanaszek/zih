@@ -325,6 +325,30 @@ export const SCENARIO: GameScenario = {
             pageId: 'page-50',
             nextStep: '6.8'
         },
+        {
+            id: '6.8', //tekst
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'page-51',
+            nextStep: '6.9'
+        },
+        {
+            id: '6.9', //tekst
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'page-52',
+            nextStep: '6.10'
+        },
+        {
+            id: '6.10', //tekst
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'page-53',
+            nextStep: '6.11'
+        },
+        {
+            id: '6.11', //tekst
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'page-54',
+            nextStep: '6.12'
+        },
         
     ]
 }

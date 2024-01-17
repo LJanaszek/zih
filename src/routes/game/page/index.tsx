@@ -57,6 +57,11 @@ const Page47 = lazy(() => import('./page-47'));
 const Page48 = lazy(() => import('./page-48'));
 const Page49 = lazy(() => import('./page-49'));
 const Page50 = lazy(() => import('./page-50'));
+const Page51 = lazy(() => import('./page-51'));
+const Page52 = lazy(() => import('./page-52'));
+const Page53 = lazy(() => import('./page-53'));
+const Page54 = lazy(() => import('./page-54'));
+// const Page55 = lazy(() => import('./page-55'));
 const PageEnd = lazy(() => import('./page-end'));
 
 type Props = {
@@ -110,7 +115,7 @@ export default function PageView({ id }: Props) {
                 return <Page16 onNext={onNext} />
 
 
-                case 'page-17':
+            case 'page-17':
                 return <Page17 onNext={onNext} />
             case 'page-18':
                 return <Page18 onNext={onNext} />
@@ -143,7 +148,7 @@ export default function PageView({ id }: Props) {
             case 'page-32':
                 return <Page32 onNext={onNext} />
 
-                case 'page-33':
+            case 'page-33':
                 return <Page33 onNext={onNext} />
             case 'page-34':
                 return <Page34 onNext={onNext} />
@@ -160,7 +165,7 @@ export default function PageView({ id }: Props) {
             case 'page-40':
                 return <Page40 onNext={onNext} />
 
-                case 'page-41':
+            case 'page-41':
                 return <Page41 onNext={onNext} />
             case 'page-42':
                 return <Page42 onNext={onNext} />
@@ -180,9 +185,18 @@ export default function PageView({ id }: Props) {
                 return <Page49 onNext={onNext} />
             case 'page-50':
                 return <Page50 onNext={onNext} />
+
+            case 'page-51':
+                return <Page51 onNext={onNext} />
+            case 'page-52':
+                return <Page52 onNext={onNext} />
+            case 'page-53':
+                return <Page53 onNext={onNext} />
+            case 'page-54':
+                return <Page54 onNext={onNext} />
             case 'end':
                 return <PageEnd onNext={onNext} />
-                
+
             default:
                 return <PagePlaceholder onNext={onNext} />
         }

@@ -460,3 +460,20 @@ button {
     // width: 20%;
   }
 }
+.poemGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  div{
+    font-size: 16px;
+    gap: 0;
+    p{
+      margin: 0.3em;
+      line-height: 1.4em;
+    }
+    .input-field{
+      #fname{
+    text-transform: uppercase;}
+  }
+  }
+  
+}

@@ -1,0 +1,130 @@
+.answer {
+  background-color: var(--color6);
+  padding-bottom: 4em;
+  font-size: .8em;
+  line-height: normal;
+  .checkbox {
+    display: none;
+  }
+  form {
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 15%;
+  }
+  .questionText {
+    padding: .5em 2em;
+    border-bottom: 4px solid var(--color1);
+  }
+  .questionAnswer {
+    height: 100%;
+    display: grid;
+    gap: 1em;
+    grid-template-columns: 1fr 1fr;
+    padding: 2em 2.2em;
+  }
+  .ans,
+  .ansCor {
+    background-color: var(--color2);
+    // height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    align-items: center;
+    border-radius: 2em;
+    line-height: normal;
+    margin: 0;
+  }
+  .ans > p,
+  .ansCor > p {
+    font-size: 0.8em;
+    line-height: normal;
+    // margin: 0 auto;
+    margin: 0;
+    margin-left: 2em;
+    text-align: left;
+  }
+  .ans > span,
+  .ansCor > span {
+    border: 4px solid var(--color1);
+    border-radius: 2em;
+    text-align: center;
+    background-color: var(--color6);
+    padding: 0.35em;
+    height: max-content;
+    width: 2em;
+  }
+  input {
+    display: none;
+    transform: translatey(20%);
+    margin-right: 1em;
+  }
+  input[type="radio"] {
+    appearance: none;
+    background: var(--quizButtonBackground);
+    width: 2em;
+    height: 2em;
+  }
+  input:checked {
+    background: var(--textColor);
+    transition: 0.5s;
+    // background-size: 9px 9px;
+  }
+  // input:checked  {
+  //   background: grey;
+  //   transition: 0.5s;
+  // }
+  img {
+    border-radius: var(--buttonBorderRadius);
+    height: 15em;
+  }
+  section {
+    // padding: 2em;
+    position: absolute;
+    right: 3em;
+    margin-bottom: 2em;
+  }
+  .answerBlock{
+    display: none;
+    color: var(--color6);
+    background-color: var(--color1);
+    padding: 1em;
+    border-radius: 2em;
+    margin: 0 auto;
+    width: 75vh;
+  }
+  .answerDiv{
+    display: grid;
+    // grid-template-rows: 1fr 1fr;
+    img{
+      margin: 0;
+      position: fixed;
+      bottom: 0;
+      left: 0vh;
+      z-index: 1;
+      transform: scaleX(-1);
+      width: 40vh;
+      height: 40vh;
+    }
+    p{
+      height: fit-content;
+    }
+  }
+}
+.buttonNext {
+  display: none;
+}
+// .button_hand {
+//   display: none;
+//   position: static;
+//   bottom: 0;
+//   right: 0;
+//   height: 2em;
+//   border: none;
+//   width: 4em;
+//   margin: 0.3em 0;
+//   background-image: url("../../../assets/right_hand.png");
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   background-color: white;
+// }
