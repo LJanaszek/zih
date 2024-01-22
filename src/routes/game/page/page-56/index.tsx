@@ -10,7 +10,7 @@ type Props = {
 export default function Page1({ onNext }: Props) {
     const [show, setShow] = useState(false)
     return <Box>
-        <QuizQuestion id="2" onComplete={()=>{setShow(true)}} onNext={onNext} />
+        <QuizQuestion id="4" onComplete={()=>{setShow(true)}} onNext={onNext} />
         {show &&
         <div className="button-list">
             <button className="button-hand" onClick={onNext}></button>

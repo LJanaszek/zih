@@ -20,28 +20,42 @@
     width: 50%;
 }
 .imgWithDesc{
-    margin-top: 1em;
+    display: grid;
     border: 2px solid;
     border-radius: 2em;
-    padding:  1em 0;
+    grid-template-rows: 1fr 3fr;
+    /* padding:  1em 0; */
     padding-bottom: 0;
     margin-bottom: .5em;
-    height: 15em;
+    height: 10em;
 }
+.arrows{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    height: min-content;
+}
+
 .indexNumber{
     background-color: white;
     width: 2em;
     margin: 0 auto;
 }
-.buttonGroup >
-span:only-child{
-    font-size: 2.5em;
-}
-.arrow{
+
+.arrow1, .arrow2{
     color: white;
+    transform: rotate(-90deg);
     background-color: var(--textColor);
     border: none;
-    height: 4em;
+    height: 2em;
+    background-image: url("../../assets/arrow.png") ;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.arrow2{
+    /* transform:scale(-1) ; */
+    transform: rotate(-90deg) scaleY(-1);
+
 }
 .section2{
     text-align: end;
@@ -70,15 +84,8 @@ span>img{
   .pick-up{
     font-size: 1em;
 }
-.arrow_up{
-    transform: rotate(-90deg);
-}
-.arrow_down{
-    transform: rotate(90deg);
-}
-.arrow_up, .arrow_down{
-    width: 1.5em;
-}
+
+
 .buttons{
     display: flex;
     gap: 2em;

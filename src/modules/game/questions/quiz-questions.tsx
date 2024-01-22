@@ -71,7 +71,6 @@ export function QuizQuestionDummy({ question }: ForQuizQuest) {
   return (
     <div className={styles.answer}>
       <div className={styles.questionText}>
-        <h1>QUIZ</h1>
         <p>{question.text}</p>
       </div>
       <div className={styles.questionAnswer}>

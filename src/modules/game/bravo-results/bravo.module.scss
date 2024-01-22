@@ -1,0 +1,42 @@
+.bravo, #button{
+      background-color: var(--color1);
+   
+}
+#button{
+    margin-bottom:3em
+}
+.bravoMain{
+    color: white;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    height: 80vh;
+    .left{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h2{
+            margin: 0;
+            color: white;
+            // font-size: 2em;
+        }
+        img{
+            width: 5em;
+        }
+    }
+    .right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p{
+            line-height: 1.3em;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+            margin-right: 3em;
+        }
+    }
+    .left, .right{
+        // min-height:80vh ;
+    }
+}

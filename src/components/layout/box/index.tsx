@@ -6,7 +6,7 @@ const Container = styled.div`
     background: white;
 
     
-    padding: 1em 2em;
+    // padding: 1em 2em;
 
 
 

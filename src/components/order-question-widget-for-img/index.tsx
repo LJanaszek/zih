@@ -95,18 +95,20 @@ export default function OrderQuestionLayoutWIthImg({items, onComplete, onInCompl
                                 return <div className={style.item} key={index}>
                                     <div className={style.indexNumber}>{numbers[index]}</div>
                                     <div className={style.buttons}>
-                                    <button onClick={() => moveUp(index)} className={style.arrow}>
-                                    <span >   
-                                        <img src={up} alt="" className={style.arrow_up}/>
-                                        </span>
-                                    </button>
-                                    <button onClick={() => moveDown(index)}  className={style.arrow}>
-                                    <span >
-                                        <img src={down} alt="" className={style.arrow_down}/>
-                                        </span>
-                                    </button>
+
                                     </div>
                                     <div className={style.imgWithDesc}>
+                                        <div className={style.arrows}>
+                                    <button onClick={() => moveUp(index)} className={style.arrow1}>
+                                   
+                                    </button>
+                                    <button onClick={() => moveDown(index)}  className={style.arrow2}>
+                                    
+                                 
+                                        
+                                    </button>
+                                    </div>
+                                    
                                     <Card>
                                         <GameItem item={item} />
                                         

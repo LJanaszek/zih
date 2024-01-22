@@ -44,8 +44,8 @@ export default function Page1({ onNext }: Props) {
     }
 
 
-    return <TextPage>
-        <Box>
+    return <>
+       <div>
             <h2>Cryptext</h2>
             
             <div className="cryptex3">
@@ -61,13 +61,13 @@ export default function Page1({ onNext }: Props) {
                 
             </div>
             
-        </Box>
+            </div>
         <div className="button-list">
             <button className="button-hand" onClick={onNext}></button>
         </div>
         
         {/* popup */}
-    </TextPage>
+    </>
 
 }
 

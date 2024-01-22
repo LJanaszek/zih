@@ -7,10 +7,9 @@ type Props = {
 }
 var showButton = false;
 export default function Page1({ onNext }: Props) {
-    return <TextPage>
-        <Box>
+    return <Box>
         <QuizQuestion id='2' onNext={onNext} showPopup/>
 
         </Box>
-    </TextPage>
+   
 }

@@ -34,7 +34,9 @@ h1 {
   margin: 0;
   padding: 0;
 }
-
+*{
+  font-size: 16px;
+}
 html {
   font-size: 16pt;
   font-family: Gothic;
@@ -43,7 +45,7 @@ html {
 }
 
 body {
-  background: var(--color3);
+  // background: var(--color3);
 }
 
 #root {
@@ -56,7 +58,7 @@ body {
   max-width: 1400px;
   min-width: 320px;
   margin: 0 auto;
-  background: var(--color6);
+  // background: var(--color2);
 
   & > main {
     flex: 1 1 auto;
@@ -100,7 +102,7 @@ p {
     background-image: url("./assets/right_hand.png");
     background-repeat: no-repeat;
     background-size: contain;
-    background-color: white;
+    background-color: transparent;
   }
 }
 
@@ -195,6 +197,9 @@ button {
   }
 }
 .cryptex3 {
+  img{
+    width: 5em;
+  }
   // display: grid;
   .crypInside {
     margin: 0 auto;
@@ -348,7 +353,14 @@ button {
   }
 }
 .paragraph-find {
-  padding: 0 2em;
+  padding: 0;
+  margin: 0;
+  height: fit-content;
+  line-height: 1.5em;
+  background-color: var(--color2);
+  display: flex;
+  align-items: center;
+  padding-left: 2em;
 }
 .button-list-find {
   margin-top: 2em;
@@ -476,4 +488,14 @@ button {
   }
   }
   
+}
+.memory{
+  width: 100%;
+  p{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    height: 5em;
+    padding-left: 2em;
+  }
 }

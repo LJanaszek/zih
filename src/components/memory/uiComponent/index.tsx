@@ -3,7 +3,7 @@ import { Flip } from 'react-awesome-reveal';
 import ModalComponent from '../resultModal';
 import { Images } from '../Images';
 import { DefaultImg } from '../Images';
-import '../uiComponent/ui.css';
+import style from './ui.module.css';
 
 type Actions =
   | { type: 'CARD_CLICKED', index: number }
@@ -111,14 +111,14 @@ export function Uirender ({onNext}:Props) {
   // }
 
   return (
+<>
 
-
-    <div className="container">
+    <div className={style.container}>
       {state.mCards && state.mCards.map((eachCard, i) =>
         // <Flip key={eachCard.id}>
-          <div className='memory-div'>
-            <figure className="figure-block">
-              <img className="img-block"
+          <div className={style.memory_div}>
+            <figure className={style.figure_block}>
+              <img className={style.img_block}
                 src={eachCard.open ? eachCard.imgUrl : DefaultImg}
                 alt="Memory"
                 onClick={() => handleClick(i, eachCard.open || false)} />
@@ -126,7 +126,7 @@ export function Uirender ({onNext}:Props) {
           </div>
         // </Flip>
       )}
-
+</div>
       {state.resultStatus &&
        <ModalComponent
         isModalOpen = { isResultOpen }
@@ -138,8 +138,8 @@ export function Uirender ({onNext}:Props) {
         </div>
       }
        
-    </div>
-   
+    
+   </>
   );
 }
 export default Uirender;

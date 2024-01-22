@@ -3,17 +3,24 @@ import TextPage from "../../../../components/layout/text-page"
 import slonimski from "../../../../assets/slonimski.png"
 import { QuizQuestion } from "../../../../modules/game/bravo/quiz-questions"
 import { useState } from "react"
+import BravoResults from "../../../../modules/game/bravo-results"
 type Props = {
     onNext(): void
 }
 
 export default function Page1({ onNext }: Props) {
     const [show, setShow] = useState(false)
-    return <Box>
-        <QuizQuestion id="2" onComplete={()=>{setShow(true)}} onNext={onNext} />
-        {show &&
-        <div className="button-list">
-            <button className="button-hand" onClick={onNext}></button>
-        </div>}
-    </Box>
+    let sum:number = 0
+        for (let i = 1; i <= 4; i++) {
+        let a=i.toString()
+        // console.log(a)
+        let single:number = Math.floor((sessionStorage[a]))
+        sum+= single}
+        let idFor = sum.toString()
+    return (
+        <>
+    <BravoResults id={idFor} onComplete={onNext}/>
+    
+    </>
+    )
 }

@@ -20,15 +20,15 @@ export const QUESTIONS: IQuizQuestion[] = [
         answers: [
             {
                 id: 'A',
-                text: 'Czzytam',
+                text: 'Czytam',
                 points: 2,
             }, {
                 id: 'B',
-                text: 'Śledziowatych',
+                text: 'Czasami czytam',
                 points: 1,
             }, {
                 id: 'C',
-                text: 'Morskich',
+                text: 'Raczej nie czytam',
                 points: 0,
             }
         ]
@@ -87,6 +87,11 @@ export const QUESTIONS: IQuizQuestion[] = [
                 id: 'B',
                 text: 'Zależy co',
                 points: 1
+
+            }, {
+                id: 'C',
+                text: 'Czytam, gdy muszę',
+                points: 0
 
             }
         ]

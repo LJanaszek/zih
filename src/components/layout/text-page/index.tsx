@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const TextPage = styled.div`
     padding: 1rem;
-
+    background-color: var(--color2);
+    height: 100vh;
     h2 {
         padding: 1em 1.5em;
         margin: 0;
