@@ -34,7 +34,7 @@ h1 {
   margin: 0;
   padding: 0;
 }
-*{
+* {
   font-size: 16px;
 }
 html {
@@ -197,8 +197,15 @@ button {
   }
 }
 .cryptex3 {
-  img{
+  img {
     width: 5em;
+  }
+  .arr_up,
+  .arr_down {
+    img {
+      width: 2em;
+      padding: 0;
+    }
   }
   // display: grid;
   .crypInside {
@@ -256,6 +263,13 @@ button {
   }
 }
 .cryptex2 {
+  .arr_up,
+  .arr_down {
+    img {
+      width: 2em;
+      padding: 0;
+    }
+  }
   height: 60vh;
   // background: url("./assets/krypteks.png");
   background-repeat: no-repeat;
@@ -263,6 +277,13 @@ button {
   background-position: center;
 }
 .cryptex {
+  .arr_up,
+  .arr_down {
+    img {
+      width: 2em;
+      padding: 0;
+    }
+  }
   display: grid;
   align-items: center;
   // padding: 2em;
@@ -390,7 +411,8 @@ button {
   display: none;
 }
 .password-view {
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   background-color: var(--color1);
   border: 2px solid var(--color1);
   border-radius: 2em;
@@ -473,30 +495,37 @@ button {
     // width: 20%;
   }
 }
-.poemGrid{
+.poemGrid {
+  margin: 0 2em;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  div{
+  div {
     font-size: 16px;
     gap: 0;
-    p{
+    p {
       margin: 0.3em;
       line-height: 1.4em;
     }
-    .input-field{
-      #fname{
-    text-transform: uppercase;}
+    .input-field {
+      #fname {
+        text-transform: uppercase;
+      }
+    }
   }
-  }
-  
 }
-.memory{
+.memory {
   width: 100%;
-  p{
+  p {
     display: flex;
     align-items: center;
     margin: 0;
     height: 5em;
     padding-left: 2em;
+  }
+}
+.reaction{
+  img{
+    width: 9em;
+    height: 11em;
   }
 }

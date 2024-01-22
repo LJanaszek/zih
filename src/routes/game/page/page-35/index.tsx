@@ -31,7 +31,7 @@ const Container = styled.div`
             margin-right:1em;
             display:flex;
             // position: relative;
-            height:100vh;
+            height:70vh;
             grid-column: 2;
 
             align-self: stretch;

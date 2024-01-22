@@ -10,8 +10,8 @@ type AppConfig = {
     onGameStateChanged(data: BirdTaskState): void
 }
 
-export const APP_WIDTH = 350;
-export const APP_HEIGHT = 250;
+export const APP_WIDTH = 331;
+export const APP_HEIGHT = 209;
 
 export default class App extends PIXI.Application {
 

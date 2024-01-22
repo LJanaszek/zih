@@ -14,9 +14,9 @@ export default function Page1({ onNext }: Props) {
 //     const child = document.createElement('div');
 // child.innerText = 'Kiedyś, gdy siostra miała odrę, czy też różę,';
 // document.getElementById('order-div')!.insertBefore(child, .children[0])
-    return <>
+    return <Box>
         <div>
-            <p className="task-paragraph">Ułóż w kolejności wersy fragmentu mojego wiersza "Popiół i wiatr"</p>
+            <p className="paragraph-find">Ułóż w kolejności wersy fragmentu mojego wiersza "Popiół i wiatr"</p>
             <OrderQuestionLayout
                 items={[
 
@@ -43,5 +43,5 @@ export default function Page1({ onNext }: Props) {
             </div>}
 
 
-    </>
+    </Box>
 }

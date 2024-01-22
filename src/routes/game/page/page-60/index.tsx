@@ -37,8 +37,8 @@ export default function Page1({ onNext }: Props) {
             </div>
 
         </div>
-        <div className="button-list">
+        {/* <div className="button-list">
             <button className="button-hand" onClick={onNext}></button>
-        </div>
+        </div> */}
     </TextPage>
 }

@@ -10,7 +10,7 @@ export default function Page1({ onNext }: Props) {
         <div className="page-view">
         <img className='page-img' src={slonimski} alt="" />
 
-            <p>W kawiarni “Ziemiańskiej” czeka na mnie tajemniczy posłaniec z jeszcze bardziej tajemniczą przesyłką. Kiedy go znajdziesz powiedz, że cię przysyła Antoni Słonimski i pyta kto zacz i co to za liścik.
+            <p>W kawiarni Ziemiańskiej czeka na mnie tajemniczy posłaniec z jeszcze bardziej tajemniczą przesyłką. Kiedy go znajdziesz, powiedz, że Cię przysyła Antoni Słonimski i pyta, kto zacz i co to za liścik.
 
             </p>
 

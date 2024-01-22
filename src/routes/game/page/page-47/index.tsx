@@ -8,10 +8,10 @@ type Props = {
 
 export default function Page1({ onNext }: Props) {
     const [showButton, setShowButton] = useState(false)
-    return <TextPage>
+    return <Box>
         <div>
 
-            <p>
+            <p className="paragraph-find">
                 W poniższym wierszu brakuje kluczowego słowa. Odgadnij je.
             </p>
             <div className="poemGrid">
@@ -53,7 +53,7 @@ export default function Page1({ onNext }: Props) {
                     </p>
                     <div className="input-field">
                         <label>
-                            HASŁO
+                            HASŁO:
                         <input type="text" id="fname" onChange={() => {
                             let x = document.getElementById("fname")!.value;
                             x = x.toUpperCase();
@@ -81,5 +81,5 @@ export default function Page1({ onNext }: Props) {
         <div className="button-list">
             <button className="button-hand" onClick={onNext}></button>
         </div>}
-    </TextPage>
+    </Box>
 }

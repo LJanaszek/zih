@@ -2,9 +2,9 @@ import { useMemo, useReducer } from "react"
 import styled from "styled-components"
 import Select from 'react-select';
 import sculp1 from "../../../../assets/sculp.png";
-import sculp2 from "../../../../assets/sculp.png";
-import sculp3 from "../../../../assets/sculp.png";
-import sculp4 from "../../../../assets/sculp.png";
+import sculp2 from "../../../../assets/sculp2.png";
+import sculp3 from "../../../../assets/sculp3.png";
+import sculp4 from "../../../../assets/sculp4.png";
 
 type Props = {
     relations: number[],
@@ -49,6 +49,7 @@ const Container = styled.div`
         display:flex;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
+        justify-content:center;
 
         &>* {
             display: flex;
@@ -172,7 +173,7 @@ export default function Page92Widget2({ relations, interpretations, items, onCom
                     return <>
                         <div>
                             <div className="reaction">
-                                <img src={images[0]} alt="" />
+                                <img src={images[slot.id]} alt="" />
                             </div>
                             <div className="intension">
                                 <Select

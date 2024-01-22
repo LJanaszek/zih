@@ -19,7 +19,7 @@ const style:CSS.Properties ={
 export default function MemoryGame({onNext}:Props) {
   return <div className='memory'>
       <p style={style}>
-      Odkryj słowa w memo i zapamiętaj je. Przydadzą ci się w następnej zagadce. 
+      Odkryj słowa w memorach i zapamiętaj je. Przydadzą ci się w następnej zagadce. 
       </p>
     <Uirender onNext={onNext}/>
     </div>

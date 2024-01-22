@@ -35,7 +35,7 @@ export default function Page1({ onNext }: Props) {
 
 
     function ifGood() {
-        if (n === 3) {
+        if (n === 1) {
             setNext(true);
         }
         else {
@@ -44,19 +44,19 @@ export default function Page1({ onNext }: Props) {
     }
 
 
-    return <TextPage>
+    return <>
         <Box>
             <h2>Cryptext</h2>
             
             <div className="cryptex3">
                 <div className="crypInside">
                     <div className="crypImgLeft"> <img src={cryptex} alt="" /></div>
-                    <div className="crypBlock"><p>D</p></div>
+                    <div className="crypBlock"><p>5</p></div>
                    
                     
+                    <div className="crypBlock"><p>K</p></div>
                     <div className="crypBlock"><p>A</p></div>
-                    <div className="crypBlock"><p>A</p></div>
-                    <div className="crypBlock"><p>A</p></div>
+                    <div className="crypBlock"><p>R</p></div>
                      <div className="crypBlock" >
                         <button className="arr_up" onClick={() => { crypUp() }}>
                             <img src={arrow} /></button>
@@ -73,10 +73,10 @@ export default function Page1({ onNext }: Props) {
             <button className="button-hand" onClick={ifGood}></button>
         </div>
         {next && <Popup onClick={onNext}>
-            <button className="button" onClick={() => { setNext(false) }}>Zamknij Popup<i className="icon map" /></button>
+            Przejdź dalej
         </Popup>}
         {/* popup */}
-    </TextPage>
+    </>
 
 }
 

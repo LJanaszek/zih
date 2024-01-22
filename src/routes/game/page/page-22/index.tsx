@@ -9,9 +9,9 @@ type Props = {
 
 export default function Page1({ onNext }: Props) {
     const [showNext, setShowNext] = useState(false)
-    return <TextPage>
+    return <Box>
         <div className="page">
-            <p>Ułóż stronę gazety Ha-Cefira z podartych fragmentów</p>
+            <p className="paragraph-find">Ułóż stronę gazety Ha-Cefira z podartych fragmentów</p>
             <Puzzle onComplete={()=>{setShowNext(true)}}></Puzzle>
 
         </div>
@@ -19,5 +19,5 @@ export default function Page1({ onNext }: Props) {
         <div className="button-list">
             <button className="button-hand" onClick={onNext}></button>
         </div>}
-    </TextPage>
+    </Box>
 }

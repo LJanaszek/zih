@@ -63,7 +63,7 @@ export const QUESTIONS: IQuizQuestion[] = [
             }, {
                 id: 'D',
                 text: 'Michalim tańcem',
-                desc: "Tańcowały dwa Michały i miały zakute pały. Julian Tuwim (prawie)",
+                desc: "Tańcowały dwa Michały, ale źle odpowiadały. Julian Tuwim (prawie).",
                 
             }
         ]
@@ -81,7 +81,7 @@ export const QUESTIONS: IQuizQuestion[] = [
             }, {
                 id: 'B',
                 text: 'Marią Morską',
-                desc: " A Ty znowu swoje…W Gdyni stocznię postawili, koniecznie pojedź obejrzeć. ."
+                desc: "Ty znowu swoje…W Gdyni stocznię postawili, koniecznie pojedź zwiedzić."
 
             }, {
                 id: 'C',

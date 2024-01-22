@@ -8,8 +8,8 @@ type Props = {
 
 export default function Page1({ onNext }: Props) {
     const [showButton, setShowButton] = useState(false);
-    return <TextPage>
-        <p>
+    return <Box>
+        <p className="paragraph-find">
             co czyta student pod starym buwem? <br></br> Podstaw odpowiednie litery pod cyfry
         </p>
         <div className="password-view">
@@ -38,7 +38,7 @@ export default function Page1({ onNext }: Props) {
             <div className="button-list">
                 <button className="button-hand" onClick={onNext}></button>
             </div>}
-    </TextPage>
+    </Box>
 }
 
 

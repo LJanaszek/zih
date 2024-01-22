@@ -65,10 +65,10 @@ export function QuizQuestionDummy({ question, onNext }: ForQuizQuest, ) {
 
   return (
     <div className={styles.answer}>
-      <div className={styles.questionText}>
-        <h1>QUIZ</h1>
-        <p>{question.text}</p>
-      </div>
+      {/* <div className={styles.questionText}> */}
+        
+        <p className="paragraph-find">{question.text}</p>
+      {/* </div> */}
       <div className={styles.questionAnswer}>
       
         <form className={styles.answer_block} method="GET">

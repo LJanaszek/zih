@@ -14,7 +14,7 @@ export default function Page1({ onNext }: Props) {
     const [next, setNext] = useState(false)
 
     function crypUp() {
-        let list = ["A", "B", "C", "D", "E", "F"];
+        let list = ["1", "2", "3", "4", "5", "6"];
         n++
         if (n > 5) {
             n = 0
@@ -25,7 +25,7 @@ export default function Page1({ onNext }: Props) {
 
 
     function crypDown() {
-        let list = ["A", "B", "C", "D", "E", "F"];
+        let list = ["1", "2", "3", "4", "5", "6"];
         n--
         if (n < 0) {
             n = 5
@@ -35,7 +35,7 @@ export default function Page1({ onNext }: Props) {
 
 
     function ifGood() {
-        if (n === 3) {
+        if (n === 5) {
             setNext(true);
         }
         else {
@@ -44,8 +44,8 @@ export default function Page1({ onNext }: Props) {
     }
 
 
-    return <TextPage>
-        <Box>
+    return <>
+        <div>
             <h2>Cryptext</h2>
             
             <div className="cryptex3">
@@ -66,15 +66,15 @@ export default function Page1({ onNext }: Props) {
                 
             </div>
             
-        </Box>
+        </div>
         <div className="button-list">
             <button className="button-hand" onClick={ifGood}></button>
         </div>
         {next && <Popup onClick={onNext}>
-            <button className="button" onClick={() => { setNext(false) }}>Zamknij Popup<i className="icon map" /></button>
+            Przejdź dalej
         </Popup>}
         {/* popup */}
-    </TextPage>
+    </>
 
 }
 

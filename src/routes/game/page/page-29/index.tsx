@@ -11,7 +11,7 @@ type Props = {
 
 export default function Page1({ onNext }: Props) {
     const [showButton, setShowButton] = useState(false)
-    return <TextPage>
+    return <Box>
         <div className="page-view-2">
 
             <p className="paragraph-find">Wyświetlą Ci się wizerunki kolejnych rzeźb. Rozejrzyj się wokół zegara słonecznego i wpisz ich nazwy. Każda jest podpisana.
@@ -47,5 +47,5 @@ export default function Page1({ onNext }: Props) {
         }
         </div>
 
-    </TextPage>
+    </Box>
 }
