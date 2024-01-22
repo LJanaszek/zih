@@ -8,6 +8,7 @@ import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header";
 import ScrollToTop from "../../../../utils/widgets/scroll-to-top";
 import EyeIconSrc from '../../../../assets/icons/eye.svg';
 import slonimski from "../../../../assets/slonimski.png"
+import Box from "../../../../components/layout/box";
 type Props = {
     onNext(): void
 }
@@ -31,7 +32,7 @@ const Container = styled.div`
             margin-right:1em;
             display:flex;
             // position: relative;
-            height:100vh;
+            height:70vh;
             grid-column: 2;
 
             align-self: stretch;
@@ -54,7 +55,7 @@ export default function TaskMain({ onNext }: Props) {
     const [showInfoPopup, setShowInfoPopup] = useState(false);
     const [showPreviewPopup, setShowPreviewPopup] = useState(false);
 
-    return <>
+    return <Box>
         <ScrollToTop />
         <p className="paragraph-find">
             Znajdź na obrazku Abrahama Sterna
@@ -66,5 +67,5 @@ export default function TaskMain({ onNext }: Props) {
 
         </Container>
         {gameState.isComplete && <div className="button-list-find"> <button className="button-hand" onClick={onNext}></button></div>}
-    </>
+    </Box>
 }
