@@ -10,8 +10,8 @@ export default function Page1({ onNext }: Props) {
         <div className="page-view">
         <img className='page-img' src={slonimski} alt="" />
 
-            <p>Pradziad mój był prekursorem cybernetyki. Ojciec mój był lekarzem ludzi biednych, popularnym i lubianym w całej Warszawie. Gdy kiedyś w zaświatach zbierze się rada familijna Słonimskich i gdy poważni ludzie nauki spytają, co zdziałałem dla dobra ludzkości, niewiele będę miał na swoją obronę. 
-
+            <p>
+            I rodzinka w komplecie. A dla Ciebie zagadka, dzięki której zdobędziesz przedostatni znak szyfru do krypteksu!
             </p>
 
             {/* <figure>

@@ -10,7 +10,7 @@ export default function Page1({ onNext }: Props) {
         <div className="page-view">
         <img className='page-img' src={slonimski} alt="" />
 
-            <p>Pierwsza cyferka odkryta Jeszcze cztery znaki i otworzysz krypteks. To się uda tylko tęgiej głowie, więc czas się dokształcić. Jazda na uniwersytet!
+            <p>Pierwsza cyferka odkryta. Jeszcze cztery znaki i otworzysz krypteks. To się uda tylko tęgiej głowie, więc czas się dokształcić. Jazda na Uniwersytet!
 
             </p>
 

@@ -10,8 +10,8 @@ export default function Page1({ onNext }: Props) {
         <div className="page-view">
         <img className='page-img' src={slonimski} alt="" />
 
-            <p>Słyszysz jak bije zegar? Ja też nie. Dlatego poszukaj takiego zegara co w ogóle nie bije. Możnaby pomyśleć, że to zegar pokojowy, a on stoi w parku. I bądź tu mądry!
-
+            <p>
+                Słyszysz, jak bije zegar? Ja też nie. Dlatego poszukaj takiego zegara, co w ogóle nie bije. Możnaby pomyśleć, że to zegar pokojowy, a on stoi w parku. I bądź tu mądry!
             </p>
 
             {/* <figure>

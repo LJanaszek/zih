@@ -10,8 +10,8 @@ export default function Page1({ onNext }: Props) {
         <div className="page-view">
         <img className='page-img' src={slonimski} alt="" />
 
-            <p>Siedzieliśmy raz przy kolacji, gdy nagle wpadł przyjaciel ojca, sybirak Czartkowski., palto rzucił w przedpokoju i zdyszany siadł przy stole. Matka szybko nakryła. Za chwilę załomotały do drzwi kolby karabinowe. “Czy tu się nie ukrył zbiegły nam przestępca?” Trzeba było szybko schować dokumenty, które przyniósł Czartkowski. Tylko gdzie?
-
+            <p>
+                Siedzieliśmy raz przy kolacji, gdy nagle wpadł przyjaciel ojca, sybirak Czartkowski, palto rzucił w przedpokoju i zdyszany siadł przy stole. Matka szybko nakryła. Za chwilę załomotały do drzwi kolby karabinowe. “Czy tu się nie ukrył zbiegły nam przestępca?” Trzeba było szybko schować dokumenty, które przyniósł Czartkowski. Tylko gdzie?
             </p>
 
             {/* <figure>

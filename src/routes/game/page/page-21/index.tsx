@@ -10,8 +10,8 @@ export default function Page1({ onNext }: Props) {
         <div className="page-view">
         <img className='page-img' src={slonimski} alt="" />
 
-            <p>Ha-Cefira, gazetka mojego dziadka. Nie wszyscy ją lubili, bo nie dość, że żydowska, to jeszcze postępowa. Konserwatywni Żydzi za nią nie przepadali, nacjonaliści tym bardziej. Ale żeby drzeć na strzępy to przesada, przecież ten papier robią z drzewostanu.  Szkoda polskich brzóz!
-
+            <p>
+                Ha-Cefira, gazetka mojego dziadka. Nie wszyscy ją lubili, bo nie dość, że żydowska, to jeszcze postępowa. Konserwatywni Żydzi za nią nie przepadali, nacjonaliści tym bardziej. Ale żeby drzeć na strzępy to przesada, przecież ten papier robią z drzewostanu.  Szkoda polskich sosen, panowie narodowcy! 
             </p>
 
             {/* <figure>

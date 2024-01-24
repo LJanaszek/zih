@@ -88,7 +88,7 @@ export function QuizQuestionDummy({ question, onNext }: ForQuizQuest, ) {
                       onClick={(e) => {
                         
                         setName(e.target.value)
-                        document.getElementById("nextButton")!.style.display = 'block';
+                        setShowConfirm(true)
 
                       }
 
@@ -104,13 +104,14 @@ export function QuizQuestionDummy({ question, onNext }: ForQuizQuest, ) {
           })}
         
         </form>
+        {showConfirm &&
         <div className="button-list">
           <button className="button-hand" onClick={()=>{
             sessionStorage.setItem(question.id, name)
             onNext()
             
           }}>  </button>
-        </div>
+        </div>}
 
       </div>
       

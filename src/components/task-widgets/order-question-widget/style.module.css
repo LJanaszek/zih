@@ -50,3 +50,6 @@ span>img{
 .arrowdown{
     transform: rotate(180deg);
 }
+.arrow{
+    margin-right: 2em;
+}

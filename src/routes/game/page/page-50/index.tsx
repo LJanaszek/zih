@@ -14,9 +14,9 @@ export default function Page1({ onNext }: Props) {
     const [next, setNext] = useState(false)
 
     function crypUp() {
-        let list = ["A", "B", "C", "D", "E", "F"];
+        let list = ["5", "6", "7", "8", "9"];
         n++
-        if (n > 5) {
+        if (n > 4) {
             n = 0
         };
 
@@ -25,17 +25,17 @@ export default function Page1({ onNext }: Props) {
 
 
     function crypDown() {
-        let list = ["A", "B", "C", "D", "E", "F"];
+        let list = ["5", "6", "7", "8", "9"];
         n--
         if (n < 0) {
-            n = 5
+            n = 4
         };
         document.getElementById('crypText')!.innerHTML = list[n];
     };
 
 
     function ifGood() {
-        if (n === 1) {
+        if (n === 3) {
             setNext(true);
         }
         else {
@@ -60,7 +60,7 @@ export default function Page1({ onNext }: Props) {
                      <div className="crypBlock" >
                         <button className="arr_up" onClick={() => { crypUp() }}>
                             <img src={arrow} /></button>
-                            <p id="crypText">A</p>
+                            <p id="crypText">5</p>
                             <button className="arr_down" onClick={() => { crypDown() }}>
                                 <img src={arrow} /></button></div>
                     <div className="crypImgRight"> <img src={cryptex} alt="" /></div>

@@ -35,7 +35,7 @@ export default function Page1({ onNext }: Props) {
 
 
     function ifGood() {
-        if (n === 5) {
+        if (n === 4) {
             setNext(true);
         }
         else {
@@ -54,7 +54,7 @@ export default function Page1({ onNext }: Props) {
                     <div className="crypBlock" >
                         <button className="arr_up" onClick={() => { crypUp() }}>
                             <img src={arrow} /></button>
-                            <p id="crypText">A</p>
+                            <p id="crypText">1</p>
                             <button className="arr_down" onClick={() => { crypDown() }}>
                                 <img src={arrow} /></button></div>
                     <div className="crypBlock"><p>A</p></div>

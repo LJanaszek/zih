@@ -61,8 +61,21 @@ export const SCENARIO: GameScenario = {
             id: '1.8', //quiz 3
             type: GAME_STEP_TYPE.PAGE,
             pageId: 'page-9',
+            nextStep: '1.9-1'
+        },
+        {
+            id: '1.9-1', //cryptex info
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'page-12-1',
+            nextStep: '1.9-2'
+        },
+        {
+            id: '1.9-2', //cryptex info
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'page-12-2',
             nextStep: '1.9'
         },
+
         {
             id: '1.9', //cryptex
             type: GAME_STEP_TYPE.PAGE,
@@ -335,6 +348,12 @@ export const SCENARIO: GameScenario = {
             id: '6.9', //tekst
             type: GAME_STEP_TYPE.PAGE,
             pageId: 'page-52',
+            nextStep: '6.10-1'
+        },
+        {
+            id: '6.10-1', //tekst
+            type: GAME_STEP_TYPE.PAGE,
+            pageId: 'page-52-1',
             nextStep: '6.10'
         },
         {

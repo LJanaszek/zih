@@ -8,11 +8,10 @@ type Props = {
 export default function Page1({ onNext }: Props) {
     return <TextPage>
         <div className="page-view">
-        <img className='page-img' src={slonimski} alt="" />
+            <img src={slonimski} className='page-img' alt="" />
 
             <p>
-                Przeklęta to praca, pisanie tych felietonów do “Wiadomości Literackich”. Nastaram się, napocę nad kartką papieru, a niewdzięczny czytelnik i tak nie doceni. Zostaje poezja…. Ale przy poezji może skończyć się jeszcze gorzej, prawda?
-
+            Ludzie siedzą i czekają. Żydzi czekają na Mesjasza, Polacy na jakiegoś generała na białym koniu, faceci na kobietę, a kobiety na pięknego i bogatego oficera marynarki, najlepiej cudzoziemca i żeby się przedstawił, zakochał, ożenił, po czym kupił willę i samochód dla nowej rodziny.
             </p>
 
         </div>

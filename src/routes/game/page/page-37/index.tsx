@@ -8,9 +8,10 @@ type Props = {
 export default function Page1({ onNext }: Props) {
     return <TextPage>
         <div className="page-view">
-        <img className='page-img' src={slonimski} alt="" />
+            <img className='page-img' src={slonimski} alt="" />
 
-            <p>Ojciec mój był lekarzem. Miał humor cięty jak brzytwa, lub raczej skalpel, w końcu ukończył Akademię Medyko-Chirurgiczną w Petersburgu. Niech będzie i dla Ciebie inspiracją, bo przed Tobą operacja na żywym słowie!
+            <p>
+                Ojciec mój był lekarzem. Miał humor cięty jak brzytwa lub raczej skalpel, w końcu ukończył Akademię Medyko-Chirurgiczną w Petersburgu. Niech będzie i dla Ciebie inspiracją, bo przed Tobą operacja na żywym słowie!
             </p>
 
             {/* <figure>

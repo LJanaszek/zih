@@ -10,9 +10,8 @@ export default function Page1({ onNext }: Props) {
         <div className="page-view">
         <img className='page-img' src={slonimski} alt="" />
 
-            <p>Mój dziadek, Chaim Zelig Słonimski wydawał po hebrajsku gazetę popularyzującą nauki ścisłe. Zagadka dla Ciebie - jak się nazywała? 
-
-
+            <p>
+                Mój dziadek, Chaim Zelig Słonimski wydawał po hebrajsku gazetę popularyzującą nauki ścisłe. Zagadka dla Ciebie: jak się nazywała? 
             </p>
 
             {/* <figure>

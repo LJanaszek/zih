@@ -7,7 +7,7 @@
     display: none;
   }
   form {
-    height: auto;
+    height: max-content;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -31,7 +31,7 @@
     display: grid;
     gap: 1em;
     grid-template-columns: 1fr 1fr;
-    padding: 2em 2.2em;
+    padding: .5em 2.2em;
   }
   .ans,
   .ansCor {
@@ -101,7 +101,7 @@
     padding: 1em;
     border-radius: 1em;
     margin: 0 auto;
-    width: 75vh;
+    // width: 75vh;
   }
   .answerDiv{
     display: grid;
@@ -118,6 +118,7 @@
     }
     p{
       height: fit-content;
+      max-width: 100%;
     }
   }
 }

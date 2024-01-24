@@ -15,33 +15,18 @@ export default function Page1({ onNext }: Props) {
             <p className="main-p"> Ojciec mój, oprócz praktyki lekarskiej, słynął z aforyzmów i facecji. Po nim mam tę pasję do języka. Odpowiedź na moją małą zagadkę to przedostatnia litera szyfru. </p>
             <p className="poem">
                 Doktor tym kończy <br />
-                Rabin zaczyna<br />
-                A bóbr bez tego<br />
+                A rabin zaczyna<br />
+                No a bóbr bez tego<br />
                 To już jest roślina.
             </p>
         </div>
         <div className="button-check-list">
             <button onClick={() => { setShowButton(true) }}>R</button>
-            <button onClick={() => { setShowButton(false) }}>K</button>
-            <button onClick={() => { setShowButton(false) }}>W</button>
-            <button onClick={() => { setShowButton(false) }}>Z</button>
-            <button onClick={() => { setShowButton(false) }}>E</button>
-            <button onClick={() => { setShowButton(false) }}>M</button>
             <button onClick={() => { setShowButton(false) }}>P</button>
+            <button onClick={() => { setShowButton(false) }}>B</button>
+            <button onClick={() => { setShowButton(false) }}>D</button>
+            <button onClick={() => { setShowButton(false) }}>N</button>
         </div>
-
-        {/* <figure>
-                <blockquote>
-                    <p>Cały trick polega na tym, że cofnęliśmy czas. Spóźniamy się tu z czasem o pewien interwał, którego wielkości niepodobna określić.</p>
-                </blockquote>
-                <figcaption>Sanatorium pod klepsydrą, Bruno Schulz</figcaption>
-            </figure> */}
-
-
-
-
-
-
 
         {showButton &&
             <div className="button-list">

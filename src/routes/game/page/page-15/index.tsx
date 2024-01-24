@@ -24,7 +24,7 @@ export default function Page1({ onNext }: Props) {
         <div className="stern_div page-view">
 
             <img src={calc} alt="" />
-            <p className="">Spójrz na trzy poniższe wyrazy. Wiesz jakiej cyfry w nich brakuje? Pamiętaj, że na kalkulatorze da się pisać litery!</p>
+            <p className="">Spójrz na trzy poniższe wyrazy. Wiesz jakiej cyfry w nich brakuje? Pamiętaj, że na kalkulatorze da się pisać litery, musisz go tylko obrócić do góry nogami!</p>
                 
         
             {/* <figure>

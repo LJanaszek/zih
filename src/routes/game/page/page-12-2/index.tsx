@@ -8,11 +8,10 @@ type Props = {
 export default function Page1({ onNext }: Props) {
     return <TextPage>
         <div className="page-view">
-        <img className='page-img' src={slonimski} alt="" />
+            <img src={slonimski} className='page-img' alt="" />
 
             <p>
-                Przeklęta to praca, pisanie tych felietonów do “Wiadomości Literackich”. Nastaram się, napocę nad kartką papieru, a niewdzięczny czytelnik i tak nie doceni. Zostaje poezja…. Ale przy poezji może skończyć się jeszcze gorzej, prawda?
-
+            Ja zaś żyję spokojnie i nie czekam ani na Mesjasza, ani na generała na białym koniu. Czas umilam sobie i innym, pisząc felietony, a po pracy - zagadki i niespodzianki. Jeżeli znajdziesz poprawny szyfr i otworzysz krypteks, odkryjesz skarb rodu Słonimskich. Powodzenia!
             </p>
 
         </div>

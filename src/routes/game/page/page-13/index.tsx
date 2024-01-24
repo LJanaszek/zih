@@ -64,8 +64,10 @@ export default function TaskMain({ onNext }: Props) {
             <div className="widget">
                 <BirdsTask onComplete={onNext} onGameStateChanged={setGameState} />
             </div>
+            
 
         </Container>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio ratione voluptatibus, obcaecati aspernatur nam blanditiis quis nisi, molestiae totam provident velit est labore in aut nesciunt unde laborum ipsam sint.</p>
         {gameState.isComplete && <div className="button-list-find"> <button className="button-hand" onClick={onNext}></button></div>}
     </Box>
 }

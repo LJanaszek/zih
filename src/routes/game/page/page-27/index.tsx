@@ -10,8 +10,8 @@ export default function Page1({ onNext }: Props) {
         <div className="page-view">
         <img className='page-img' src={stern} alt="" />
 
-            <p>Nie poznajesz mnie już? To ja, Abraham Stern. Jak łatwo przychodzi ludziom zapomnieć mnie i wszystkie chwile te, które razem spędziliśmy.
-
+            <p>
+                Nie poznajesz mnie już? To ja, Abraham Stern. Ot, jak łatwo przychodzi zapomnieć.
             </p>
 
             {/* <figure>

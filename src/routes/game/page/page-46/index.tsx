@@ -10,7 +10,7 @@ export default function Page1({ onNext }: Props) {
         <div className="page-view">
         <img className='page-img' src={slonimski} alt="" />
 
-            <p>SŁONIMSKI: Po publikacji pewnego wiersza zostałem podstępnie zwabiony do kawiarni i pobity przez młodego fascynata Polski dla Polaków. Zgadnij, co mogło go tak rozjuszyć.
+            <p>Po publikacji pewnego wiersza zostałem podstępnie zwabiony do kawiarni i pobity przez młodego fascynata Polski dla Polaków. Zgadnij, co mogło go tak rozjuszyć.
 
             </p>
 

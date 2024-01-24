@@ -10,8 +10,8 @@ export default function Page1({ onNext }: Props) {
         <div className="page-view">
         <img className='page-img' src={slonimski} alt="" />
 
-            <p>Przeklęta to praca, pisanie tych felietonów do “Wiadomości Literackich”. Nastaram się, napocę nad kartką papieru, a niewdzięczny czytelnik i tak nie doceni. Zostaje poezja…. Ale przy poezji może skończyć się jeszcze gorzej, prawda?
-
+            <p>
+            Mówiłem Ci, że można pisać na kalkulatorze. I mówiłem Ci, że odkryjesz 5KAR8 rodziny Słonimskich. Nie mówiłem Ci tylko jednego, bo nie chciałem psuć niespodzianki. Największym 5KAR83M jest humor!
             </p>
 
         </div>

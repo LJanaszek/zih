@@ -11,8 +11,7 @@ export default function Page1({ onNext }: Props) {
         <img className='page-img' src={slonimski} alt="" />
 
             <p>
-                Przeklęta to praca, pisanie tych felietonów do “Wiadomości Literackich”. Nastaram się, napocę nad kartką papieru, a niewdzięczny czytelnik i tak nie doceni. Zostaje poezja…. Ale przy poezji może skończyć się jeszcze gorzej, prawda?
-
+            Jest kilka rodzajów czytelników. Przykre doświadczenia uczyniły mnie ostrożnym. Zaraz zobaczymy, którym Ty jesteś, gagatku. 
             </p>
 
         </div>

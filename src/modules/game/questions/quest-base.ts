@@ -49,7 +49,7 @@ export const QUESTIONS: IQuizQuestion[] = [
             {
                 id: 'A',
                 text: 'Bojami z Babilonem',
-                desc: "Ach, nie szukajcie wód babilońskich, Jedna niewielka została tu rzeka,Wierzby szeregiem nad nią stoją,I widać ślady kopyt końskich U wodopoju, Rzeka kręta jak glista,Rzeka pośpieszna jak mrówka,Eufrat i Tygrys w pastewnej równinie:Nasza mulista Młynówka Tędy płynie"
+                desc: "Prawie, ale to pisał Kazio Wierzyński: Ach, nie szukajcie wód babilońskich, Jedna niewielka została tu rzeka, [...] Rzeka kręta jak glista, Rzeka pośpieszna jak mrówka, Eufrat i Tygrys w pastewnej równinie: Nasza mulista Młynówka Tędy płynie"
             }, {
                 id: 'B',
                 text: 'Bojami nad Bzdurą',
@@ -64,7 +64,7 @@ export const QUESTIONS: IQuizQuestion[] = [
                 id: 'D',
                 text: 'Michalim tańcem',
                 desc: "Tańcowały dwa Michały, ale źle odpowiadały. Julian Tuwim (prawie).",
-                
+
             }
         ]
 
@@ -81,7 +81,7 @@ export const QUESTIONS: IQuizQuestion[] = [
             }, {
                 id: 'B',
                 text: 'Marią Morską',
-                desc: "Ty znowu swoje…W Gdyni stocznię postawili, koniecznie pojedź zwiedzić."
+                desc: "Ty znowu swoje… W Gdyni stocznię postawili, koniecznie pojedź zwiedzić."
 
             }, {
                 id: 'C',

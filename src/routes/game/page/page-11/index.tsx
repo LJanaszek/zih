@@ -17,7 +17,7 @@ export default function Page5({ onNext }: Props) {
     return <div >
         <div className="">
             
-            <p className="paragraph-find">Ile liczb w zakresie od jednego do stu zaczyna się na tę literę? Uszereguj pozycje od największej do najmniejszej. Jeżeli ilość liczb zaczynających się na daną literę w spisie jest równa ilości liczb zaczynającej się na inną literę, są one w jednej grupie.</p>
+            <p className="paragraph-find">Ile liczb w zakresie od jednego do stu zaczyna się na tę literę? Uszereguj pozycje od największej do najmniejszej. Jeżeli liczba liczb zaczynających się na daną literę w spisie jest równa liczbie liczb zaczynającej się na inną literę, są one w jednej grupie.</p>
         </div>
         <OrderQuestionLayoutWIthImg
             items={[

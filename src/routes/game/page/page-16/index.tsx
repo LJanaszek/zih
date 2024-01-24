@@ -11,7 +11,7 @@ export default function Page1({ onNext }: Props) {
             <img src={stern} alt="" className='page-img'/>
 
             <p>
-            Mój pradziad, Abraham Stern wynalazł maszynę do liczenia. Tęgi był z niego łeb, więc został zaproszony przez Stanisława Staszica do Towarzystwa Przyjaciół Nauk. Nie wszystkim się podobało, że się nosił po żydowsku: w szacie polskiego Izraelity z broda czarnorudawą.
+            Mój pradziad, Abraham Stern wynalazł maszynę do liczenia. Tęgi był z niego łeb, więc został zaproszony przez Stanisława Staszica do Towarzystwa Przyjaciół Nauk. Nie wszystkim się podobało, że się nosił po żydowsku: w szacie polskiego Izraelity i z brodą czarnorudawą.
             </p>
 
             {/* <figure>
