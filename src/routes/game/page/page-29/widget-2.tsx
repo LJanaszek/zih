@@ -177,6 +177,7 @@ export default function Page92Widget2({ relations, interpretations, items, onCom
                             </div>
                             <div className="intension">
                                 <Select
+                                    isSearchable={false}
                                     value={{ value: slot.item?.id, label: slot.item?.text }}
                                     onChange={(data: { value: any; }) => {
                                         

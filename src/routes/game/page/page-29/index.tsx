@@ -40,7 +40,9 @@ export default function Page1({ onNext }: Props) {
                 onComplete={()=>{setShowButton(true)}}
             />
             {showButton &&
-            <Popup onClick={onNext}></Popup>
+            <Popup onClick={onNext}>
+                <p>Przejdź dalej</p>
+            </Popup>
             // <div className="button-list">
             //     <button className="button-hand" onClick={onNext}></button>
             // </div>

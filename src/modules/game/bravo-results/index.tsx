@@ -39,7 +39,7 @@ export function BravoResultsDummy({ texts, onComplete }: DummyProps) {
                     </div>
                 )
             })}
-<div className="button-list">
+<div className="button-list" id={styles.button_list}>
         <button className="button-hand" id={styles.button} onClick={onComplete}></button>
     </div>
         </div>

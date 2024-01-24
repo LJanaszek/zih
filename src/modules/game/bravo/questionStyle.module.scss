@@ -38,7 +38,7 @@
     line-height: normal;
     margin: 0 auto;
     text-align: center;
-    font-family: UbuntuReg;
+    // font-family: UbuntuReg;
   }
   .ans > span,
   .ansCor > span {
@@ -52,6 +52,7 @@
     align-items: baseline;
     justify-content: center;
     margin: .2em;
+    font-family: bristol;
   }
   input {
     transform: translatey(20%);
