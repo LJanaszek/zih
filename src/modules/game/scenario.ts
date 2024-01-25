@@ -9,10 +9,10 @@ export const SCENARIO: GameScenario = {
             id: '1.0',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 52.163835723370600,
-                lng: 21.21937101781457
+                lat: 52.237741,
+                lng: 21.013273
             },
-            name: [''],
+            name: ['Mazowiecka 12'],
             nextStep: '1.1'
         },
         {
@@ -86,12 +86,13 @@ export const SCENARIO: GameScenario = {
             id: '2.0',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 52.163835723370600,
-                lng: 21.21937101781457
+                lat: 52.237794,
+                lng: 21.018198
             },
-            name: [''],
+            name: ['Pałac Staszica w Warszawie, Nowy Świat 72'],
             nextStep: '2.1'
         },
+        
         {
             id: '2.1', //ekran A
             type: GAME_STEP_TYPE.PAGE,
@@ -138,6 +139,16 @@ export const SCENARIO: GameScenario = {
             id: '3.1', //tekst
             type: GAME_STEP_TYPE.PAGE,
             pageId: 'page-17',
+            nextStep: '3.2-0'
+        },
+        {
+            id: '3.2-0',
+            type: GAME_STEP_TYPE.GEO_STEP,
+            position: {
+                lat: 52.237794, //do poprawy
+                lng: 21.018198
+            },
+            name: ['Krakowskie Przedmieście 26/28'],
             nextStep: '3.2'
         },
         {
@@ -192,6 +203,16 @@ export const SCENARIO: GameScenario = {
             id: '4.2', //tekst
             type: GAME_STEP_TYPE.PAGE,
             pageId: 'page-26',
+            nextStep: '4.3-0'
+        },
+        {
+            id: '4.3-0',
+            type: GAME_STEP_TYPE.GEO_STEP,
+            position: {
+                lat: 52.237794, //do poprawy
+                lng: 21.018198
+            },
+            name: ['Ogród Saski przy fontannie'],
             nextStep: '4.3'
         },
         {
@@ -228,6 +249,16 @@ export const SCENARIO: GameScenario = {
             id: '5.2', //tekst
             type: GAME_STEP_TYPE.PAGE,
             pageId: 'page-32',
+            nextStep: '5.3-0'
+        },
+        {
+            id: '5.3-0',
+            type: GAME_STEP_TYPE.GEO_STEP,
+            position: {
+                lat: 52.237794, //do poprawy
+                lng: 21.018198
+            },
+            name: ['Niecała 6'],
             nextStep: '5.3'
         },
         {
@@ -300,6 +331,16 @@ export const SCENARIO: GameScenario = {
             id: '6.1', //tekst
             type: GAME_STEP_TYPE.PAGE,
             pageId: 'page-44',
+            nextStep: '6.2-0'
+        },
+        {
+            id: '6.2-0',
+            type: GAME_STEP_TYPE.GEO_STEP,
+            position: {
+                lat: 52.237794, //do poprawy
+                lng: 21.018198
+            },
+            name: ['Senatorska 18'],
             nextStep: '6.2'
         },
         {
@@ -342,6 +383,16 @@ export const SCENARIO: GameScenario = {
             id: '6.8', //tekst
             type: GAME_STEP_TYPE.PAGE,
             pageId: 'page-51',
+            nextStep: '6.9-0'
+        },
+        {
+            id: '6.9-0',
+            type: GAME_STEP_TYPE.GEO_STEP,
+            position: {
+                lat: 52.237794, //do poprawy
+                lng: 21.018198
+            },
+            name: ['Tłomackie 3/5'],
             nextStep: '6.9'
         },
         {
