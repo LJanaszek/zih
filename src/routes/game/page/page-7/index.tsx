@@ -51,7 +51,7 @@ export default function Page1({ onNext }: Props) {
             <div className="cryptex3">
                 <div className="crypInside">
                     <div className="crypImgLeft"> <img src={cryptex} alt="" /></div>
-                    <div className="crypBlock" >
+                    <div className="crypBlock crypNum" >
                         <button className="arr_up" onClick={() => { crypUp() }}>
                             <img src={arrow} /></button>
                             <p id="crypText">1</p>
@@ -60,7 +60,7 @@ export default function Page1({ onNext }: Props) {
                     <div className="crypBlock"><p>A</p></div>
                     <div className="crypBlock"><p>A</p></div>
                     <div className="crypBlock"><p>A</p></div>
-                    <div className="crypBlock"><p>A</p></div>
+                    <div className="crypBlock crypNum"><p>A</p></div>
                     <div className="crypImgRight"> <img src={cryptex} alt="" /></div>
                 </div>
                 

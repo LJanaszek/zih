@@ -29,6 +29,8 @@ const Container = styled.div`
     
 
         .widget {
+            flex-direction: column;
+            align-items:center;
             margin-right:1em;
             display:flex;
             // position: relative;
@@ -63,11 +65,12 @@ export default function TaskMain({ onNext }: Props) {
         <Container>
             <div className="widget">
                 <BirdsTask onComplete={onNext} onGameStateChanged={setGameState} />
+                <p className="underQuote">Bronisław Kopczyński, Nadanie dyplomu księdzu Onufremu Kopczyńskiemu za „Gramatykę języka polskiego”, 1916, olej na płótnie, Muzeum Narodowe w Warszawie.</p>
             </div>
             
 
         </Container>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio ratione voluptatibus, obcaecati aspernatur nam blanditiis quis nisi, molestiae totam provident velit est labore in aut nesciunt unde laborum ipsam sint.</p>
+        
         {gameState.isComplete && <div className="button-list-find"> <button className="button-hand" onClick={onNext}></button></div>}
     </Box>
 }

@@ -51,11 +51,11 @@ export default function Page1({ onNext }: Props) {
             <div className="cryptex3">
                 <div className="crypInside">
                     <div className="crypImgLeft"> <img src={cryptex} alt="" /></div>
+                    <div className="crypBlock crypNum"><p></p></div>
                     <div className="crypBlock"><p></p></div>
                     <div className="crypBlock"><p></p></div>
                     <div className="crypBlock"><p></p></div>
-                    <div className="crypBlock"><p></p></div>
-                    <div className="crypBlock"><p></p></div>
+                    <div className="crypBlock crypNum"><p></p></div>
                     <div className="crypImgRight"> <img src={cryptex} alt="" /></div>
                 </div>
                 

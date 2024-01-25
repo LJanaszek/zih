@@ -32,6 +32,8 @@ const Container = styled.div`
     
 
         .widget {
+            flex-direction: column;
+            align-items:center;
             margin-right:1em;
             display:flex;
             // position: relative;
@@ -73,6 +75,7 @@ export default function TaskMain({ onNext }: Props) {
 
             <div className="widget">
                 <BirdsTask onComplete={onNext} onGameStateChanged={setGameState} />
+                <p className="underQuote">Józef Rapacki, Wnętrze kawiarni „Ziemiańska”, 1926, Muzeum Warszawy</p>
             </div>
 
         </Container>
