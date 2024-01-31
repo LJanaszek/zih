@@ -17,3 +17,6 @@ export function getPolicyRoute() {
 export function getAccessibilityRoute() {
     return '/dostepnosc';
 }
+export function getEntryRoute() {
+    return '/wstep';
+}

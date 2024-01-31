@@ -3,7 +3,7 @@
 :root {
   --color1: #eb5b29;
   --color2: rgba(235, 91, 41, 0.15);
-  --color3: #666699;
+  --color3: var(--color1);
   --color4: #84ce55;
   --color5: #434357;
   --color6: #ffffff;

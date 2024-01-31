@@ -1,6 +1,6 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components"
-import { getGamePageRoute } from "../routes";
+import { getEntryRoute, getGamePageRoute } from "../routes";
 import { useCallback, useState } from "react";
 import Popup from "../../components/elements/popup";
 import Box from "../../components/layout/box";
@@ -55,18 +55,19 @@ export default function RulesPage() {
     return <Container>
         <Box>
             <h2>Instrukcja</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem aspernatur aliquam deleniti suscipit laboriosam, accusantium voluptas voluptate esse similique nisi autem provident molestias magni amet quae accusamus ducimus maxime officia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora voluptas optio autem ipsum. Eius veniam est impedit ratione distinctio sed cupiditate alias, aspernatur repudiandae consequuntur repellendus corporis expedita facere dicta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus quis assumenda dolor sit omnis quasi aspernatur laboriosam sed architecto alias doloribus, officiis velit repellendus, delectus aliquid esse minus, ratione asperiores. Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
-            {/* <ul>
-                <li>Do wzięcia udziału w rozgrywce potrzebujesz smartfona lub tablet z dostępem do Internetu.</li>
-                <li>Gra wykorzystuje aparat i lokalizację urządzenia. Aby zagrać, udziel zgody, gdy zostaniesz zapytany/zapytana o udzielenie dostępu.</li>
-                <li>Początek gry znajduje się przy tzw. „Kapliczce Godebskiego" mieszczącej się pod adresem Cypriana Godebskiego 19 w Raszynie.</li>
-                <li>Gra jest przeznaczona dla zespołów, ale można wziąć w niej udział pojedynczo.</li>
+            <p>Zanim rozpoczniesz grę, poznasz losy rodu Słonimskich i miejsca związane ze społecznością żydowską przedwojennej Warszawy, zapoznaj się z poniższą instrukcją:</p>
+            <ul>
+                <li>Do wzięcia udziału w grze niezbędne jest urządzenie mobilne z dostępem do Internetu.</li>
+                <li>Gra wykorzystuje lokalizację urządzenia. Zostaniesz poproszony/a o udzielenie dostępu.</li>
+                <li>Gra rozpoczyna się na ulicy Mazowieckiej 12 w Warszawie.</li>
+                <li>Aby odblokować kolejne zadania musisz znaleźć się w pobliżu określonej lokalizacji.</li>
                 <li>Informacja o lokalizacji kolejnych punktów będzie podawana na podstawie danych GPS.</li>
-                <li>Przemieszczając się pomiędzy kolejnymi miejscami – zachowaj ostrożność.</li>
-                <li>Gdy w zadaniach zobaczysz ikonę ? – kliknij, aby przeczytać treść pomocy.</li>
-            </ul> */}
+                <li>Gdy uda Ci się poprawnie wykonać zadanie na ekranie pojawi się przycisk (łapa symbol) pozwalający przejść dalej.</li>
+                <li>Gdy na ekranie pojawi się przyciski (dowiedz się więcej symbol) kliknij go, aby dowiedzieć się więcej o danej postaci, miejscu lub wydarzeniu.</li>
+            </ul>
+            <p>Powodzenia!</p>
             <nav className="button-list">
-                <button className="button-hand" onClick={() => { setShowGPSInfo(true) }}></button>
+                <Link to={getEntryRoute()} className="button-hand" />
             </nav>
         </Box>
 

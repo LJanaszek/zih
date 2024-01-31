@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 
-import { getHomeRoute, getGamePageRoute, getPolicyRoute, getAccessibilityRoute, getRulesRoute } from './routes/routes';
+import { getHomeRoute, getGamePageRoute, getPolicyRoute, getAccessibilityRoute, getRulesRoute, getEntryRoute } from './routes/routes';
 import React, { Suspense } from 'react';
 import Loader from './components/elements/loader';
 import PageHeader from './components/layout/header';
@@ -18,6 +18,7 @@ import AccessibilityPage from './routes/accessibility';
 const HomePage = React.lazy(() => import('./routes/home'));
 const GamePage = React.lazy(() => import('./routes/game'));
 const RulesPage = React.lazy(() => import('./routes/rules'));
+const EntryPage = React.lazy(()=>import('./routes/entry'))
 
 export default function App() {
 
@@ -36,7 +37,7 @@ export default function App() {
                             <Route path={getGamePageRoute()} element={<GamePage />} />
                             <Route path={getRulesRoute()} element={<RulesPage />} />
                             <Route path={getPolicyRoute()} element={<PolicyPage />} />
-
+                            <Route path={getEntryRoute()} element={<EntryPage />} />
                             <Route path={getAccessibilityRoute()} element={<AccessibilityPage />} />
 
                             <Route path={'/test/street-photo'} element={<StreetPhotoTestPage />} />
