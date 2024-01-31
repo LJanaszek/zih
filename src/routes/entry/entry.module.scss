@@ -2,10 +2,10 @@
     display: flex;
     justify-content: end;
   .pageImg {
-    position: relative;
-    max-width: 30%;
+    // position: relative;
+    max-width: 20%;
     margin: 0 auto !important;
-    margin-top: 2em !important;
+    margin-top: 0em !important;
     bottom: 0;
     left: 5%;
   }
@@ -32,7 +32,7 @@
         line-height: 20px;
         
     }
-    margin: 0 auto;
+    // width: 80%;
     // background-image: url("./border.png");
     border: 1px solid black;
     background-size: 100%;

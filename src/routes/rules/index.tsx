@@ -6,39 +6,29 @@ import Popup from "../../components/elements/popup";
 import Box from "../../components/layout/box";
 
 const Container = styled.div`
+    width:80%;
+    
+    margin: 0 auto;
+    *{font-family: Bristol;}
+    
+    ul{
+        line-height: 1.5em;
+        color: black;
+    }
     li {
         margin: .5em 0;
     }
     h2{
         font-size: 3em;
-        font-weight:900
+        // font-weight:900;
+        font-family: Bristol;
+        text-transform: uppercase;
     }
     p{
-        color:black
+        color:var(--color1);
     }
-    .sponsor {
-        font-size: .8em;
-        text-align: center;
-
-        display: flex;
-        flex-direction: column;
-
-        max-width: 80vh;
-        margin: 0 auto;
-
-        &>* {
-            margin: 1.5em auto;
-        }
-
-        img.mazowsze {
-            width: 350px;
-            max-width: 100%;
-        }
-
-        img.raszyn {
-            width: 100px;
-            max-width: 100%;
-        }
+    nav{
+        position: relative;
     }
 `;
 
@@ -53,8 +43,8 @@ export default function RulesPage() {
     }, [navigate]);
 
     return <Container>
-        <Box>
-            <h2>Instrukcja</h2>
+        <div>
+            <h2>Zasady</h2>
             <p>Zanim rozpoczniesz grę, poznasz losy rodu Słonimskich i miejsca związane ze społecznością żydowską przedwojennej Warszawy, zapoznaj się z poniższą instrukcją:</p>
             <ul>
                 <li>Do wzięcia udziału w grze niezbędne jest urządzenie mobilne z dostępem do Internetu.</li>
@@ -69,7 +59,7 @@ export default function RulesPage() {
             <nav className="button-list">
                 <Link to={getEntryRoute()} className="button-hand" />
             </nav>
-        </Box>
+        </div>
 
         {showGPSInfo && <Popup onClick={goToGame}>
             <p>
