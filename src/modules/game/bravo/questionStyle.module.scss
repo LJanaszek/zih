@@ -1,5 +1,6 @@
 .answer {
-  padding-bottom: 4em;
+  height: 100vh;
+  background-color: var(--color2);
   .checkbox {
     display: none;
   }
@@ -15,12 +16,20 @@
     border-bottom: 4px solid var(--baseColor);
   }
   .questionAnswer{
+    
     height: 100%;
     display: grid;
     gap:1em;
     grid-template-columns: 1fr 1fr;
     padding: 2em 2.2em ;
 
+  }
+  .paragraph{
+    // color: white;
+    background-color: white ;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1em 0em 1em  2em;
   }
   .ans,
   .ansCor {
@@ -45,14 +54,15 @@
     border-radius: 2.5em;
     text-align: center;
     background-color: var(--color6);
-    padding: .7em;
+    padding: .5em;
     height: max-content;
     color: var(--color1);
     display: flex;
     align-items: baseline;
     justify-content: center;
-    margin: .2em;
+    margin: .1em;
     font-family: bristol;
+    font-size: 1.5em;
   }
   input {
     transform: translatey(20%);
@@ -64,8 +74,8 @@
   input[type=radio]{
     appearance: none;
     background: var(--quizButtonBackground);
-    width: 2em;
-    height: 2em;
+    width: 1.5em;
+    height: 1.5em;
 
     
   }

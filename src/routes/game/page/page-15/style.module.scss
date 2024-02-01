@@ -1,0 +1,63 @@
+.div {
+  display: flex;
+  // flex-direction: row-reverse;
+  
+  .leftDiv {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    max-width: 60%;
+
+    p {
+      margin: 0 auto;
+      color: white;
+      background-color: var(--color1);
+      border-radius: 2em;
+      padding: 2em;
+      width: 80%;
+    }
+    img {
+      transform: scaleX(1);
+      position: relative;
+      bottom: 0;
+      left: 2em;
+      width: 10em;
+      height: 10em;
+    }
+  }
+  .rightDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .img {
+        width: 60%;
+        height: 60%;
+        margin: 0 auto;
+      }
+  }
+}
+.buttonList {
+//   position: static;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: right;
+  flex-wrap: wrap;
+  margin: 0.5em auto;
+  .buttonHand {
+    background-image: url("../../../../assets/right_hand.png");
+    position: relative;
+    bottom: 0;
+    right: 3em;
+    height: 2em;
+    border: none;
+    width: 4em;
+    margin: 0em 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+  }
+}

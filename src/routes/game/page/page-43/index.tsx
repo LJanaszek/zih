@@ -61,7 +61,7 @@ export default function Page1({ onNext }: Props) {
                             <button className="arr_down" onClick={() => { crypDown() }}>
                                 <img src={arrow} /></button></div>
                     
-                    <div className="crypBlock crypNum"><p>A</p></div>
+                    <div className="crypBlock"><p>A</p></div>
                     <div className="crypImgRight"> <img src={cryptex} alt="" /></div>
                 </div>
                 

@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useAnswer } from "../../main/hooks/use-answer";
 import fisher from "./fiszer.png"
+import style from "./style.module.scss"
 
 export interface Props2 {
   id: string;
@@ -65,9 +66,10 @@ export function QuizQuestionDummy({ question, onNext }: ForQuizQuest, ) {
 
   return (
     <div className={styles.answer}>
+      <div>
       {/* <div className={styles.questionText}> */}
         
-        <p className="paragraph-find">{question.text}</p>
+        <p className={styles.paragraph}>{question.text}</p>
       {/* </div> */}
       <div className={styles.questionAnswer}>
       
@@ -105,8 +107,8 @@ export function QuizQuestionDummy({ question, onNext }: ForQuizQuest, ) {
         
         </form>
         {showConfirm &&
-        <div className="button-list">
-          <button className="button-hand" onClick={()=>{
+        <div className={style.buttonList}>
+        <button className={style.buttonHand}onClick={()=>{
             sessionStorage.setItem(question.id, name)
             onNext()
             
@@ -114,7 +116,7 @@ export function QuizQuestionDummy({ question, onNext }: ForQuizQuest, ) {
         </div>}
 
       </div>
-      
+      </div>
     </div>
   );
 }

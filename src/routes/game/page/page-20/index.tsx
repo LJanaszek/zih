@@ -10,7 +10,7 @@ export default function Page1({ onNext }: Props) {
     const [showButton, setShowButton] = useState(false);
     return <Box>
         <p className="paragraph-find">
-            co czyta student pod starym buwem? <br></br> Podstaw odpowiednie litery pod cyfry
+            Co czyta student pod starym buwem? <br></br> Podstaw odpowiednie litery pod cyfry
         </p>
         <div className="password-view">
             <div className="password-view-title">

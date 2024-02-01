@@ -209,8 +209,8 @@ export const SCENARIO: GameScenario = {
             id: '4.3-0',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 52.237794, //do poprawy
-                lng: 21.018198
+                lat: 52.240750, 
+                lng: 21.009944
             },
             name: ['Ogród Saski przy fontannie'],
             nextStep: '4.3'
@@ -255,8 +255,8 @@ export const SCENARIO: GameScenario = {
             id: '5.3-0',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 52.237794, //do poprawy
-                lng: 21.018198
+                lat: 52.242444,
+                lng:  21.008667
             },
             name: ['Niecała 6'],
             nextStep: '5.3'
@@ -337,8 +337,8 @@ export const SCENARIO: GameScenario = {
             id: '6.2-0',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 52.237794, //do poprawy
-                lng: 21.018198
+                lat: 52.244444, 
+                lng: 21.009556
             },
             name: ['Senatorska 18'],
             nextStep: '6.2'
@@ -389,8 +389,8 @@ export const SCENARIO: GameScenario = {
             id: '6.9-0',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 52.237794, //do poprawy
-                lng: 21.018198
+                lat: 52.244333, 
+                lng: 21.002667
             },
             name: ['Tłomackie 3/5'],
             nextStep: '6.9'
