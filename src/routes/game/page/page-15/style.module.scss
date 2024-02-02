@@ -1,7 +1,7 @@
 .div {
   display: flex;
   // flex-direction: row-reverse;
-  
+
   .leftDiv {
     display: flex;
     flex-direction: column;
@@ -13,9 +13,11 @@
       margin: 0 auto;
       color: white;
       background-color: var(--color1);
+      line-height: 1.3em;
       border-radius: 2em;
-      padding: 2em;
+      padding: 1.3em;
       width: 80%;
+      font-size: 16px;
     }
     img {
       transform: scaleX(1);
@@ -33,7 +35,7 @@
 
     .img {
         width: 60%;
-        height: 60%;
+        height: 50%;
         margin: 0 auto;
       }
   }

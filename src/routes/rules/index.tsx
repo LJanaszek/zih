@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { getEntryRoute, getGamePageRoute } from "../routes";
 import { useCallback, useState } from "react";
 import Popup from "../../components/elements/popup";
-import Box from "../../components/layout/box";
+import hand from "../../assets/right_hand.png"
 
 const Container = styled.div`
     width:80%;
@@ -30,6 +30,9 @@ const Container = styled.div`
     nav{
         position: relative;
     }
+    img{
+        width: 2em;
+    }
 `;
 
 export default function RulesPage() {
@@ -52,8 +55,8 @@ export default function RulesPage() {
                 <li>Gra rozpoczyna się na ulicy Mazowieckiej 12 w Warszawie.</li>
                 <li>Aby odblokować kolejne zadania musisz znaleźć się w pobliżu określonej lokalizacji.</li>
                 <li>Informacja o lokalizacji kolejnych punktów będzie podawana na podstawie danych GPS.</li>
-                <li>Gdy uda Ci się poprawnie wykonać zadanie na ekranie pojawi się przycisk (łapa symbol) pozwalający przejść dalej.</li>
-                <li>Gdy na ekranie pojawi się przyciski (dowiedz się więcej symbol) kliknij go, aby dowiedzieć się więcej o danej postaci, miejscu lub wydarzeniu.</li>
+                <li>Gdy uda Ci się poprawnie wykonać zadanie na ekranie pojawi się przycisk <img src={hand} alt="" /> pozwalający przejść dalej.</li>
+                <li>Gdy na ekranie pojawi się przycisk <img src={hand} alt="" /> kliknij go, aby dowiedzieć się więcej o danej postaci, miejscu lub wydarzeniu.</li>
             </ul>
             <p>Powodzenia!</p>
             <nav className="button-list">
