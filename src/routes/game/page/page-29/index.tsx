@@ -32,9 +32,9 @@ export default function Page1({ onNext }: Props) {
                     "geografia",
                 ]}
                 items={[
-                    { correctPlace: '0', description: "astronomia" },
-                    { correctPlace: '1', description: "medycyna" },
                     { correctPlace: '2', description: "historia" },
+                    { correctPlace: '1', description: "medycyna" },
+                    { correctPlace: '0', description: "astronomia" },
                     { correctPlace: '3', description: "geografia" },
                 ]}
                 onComplete={()=>{setShowButton(true)}}

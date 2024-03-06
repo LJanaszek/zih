@@ -76,10 +76,10 @@
     width: 2em;
     height: 2em;
   }
-  input:checked {
-    background: var(--textColor);
+  .ans:has(input:checked),
+  .ansCor:has(input:checked) {
+    background-color: var(--color1);
     transition: 0.5s;
-    // background-size: 9px 9px;
   }
   // input:checked  {
   //   background: grey;

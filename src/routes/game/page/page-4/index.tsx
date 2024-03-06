@@ -69,7 +69,7 @@ export default function TaskMain({ onNext }: Props) {
             <div className="page-view">
                 <img className="page-img" src={slonimski} alt="" />
                 <p>
-                Wiesz już, kogo szukać? Bo młyn tu dzisiaj straszliwy. Gdy spotkasz literata, to nigdy nie wiesz na pewno, czy to jest ten od litra, czy od literatury. 
+                    Wiesz już, kogo szukać? Bo młyn tu dzisiaj straszliwy. Gdy spotkasz literata, to nigdy nie wiesz na pewno, czy to jest ten od litra, czy od literatury.
                 </p>
             </div>
 
