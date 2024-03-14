@@ -56,7 +56,7 @@ export default function GeoInfo({ distance, name, bering }: Props) {
         } else if (bering < 112.5) {
             return 'wschód';
         } else if (bering < 157.5) {
-            return 'połódniowy-wschód';
+            return 'południowy-wschód';
         } else if (bering < 202.5) {
             return 'południe';
         } else if (bering < 247.5) {

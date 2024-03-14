@@ -145,8 +145,8 @@ export const SCENARIO: GameScenario = {
             id: '3.2-0',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 52.237794, //do poprawy
-                lng: 21.018198
+                lat: 52.240306,  //do poprawy
+                lng: 21.019028
             },
             name: ['Krakowskie Przedmieście 26/28'],
             nextStep: '3.2'
@@ -337,8 +337,8 @@ export const SCENARIO: GameScenario = {
             id: '6.2-0',
             type: GAME_STEP_TYPE.GEO_STEP,
             position: {
-                lat: 52.244444, 
-                lng: 21.009556
+                lat: 52.24416842414135,
+                lng: 21.009026487083137
             },
             name: ['Senatorska 18'],
             nextStep: '6.2'

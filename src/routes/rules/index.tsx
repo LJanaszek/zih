@@ -4,7 +4,8 @@ import { getEntryRoute, getGamePageRoute } from "../routes";
 import { useCallback, useState } from "react";
 import Popup from "../../components/elements/popup";
 import hand from "../../assets/right_hand.png"
-
+import info from "../../assets/icons/info.svg"
+import style from "./style.module.scss"
 const Container = styled.div`
     width:80%;
     
@@ -56,7 +57,7 @@ export default function RulesPage() {
                 <li>Aby odblokować kolejne zadania musisz znaleźć się w pobliżu określonej lokalizacji.</li>
                 <li>Informacja o lokalizacji kolejnych punktów będzie podawana na podstawie danych GPS.</li>
                 <li>Gdy uda Ci się poprawnie wykonać zadanie na ekranie pojawi się przycisk <img src={hand} alt="" /> pozwalający przejść dalej.</li>
-                <li>Gdy na ekranie pojawi się przycisk <img src={hand} alt="" /> kliknij go, aby dowiedzieć się więcej o danej postaci, miejscu lub wydarzeniu.</li>
+                <li>Gdy na ekranie pojawi się przycisk <img src={info} alt="" className={style.imgInfo}/> kliknij go, aby dowiedzieć się więcej o danej postaci, miejscu lub wydarzeniu.</li>
             </ul>
             <p>Powodzenia!</p>
             <nav className="button-list">

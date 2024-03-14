@@ -60,17 +60,17 @@ export default function TaskMain({ onNext }: Props) {
     return <Box>
         <ScrollToTop />
         <p className="paragraph-find">
-            Znajdź na obrazku Abrahama Sterna
+            Znajdź na obrazku Abrahama Sterna. Możesz przybliżyć obraz.
         </p>
         <Container>
             <div className="widget">
                 <BirdsTask onComplete={onNext} onGameStateChanged={setGameState} />
                 <p className="underQuote">Bronisław Kopczyński, Nadanie dyplomu księdzu Onufremu Kopczyńskiemu za „Gramatykę języka polskiego”, 1916, olej na płótnie, Muzeum Narodowe w Warszawie.</p>
             </div>
-            
+
 
         </Container>
-        
+
         {gameState.isComplete && <div className="button-list-find"> <button className="button-hand" onClick={onNext}></button></div>}
     </Box>
 }

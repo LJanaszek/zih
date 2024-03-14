@@ -1,0 +1,43 @@
+.buttonLike {
+   
+    display: inline-flex;
+    margin: 0 auto;
+    
+}
+
+.buttonLike > * { 
+    width: 40vh;
+    height: 13vh;
+    background-image: url("../../assets/nextBtn.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    // font-size: .9em;
+    display: inline-block;
+    font-family: var(--baseFont);
+    color: var(--buttonText);
+
+    padding: var(--buttonPadding);
+    text-decoration: none;
+    margin: var(--buttonMargin);
+    box-shadow: none;
+    border: none;
+    // background: none;
+}
+
+
+
+.buttonLike.inverted > *  {
+    background: var(--buttonInvertedBackground);
+    color: var(--buttonInvertedText);
+
+    border: var(--buttonInvertedBorder);
+    border-radius: var(--buttonInvertedBorderRadius);
+
+    &:hover {
+        background: var(--buttonInvertedHoverBackground);
+        color: var(--buttonInvertedHoverText);
+
+        border: var(--buttonInvertedHoverBorder);
+        border-radius: var(--buttonInvertedHoverBorderRadius);
+    }
+}

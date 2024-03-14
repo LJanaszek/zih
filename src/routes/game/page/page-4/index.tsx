@@ -63,7 +63,7 @@ export default function TaskMain({ onNext }: Props) {
     return <>
         <ScrollToTop />
         <p className="paragraph-find">
-            Pamiętając wskazówki z poprzedniej zagadki, znajdź w kawiarni tajemniczego posłańca.
+            Pamiętając wskazówki z poprzedniej zagadki, znajdź w kawiarni tajemniczego posłańca. Możesz przybliżyć obraz
         </p>
         <Container>
             <div className="page-view">
