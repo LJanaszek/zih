@@ -12,6 +12,7 @@ export const SCENARIO: GameScenario = {
                 lat: 52.237741,
                 lng: 21.013273
             },
+            additional: "W tym miejscu mieściła się kawiarnia “Mała Ziemiańska”. Była ona jednym z najważniejszych miejsc spotkań inteligencji warszawskiej: poetów, literatów, artystów malarzy, dziennikarzy i aktorów.",
             name: ['Mazowiecka 12'],
             nextStep: '1.1'
         },
@@ -90,6 +91,7 @@ export const SCENARIO: GameScenario = {
                 lng: 21.018198
             },
             name: ['Pałac Staszica w Warszawie, Nowy Świat 72'],
+            additional:"Siedziba Towarzystwa Warszawskiego Przyjaciół Nauk w latach 1827–1831.",
             nextStep: '2.1'
         },
         
@@ -148,6 +150,7 @@ export const SCENARIO: GameScenario = {
                 lat: 52.240306,  //do poprawy
                 lng: 21.019028
             },
+            additional: "Stary BUW",
             name: ['Krakowskie Przedmieście 26/28'],
             nextStep: '3.2'
         },
@@ -212,6 +215,7 @@ export const SCENARIO: GameScenario = {
                 lat: 52.240750, 
                 lng: 21.009944
             },
+            additional:"",
             name: ['Ogród Saski przy fontannie'],
             nextStep: '4.3'
         },
@@ -258,6 +262,7 @@ export const SCENARIO: GameScenario = {
                 lat: 52.242444,
                 lng:  21.008667
             },
+            additional:"Pod tym adresem mieszkali rodzice Antoniego - Stanisław i Eugenia Słonimscy",
             name: ['Niecała 6'],
             nextStep: '5.3'
         },
@@ -340,6 +345,7 @@ export const SCENARIO: GameScenario = {
                 lat: 52.24416842414135,
                 lng: 21.009026487083137
             },
+            additional:'',
             name: ['Senatorska 18'],
             nextStep: '6.2'
         },
@@ -392,6 +398,7 @@ export const SCENARIO: GameScenario = {
                 lat: 52.244333, 
                 lng: 21.002667
             },
+            additional:'',
             name: ['Tłomackie 3/5'],
             nextStep: '6.9'
         },

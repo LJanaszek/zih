@@ -9,7 +9,7 @@ import HomePagePopup from "../../components/elements/hppopup";
 import WikiPopup from "../../components/wiki-popup";
 import { useRef } from "react";
 import hand from "../../assets/right_hand.png";
-
+import logo2 from "../../assets/logoZih.png"
 const Container = styled.div`
 
 .inner{
@@ -53,7 +53,6 @@ nav{
     grid-row: 2;
     width:70%;
     margin: auto;
-    margin-bottom: 10em;
     display:grid;
     text-align: center;
     justify-content: space-around;
@@ -62,6 +61,10 @@ nav{
 }
 .button{
     height:2em;
+}
+footer{
+    margin: 0 auto;
+    text-align:center;
 }
 
 
@@ -95,7 +98,7 @@ export default function HomePage() {
         <Container>
             <div className='content'>
                 <div className="fill">
-                    <h2>Słonimski</h2>
+                    <h2>Słonimscy</h2>
                     <h3>gra terenowa</h3>
                 </div>
 
@@ -112,8 +115,9 @@ export default function HomePage() {
                         </>
                     }
                 </nav>
+                
             </div>
-
+            <footer><img src={logo2} alt="" /></footer>
             {/* {PageFooter()} */}
         </Container>
         {
@@ -128,5 +132,6 @@ export default function HomePage() {
 
             </WikiPopup>
         }
+        
     </>
 }

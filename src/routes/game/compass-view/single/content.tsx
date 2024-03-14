@@ -40,7 +40,7 @@ export default function CompassViewContent({ step }: { step: GeoStep }) {
     const { isAccuracyOk, error, closestPoint } = useCompassView([step]);
     const { distance, bearing } = closestPoint;
     const name = closestPoint.point.name;
-
+    const additional = closestPoint.point.additional!
     const showPermitionError = error?.type === GEO_MODULE_ERROR.PERMISSION_DENIED;
     const showAccuracyError = !isAccuracyOk && !error;
     const showGeoInfo = isAccuracyOk && !error;
@@ -51,6 +51,6 @@ export default function CompassViewContent({ step }: { step: GeoStep }) {
             <p>Gra nie uzyskała dostępu do lokalizacji urządzenia. <br />Przyznaj uprawnienia stronie z grą, a następnie odśwież stronę.</p>
         </Box>}
         {showAccuracyError && <AccuracyError />}
-        {showGeoInfo && <GeoInfo bering={bearing} name={name} distance={distance} />}
+        {showGeoInfo && <GeoInfo bering={bearing} name={name} distance={distance} additional={additional}/>}
     </Container>
 }

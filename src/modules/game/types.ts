@@ -41,6 +41,7 @@ export interface GeoStep extends BaseGameStep {
     type: GAME_STEP_TYPE.GEO_STEP
     position: GeoLocalization,
     name: string[],
+    additional?:string
 }
 
 export interface MultiGeoStep extends BaseGameStep {

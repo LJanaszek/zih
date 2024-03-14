@@ -5,7 +5,8 @@ import compassIcon from '../../../assets/icons/kierunek.svg';
 type Props = {
     distance: number,
     name: string[],
-    bering: number
+    bering: number,
+    additional?: string
 }
 
 const Container = styled.div`
@@ -46,7 +47,7 @@ const Container = styled.div`
     }
 `;
 
-export default function GeoInfo({ distance, name, bering }: Props) {
+export default function GeoInfo({ distance, name, bering, additional }: Props) {
 
     const direction = useMemo(() => {
         if (bering < 22.5) {
@@ -69,7 +70,7 @@ export default function GeoInfo({ distance, name, bering }: Props) {
             return 'północ';
         }
     }, [bering]);
-
+    // console.log(additional[0], "=============")
     return <Container>
         <div className="inner">
             Aby dojść do<br />
@@ -78,6 +79,7 @@ export default function GeoInfo({ distance, name, bering }: Props) {
                 {name[1] && <span dangerouslySetInnerHTML={{__html: name[1]}}></span>}
             </div>
             kieruj się <strong>{Math.round(distance)}m.</strong> na{'\u00A0'}<strong style={{whiteSpace: 'nowrap'}}>{direction}</strong><br />
+            <p>{additional}</p>
         </div>
     </Container>
 }
