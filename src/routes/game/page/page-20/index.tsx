@@ -18,11 +18,24 @@ export default function Page1({ onNext }: Props) {
                 <h1>H2-C7F482</h1>
             </div>
             <div className="input-field">
-            <input type="text" id="fname" placeholder="_ _ - _ _ _ _ _ _"/> 
+            <input type="text" id="fname" placeholder="_ _ - _ _ _ _ _ _" onKeyUp={(x)=>{
+                
+                if(x.target.value.length === 2 && x.key != 'Backspace'){
+                    x.target.value=x.target.value+'-';
+                }
+                if("-" in x.target.value.split('') ){
+                    
+                }
+            }} maxLength={9}/> 
 
                 <button className="button" onClick={() => {
                     let x = document.getElementById("fname")!.value;
                     x=x.toUpperCase();
+                
+                    if(x.lenght === 2){
+                        console.log("--------------------")
+                        document.getElementById("fname")!.value = x+'-'
+                    }
                     if (x === "HA-CEFIRA" || x==="HA CEFIRA") {
                         setShowButton(true)
                     }
