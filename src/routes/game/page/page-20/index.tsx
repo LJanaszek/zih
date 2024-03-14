@@ -18,9 +18,9 @@ export default function Page1({ onNext }: Props) {
                 <h1>H2-C7F482</h1>
             </div>
             <div className="input-field">
-            <input type="text" id="fname" placeholder="_ _ - _ _ _ _ _ _" onKeyUp={(x)=>{
+            <input type="text" id="fname" placeholder="_ _ - _ _ _ _ _ _" onKeyDown={(x)=>{
                 
-                if(x.target.value.length === 2 && x.key != 'Backspace'){
+                if(x.target.value.length === 2 && x.key != 'Backspace' && x.key != '-'){
                     x.target.value=x.target.value+'-';
                 }
                 if("-" in x.target.value.split('') ){
