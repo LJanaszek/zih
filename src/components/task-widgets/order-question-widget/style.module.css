@@ -44,7 +44,7 @@ span>img{
     color: white;
     background-color: var(--textColor);
     border: none;
-    height: 4em;
+   
     /* width: 5em; */
 }
 .arrowdown{
@@ -52,4 +52,5 @@ span>img{
 }
 .arrow{
     margin-right: 2em;
+;
 }
