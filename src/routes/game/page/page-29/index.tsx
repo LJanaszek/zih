@@ -20,22 +20,19 @@ export default function Page1({ onNext }: Props) {
 
             <Page92Widget2
                 relations={[
-                    0,
-                    1,
-                    2,
-                    3
+                    0,1,2,3
                 ]}
                 interpretations={[
-                    "astronomia",
-                    "medycyna",
-                    "historia",
-                    "geografia",
+                    "geografia", //0
+                    "medycyna", //1
+                    "historia", //2
+                    "astronomia", //3
                 ]}
                 items={[
-                    { correctPlace: '2', description: "historia" },
+                    { correctPlace: '3', description: "historia" },
                     { correctPlace: '1', description: "medycyna" },
-                    { correctPlace: '0', description: "astronomia" },
-                    { correctPlace: '3', description: "geografia" },
+                    { correctPlace: '2', description: "astronomia" },
+                    { correctPlace: '0', description: "geografia" }, //rozpierdol straszny, ale działa
                 ]}
                 onComplete={()=>{setShowButton(true)}}
             />
