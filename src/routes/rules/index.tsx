@@ -4,7 +4,7 @@ import { getEntryRoute, getGamePageRoute } from "../routes";
 import { useCallback, useState } from "react";
 import Popup from "../../components/elements/popup";
 import hand from "../../assets/right_hand.png"
-import info from "../../assets/icons/info.svg"
+import info from "../../assets/icons/info.png"
 import style from "./style.module.scss"
 const Container = styled.div`
     width:80%;

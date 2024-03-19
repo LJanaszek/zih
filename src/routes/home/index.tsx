@@ -10,6 +10,7 @@ import WikiPopup from "../../components/wiki-popup";
 import { useRef } from "react";
 import hand from "../../assets/right_hand.png";
 import logo2 from "../../assets/logoZih.png"
+import homeImg from "../../assets/homePageInfo.png"
 const Container = styled.div`
 
 .inner{
@@ -25,8 +26,10 @@ h2,h3{
 }
 h2{
     font-size:3em
+    margin:1em 0;
 }
 h3{
+    // margin:0;
     font-size:1.5em;
 }
 
@@ -48,7 +51,7 @@ p{
 }
 
 nav{
-
+    row-gap: 10px;
     grid-column:1;
     grid-row: 2;
     width:70%;
@@ -65,6 +68,20 @@ nav{
 footer{
     margin: 0 auto;
     text-align:center;
+}
+.contentHome{
+    margin-top:3em;
+    font-size:1em;
+    display:flex;
+}
+.contentHome>div{
+    width:70%
+}
+.contentHome>div>img{
+    width:inherit;
+}
+.with-icon{
+    border-radius:1em;
 }
 
 
@@ -97,25 +114,25 @@ export default function HomePage() {
     return <>
         <Container>
             <div className='content'>
-                <div className="fill">
-                    <h2>Słonimscy</h2>
-                    <h3>gra terenowa</h3>
-                </div>
-
-                <nav>
-
-                    {!gameStarted &&
-                        <Link className="button with-icon" to= {getRulesRoute()}>Rozpocznij grę <i className="icon game-start" /></Link>
-                    }
-
-                    {gameStarted &&
-                        <>
-                            <Link className="button with-icon" to={getGamePageRoute()}>Kontynuuj grę</Link>
-                            <Link className="button with-icon" to={getHomeRoute()} onClick={() => { onGameRestart() }}>Zrestartuj grę <i className="icon game-restart" /> </Link>
-                        </>
-                    }
-                </nav>
                 
+                <div className="contentHome">
+                    <div>
+                        <img src={homeImg} alt="" />
+                    </div>
+                    <nav>
+
+                        {!gameStarted &&
+                            <Link className="button with-icon" to={getRulesRoute()}>Rozpocznij grę <i className="icon game-start" /></Link>
+                        }
+
+                        {gameStarted &&
+                            <>
+                                <Link className="button with-icon" to={getGamePageRoute()}>Kontynuuj grę</Link>
+                                <Link className="button with-icon" to={getHomeRoute()} onClick={() => { onGameRestart() }}>Zrestartuj grę <i className="icon game-restart" /> </Link>
+                            </>
+                        }
+                    </nav>
+                </div>
             </div>
             <footer><img src={logo2} alt="" /></footer>
             {/* {PageFooter()} */}
@@ -132,6 +149,6 @@ export default function HomePage() {
 
             </WikiPopup>
         }
-        
+
     </>
 }
