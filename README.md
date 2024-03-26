@@ -1,9 +1,9 @@
-# WAWER: Brunon Schulz
+# Słonimscy, gra terenowa
 
 ## Środowisko developerskie
 
 Wymagane oprogramowanie:
-- `nodejs`
+- `nodejs` używana wersja - 18.17.1
 - `yarn`
 
 Po skolowaniu repozytorium należy zaistalować zależności komendą `yarn`
@@ -64,7 +64,7 @@ Szablon jest przestosowany do działania w głównym katalogu domeny!
 - progres gry zapisywany jest lokalnie na urządzeniu gracza (`localStorage`)
 - brak komunikacji z serwerem (brak logowanie, zapisytwania wyników itp.)
 - strona działa tylko na `localhost` lub na serwerze z zaufanym certyfikatem SSL (inaczej nie ma dostępu do geolokalizacji)
-- aby gra działała urządzenie musi zwracać odczyć GPS o określonej dokłądości (domyślnie 40m)
+- aby gra działała urządzenie musi zwracać odczyć GPS o określonej dokłądości (domyślnie 40m) `src/config.ts`
 - mapy Google użyta w projekcie jest tylko do celów developerskich/testowych - jeżeli ktoś chce użyć jej produkcyjnie trzeba połaćzy ją z jakimś płacącym kontem Google
 - szablon nie ma aktualnie żadnych elementów dostosowanych do spełniania wymogówe WCAG itp.
 
