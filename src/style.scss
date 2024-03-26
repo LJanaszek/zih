@@ -45,8 +45,24 @@ html {
   line-height: 1.5em;
 }
 
-body {
+body>div>main {
   // background: var(--color3);
+  @media (orientation:portrait) {
+    display: none !important;
+  }
+}
+.ErrorMessege{ 
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  font-size: 3em;
+  line-height: 2em;
+  display: none;
+  color:#eb5b29;
+  @media (orientation:portrait) {
+   display: block !important;
+  }
+  
 }
 
 #root {
@@ -81,7 +97,22 @@ h2 {
   text-align: center;
 }
 
-p {
+.page-view {
+  @media (max-width: 600px) {
+    padding: .3em;
+  }
+  p {
+    @media (max-width: 600px) {
+      font-size: 14px !important;
+      line-height: 1em !important;
+    }
+  }
+}
+.underQuote {
+  @media (max-width: 600px) {
+    font-size: 8px !important;
+    line-height: 1em !important;
+  }
 }
 
 .button-list {
@@ -287,7 +318,7 @@ button {
       padding: 0;
     }
   }
- 
+
   display: grid;
   align-items: center;
   // padding: 2em;
@@ -527,19 +558,18 @@ button {
     padding-left: 2em;
   }
 }
-.reaction{
-  img{
+.reaction {
+  img {
     width: 9em;
     height: 11em;
   }
 }
-.crypNum{
-  p{
+.crypNum {
+  p {
     font-family: calc;
   }
-  
 }
-.underQuote{
+.underQuote {
   line-height: 8px;
   letter-spacing: 1px;
   font-size: 6px;

@@ -1,4 +1,4 @@
-import img1 from "../../assets/icons/info.svg";
+import img1 from "../../assets/icons/info.png";
 import styles from "./style.module.scss"
 type Props = React.PropsWithChildren<{
     onOKClick?(): void

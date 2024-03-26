@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useReducer } from "react"
 import styled from "styled-components"
 import WIDGET_DATA from "./data";
-import infoSrc from '../../../assets/icons/info.svg';
+import infoSrc from '../../../assets/icons/info.png';
 import closeSrc from '../../../assets/icons/close.svg';
 import okSrc from '../../../assets/icons/ok-circle.svg';
 import classNames from "classnames";

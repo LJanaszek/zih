@@ -4,7 +4,7 @@ import { getEntryRoute, getGamePageRoute } from "../routes";
 import { useCallback, useState } from "react";
 import Popup from "../../components/elements/popup";
 import hand from "../../assets/right_hand.png"
-import info from "../../assets/icons/info.svg"
+import info from "../../assets/icons/info.png"
 import style from "./style.module.scss"
 const Container = styled.div`
     width:80%;
@@ -49,9 +49,12 @@ export default function RulesPage() {
     return <Container>
         <div>
             <h2>Zasady</h2>
-            <p>Zanim rozpoczniesz grę, poznasz losy rodu Słonimskich i miejsca związane ze społecznością żydowską przedwojennej Warszawy, zapoznaj się z poniższą instrukcją:</p>
+            <p>Zanim rozpoczniesz grę, i poznasz losy rodu Słonimskich, zapoznaj się z poniższą instrukcją:</p>
             <ul>
                 <li>Do wzięcia udziału w grze niezbędne jest urządzenie mobilne z dostępem do Internetu.</li>
+                <li>
+                Grę uruchom w poziomej orientacji ekranu.
+                </li>
                 <li>Gra wykorzystuje lokalizację urządzenia. Zostaniesz poproszony/a o udzielenie dostępu.</li>
                 <li>Gra rozpoczyna się na ulicy Mazowieckiej 12 w Warszawie.</li>
                 <li>Aby odblokować kolejne zadania musisz znaleźć się w pobliżu określonej lokalizacji.</li>

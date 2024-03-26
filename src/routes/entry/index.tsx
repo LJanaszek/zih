@@ -19,7 +19,7 @@ export default function Page1() {
         <div className={style.entryView}>
             <img className={style.pageImg} src={slonimski} alt="" />
             <p>
-            <b>Antoni Słonimski</b> to złośliwy i błyskotliwy poeta. Niedługo będzie obchodził 130. rocznicę urodzin. Pisał teksty i w prozie, i wierszem, i nawet dramaty. Ilość szła w parze z jakością, a przynajmniej tak uważa wiele mądrych głów, co się znają na literaturze. 
+            <b>Antoni Słonimski</b> to błyskotliwy i złośliwy poeta. Niedługo będzie obchodził 130. rocznicę urodzin. Pisał teksty i w prozie, i wierszem, i nawet dramaty. Ilość szła w parze z jakością, a przynajmniej tak uważa wiele mądrych głów, co się znają na literaturze. 
             </p>
         </div>
         <div className={style.borderPadding}>

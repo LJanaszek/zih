@@ -14,6 +14,7 @@ import TravelersTestPage from './components/task-widgets/travelers';
 import PuzzleTestPage from './components/task-widgets/puzzle';
 import ButtonStyle from './button-style';
 import AccessibilityPage from './routes/accessibility';
+import ErrorMessege from './components/errorMessage';
 
 const HomePage = React.lazy(() => import('./routes/home'));
 const GamePage = React.lazy(() => import('./routes/game'));
@@ -26,6 +27,7 @@ export default function App() {
 
     return (
         <>
+            <ErrorMessege />
             <ButtonStyle />
             <BrowserRouter>
                 {/* <CookiesInfo /> */}
