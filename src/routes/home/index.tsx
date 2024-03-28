@@ -4,11 +4,9 @@ import { getGamePageRoute, getHomeRoute, getRulesRoute } from "../routes";
 import useGameStarted from "../../modules/game/hooks/use-game-started";
 import { useCallback, useState } from "react";
 import { GAME_MODULE_ACTION, useGameModuleDispatch } from "../../modules/game";
-import logo from './instrukcja.jpg';
 import HomePagePopup from "../../components/elements/hppopup";
 import WikiPopup from "../../components/wiki-popup";
 import { useRef } from "react";
-import hand from "../../assets/right_hand.png";
 import logo2 from "../../assets/logoZih.png"
 import homeImg from "../../assets/homePageInfo.png"
 const Container = styled.div`
@@ -122,7 +120,7 @@ export default function HomePage() {
                     <nav>
 
                         {!gameStarted &&
-                            <Link className="button with-icon" to={getRulesRoute()}>Rozpocznij grę <i className="icon game-start" /></Link>
+                            <Link className="button with-icon" to={getRulesRoute()} onClick={()=>{setShowGPSInfo(true)}}>Rozpocznij grę <i className="icon game-start" /></Link>
                         }
 
                         {gameStarted &&
@@ -135,7 +133,6 @@ export default function HomePage() {
                 </div>
             </div>
             <footer><img src={logo2} alt="" /></footer>
-            {/* {PageFooter()} */}
         </Container>
         {
             showGPSInfo && <HomePagePopup onClick={goToGame}>
