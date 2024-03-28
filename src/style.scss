@@ -46,7 +46,6 @@ html {
 }
 
 body>div>main {
-  // background: var(--color3);
   @media (orientation:portrait) {
     display: none !important;
   }
@@ -87,8 +86,6 @@ body>div>main {
   }
 }
 
-h1 {
-}
 
 h2 {
   color: var(--color1);
@@ -120,7 +117,7 @@ h2 {
   bottom: 0;
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: right;
   flex-wrap: wrap;
   margin: 0.5em auto;
@@ -168,7 +165,6 @@ button {
   width: fit-content;
   display: block;
   grid-template-rows: 1fr;
-  // grid-template-columns: 1fr 1fr 1fr;
   text-align: center;
   justify-content: center;
   gap: 1em;
@@ -179,7 +175,6 @@ button {
     font-family: Calc;
     margin: 0 0.5em;
     width: fit-content;
-    // min-height: 5em;
     font-size: 1em;
     background-color: var(--color1);
     color: var(--color6);
@@ -189,10 +184,14 @@ button {
     background-color: #434357;
   }
 }
-
+.fisher{
+  img{
+    transform: scaleX(-1);
+  }
+}
 .page-view {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 
   .page-img {
     position: fixed;
@@ -210,7 +209,7 @@ button {
   .p {
     display: flex;
     width: 50%;
-    justify-content: end;
+    justify-content: flex-end;
     background-color: var(--color1);
     color: var(--color6);
     border-radius: 1em;
@@ -241,17 +240,14 @@ button {
       padding: 0;
     }
   }
-  // display: grid;
   .crypInside {
     margin: 0 auto;
     width: 60%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    // grid-template-columns: 14% 14% 14% 14% 14% 14% 14%;
     justify-content: center;
     align-items: center;
     justify-items: center;
-    // gap: 5px;
   }
   .crypBlock {
     justify-content: center;
@@ -262,8 +258,6 @@ button {
     display: grid;
     text-align: center;
     height: max-content;
-    // width: max-content;
-    // height: 8em;
 
     p {
       width: 3em;
@@ -289,11 +283,7 @@ button {
     display: flex;
 
     width: 5em;
-    // height: min-content;
-    :only-child {
-      // width: -webkit-fill-available;
-      // height: auto;
-    }
+   
   }
 }
 .cryptex2 {
@@ -305,7 +295,6 @@ button {
     }
   }
   height: 60vh;
-  // background: url("./assets/krypteks.png");
   background-repeat: no-repeat;
   background-size: 80%;
   background-position: center;
@@ -321,11 +310,9 @@ button {
 
   display: grid;
   align-items: center;
-  // padding: 2em;
   margin: 0 auto;
   padding: 2em;
   height: fit-content;
-  // background: url("./assets/krypteks.png");
   background-repeat: no-repeat;
   background-size: 80%;
   background-position: center;
@@ -343,8 +330,6 @@ button {
     grid-template-columns: 14% 14% 14% 14% 14% 14% 14%;
     width: 60%;
     margin: 0 auto;
-    // display: grid;
-    // grid-template-rows: 1fr 1fr 1fr ;
     grid-gap: 2%;
   }
 }
@@ -357,15 +342,12 @@ button {
   padding: 0;
 }
 .arr_up {
-  // margin-left: 2em;
   background: none;
   border: none;
-  // width: 7%;
 }
 .arr_down {
   background: none;
   border: none;
-  // width: 7%;
   transform: rotate(180deg);
 }
 @media screen and (max-width: 600px) {
@@ -381,7 +363,6 @@ button {
   img {
     margin: 2em;
     width: 50%;
-    // height: 40%;
   }
   p {
     font-size: 0.7em;
@@ -390,20 +371,17 @@ button {
 }
 .stern {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   transform: scaleX(-1);
   width: 20%;
-  // position: absolute;
 }
 
 .img-button-block {
   position: fixed;
   bottom: 0;
   right: 6em;
-  // margin-top: -5em;
   img {
     display: grid;
-    // align-items: end;
     text-align: right;
     width: 60vh;
   }
@@ -423,7 +401,7 @@ button {
   margin-top: 2em;
   width: 100%;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: right;
   flex-wrap: wrap;
   // margin: 0.5em auto;

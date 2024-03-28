@@ -20,7 +20,8 @@ import MapIconSrc from '!file-loader!./assets/icons/mapa.svg';
 
 const ButtonStyle = createGlobalStyle`
     .button {
-        /* display: inline-block; */
+        display: flex;
+        align-items: center;
         background: var(--color1);
         color: white;
         padding: .3em 1.1em .3em 1.1em;

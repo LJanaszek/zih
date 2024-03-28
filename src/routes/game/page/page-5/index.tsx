@@ -7,7 +7,7 @@ type Props = {
 
 export default function Page1({ onNext }: Props) {
     return <TextPage>
-        <div className="page-view">
+        <div className="page-view fisher">
             <img className='page-img' src={fisher} alt="" />
 
             <p>Kobieta w fioletowym kapeluszu? Była i wyszła, ale przesyłkę zostawiła mnie. Słonimski nie uprzedził, że nie będzie czekać wieczność? Bo wieczność czeka jedynie poetów. Odgadnij moje trzy zagadki, a dam Ci tajemniczy liścik.

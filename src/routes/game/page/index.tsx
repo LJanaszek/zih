@@ -17,8 +17,8 @@ const Page9 = lazy(() => import('./page-9'));
 const Page10 = lazy(() => import('./page-10'));
 const Page11 = lazy(() => import('./page-11'));
 const Page12 = lazy(() => import('./page-12'));
-const Page12_1 = lazy(() => import('./page-12-1'));
-const Page12_2 = lazy(() => import('./page-12-2'));
+const PAGE12_1 = lazy(() => import('./page-12-1'));
+const PAGE12_2 = lazy(() => import('./page-12-2'));
 const Page13 = lazy(() => import('./page-13'));
 const Page14 = lazy(() => import('./page-14'));
 const Page15 = lazy(() => import('./page-15'));
@@ -61,7 +61,7 @@ const Page49 = lazy(() => import('./page-49'));
 const Page50 = lazy(() => import('./page-50'));
 const Page51 = lazy(() => import('./page-51'));
 const Page52 = lazy(() => import('./page-52'));
-const Page52_1 = lazy(() => import('./page-52-1'));
+const PAGE52_1 = lazy(() => import('./page-52-1'));
 const Page53 = lazy(() => import('./page-53'));
 const Page54 = lazy(() => import('./page-54'));
 const Page55 = lazy(() => import('./page-55'));
@@ -70,7 +70,6 @@ const Page57 = lazy(() => import('./page-57'));
 const Page58 = lazy(() => import('./page-58'));
 const Page59 = lazy(() => import('./page-59'));
 const Page60 = lazy(() => import('./page-60'));
-const PageEnd = lazy(() => import('./page-end'));
 
 type Props = {
     id: string
@@ -114,9 +113,9 @@ export default function PageView({ id }: Props) {
             case 'page-12':
                 return <Page12 onNext={onNext} />
             case 'page-12-1':
-                return <Page12_1 onNext={onNext} />
+                return <PAGE12_1 onNext={onNext} />
             case 'page-12-2':
-                return <Page12_2 onNext={onNext} />
+                return <PAGE12_2 onNext={onNext} />
             case 'page-13':
                 return <Page13 onNext={onNext} />
             case 'page-14':
@@ -203,7 +202,7 @@ export default function PageView({ id }: Props) {
             case 'page-52':
                 return <Page52 onNext={onNext} />
             case 'page-52-1':
-                return <Page52_1 onNext={onNext} />
+                return <PAGE52_1 onNext={onNext} />
             case 'page-53':
                 return <Page53 onNext={onNext} />
             case 'page-54':
@@ -221,8 +220,6 @@ export default function PageView({ id }: Props) {
                 return <Page59 onNext={onNext} />
             case 'page-60':
                 return <Page60 onNext={onNext} />
-            case 'end':
-                return <PageEnd onNext={onNext} />
 
             default:
                 return <PagePlaceholder onNext={onNext} />
