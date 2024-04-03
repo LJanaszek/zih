@@ -16,7 +16,6 @@ export default function BravoResults({ id, onComplete }: Props) {
     )
 }
 
-
 export interface DummyProps {
     texts: BravoTexts
     onComplete(): void
