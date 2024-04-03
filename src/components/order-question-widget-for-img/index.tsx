@@ -1,8 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useReducer, useState } from "react";
 import { Card } from "./card";
 import style from "./style.module.css"
-import up from "../../assets/arrow.png"
-import down from "../../assets/arrow.png"
 
 type Props = {
     items: { correctPlace: number, description: string}[],

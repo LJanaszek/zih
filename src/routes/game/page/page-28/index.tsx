@@ -1,4 +1,3 @@
-import Box from "../../../../components/layout/box"
 import TextPage from "../../../../components/layout/text-page"
 import stern from "../../../../assets/stern.png"
 import style from "../../../../components/moreInfo/popus.module.scss"

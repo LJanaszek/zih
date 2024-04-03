@@ -7,7 +7,6 @@ import { useConfigModuleState } from "../../modules/config";
 import { GAME_MODULE_ACTION, useGameModuleDispatch, useGameModuleState } from "../../modules/game";
 import useGameStep from "../../modules/game/hooks/use-game-step";
 import { GameStep, GAME_STEP_TYPE } from "../../modules/game/types";
-import EndGamePage from "./end";
 import GameErrorPage from "./error";
 import PageView from "./page";
 import WidgetView from "./task";
@@ -35,7 +34,6 @@ export default function GamePage() {
         <ScrollToTop trigger={step?.id} behavior={'smooth'} />
         {!gameComplete && !step && <GameErrorPage />}
         {!gameComplete && step && <GameStepView step={step} />}
-        {gameComplete && <EndGamePage />}
         {showDebug && <DebugTools />}
     </Container>
 }

@@ -1,5 +1,4 @@
 import { useState } from "react"
-import calc from "../../../../assets/calc.png"
 import stern from "../../../../assets/stern.png"
 import style from "./style.module.scss"
 type Props = {
@@ -17,7 +16,7 @@ export default function Page1({ onNext }: Props) {
             if (a.className.length > 0) {
                 a.innerText = spanValue
             };
-
+            return 1;
         })
     }
     const ButtonArr = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];

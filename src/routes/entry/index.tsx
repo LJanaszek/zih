@@ -8,9 +8,6 @@ import styles from "../../components/moreInfo/popus.module.scss"
 import { useState } from "react"
 import { Popup } from "../../components/moreInfo/popup"
 import ButtonInfo from "../../components/buttonInfo"
-type Props = {
-    onNext(): void
-}
 
 export default function Page1() {
     const [showPopup, setShowPopup] = useState(false)

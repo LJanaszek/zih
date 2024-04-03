@@ -1,6 +1,4 @@
 import Box from "../../../../components/layout/box"
-import TextPage from "../../../../components/layout/text-page"
-import slonimski from "../../../../assets/slonimski.png"
 import { useState } from "react"
 type Props = {
     onNext(): void
@@ -20,7 +18,7 @@ export default function Page1({ onNext }: Props) {
             <div className="input-field">
                 <input type="text" id="fname" placeholder="_ _ - _ _ _ _ _ _" onKeyDown={(x) => {
 
-                    if (x.target.value.length === 2 && x.key != 'Backspace' && x.key != '-') {
+                    if (x.target.value.length === 2 && x.key !== 'Backspace' && x.key !== '-') {
                         x.target.value = x.target.value + '-';
                     }
                     if ("-" in x.target.value.split('')) {
@@ -52,9 +50,4 @@ export default function Page1({ onNext }: Props) {
                 <button className="button-hand" onClick={onNext}></button>
             </div>}
     </Box>
-}
-
-
-function validate() {
-
 }

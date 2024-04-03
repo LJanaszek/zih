@@ -1,13 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
-import Popup from "../../../../components/elements/popup";
-import TaskPopup from "../../../../components/elements/task-popup";
-import SmallPageHeader from "../../../../components/layout/header/small-header";
 import BirdsTask, { BirdTaskState } from "../../../../components/task-widgets/find-sec";
-import useRemoveHeader from "../../../../modules/main/hooks/use-remove-header";
 import ScrollToTop from "../../../../utils/widgets/scroll-to-top";
-import EyeIconSrc from '../../../../assets/icons/eye.svg';
-import slonimski from "../../../../assets/slonimski.png"
 type Props = {
     onNext(): void
 }
@@ -50,9 +44,6 @@ export default function TaskMain({ onNext }: Props) {
         findedBirdCount: 0,
         isComplete: false
     });
-
-    const [showInfoPopup, setShowInfoPopup] = useState(false);
-    const [showPreviewPopup, setShowPreviewPopup] = useState(false);
 
     return <>
         <ScrollToTop />

@@ -1,6 +1,4 @@
 import Box from "../../../../components/layout/box"
-import TextPage from "../../../../components/layout/text-page"
-import slonimski from "../../../../assets/slonimski.png"
 import Puzzle from "../../../../components/task-widgets/puzzle/puzzle"
 import { useState } from "react"
 type Props = {

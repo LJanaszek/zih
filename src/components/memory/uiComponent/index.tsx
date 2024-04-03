@@ -1,5 +1,4 @@
 import React, { useReducer, useEffect, useState } from 'react';
-import { Flip } from 'react-awesome-reveal';
 import ModalComponent from '../resultModal';
 import { Images } from '../Images';
 import { DefaultImg } from '../Images';

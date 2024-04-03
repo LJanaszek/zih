@@ -1,4 +1,3 @@
-import { useState } from "react"
 import BravoResults from "../../../../modules/game/bravo-results"
 type Props = {
     onNext(): void

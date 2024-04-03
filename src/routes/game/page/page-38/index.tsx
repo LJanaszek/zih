@@ -1,7 +1,4 @@
 import Box from "../../../../components/layout/box"
-import TextPage from "../../../../components/layout/text-page"
-import slonimski from "../../../../assets/slonimski.png"
-import CheckboxAnswerForm from "../../../../components/task-widgets/checkboxAnswerForm/checkboxAnswerForm"
 import OrderQuestionLayout from "../../../../components/task-widgets/order-question-widget"
 import { useState } from "react"
 

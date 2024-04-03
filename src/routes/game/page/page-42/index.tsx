@@ -1,5 +1,4 @@
 import { useState } from "react"
-import calc from "../../../../assets/calc.png"
 import slonimski from "../../../../assets/slonimski.png"
 
 type Props = {
