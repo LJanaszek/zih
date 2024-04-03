@@ -10,8 +10,8 @@ export default function Page1({ onNext }: Props) {
         <div className="page-view">
         <img className='page-img' src={stern} alt="" />
 
-            <p>No, z tą medycyną to taka moja osobista ambicja. Ale trzech pozostałych naprawdę uczyliśmy w Warszawskiej Szkole Rabinów. Gratuluję rozwiązania zagadki. Kolejny znak szyfru to jedyna litera, która powtarza się w nazwach wszystkich czterech rzeźb.
-
+            <p>
+                No, z tą medycyną to taka moja osobista ambicja. Ale trzech pozostałych naprawdę uczyliśmy w warszawskiej Szkole Rabinów. Gratuluję rozwiązania zagadki. Kolejny znak szyfru to jedyna litera, która powtarza się w nazwach wszystkich czterech rzeźb.
             </p>
 
             {/* <figure>

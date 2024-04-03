@@ -10,16 +10,9 @@ export default function Page1({ onNext }: Props) {
         <div className="page-view">
         <img className='page-img' src={slonimski} alt="" />
 
-            <p>Uniwersytet to piękne miejsce. Czujesz? Powietrze pachnie wolnością myśli i słowa. Tu się wydaje książki, gazety i okrzyki. 
-
+            <p>
+                Uniwersytet to piękne miejsce. Czujesz? Powietrze pachnie wolnością myśli i słowa. Tu się wydaje książki, gazety i okrzyki. 
             </p>
-
-            {/* <figure>
-                <blockquote>
-                    <p>Cały trick polega na tym, że cofnęliśmy czas. Spóźniamy się tu z czasem o pewien interwał, którego wielkości niepodobna określić.</p>
-                </blockquote>
-                <figcaption>Sanatorium pod klepsydrą, Bruno Schulz</figcaption>
-            </figure> */}
 
         </div>
         <div className="button-list">

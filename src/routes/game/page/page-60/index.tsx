@@ -11,7 +11,7 @@ export default function Page1({ onNext }: Props) {
         'display': 'flex',
         'flexDirection': 'column',
         'alignItems': 'flex-start',
-        'width':'50%'
+        'width': '50%'
 
     }
     const Pstyles: CSS.Properties = {
@@ -25,15 +25,15 @@ export default function Page1({ onNext }: Props) {
         <div className="page-view" >
             <img className='page-img' src={slonimski} alt="" />
             <div style={styles}>
-            <p style={Pstyles}>
-                Mam!
-            </p>
-            <p style={Pstyles}>
-            Ach nie, to bilet na tramwaj i jakieś paprochy.
-            </p>
-            <p style={Pstyles}>
-            No dobra, znam go na pamięć. Tak sobie chciałem pożartować, bo będę za Tobą tęsknił. Kod to: 1895 
-            </p>
+                <p style={Pstyles}>
+                    Mam!
+                </p>
+                <p style={Pstyles}>
+                    Ach nie, to bilet na tramwaj i jakieś paprochy.
+                </p>
+                <p style={Pstyles}>
+                    No dobra, znam go na pamięć. Tak sobie chciałem pożartować, bo będę za Tobą tęsknił. Kod to: 1895#.
+                </p>
             </div>
 
         </div>

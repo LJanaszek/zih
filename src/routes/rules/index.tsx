@@ -49,7 +49,7 @@ export default function RulesPage() {
     return <Container>
         <div>
             <h2>Zasady</h2>
-            <p>Zanim rozpoczniesz grę, i poznasz losy rodu Słonimskich, zapoznaj się z poniższą instrukcją:</p>
+            <p>Zanim rozpoczniesz grę i poznasz losy rodu Słonimskich, zapoznaj się z poniższą instrukcją:</p>
             <ul>
                 <li>Do wzięcia udziału w grze niezbędne jest urządzenie mobilne z dostępem do Internetu.</li>
                 <li>
@@ -57,9 +57,9 @@ export default function RulesPage() {
                 </li>
                 <li>Gra wykorzystuje lokalizację urządzenia. Zostaniesz poproszony/a o udzielenie dostępu.</li>
                 <li>Gra rozpoczyna się na ulicy Mazowieckiej 12 w Warszawie.</li>
-                <li>Aby odblokować kolejne zadania musisz znaleźć się w pobliżu określonej lokalizacji.</li>
+                <li>Aby odblokować kolejne zadania, musisz znaleźć się w pobliżu określonej lokalizacji.</li>
                 <li>Informacja o lokalizacji kolejnych punktów będzie podawana na podstawie danych GPS.</li>
-                <li>Gdy uda Ci się poprawnie wykonać zadanie na ekranie pojawi się przycisk <img src={hand} alt="" /> pozwalający przejść dalej.</li>
+                <li>Gdy uda Ci się poprawnie wykonać zadanie, na ekranie pojawi się przycisk <img src={hand} alt="" /> pozwalający przejść dalej.</li>
                 <li>Gdy na ekranie pojawi się przycisk <img src={info} alt="" className={style.imgInfo}/> kliknij go, aby dowiedzieć się więcej o danej postaci, miejscu lub wydarzeniu.</li>
             </ul>
             <p>Powodzenia!</p>

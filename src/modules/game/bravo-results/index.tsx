@@ -5,7 +5,7 @@ import styles from "./bravo.module.scss"
 
 export interface Props {
     id: string
-    onComplete():void
+    onComplete(): void
 }
 export default function BravoResults({ id, onComplete }: Props) {
     const question = useQuestion(id)
@@ -13,7 +13,7 @@ export default function BravoResults({ id, onComplete }: Props) {
         return <p>brak pytania w bazie</p>;
     }
     return (
-        <BravoResultsDummy texts={question} onComplete={onComplete}/>
+        <BravoResultsDummy texts={question} onComplete={onComplete} />
     )
 }
 
@@ -39,9 +39,9 @@ export function BravoResultsDummy({ texts, onComplete }: DummyProps) {
                     </div>
                 )
             })}
-<div className="button-list" id={styles.button_list}>
-        <button className="button-hand" id={styles.button} onClick={onComplete}></button>
-    </div>
+            <div className="button-list" id={styles.button_list}>
+                <button className="button-hand" id={styles.button} onClick={onComplete}></button>
+            </div>
         </div>
     )
 }

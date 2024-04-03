@@ -49,11 +49,11 @@ export const QUESTIONS: IQuizQuestion[] = [
             {
                 id: 'A',
                 text: 'Bojami z Babilonem',
-                desc: "Prawie, ale to pisał Kazio Wierzyński: Ach, nie szukajcie wód babilońskich, Jedna niewielka została tu rzeka, [...] Rzeka kręta jak glista, Rzeka pośpieszna jak mrówka, Eufrat i Tygrys w pastewnej równinie: Nasza mulista Młynówka Tędy płynie"
+                desc: 'Prawie, ale to pisał Kazio Wierzyński: „Ach, nie szukajcie wód babilońskich, Jedna niewielka została tu rzeka, [...] Rzeka kręta jak glista, Rzeka pośpieszna jak mrówka, Eufrat i Tygrys w pastewnej równinie: Nasza mulista Młynówka Tędy płynie"'
             }, {
                 id: 'B',
                 text: 'Bojami nad Bzdurą',
-                desc: " Brawo. Jak sam napisał: “Autorem był gen. Antoni Słonimski. Terenem walk była rzeka Bzdura [...] Starałem się nieraz podać rękę ludziom tonącym w szarych falach rzeki Bzdury i to ratownictwo usprawiedliwia wiele moich okrucieństw wojennych. [...] przed nazwiskiem autora dodano «gen.». Nie jest to skrótem słowa generał, ale oczywiście słowa geniusz”",
+                desc: " Brawo. Jak sam napisał: „Autorem był gen. Antoni Słonimski. Terenem walk była rzeka Bzdura [...] Starałem się nieraz podać rękę ludziom tonącym w szarych falach rzeki Bzdury i to ratownictwo usprawiedliwia wiele moich okrucieństw wojennych. [...] przed nazwiskiem autora dodano «gen.». Nie jest to skrótem słowa generał, ale oczywiście słowa geniusz”",
                 isCorrect: true
 
             }, {

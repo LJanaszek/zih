@@ -13,8 +13,8 @@ export default function Page1({ onNext }: Props) {
         <div className="page-view">
         <img className='page-img' src={slonimski} alt="" />
 
-            <p>No, ale dość tych smutnych refleksji. Zaraz otworzysz ostatnią obręcz krypteksu. Ostatni znak szyfru to cyfra. Cyfra nie byle jaka, bo gdy leży na boku oznacza nieskończoność. A kiedy stoi, oznacza dokładnie liczbę wypełnionych przez Ciebie luk w moim wierszu.
-
+            <p>
+                No, ale dość tych smutnych refleksji. Zaraz otworzysz ostatnią obręcz krypteksu. Ostatni znak szyfru to cyfra. Cyfra nie byle jaka, bo gdy leży na boku, oznacza nieskończoność. A kiedy stoi, oznacza dokładnie liczbę wypełnionych przez Ciebie luk w moim wierszu.
             </p>
 
             

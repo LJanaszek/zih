@@ -10,16 +10,9 @@ export default function Page1({ onNext }: Props) {
         <div className="page-view">
         <img className='page-img' src={slonimski} alt="" />
 
-            <p>W kawiarni Ziemiańskiej czeka na mnie tajemniczy posłaniec z jeszcze bardziej tajemniczą przesyłką. Kiedy go znajdziesz, powiedz, że Cię przysyła Antoni Słonimski i pyta, kto zacz i co to za liścik.
-
+            <p>
+                W kawiarni Ziemiańskiej czeka na mnie tajemniczy posłaniec z jeszcze bardziej tajemniczą przesyłką. Kiedy go znajdziesz, powiedz, że przysyła Cię Antoni Słonimski i pyta, kto zacz i co to za liścik.
             </p>
-
-            {/* <figure>
-                <blockquote>
-                    <p>Cały trick polega na tym, że cofnęliśmy czas. Spóźniamy się tu z czasem o pewien interwał, którego wielkości niepodobna określić.</p>
-                </blockquote>
-                <figcaption>Sanatorium pod klepsydrą, Bruno Schulz</figcaption>
-            </figure> */}
 
         </div>
         <div className="button-list">

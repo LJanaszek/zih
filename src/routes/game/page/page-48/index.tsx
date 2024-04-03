@@ -17,20 +17,20 @@ export default function Page1({ onNext }: Props) {
             <img className='page-img' src={slonimski} alt="" />
 
             <p>
-                Ojczyzna, to słowo brzmi dumnie, czyż nie? W imię Ojczyzny młody narodowiec umówił się ze mną na spotkanie w kawiarni Ziemiańskiej, a potem spoliczkował mnie ohydnie za wiersz “Dwie Ojczyzny” i uciekł. Życie to teatr, więc łatwo może się zmienić w dramat. A wielkie teatry to wielkie dramaty.
+                Ojczyzna – to słowo brzmi dumnie, czyż nie? W imię ojczyzny młody narodowiec umówił się ze mną na spotkanie w kawiarni Ziemiańskiej, a potem spoliczkował mnie ohydnie za wiersz „Dwie ojczyzny” i uciekł. Życie to teatr, więc łatwo może się zmienić w dramat. A wielkie teatry to wielkie dramaty.
             </p>
 
         </div>
         {showPopup && <Popup onOKClick={() => { setShowPopup(false) }}>
-            <h1 className={style.h1Popup}>Stosunek Antoniego Słonimskiego do żydowskich środowisk tradycyjnych. </h1>
-            
-            <p className={style.pPopup}>Antoni Słonimski, znany polski poeta oraz krytyk literacki, prezentował zróżnicowany stosunek do żydowskich środowisk tradycyjnych i ich literatury. W kontekście znanych pisarzy żydowskich, takich jak Icchok Lejbusz Perec czy Szalom Asz, którzy zdecydowali się tworzyć w  języku jidysz, czyli języku żydowskim, powstałym około X wieku w południowych Niemczech na bazie jednego z dialektów języka niemieckiego (z dodatkiem elementów hebrajskich, słowiańskich i romańskich), Słonimski wykazywał postawę pełną ambiwalencji. </p>
+            <h1 className={style.h1Popup}>&nbsp;</h1>
+
+            <p className={style.pPopup}>W XIX wieku Żydzi w Polsce reprezentowali istotną grupę społeczną, aktywnie zaangażowaną w różnorodne przedsięwzięcia gospodarcze. Stosunki między Żydami a Polakami były bardzo złożone. Z jednej strony istniały zakorzenione uprzedzenia wynikające z różnic kulturowych i religijnych; z drugiej strony zaś, szczególnie wśród żydowskich mieszkańców obszarów miejskich, obserwowano dążenia asymilacyjne, w wyniku których następowała integracja jednostek do polskiej grupy kulturowej.</p>
 
 
-            <p className={style.pPopup}>Z jednej strony uznawał bogactwo kultury jidysz oraz wkład tych pisarzy w jej rozwój. Z szacunkiem podchodził do głęboko zakorzenionych tradycji i unikalnego języka, jakimi posługiwali się ci literaci, dostrzegając ich zaangażowanie w zachowanie żydowskiej tożsamości kulturowej. Z drugiej strony, będąc zwolennikiem asymilacji i modernizacji społecznej, dostrzegał wyzwania związane z jednak ograniczonym zasięgiem czytelnictwa pisarzy jidysz jedynie do społeczności żydowskiej. W świetle ówczesnych dążeń do integracji społecznej, nawoływał raczej do współdzielenia kultury i asymilacji z polską większością.</p>
+            <p className={style.pPopup}>Żydzi asymilujący się, którzy dopiero przyjmowali elementy kultury polskiej, stawali się często obiektem krytyki ze strony ortodoksyjnych przedstawicieli swojej społeczności. Dla wielu Polaków zaś zasymilowany Żyd był symbolem postępu i modernizacji, przyczyniającym się do rozwoju nauki, sztuki oraz handlu. Niestety dla niektórych wciąż pozostawał obiektem uprzedzeń antysemickich i stereotypów. Różnice kulturowe i religijne często dominowały nad stopniem asymilacji, wpływając istotnie na stosunki społeczne.</p>
 
 
-            <p className={style.pPopup}>Ostateczny stosunek Słonimskiego do pisarzy tworzących w jidysz ujawniał mieszankę respektu dla dziedzictwa kulturowego i równoczesnej troski o adaptację do nowoczesnych, uniwersalnych wartości. Jego perspektywa ilustruje konflikt pomiędzy tradycją a współczesnością, stanowiąc jednocześnie odzwierciedlenie ówczesnych debat na temat tożsamości oraz roli mniejszości kulturowych w społeczeństwie.</p>
+            <p className={style.pPopup}>XIX-wieczna Polska stanowiła scenę złożonego procesu transformacji społecznej, gdzie obecność zasymilowanych Żydów stanowiła istotny składnik. Mimo że dla wielu reprezentowali symbol postępu, to jednak negatywne stereotypy, obrazujące ich jako obcych, pozostawały dość powszechne. To zjawisko ilustruje bogatą, wielokrotnie złożona, aczkolwiek często trudną do jednoznacznej interpretacji, historię obecności Żydów w Polsce tego okresu.</p>
 
         </Popup>}
         <div className="button-list">

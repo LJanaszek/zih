@@ -10,7 +10,7 @@ export default function Page1({ onNext }: Props) {
     const [showButton, setShowButton] = useState(false);
     return <Box>
         <p className="paragraph-find">
-            Co czyta student pod starym buwem? <br></br> Podstaw odpowiednie litery pod cyfry
+            Co czyta student pod Starym BUW-em? <br></br> Podstaw odpowiednie litery pod cyfry.
         </p>
         <div className="password-view">
             <div className="password-view-title">
@@ -18,28 +18,28 @@ export default function Page1({ onNext }: Props) {
                 <h1>H2-C7F482</h1>
             </div>
             <div className="input-field">
-            <input type="text" id="fname" placeholder="_ _ - _ _ _ _ _ _" onKeyDown={(x)=>{
-                
-                if(x.target.value.length === 2 && x.key != 'Backspace' && x.key != '-'){
-                    x.target.value=x.target.value+'-';
-                }
-                if("-" in x.target.value.split('') ){
-                    
-                }
-            }} maxLength={9}/> 
+                <input type="text" id="fname" placeholder="_ _ - _ _ _ _ _ _" onKeyDown={(x) => {
+
+                    if (x.target.value.length === 2 && x.key != 'Backspace' && x.key != '-') {
+                        x.target.value = x.target.value + '-';
+                    }
+                    if ("-" in x.target.value.split('')) {
+
+                    }
+                }} maxLength={9} />
 
                 <button className="button" onClick={() => {
                     let x = document.getElementById("fname")!.value;
-                    x=x.toUpperCase();
-                
-                    if(x.lenght === 2){
+                    x = x.toUpperCase();
+
+                    if (x.lenght === 2) {
                         console.log("--------------------")
-                        document.getElementById("fname")!.value = x+'-'
+                        document.getElementById("fname")!.value = x + '-'
                     }
-                    if (x === "HA-CEFIRA" || x==="HA CEFIRA") {
+                    if (x === "HA-CEFIRA" || x === "HA CEFIRA") {
                         setShowButton(true)
                     }
-                    else{
+                    else {
                         setShowButton(false)
                     }
                 }}>sprawdź</button>

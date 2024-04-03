@@ -8,10 +8,10 @@ type Props = {
 export default function Page1({ onNext }: Props) {
     return <TextPage>
         <div className="page-view">
-        <img className='page-img' src={slonimski} alt="" />
+            <img className='page-img' src={slonimski} alt="" />
 
             <p>
-            Teraz wiem, z kim mam do czynienia. Jest jak jest, lepiej nie będzie.
+                Teraz wiem, z kim mam do czynienia. Jest, jak jest, lepiej nie będzie.
             </p>
 
         </div>

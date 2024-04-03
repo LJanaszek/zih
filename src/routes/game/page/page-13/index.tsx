@@ -51,7 +51,7 @@ export default function TaskMain({ onNext }: Props) {
     return <Box>
         <ScrollToTop />
         <p className="paragraph-find">
-            Znajdź na obrazku Abrahama Sterna. Możesz przybliżyć obraz.
+            Znajdź na obrazie, przedstawiającym Towarzystwo Przyjaciół Nauk, Abrahama Sterna. Możesz przybliżyć obraz.
         </p>
         <Container>
             <div className="widget">
