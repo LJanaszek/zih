@@ -3,8 +3,8 @@
 ## Środowisko developerskie
 
 Wymagane oprogramowanie:
-- `nodejs` używana wersja - 18.17.1
-- `yarn`
+- `nodejs` używana wersja - `18.17.1`
+- `yarn` używana wersja - `1.22.22`
 
 Po skolowaniu repozytorium należy zaistalować zależności komendą `yarn`
 
@@ -21,25 +21,6 @@ Po skolowaniu repozytorium należy zaistalować zależności komendą `yarn`
 
 ## Mechaniki zadań przeniesionych z innych projketów
 
-### Zadanie 1 - Zdjęcie ulicy
-
-W projekcie jest podstawowy kod do zadania w plikach:
-* `src\components\task-widgets\street-photo\photo.tsx` - layout widoku + kod generacji zdjęcia
-* `src\components\task-widgets\street-photo\video.tsx` - element playera video z nałożoną grafiką
-
-**Uwaga:** nakładanie naklejki na widoku z kamery i nakłądanie naklejki na zrobione zdjęcie są dwoma niezależnymi procesami. Trzeba przypilnować że oba dają ten sam wynik!
-
-
-### Zadanie 5 - Polowanie na podróżnych
-
-Zadanie zbudowane jest na podstawie sceny 3D przy pomocy biblioteki [THREE.js](https://threejs.org/) nałozonej na obraz z kamery urządzenia
-
-Istotne pliki:
-* `src\components\task-widgets\travelers\scene.tsx` - główny widok zadania
-* `src\components\task-widgets\travelers\scene\scene.ts` - scena 3D
-* `src\components\task-widgets\travelers\scene\controls.ts` - kontrole łączący ruchy urządzenia z kamerą w scenie 3d
-* `src\components\task-widgets\travelers\scene\video.tsx` - element video wyświetlający widok z kamery
-
 ### Zadanie 6 - 15-stka
 
 W projekcie jest podstawowy kod do zadania w plikach:
@@ -50,7 +31,6 @@ W pliku należy podmienić ścieżki do grafik i ewentualnie zmienić startowe u
 # GD Events Geo Game Template
 
 To jest podstawowy szablon to tworzenie stron www/gier z wykożystaniem geolokalizacji.
-
 
 
 ## Deploy
@@ -128,7 +108,6 @@ Jeżeli aplikacja wróci do stanu `GAME_STEP_TYPE.MULTI_GEO_STEP` i user znalaz�
 | `/src/routes/game/page/**`                    | katalogi z poszczególnymi stronami                                                                                        |
 | `/src/routes/task/index.tsx`                  | router decydujący którye zadanie pokazać                                                                                  |
 | `/src/routes/task/**`                         | katalogi z poszczególnymi zadaniami                                                                                       |
-| `/src/routes/end/index.tsx`                   | ekran kończący grę                                                                                                        |
 | `/src/routes/compass-view/single/content.tsx` | ekran kroku z pojedynczym punktem geo                                                                                     |
 | `/src/routes/compass-view/multi/content.tsx`  | ekran kroku z wieloma punktami geo                                                                                        |
 
