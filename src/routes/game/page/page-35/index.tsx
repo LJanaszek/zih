@@ -57,7 +57,7 @@ export default function TaskMain({ onNext }: Props) {
     return <>
         <ScrollToTop />
         <p className="paragraph-find">
-            Gdzie moga być schowane dokumenty?
+            Gdzie mogą być schowane dokumenty?
         </p>
         <Container>
             <div className="widget">

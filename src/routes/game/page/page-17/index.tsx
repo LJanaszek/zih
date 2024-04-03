@@ -8,18 +8,11 @@ type Props = {
 export default function Page1({ onNext }: Props) {
     return <TextPage>
         <div className="page-view">
-        <img className='page-img' src={slonimski} alt="" />
+            <img className='page-img' src={slonimski} alt="" />
 
-            <p>Pierwsza cyferka odkryta. Jeszcze cztery znaki i otworzysz krypteks. To się uda tylko tęgiej głowie, więc czas się dokształcić. Jazda na Uniwersytet!
-
+            <p>
+                Pierwsza cyferka odkryta. Jeszcze cztery znaki i otworzysz krypteks. To się uda tylko tęgiej głowie, więc czas się dokształcić. Jazda na uniwersytet!
             </p>
-
-            {/* <figure>
-                <blockquote>
-                    <p>Cały trick polega na tym, że cofnęliśmy czas. Spóźniamy się tu z czasem o pewien interwał, którego wielkości niepodobna określić.</p>
-                </blockquote>
-                <figcaption>Sanatorium pod klepsydrą, Bruno Schulz</figcaption>
-            </figure> */}
 
         </div>
         <div className="button-list">

@@ -20,22 +20,17 @@ export default function Page1({ onNext }: Props) {
                 Ojciec mój był lekarzem. Miał humor cięty jak brzytwa lub raczej skalpel, w końcu ukończył Akademię Medyko-Chirurgiczną w Petersburgu. Niech będzie i dla Ciebie inspiracją, bo przed Tobą operacja na żywym słowie!
             </p>
 
-            {/* <figure>
-                <blockquote>
-                    <p>Cały trick polega na tym, że cofnęliśmy czas. Spóźniamy się tu z czasem o pewien interwał, którego wielkości niepodobna określić.</p>
-                </blockquote>
-                <figcaption>Sanatorium pod klepsydrą, Bruno Schulz</figcaption>
-            </figure> */}
-
         </div>
         {showPopup && <Popup onOKClick={()=>{setShowPopup(false)}}> 
         <h1 className={style.h1Popup}>Struktura zawodowa Żydów w Królestwie Polskim i wpływ chrztu na możliwości awansu </h1>
         
-        <p className={style.pPopup}>W XIX-wiecznym Królestwie Polskim społeczność żydowska aktywna była w różnych dziedzinach zawodowych, w tym w handlu, rzemiośle, finansach i usługach, co świadczyło o jej zaangażowaniu w życie gospodarcze. Ta różnorodność zawodowa stanowiła efekt zarówno tradycyjnych praktyk wynikających z kultury żydowskiej, jak i konieczności dostosowania się do zmieniających się warunków społeczno-gospodarczych epoki.
-</p>
-        <p className={style.pPopup}>Kwestia porzucenia judaizmu i przejścia na chrześcijaństwo była zagadnieniem wielowymiarowym. Chrzest zwiększał możliwości awansu społecznego Żydów, zaś zbliżenie się do społeczności nieżydowskiej otwierało drzwi do zawodów i sfer społecznych, co wcześniej było często niedostępne. Trzeba jednak pamiętać, że zabiegi te były często hamowane przez utrzymujące się uprzedzenia i stereotypy społeczne. </p>
-        <p className={style.pPopup}>Pewna grupa ochrzczonych Żydów osiągała znaczny awans społeczny poprzez zdobycie wykształcenia, wykorzystywanie nowych możliwości zawodowych i osiąganie prestiżowych pozycji społecznych. Niemniej jednak, wielu z nich borykało się z trudnościami związanymi z akceptacją w społeczeństwie chrześcijańskim, a pełna asymilacja w tym kontekście była często nieosiągalna. </p>
-        <p className={style.pPopup}>Podsumowując, struktura zawodowa Żydów w Królestwie Polskim w XIX wieku wykazywała złożoną różnorodność, a wpływ konwersji na chrześcijaństwo na możliwości awansu społecznego był niejednoznaczny, z jednej strony otwierając pewne perspektywy, z drugiej zaś narażając na trudności wynikające z uprzedzeń i braku akceptacji społecznej dla tych znajdujących się „pomiędzy”.</p>
+        <p className={style.pPopup}>W XIX-wiecznym Królestwie Polskim społeczność żydowska aktywna była w różnych dziedzinach zawodowych, w tym w handlu, rzemiośle, finansach i usługach, co świadczyło o jej zaangażowaniu w życie gospodarcze. Ta różnorodność zawodowa stanowiła efekt zarówno tradycyjnych praktyk wynikających z kultury żydowskiej, jak i konieczności dostosowania się do zmieniających się warunków społeczno-gospodarczych epoki.</p>
+
+        <p className={style.pPopup}>Kwestia porzucenia judaizmu i przejścia na chrześcijaństwo była zagadnieniem wielowymiarowym. Chrzest zwiększał możliwości awansu społecznego Żydów, zaś zbliżenie się do społeczności nieżydowskiej otwierało drzwi do zawodów i sfer społecznych, co wcześniej było często niedostępne. Trzeba jednak pamiętać, że zabiegi te były często hamowane przez utrzymujące się uprzedzenia i stereotypy społeczne.</p>
+
+        <p className={style.pPopup}>Pewna grupa ochrzczonych Żydów osiągnęła znaczny awans poprzez zdobycie wykształcenia, wykorzystywanie nowych możliwości zawodowych i osiąganie prestiżowych pozycji społecznych. Niemniej jednak, wielu z nich borykało się z trudnościami związanymi z akceptacją w społeczeństwie chrześcijańskim, a pełna asymilacja w tym kontekście była często nieosiągalna.</p>
+
+        <p className={style.pPopup}>Struktura zawodowa Żydów w Królestwie Polskim w XIX wieku wykazywała różnorodność, a wpływ konwersji na chrześcijaństwo na możliwości awansu społecznego był niejednoznaczny, z jednej strony otwierając pewne perspektywy, z drugiej zaś narażając na trudności wynikające z uprzedzeń i braku akceptacji społecznej dla tych znajdujących się „pomiędzy”.</p>
         
         </Popup>}
         <div className="button-list">

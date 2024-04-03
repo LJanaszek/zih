@@ -13,7 +13,9 @@ export default function Page1({ onNext }: Props) {
     const [showNext, setShowNext] = useState(false)
     return <Box>
         <div>
-        <p className="paragraph-find">Ułóż w kolejności wersy fragmentu mojego wiersza "Popiół i wiatr"</p>
+            <p className="paragraph-find">
+                Ułóż w kolejności wersy fragmentu mojego wiersza „Popiół i wiatr”.
+            </p>
             <OrderQuestionLayout
                 items={[
                     // { correctPlace: 0, text: 'Ojciec mój szanowany był “Pod Filarami”' },
@@ -28,8 +30,8 @@ export default function Page1({ onNext }: Props) {
                 ]}
                 onComplete={() => (setShowNext(true))}
                 firsLine="Ojciec mój szanowany był “Pod Filarami”"
-                />
-                
+            />
+
 
 
         </div>

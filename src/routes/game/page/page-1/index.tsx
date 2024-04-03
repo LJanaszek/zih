@@ -9,7 +9,7 @@ export default function Page1({ onNext }: Props) {
         <div className="page-view">
             <img className='page-img' src={slonimski} alt="" />
             <p>
-            Czasami zadaję sobie pytanie, dlaczego ludzie robią pewne rzeczy? Dlaczego akurat Ciebie proszę o pomoc z pewną tajemniczą sprawą? Z zasady przy prostych sprawach, proste są i powody. Idziesz spać, bo Ci się spać zachciało. A ja Cię proszę o pomoc, bo Ciebie tu  przywiało.
+            Czasami zadaję sobie pytanie, dlaczego ludzie robią pewne rzeczy. Dlaczego akurat Ciebie proszę o pomoc z pewną tajemniczą sprawą? Z zasady przy prostych sprawach proste są i powody. Idziesz spać, bo Ci się spać zachciało. A ja Cię proszę o pomoc, bo Ciebie tu przywiało.
             </p>
         </div>
         <div className="button-list">

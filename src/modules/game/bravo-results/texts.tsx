@@ -5,6 +5,7 @@ import img4 from "../../../assets/weszacy.png"
 import img5 from "../../../assets/niezadowolony.png"
 import img6 from "../../../assets/marzyciel.png"
 import img7 from "../../../assets/pila.png"
+import img0 from "../../../assets/skand.png"
 
 
 
@@ -20,11 +21,21 @@ export interface BravoTexts {
 
 export const TEXTS: BravoTexts[] = [
     {
+        id: "0",
+        items: [
+            {
+                h1: 'Czytelnik literatury skandynawskiej',
+                p: 'Lubisz, jak jest o małych ludziach, o szarych, zwykłych sprawach człowieczych i żeby nad tem huczał kosmos. Jesteś estetą. Z czasem wyrośniesz na czytelnika literatury klasycznej, mówiącego: „Ja czytam tylko klasyków”. To znaczy, że nic nie będziesz czytał.',
+                img: img0
+            }
+        ]
+    },
+    {
         id: "1",
         items: [
             {
                 h1: 'Czytelnik łatwowierny',
-                p: 'Wszystko strawisz. Dziwisz się, ale wierzysz. Gdy przeczytasz w numerze primaaprilisowym, że kogoś ugryzła w udo jemioła albo że przed sędzią pokoju stanął piorun z mamusią-błyskawicą, powiesz: “Mój panie, kto by to pomyślał”. Przeglądasz gazety, książki, tygodniki, szukasz prawdy i chodzisz po świecie z głową ciężką i nabitą bredniami. W nocy źle sypiasz.',
+                p: 'Wszystko strawisz. Dziwisz się, ale wierzysz. Gdy przeczytasz w numerze primaaprilisowym, że kogoś ugryzła w udo jemioła albo że przed sędzią pokoju stanął piorun z mamusią-błyskawicą, powiesz: „Mój panie, kto by to pomyślał”. Przeglądasz gazety, książki, tygodniki, szukasz prawdy i chodzisz po świecie z głową ciężką i nabitą bredniami. W nocy źle sypiasz.',
                 img: img1
             }
         ]
@@ -64,7 +75,7 @@ export const TEXTS: BravoTexts[] = [
         items: [
             {
                 h1: 'Niezadowolony',
-                p: 'Nic Ci się nie podoba, ale czytasz chętnie. Mój przyjaciel ma takiego fryzjera. Pożycza co rano książkę i nazajutrz oddaje z grymasem. O Conradzie powiada: “To jakieś głupie”, o Żeromskim: “I po co to było pisać?”, o Victorze Hugo, że to “Nabieranie gości”. O Sienkiewiczu mówi: “To jakiś chory facet”. Nawet “Trędowata” nie daje mu zadowolenia. Odniósł i powiedział, że drugiego tomu już nie chce. Kiedy mu objaśniono, że “Trędowata” jest w jednym tomie, pomilczał chwilkę i powiedział: “To lepiej”. Nareszcie coś mu się spodobało.',
+                p: 'Nic Ci się nie podoba, ale czytasz chętnie. Mój przyjaciel ma takiego fryzjera. Pożycza co rano książkę i nazajutrz oddaje z grymasem. O Conradzie powiada: „To jakieś głupie”, o Żeromskim: „I po co to było pisać?”, o Victorze Hugo, że to „nabieranie gości”. O Sienkiewiczu mówi: „To jakiś chory facet”. Nawet „Trędowata” nie daje mu zadowolenia. Odniósł i powiedział, że drugiego tomu już nie chce. Kiedy mu objaśniono, że „Trędowata” jest w jednym tomie, pomilczał chwilkę i powiedział: „To lepiej”. Nareszcie coś mu się spodobało.',
                 img: img5
             }
         ]
@@ -84,7 +95,7 @@ export const TEXTS: BravoTexts[] = [
         items: [
             {
                 h1: 'Czytelnik-piła',
-                p: 'Lubisz sobie przeczytać coś ciężkiego, gruby tom, napisany zawiłym stylem. Gdy znajdziesz obcy wyraz, zaglądasz do słownika. Masz na biurku słowniczek Arcta “Dwadzieścia tysięcy słów obcych”. Nie lubisz jasności, lapidarności i dowcipu. Gdy z trudnością przebrniesz przez mętne i powykręcane, najeżone żargonem filozoficznym artykulisko, wielkim zadowoleniem napawa Cię zrozumienie mniej więcej, o co chodzi i wdzięczny jesteś za to  autorowi. Kolekcjonujesz takie piły, które udało Ci się przebrnąć! Mówisz, że to głębokie i masz się przez to za inteligenta. Wszystko, co jasne i proste, jest dla Ciebie naiwne.',
+                p: 'Lubisz sobie przeczytać coś ciężkiego, gruby tom, napisany zawiłym stylem. Gdy znajdziesz obcy wyraz, zaglądasz do słownika. Masz na biurku słowniczek Arcta „Dwadzieścia tysięcy słów obcych”. Nie lubisz jasności, lapidarności i dowcipu. Gdy z trudnością przebrniesz przez mętne i powykręcane, najeżone żargonem filozoficznym artykulisko, wielkim zadowoleniem napawa Cię zrozumienie mniej więcej, o co chodzi i wdzięczny jesteś za to autorowi. Kolekcjonujesz takie piły, które udało Ci się przebrnąć! Mówisz, że to głębokie i masz się przez to za inteligenta. Wszystko, co jasne i proste, jest dla Ciebie naiwne.',
                 img: img7
             }
         ]

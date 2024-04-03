@@ -262,7 +262,7 @@ export const SCENARIO: GameScenario = {
                 lat: 52.242444,
                 lng:  21.008667
             },
-            additional:"Pod tym adresem mieszkali rodzice Antoniego - Stanisław i Eugenia Słonimscy",
+            additional:"Pod tym adresem mieszkali rodzice Antoniego – Stanisław i Eugenia Słonimscy.",
             name: ['Niecała 6'],
             nextStep: '5.3'
         },

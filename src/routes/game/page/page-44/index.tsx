@@ -8,18 +8,12 @@ type Props = {
 export default function Page1({ onNext }: Props) {
     return <TextPage>
         <div className="page-view">
-        <img className='page-img' src={slonimski} alt="" />
+            <img className='page-img' src={slonimski} alt="" />
 
-            <p>Chyba Cię nie doceniałem, dobra robota! Następny przystanek: Plac Teatralny.
-
+            <p>
+                Chyba Cię nie doceniałem, dobra robota! Następny przystanek: plac Teatralny.
+                Została Ci jedna obręcz krypteksu. Zaraz zasmakujesz najsłodszych nektarów i ananasów tryumfu. Ale wiedz, że w życiu poety bywają i łyżki dziegciu, a gorycz ta dosięga Cię w najmniej spodziewanych momentach.
             </p>
-
-            {/* <figure>
-                <blockquote>
-                    <p>Cały trick polega na tym, że cofnęliśmy czas. Spóźniamy się tu z czasem o pewien interwał, którego wielkości niepodobna określić.</p>
-                </blockquote>
-                <figcaption>Sanatorium pod klepsydrą, Bruno Schulz</figcaption>
-            </figure> */}
 
         </div>
         <div className="button-list">

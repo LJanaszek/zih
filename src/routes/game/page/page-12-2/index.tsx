@@ -11,7 +11,7 @@ export default function Page1({ onNext }: Props) {
             <img src={slonimski} className='page-img' alt="" />
 
             <p>
-            Ja zaś żyję spokojnie i nie czekam ani na Mesjasza, ani na generała na białym koniu. Czas umilam sobie i innym, pisząc felietony, a po pracy - zagadki i niespodzianki. Jeżeli znajdziesz poprawny szyfr i otworzysz krypteks, odkryjesz skarb rodu Słonimskich. Powodzenia!
+            Ja zaś żyję spokojnie i nie czekam ani na Mesjasza, ani na generała na białym koniu. Czas umilam sobie i innym, pisząc felietony, a po pracy – zagadki i niespodzianki. Jeżeli znajdziesz poprawny szyfr i otworzysz krypteks, odkryjesz skarb rodu Słonimskich. Powodzenia!
             </p>
 
         </div>

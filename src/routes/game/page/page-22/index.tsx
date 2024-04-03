@@ -11,7 +11,7 @@ export default function Page1({ onNext }: Props) {
     const [showNext, setShowNext] = useState(false)
     return <Box>
         <div className="page">
-            <p className="paragraph-find">Ułóż stronę gazety Ha-Cefira z podartych fragmentów</p>
+            <p className="paragraph-find">Ułóż stronę gazety „Ha-Cefira” z podartych fragmentów. Naciśnij dowolny fragment układanki aby przenieść go na puste pole.</p>
             <Puzzle onComplete={()=>{setShowNext(true)}}></Puzzle>
 
         </div>

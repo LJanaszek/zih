@@ -12,7 +12,7 @@ export default function Page1({ onNext }: Props) {
         
         <div className="page-view page-view-slon">
         <img src={slonimski} className="page-img img-slon" alt="" />
-            <p className=""> Litera “S” to wąż, to nawet dziecko powie i jeszcze zasyczy jadowicie. Gazeciarz, co trzyma gazety pod pachą to litera “R”. Spójrz, na jednej nodze się oparł, rękę zawija pod bok. A jaka litera przedstawia gazeciarza, co jeszcze gazety rozdaje?</p>
+            <p className=""> Litera „S” to wąż, to nawet dziecko powie i jeszcze zasyczy jadowicie. Gazeciarz, co trzyma gazety pod pachą to litera „R”. Spójrz, na jednej nodze się oparł, rękę zawija pod bok. A która litera przedstawia gazeciarza, co jeszcze gazety rozdaje?</p>
             </div>
         <div className="button-check-list">
             <button onClick={() => { setShowButton(false) }}>R</button>

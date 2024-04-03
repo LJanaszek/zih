@@ -10,7 +10,8 @@ export default function Page1({ onNext }: Props) {
         <div className="page-view">
             <img src={slonimski} className='page-img' alt="" />
 
-            <p>Pradziad mój był uczonym, prekursorem cybernetyki, twórcą pierwszej maszyny do liczenia.  Ja natomiast, wraz z Julianem Tuwimem, jesteśmy twórcami pierwszego w historii alfabetycznego spisu wszystkich liczb od jednego do stu. To nie jest wcale takie proste!
+            <p>
+                Pradziad mój był uczonym, prekursorem cybernetyki, twórcą pierwszej maszyny do liczenia. Ja natomiast, wraz z Julianem Tuwimem, jesteśmy twórcami pierwszego w historii alfabetycznego spisu wszystkich liczb od jednego do stu. To wcale nie jest takie proste!
 
             </p>
 
