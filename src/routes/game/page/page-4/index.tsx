@@ -58,9 +58,6 @@ export default function TaskMain({ onNext }: Props) {
         isComplete: false
     });
 
-    const [showInfoPopup, setShowInfoPopup] = useState(false);
-    const [showPreviewPopup, setShowPreviewPopup] = useState(false);
-
     return <>
         <ScrollToTop />
         <p className="paragraph-find">

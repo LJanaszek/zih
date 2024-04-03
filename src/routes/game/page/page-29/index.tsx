@@ -1,8 +1,5 @@
 import Box from "../../../../components/layout/box"
-import TextPage from "../../../../components/layout/text-page"
-import stern from "../../../../assets/stern.png"
 import Page92Widget2 from "./widget-2"
-import c from "./sculp.png"
 import { useState } from "react"
 import Popup from "../../../../components/elements/popup"
 type Props = {
@@ -41,9 +38,6 @@ export default function Page1({ onNext }: Props) {
                 <Popup onClick={onNext}>
                     <p>Przejdź dalej</p>
                 </Popup>
-                // <div className="button-list">
-                //     <button className="button-hand" onClick={onNext}></button>
-                // </div>
             }
         </div>
 

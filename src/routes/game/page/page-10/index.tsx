@@ -1,4 +1,3 @@
-import Box from "../../../../components/layout/box"
 import TextPage from "../../../../components/layout/text-page"
 import slonimski from "../../../../assets/slonimski.png"
 type Props = {
@@ -14,13 +13,6 @@ export default function Page1({ onNext }: Props) {
                 Pradziad mój był uczonym, prekursorem cybernetyki, twórcą pierwszej maszyny do liczenia. Ja natomiast, wraz z Julianem Tuwimem, jesteśmy twórcami pierwszego w historii alfabetycznego spisu wszystkich liczb od jednego do stu. To wcale nie jest takie proste!
 
             </p>
-
-            {/* <figure>
-                <blockquote>
-                    <p>Cały trick polega na tym, że cofnęliśmy czas. Spóźniamy się tu z czasem o pewien interwał, którego wielkości niepodobna określić.</p>
-                </blockquote>
-                <figcaption>Sanatorium pod klepsydrą, Bruno Schulz</figcaption>
-            </figure> */}
 
         </div>
         <div className="button-list">

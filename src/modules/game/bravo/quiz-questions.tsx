@@ -1,11 +1,9 @@
 import { useQuestion } from "./use-question";
 import { IQuizQuestion, } from "./quest-base";
 import styles from "./questionStyle.module.scss";
-
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useAnswer } from "../../main/hooks/use-answer";
-import fisher from "./fiszer.png"
 import style from "./style.module.scss"
 
 export interface Props2 {
@@ -50,10 +48,8 @@ export interface ForQuizQuest {
 }
 
 export function QuizQuestionDummy({ question, onNext }: ForQuizQuest, ) {
-  const imgRef = useRef<HTMLImageElement>(null);
   const [name, setName] = useState("")
   const { register, watch } = useForm();
-  const [key, setKey] = useState("")
   const value = watch("an");
 
 

@@ -1,5 +1,4 @@
 import { useState } from "react"
-import calc from "../../../../assets/calc.png"
 import slonimski from "../../../../assets/slonimski.png"
 
 type Props = {
@@ -23,20 +22,7 @@ export default function Page1({ onNext }: Props) {
             <button onClick={() => { setShowButton(false) }}>M</button>
             <button onClick={() => { setShowButton(false) }}>P</button>
         </div>
-        
-            {/* <figure>
-                <blockquote>
-                    <p>Cały trick polega na tym, że cofnęliśmy czas. Spóźniamy się tu z czasem o pewien interwał, którego wielkości niepodobna określić.</p>
-                </blockquote>
-                <figcaption>Sanatorium pod klepsydrą, Bruno Schulz</figcaption>
-            </figure> */}
-
-
-
-        
-        
-        
-        
+    
         {showButton &&
             <div className="button-list">
                 <button className="button-hand" onClick={onNext}></button>

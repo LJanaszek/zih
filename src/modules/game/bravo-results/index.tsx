@@ -1,4 +1,3 @@
-import TextPage from "../../../components/layout/text-page";
 import { BravoTexts } from "./texts";
 import { useQuestion } from "./use-question";
 import styles from "./bravo.module.scss"

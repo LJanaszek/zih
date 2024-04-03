@@ -1,4 +1,3 @@
-import Box from "../../../../components/layout/box"
 import TextPage from "../../../../components/layout/text-page"
 import stern from "../../../../assets/stern.png"
 type Props = {
@@ -13,13 +12,6 @@ export default function Page1({ onNext }: Props) {
             <p>
                 Nie poznajesz mnie już? To ja, Abraham Stern. Ot, jak łatwo przychodzi zapomnieć.
             </p>
-
-            {/* <figure>
-                <blockquote>
-                    <p>Cały trick polega na tym, że cofnęliśmy czas. Spóźniamy się tu z czasem o pewien interwał, którego wielkości niepodobna określić.</p>
-                </blockquote>
-                <figcaption>Sanatorium pod klepsydrą, Bruno Schulz</figcaption>
-            </figure> */}
 
         </div>
         <div className="button-list">

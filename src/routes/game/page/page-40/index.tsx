@@ -1,7 +1,4 @@
 import Box from "../../../../components/layout/box"
-import TextPage from "../../../../components/layout/text-page"
-import slonimski from "../../../../assets/slonimski.png"
-import CheckboxAnswerForm from "../../../../components/task-widgets/checkboxAnswerForm/checkboxAnswerForm"
 import OrderQuestionLayout from "../../../../components/task-widgets/order-question-widget"
 import { useState } from "react"
 type Props = {
@@ -11,9 +8,6 @@ type Props = {
 export default function Page1({ onNext }: Props) {
 
     const [showNext, setShowNext] = useState(false);
-    //     const child = document.createElement('div');
-    // child.innerText = 'Kiedyś, gdy siostra miała odrę, czy też różę,';
-    // document.getElementById('order-div')!.insertBefore(child, .children[0])
     return <Box>
         <div>
             <p className="paragraph-find">
@@ -27,11 +21,6 @@ export default function Page1({ onNext }: Props) {
                     { correctPlace: 2, text: 'Prawie rok przemieszkałem, nim się w końcu matka' },
                     { correctPlace: 1, text: 'Miałem tam być przez miesiąc, lecz zostałem dłużej' },
                     { correctPlace: 4, text: 'Spostrzegła przerażona, że z domu zniknąłem. ' },
-
-
-
-
-
 
                 ]}
                 onComplete={() => (setShowNext(true))}

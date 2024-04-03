@@ -41,7 +41,7 @@ export default function RulesPage() {
     const navigate = useNavigate()
 
     const [showGPSInfo, setShowGPSInfo] = useState(false);
-
+    console.log(setShowGPSInfo)
     const goToGame = useCallback(() => {
         navigate(getGamePageRoute())
     }, [navigate]);

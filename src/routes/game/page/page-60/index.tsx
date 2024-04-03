@@ -1,4 +1,3 @@
-import Box from "../../../../components/layout/box"
 import TextPage from "../../../../components/layout/text-page"
 import slonimski from "../../../../assets/slonimski.png"
 import CSS from "csstype"
@@ -37,8 +36,5 @@ export default function Page1({ onNext }: Props) {
             </div>
 
         </div>
-        {/* <div className="button-list">
-            <button className="button-hand" onClick={onNext}></button>
-        </div> */}
     </TextPage>
 }

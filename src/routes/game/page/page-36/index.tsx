@@ -1,4 +1,3 @@
-import Box from "../../../../components/layout/box"
 import TextPage from "../../../../components/layout/text-page"
 import slonimski from "../../../../assets/slonimski.png"
 type Props = {

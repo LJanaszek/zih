@@ -1,4 +1,4 @@
-import { useMemo, useReducer } from "react"
+import { useReducer } from "react"
 import styled from "styled-components"
 import Select from 'react-select';
 import sculp1 from "../../../../assets/sculp.png";
@@ -75,30 +75,16 @@ const Container = styled.div`
 export default function Page92Widget2({ relations, interpretations, items, onComplete }: Props) {
     var userAns: string[] = [];
     var correctAns: string[] = [];
-    const initData: GameState = useMemo(() => {
-        return {
-            items: items.map((item, index) => {
-                return {
-                    correctPlace: item.correctPlace,
-                    description: item.description
-                }
-            })
-        }
-    }, [items]);
     const [state, moveItem] = useReducer((state: GameState, action: { itemId: string, slotId: string }) => {
         const copyArr = [...state.items];
-        // copyArr.splice(hoverIndex, 0, copyArr.splice(dragIndex, 1)[0]);
 
 
         const item = state.items.find(i => i.id === action.itemId);
         const slot = state.slots.find(s => s.id === action.slotId);
 
-
-
-
-
         items.map(s => {
             correctAns.push(s.correctPlace);
+            return 1
             // console.log(correctAns)
         })
 

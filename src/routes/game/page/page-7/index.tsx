@@ -1,6 +1,4 @@
 import { useState } from "react";
-import Box from "../../../../components/layout/box"
-import TextPage from "../../../../components/layout/text-page"
 import Popup from "../../../../components/elements/popup";
 import cryptex from "../../../../assets/cryptex.png"
 import arrow from "../../../../assets/arrow.png"
@@ -53,10 +51,10 @@ export default function Page1({ onNext }: Props) {
                     <div className="crypImgLeft"> <img src={cryptex} alt="" /></div>
                     <div className="crypBlock crypNum" >
                         <button className="arr_up" onClick={() => { crypUp() }}>
-                            <img src={arrow} /></button>
+                            <img src={arrow} alt="" /></button>
                             <p id="crypText">1</p>
                             <button className="arr_down" onClick={() => { crypDown() }}>
-                                <img src={arrow} /></button></div>
+                                <img src={arrow} alt="" /></button></div>
                     <div className="crypBlock"><p>A</p></div>
                     <div className="crypBlock"><p>A</p></div>
                     <div className="crypBlock"><p>A</p></div>

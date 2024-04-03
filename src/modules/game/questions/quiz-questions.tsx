@@ -2,7 +2,7 @@ import { useQuestion } from "./use-question";
 import { IQuizQuestion, } from "./quest-base";
 import styles from "./questionStyle.module.scss";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useAnswer } from "../../main/hooks/use-answer";
 import fisher from "./fiszer.png"
@@ -18,7 +18,6 @@ export interface Props2 {
  * Jezeli user opdpiwedział na pytanie to pokazujemy podsumowanie pytania
  */
 export function QuizQuestion({ id, onComplete, onNext }: Props2) {
-
   const q = useQuestion(id);
   const answer = useAnswer(id);
 
@@ -48,20 +47,17 @@ export interface ForQuizQuest {
 }
 
 export function QuizQuestionDummy({ question }: ForQuizQuest) {
-  const imgRef = useRef<HTMLImageElement>(null);
 
   const { register, watch } = useForm();
 
   const value = watch("an");
-
-  const [showButton, setShowButton] = useState(false);
 
   const [showConfirm, setShowConfirm] = useState(false);
 
   useEffect(() => {
     setShowConfirm(Boolean(value));
   }, [value]);
-
+  console.log(showConfirm)
   // const onConfirmClicked = useCallback(() => {
   //   onConfirm(question.id, value);
   // }, [onConfirm, question, value]);
@@ -75,15 +71,15 @@ export function QuizQuestionDummy({ question }: ForQuizQuest) {
       </div>
       <div className={styles.questionAnswer}>
         <div className={styles.answerDiv}>
-                  <img src={fisher} alt="" />
-                  <p id="answer" className={styles.answerBlock}></p>
+          <img src={fisher} alt="" />
+          <p id="answer" className={styles.answerBlock}></p>
 
-                </div>
+        </div>
         <form className={styles.answer_block}>
           {question.answers.map((a) => {
             return (
               <div className={styles.answersGrid} key={a.id} >
-                
+
                 <label>
 
                   <div className={a.isCorrect ? styles.ans : styles.ans}>
@@ -99,7 +95,6 @@ export function QuizQuestionDummy({ question }: ForQuizQuest) {
                           // onConfirmClicked()
                         }
                         else {
-                          setShowButton(false)
                           document.getElementById("nextButton")!.style.display = 'none';
                         }
                       }}
