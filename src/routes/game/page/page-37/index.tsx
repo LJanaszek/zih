@@ -21,7 +21,7 @@ export default function Page1({ onNext }: Props) {
 
         </div>
         {showPopup && <Popup onOKClick={()=>{setShowPopup(false)}}> 
-        <h1 className={style.h1Popup}>Struktura zawodowa Żydów w Królestwie Polskim i wpływ chrztu na możliwości awansu </h1>
+        <h1 className={style.h1Popup}>&nbsp;</h1>
         
         <p className={style.pPopup}>W XIX-wiecznym Królestwie Polskim społeczność żydowska aktywna była w różnych dziedzinach zawodowych, w tym w handlu, rzemiośle, finansach i usługach, co świadczyło o jej zaangażowaniu w życie gospodarcze. Ta różnorodność zawodowa stanowiła efekt zarówno tradycyjnych praktyk wynikających z kultury żydowskiej, jak i konieczności dostosowania się do zmieniających się warunków społeczno-gospodarczych epoki.</p>
 

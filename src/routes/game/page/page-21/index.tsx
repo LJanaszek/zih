@@ -21,7 +21,7 @@ export default function Page1({ onNext }: Props) {
 
         </div>
         {showPopup && <Popup onOKClick={() => { setShowPopup(false) }}>
-            <h1 className={style.h1Popup}>Znaczenie Haskali w Polsce w XIX wieku</h1>
+            <h1 className={style.h1Popup}>&nbsp;</h1>
 
             <p className={style.pPopup}>Synem Abrahama Sterna był, urodzony w 1810 roku w Białymstoku, Chaim Zelig Słonimski, również wynalazca, matematyk i astronom, którego naukowym przewodnikiem był Jechiel Zabłudowski, jeden z pionierów Haskali. Był to ruch intelektualny, którego początki datuje się na późne lata XVIII wieku, opowiadający się za przyjęciem przez Żydów oświeceniowych ideałów. Haskala stanowiła złożone zjawisko kulturowe i intelektualne, rozwijające się również w społeczności żydowskiej XIX-wiecznej rozbiorowej Polski. Głównym celem tego ruchu było wprowadzenie modernizacji, edukacji i procesu akulturacji wśród Żydów.
             </p>

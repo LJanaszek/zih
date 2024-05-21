@@ -19,19 +19,12 @@ export default function Page1({ onNext }: Props) {
                 Mój pradziad Abraham Stern wynalazł maszynę do liczenia. Tęgi był z niego łeb, więc został zaproszony przez Stanisława Staszica do Towarzystwa Przyjaciół Nauk. Nie wszystkim się podobało, że nosił się po żydowsku: w szacie polskiego Izraelity i z brodą czarnorudawą.
             </p>
 
-            {/* <figure>
-                <blockquote>
-                    <p>Cały trick polega na tym, że cofnęliśmy czas. Spóźniamy się tu z czasem o pewien interwał, którego wielkości niepodobna określić.</p>
-                </blockquote>
-                <figcaption>Sanatorium pod klepsydrą, Bruno Schulz</figcaption>
-            </figure> */}
-
         </div>
         <div className="button-list">
             <button className="button-hand" onClick={onNext}></button>
         </div>
         {showPopup && <Popup onOKClick={() => { setShowPopup(false) }}>
-            <h1 className={style.h1Popup}>Możliwości awansu społecznego Żydów w&nbsp;Kongresówce</h1>
+            <h1 className={style.h1Popup}>&nbsp;</h1>
 
             <p className={style.pPopup}>W XIX wieku Żydzi w Polsce, a w zasadzie precyzyjnie rzecz ujmując w Królestwie Kongresowym istniejącym od 1815 roku, reprezentowali istotną grupę społeczną, aktywnie zaangażowaną w różnorodne przedsięwzięcia. W tym okresie, społeczność żydowska skoncentrowana była głównie wokół działań gospodarczych. Żydzi odgrywali kluczową rolę w sektorach handlu, rzemiosła i finansów. Stosunki między Żydami a Polakami były bardzo złożone. Z jednej strony istniały zakorzenione uprzedzenia wynikające z różnic kulturowych i religijnych; z drugiej strony zaś, szczególnie wśród żydowskich mieszkańców obszarów miejskich, obserwowano dążenia asymilacyjne, w wyniku których następowała integracja jednostek do polskiej grupy kulturowej.
             </p>

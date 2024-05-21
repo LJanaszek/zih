@@ -15,32 +15,32 @@ export default function Page1({ onNext }: Props) {
             <div className="poemGrid">
                 <div>
                     <p>
-                        “Dwie ______”, Antoni Słonimski
+                        “Dwie ________”, Antoni Słonimski
                     </p>
                     <p>
-                        W twojej ______ karki się zgina <br />
+                        W twojej _________ karki się zgina <br />
                         Przed każdą władzą,<br />
                         Dla zwyciężonych – wzgarda i ślina,<br />
                         Gdy ich na rzeź prowadzą.<br />
-                        W twojej ______, gdyś hołdy składał –
+                        W twojej _________, gdyś hołdy składał –
                         Przed obce trony.
                         <br />
-                        W ______ mojej, jeśli kto padał, <br />
+                        W _________ mojej, jeśli kto padał, <br />
                         To krwią zbroczony
                     </p>
 
                     <p>
-                        W twojej ______ do obcych w wierze<br />
+                        W twojej _________ do obcych w wierze<br />
                         Bóg się nie zniża.<br />
-                        Moja ______ świat cały bierze<br />
+                        Moja ________ świat cały bierze<br />
                         W ramiona krzyża.
                     </p>
                 </div>
                 <div>
                     <p>
-                        W twojej ______ sławnych portrety – <br />
+                        W twojej _________ sławnych portrety – <br />
                         Tom w etażerce.<br />
-                        W mojej ______ słowa poety<br />
+                        W mojej _________ słowa poety<br />
                         Oprawne w serce.
                     </p>
                     <p>

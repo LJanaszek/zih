@@ -8,7 +8,7 @@ export default function Page1({ onNext }: Props) {
     const [showButton, setShowButton] = useState(false);
     return <Box>
         <p className="paragraph-find">
-            Co czyta student pod Starym BUW-em? <br></br> Podstaw odpowiednie litery pod cyfry.
+        Co czyta student pod Starym BUW-em? Odnaleziony tytuł podstaw pod klucz, znajdujący się na dole ekranu, zestawiając litery z cyframi. Następnie, korzystając z odkrytego kodu, rozszyfruj tytuł gazety Chaima Zeliga Słonimiskiego.
         </p>
         <div className="password-view">
             <div className="password-view-title">

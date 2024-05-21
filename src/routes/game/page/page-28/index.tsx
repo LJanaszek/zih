@@ -20,7 +20,7 @@ export default function Page1({ onNext }: Props) {
             </p>
         </div>
         {showPopup && <Popup onOKClick={() => { setShowPopup(false) }}>
-            <h1 className={style.h1Popup}>Stosunek środowisk tradycyjnych do integracji żydowskiej  </h1>
+            <h1 className={style.h1Popup}>&nbsp;</h1>
 
             <p className={style.pPopup}>W XIX wieku społeczności żydowskie o charakterze tradycyjnym przejawiały zróżnicowane stanowiska wobec kwestii integracji. Grupy ortodoksyjne, wyraźnie osadzone w tradycji religijnej, często przyjmowały stanowisko nieufności lub wręcz sprzeciwu wobec idei asymilacji.</p>
 

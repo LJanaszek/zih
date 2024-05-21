@@ -13,10 +13,27 @@ export default function Page1({ onNext }: Props) {
         'width': '50%'
 
     }
+    const styles2: CSS.Properties = {
+        'display': 'flex',
+        'flexDirection': 'column',
+        'alignItems': 'flex-start',
+        'width': '50%',
+        'position': 'absolute',
+        'bottom': '1em',
+        right: '0'
+
+    }
     const Pstyles: CSS.Properties = {
         'width': 'auto',
         'margin': '0.2em',
         padding: '0.9em',
+    }
+    const Pstyles2: CSS.Properties = {
+        'width': 'auto',
+        'margin': '0.2em',
+        padding: '0.9em',
+        backgroundColor: 'unset',
+        color: 'black'
     }
 
 
@@ -32,6 +49,11 @@ export default function Page1({ onNext }: Props) {
                 </p>
                 <p style={Pstyles}>
                     No dobra, znam go na pamięć. Tak sobie chciałem pożartować, bo będę za Tobą tęsknił. Kod to: 1895#.
+                </p>
+            </div>
+            <div style={styles2}>
+                <p style={Pstyles2}>
+                    Gratulacje! Udało Ci się ukończyć grę! Za pomocą otrzymanego kodu otwórz skrzynkę znajdującą się w holu Żydowskiego Instytutu Historycznego.
                 </p>
             </div>
 
