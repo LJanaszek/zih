@@ -5,7 +5,6 @@ import React, { Suspense } from 'react';
 import Loader from './components/elements/loader';
 import { useEffect } from 'react';
 import { CONFIG_MODULE_ACTION, useConfigModuleDispatch } from './modules/config';
-import StreetPhotoTestPage from './components/task-widgets/street-photo';
 import PuzzleTestPage from './components/task-widgets/puzzle';
 import ButtonStyle from './button-style';
 import ErrorMessege from './components/errorMessage';
@@ -32,7 +31,6 @@ export default function App() {
                             <Route path={getRulesRoute()} element={<RulesPage />} />
                             <Route path={getEntryRoute()} element={<EntryPage />} />
 
-                            <Route path={'/test/street-photo'} element={<StreetPhotoTestPage />} />
                             <Route path={'/test/puzzle'} element={<PuzzleTestPage />} />
 
                             <Route path={'/debug-on'} element={<DebugOn />} />
