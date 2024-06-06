@@ -1,10 +1,20 @@
 # Słonimscy, gra terenowa
 
+# klonowanie repozytorium z githuba
+* `visual studio code`
+* `ctrl + shift + p`
+* git: clone
+* clone from github
+* ścieżka do repozytorium githubowego
+
 ## Środowisko developerskie
 
 Wymagane oprogramowanie:
 - `nodejs` używana wersja - `18.17.1`
 - `yarn` używana wersja - `1.22.22`
+
+Sugerowane oprogramowanie
+- `nvm` do pobrania z githuba twórcy (zarządzanie dynamiczne wersją node.js)
 
 Po skolowaniu repozytorium należy zaistalować zależności komendą `yarn`
 
@@ -12,6 +22,8 @@ Po skolowaniu repozytorium należy zaistalować zależności komendą `yarn`
 
 - `yarn start` - start developer server
 - `yarn build` - build projects (result in `/build`)
+
+lista wszystkich skryptów w pliku `package.json`
 
 ## Branche
 
