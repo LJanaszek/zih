@@ -95,6 +95,7 @@ h2 {
 }
 
 .page-view {
+
   @media (max-width: 600px) {
     padding: .3em;
   }
@@ -192,7 +193,38 @@ button {
 .page-view {
   display: flex;
   justify-content: flex-end;
-
+  flex-direction: row-reverse;
+  .right-div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 50%;
+    p{
+      width: auto;
+      margin: 0.2em;
+      padding: 0.9em;
+    }
+  }
+  .slonim-div{
+    display: flex;
+    flex-direction: column;
+    img{
+      width: 40vw;
+      max-width: 50vh;
+      margin: 0;
+      padding: 0;
+    }
+    .under-quote{
+        width: auto;
+        padding: 0.9em;
+        background-color: unset;
+        color: black;
+        border: 1px solid black;
+        position: relative;
+        margin: 0;
+  }
+  }
+  
   .page-img {
     position: fixed;
     max-width: 30%;
